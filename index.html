@@ -28,10 +28,12 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:#1a1a2e;color:var(--
 /* ── SLIDE WRAPPER ─────────────────────────────────────────────────── */
 .slide{
   width:var(--slide-w);
-  margin:0 auto 4px;
+  margin:0 auto;
   background:var(--c-white);
   overflow:hidden;
   position:relative;
+  display:flex;
+  flex-direction:column;
 }
 
 /* ── HEADER (slide top bar) ─────────────────────────────────────────── */
@@ -51,8 +53,8 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:#1a1a2e;color:var(--
   display:inline-block;margin-bottom:6px;
 }
 .slide-header .title-block .subtitle{
-  color:rgba(255,255,255,.88);font-size:14px;font-style:italic;font-weight:300;
-  padding-left:2px;
+  color:rgba(255,255,255,.92);font-size:14px;font-style:normal;font-weight:400;
+  padding-left:2px;margin-top:4px;
 }
 .slide-header .btg-logo{
   flex-shrink:0;
@@ -69,11 +71,12 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:#1a1a2e;color:var(--
 .band-blue2 { background:var(--c-blue2); color:#fff; }
 .band-blue3 { background:var(--c-blue3); color:#fff; }
 .band-sky   { background:var(--c-sky);   color:var(--c-navy); }
+.band-blue5 { background:var(--c-blue5); color:#fff; }
 .band-white { background:#fff;           color:var(--c-navy); }
 .band-light { background:#f0f5ff;        color:var(--c-navy); }
 
 /* ── INTRO TEXT ─────────────────────────────────────────────────────── */
-.intro-text{font-size:11.5px;line-height:1.65;color:var(--c-text);}
+.intro-text{font-size:11.5px;line-height:1.65;color:#fff;text-align:justify;}
 .intro-text p{margin-bottom:10px;}
 .intro-text p:last-child{margin-bottom:0;}
 
@@ -89,7 +92,8 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:#1a1a2e;color:var(--
 .rrss-card{background:rgba(255,255,255,.15);border-radius:8px;padding:10px 6px;text-align:center;}
 .rrss-card .platform{font-size:10px;font-weight:600;color:rgba(255,255,255,.75);margin-bottom:4px;}
 .rrss-card .num{font-size:20px;font-weight:900;color:#fff;line-height:1;}
-.rrss-card .growth{font-size:9px;color:var(--c-green);font-weight:700;margin-top:3px;}
+.rrss-card .growth{font-size:9px;color:rgba(255,255,255,.85);font-weight:400;margin-top:3px;}
+.rrss-card .growth .pct{color:var(--c-green);font-weight:700;}
 .rrss-note{font-size:9px;color:rgba(255,255,255,.5);text-align:right;padding:0 8px 8px;}
 
 /* ── METRICS ROW ────────────────────────────────────────────────────── */
@@ -340,7 +344,7 @@ circle.dot{fill:var(--c-blue3);stroke:#fff;stroke-width:1;}
   </div>
 
   <!-- Intro text -->
-  <div class="band band-white" style="padding:20px 24px 16px;">
+  <div class="band band-blue5" style="padding:16px 24px 32px;">
     <div class="intro-text">
       <p>Durante el último trimestre del año, el área de Marketing y Comunicaciones desarrolló una agenda continua de difusión de contenidos corporativos y de apoyo a las distintas áreas de negocio, con resultados visibles en términos de alcance orgánico y presencia de BTG Pactual en canales digitales. Durante el período, la marca registró una mayor aparición en resultados de búsqueda y en plataformas digitales vinculadas a información financiera.</p>
       <p>En paralelo, se ejecutó una agenda de eventos y acciones de relacionamiento de cierre de año, entre los que destacaron el BTG Talks con Joaquín Niemann y los encuentros de fin de año por área de negocio. Estas instancias permitieron generar espacios de encuentro con clientes y cerrar el año con una presencia institucional activa.</p>
@@ -355,27 +359,27 @@ circle.dot{fill:var(--c-blue3);stroke:#fff;stroke-width:1;}
       <div class="rrss-card">
         <div class="platform">LinkedIn</div>
         <div class="num">52,1 K</div>
-        <div class="growth">21% crecimiento en 12 meses</div>
+        <div class="growth"><span class="pct">21%</span> crecimiento en 12 meses</div>
       </div>
       <div class="rrss-card">
         <div class="platform">Instagram</div>
         <div class="num">57,8 K</div>
-        <div class="growth">72% crecimiento en 12 meses</div>
+        <div class="growth"><span class="pct">72%</span> crecimiento en 12 meses</div>
       </div>
       <div class="rrss-card">
         <div class="platform">X (Twitter)</div>
         <div class="num">5,9 K</div>
-        <div class="growth" style="color:rgba(255,255,255,.5)">20% crecimiento en 12 meses</div>
+        <div class="growth"><span class="pct" style="color:rgba(255,255,255,.5)">20%</span> crecimiento en 12 meses</div>
       </div>
       <div class="rrss-card">
         <div class="platform">YouTube</div>
         <div class="num">3,3 K</div>
-        <div class="growth">50% crecimiento en 12 meses</div>
+        <div class="growth"><span class="pct">50%</span> crecimiento en 12 meses</div>
       </div>
       <div class="rrss-card">
         <div class="platform">Spotify</div>
         <div class="num">3,0 K</div>
-        <div class="growth">12% crecimiento en 12 meses</div>
+        <div class="growth"><span class="pct">12%</span> crecimiento en 12 meses</div>
       </div>
     </div>
     <div class="rrss-note">(*) No se incluyen datos de Twitter</div>
