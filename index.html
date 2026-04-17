@@ -3,103 +3,62 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>INFORME BTG 2025 – Reporte 4Q Marketing y Comunicaciones</title>
+<title>INFORME BTG 2026 – Reporte Q1 Marketing y Comunicaciones</title>
 <style>
-/* ── VARIABLES (colores exactos del sitio original) ─────────────────── */
+/* ── VARIABLES ───────────────────────────────────────────────────────── */
 :root {
-  --c-navy:    #002f73;   /* rgb(0,47,115)  – azul oscuro principal */
-  --c-blue1:   #0b2859;   /* rgb(11,40,89)  – azul muy oscuro */
-  --c-blue2:   #14448c;   /* rgb(20,68,140) – azul medio oscuro */
-  --c-blue3:   #195ab4;   /* rgb(25,90,180) – azul medio */
-  --c-blue4:   #305de0;   /* rgb(48,122,224)– azul medio claro */
-  --c-blue5:   #549cff;   /* rgb(84,156,255)– azul claro */
-  --c-sky:     #d2e5ff;   /* rgb(210,229,255)–azul muy claro */
+  --c-navy:    #002f73;
+  --c-blue1:   #0b2859;
+  --c-blue2:   #14448c;
+  --c-blue3:   #195ab4;
+  --c-blue4:   #305de0;
+  --c-blue5:   #549cff;
+  --c-sky:     #d2e5ff;
   --c-white:   #fefefe;
-  --c-green:   #00bf63;   /* rgb(0,191,99)  – verde crecimientos */
+  --c-green:   #00bf63;
   --c-text:    #1a1a1a;
   --c-muted:   #555;
   --slide-w:   720px;
 }
-
-/* ── RESET ──────────────────────────────────────────────────────────── */
 *{box-sizing:border-box;margin:0;padding:0;}
 body{font-family:'Segoe UI',system-ui,sans-serif;background:#1a1a2e;color:var(--c-text);}
 
 /* ── SLIDE WRAPPER ─────────────────────────────────────────────────── */
-.slide{
-  width:var(--slide-w);
-  margin:0 auto;
-  background:var(--c-white);
-  overflow:hidden;
-  position:relative;
-  display:flex;
-  flex-direction:column;
-}
+.slide{width:var(--slide-w);margin:0 auto;background:var(--c-white);overflow:hidden;position:relative;display:flex;flex-direction:column;}
 
-/* ── HEADER (slide top bar) ─────────────────────────────────────────── */
-.slide-header{
-  background:var(--c-navy);
-  padding:18px 24px 14px;
-  display:flex;
-  align-items:flex-start;
-  justify-content:space-between;
-  gap:12px;
-}
-.slide-header .title-block .label{
-  background:var(--c-blue3);
-  color:#fff;
-  font-size:17px;font-weight:800;
-  padding:5px 14px;border-radius:6px;
-  display:inline-block;margin-bottom:6px;
-}
-.slide-header .title-block .subtitle{
-  color:rgba(255,255,255,.92);font-size:14px;font-style:normal;font-weight:400;
-  padding-left:2px;margin-top:4px;
-}
-.slide-header .btg-logo{
-  flex-shrink:0;
-  background:var(--c-navy);border-radius:50%;
-  width:72px;height:72px;
-  display:flex;align-items:center;justify-content:center;
-  overflow:hidden;
-}
+/* ── SLIDE HEADER ──────────────────────────────────────────────────── */
+.slide-header{background:var(--c-navy);padding:18px 24px 14px;display:flex;align-items:flex-start;justify-content:space-between;gap:12px;}
+.slide-header .title-block .label{background:var(--c-blue3);color:#fff;font-size:17px;font-weight:800;padding:5px 14px;border-radius:6px;display:inline-block;margin-bottom:6px;}
+.slide-header .title-block .subtitle{color:rgba(255,255,255,.92);font-size:14px;font-style:italic;font-weight:400;padding-left:2px;margin-top:4px;}
+.slide-header .btg-logo{flex-shrink:0;background:var(--c-navy);border-radius:50%;width:72px;height:72px;display:flex;align-items:center;justify-content:center;overflow:hidden;}
 .slide-header .btg-logo img{width:58px;object-fit:contain;}
 
-/* ── SECTION BANDS ──────────────────────────────────────────────────── */
-.band{ padding:20px 24px; }
-.band-navy  { background:var(--c-navy);  color:#fff; }
-.band-blue2 { background:var(--c-blue2); color:#fff; }
-.band-blue3 { background:var(--c-blue3); color:#fff; }
-.band-sky   { background:var(--c-sky);   color:var(--c-navy); }
-.band-blue5 { background:var(--c-blue5); color:#fff; }
-.band-white { background:#fff;           color:var(--c-navy); }
-.band-light { background:#f0f5ff;        color:var(--c-navy); }
+/* ── BANDS ─────────────────────────────────────────────────────────── */
+.band{padding:20px 24px;}
+.band-navy{background:var(--c-navy);color:#fff;}
+.band-blue2{background:var(--c-blue2);color:#fff;}
+.band-blue3{background:var(--c-blue3);color:#fff;}
+.band-sky{background:var(--c-sky);color:var(--c-navy);}
+.band-blue5{background:var(--c-blue5);color:#fff;}
+.band-white{background:#fff;color:var(--c-navy);}
 
 /* ── INTRO TEXT ─────────────────────────────────────────────────────── */
 .intro-text{font-size:11.5px;line-height:1.65;color:#fff;text-align:justify;}
 .intro-text p{margin-bottom:10px;}
 .intro-text p:last-child{margin-bottom:0;}
 
-/* ── SEGUIDORES RRSS ────────────────────────────────────────────────── */
-.rrss-title{
-  text-align:center;font-size:15px;font-weight:700;
-  color:#fff;padding:10px 0 14px;
-}
-.rrss-grid{
-  display:grid;grid-template-columns:repeat(5,1fr);gap:6px;
-  padding:0 8px 12px;
-}
+/* ── RRSS GRID ──────────────────────────────────────────────────────── */
+.rrss-title{text-align:center;font-size:15px;font-weight:700;color:#fff;padding:10px 0 14px;}
+.rrss-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;padding:0 8px 12px;}
 .rrss-card{background:rgba(255,255,255,.15);border-radius:8px;padding:10px 6px;text-align:center;}
 .rrss-card .platform{font-size:10px;font-weight:600;color:rgba(255,255,255,.75);margin-bottom:4px;}
 .rrss-card .num{font-size:20px;font-weight:900;color:#fff;line-height:1;}
-.rrss-card .growth{font-size:9px;color:rgba(255,255,255,.85);font-weight:400;margin-top:3px;}
+.rrss-card .growth{font-size:9px;color:rgba(255,255,255,.85);margin-top:3px;}
 .rrss-card .growth .pct{color:var(--c-green);font-weight:700;}
 .rrss-note{font-size:9px;color:rgba(255,255,255,.5);text-align:right;padding:0 8px 8px;}
 
 /* ── METRICS ROW ────────────────────────────────────────────────────── */
-.metrics-row{
-  display:grid;gap:0;
-}
+.metrics-row{display:grid;gap:0;}
 .metrics-row.cols4{grid-template-columns:repeat(4,1fr);}
 .metrics-row.cols2{grid-template-columns:repeat(2,1fr);}
 .metric-cell{padding:14px 16px;border-right:1px solid rgba(0,0,0,.07);}
@@ -108,33 +67,15 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:#1a1a2e;color:var(--
 .metric-cell .num.lg{font-size:32px;}
 .metric-cell .lbl{font-size:10px;color:var(--c-muted);margin-top:4px;line-height:1.3;}
 .metric-cell .note{font-size:9px;color:var(--c-muted);margin-top:2px;}
-/* on dark backgrounds */
-.band-blue3 .metric-cell .num,
-.band-blue2 .metric-cell .num{ color:#fff; }
-.band-blue3 .metric-cell .lbl,
-.band-blue2 .metric-cell .lbl{ color:rgba(255,255,255,.75); }
 
-/* ── METRIC NOTE ─────────────────────────────────────────────────────── */
-.metric-note{
-  font-size:9px;color:var(--c-muted);padding:6px 16px 10px;
-  border-top:1px solid #e8eef8;
-}
-
-/* ── TRAFFIC BOXES ──────────────────────────────────────────────────── */
-.traffic-row{display:grid;grid-template-columns:1fr 1fr;gap:0;}
-.traffic-box{padding:14px 18px;}
-.traffic-box .t-title{font-size:12px;font-weight:700;color:#fff;}
-.traffic-box .t-num{font-size:30px;font-weight:900;color:#fff;line-height:1.1;}
-.traffic-box .t-sub{font-size:9.5px;color:rgba(255,255,255,.75);margin-top:3px;line-height:1.3;}
-.traffic-box.left{background:var(--c-blue3);}
-.traffic-box.right{background:var(--c-blue2);}
-
-/* ── LINE CHART (SVG) ───────────────────────────────────────────────── */
-.charts-row{display:grid;grid-template-columns:1fr 1fr;gap:0;background:#f6faff;}
-.chart-box{padding:14px 16px;}
-.chart-box .c-title{font-size:11px;font-weight:700;color:var(--c-navy);margin-bottom:2px;}
-.chart-box .c-sub{font-size:9px;color:var(--c-muted);margin-bottom:8px;}
-.chart-box svg{width:100%;height:90px;overflow:visible;}
+/* ── TRAFFIC BLOCKS ─────────────────────────────────────────────────── */
+.traffic-blocks{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:0 20px 16px;}
+.tblock{border-radius:8px;padding:12px 16px;}
+.tblock.paid{background:var(--c-blue3);}
+.tblock.organic{background:var(--c-blue2);}
+.tblock .tb-title{font-size:10px;font-weight:700;color:#fff;}
+.tblock .tb-num{font-size:24px;font-weight:900;color:#fff;line-height:1.2;}
+.tblock .tb-sub{font-size:8.5px;color:rgba(255,255,255,.8);}
 
 /* ── BOTTOM STATS ───────────────────────────────────────────────────── */
 .bottom-stats{display:grid;grid-template-columns:repeat(4,1fr);background:var(--c-sky);}
@@ -155,11 +96,7 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:#1a1a2e;color:var(--
 .hitos-footnote{font-size:8.5px;color:var(--c-muted);text-align:center;padding:10px 16px 14px;background:#fff;line-height:1.5;}
 
 /* ── SECTION HEADING ─────────────────────────────────────────────────── */
-.section-heading{
-  font-size:14px;font-weight:800;color:var(--c-navy);
-  text-align:center;padding:16px 24px 12px;
-  background:#fff;
-}
+.section-heading{font-size:14px;font-weight:800;color:var(--c-navy);text-align:center;padding:16px 24px 12px;background:#fff;}
 
 /* ── EVENT HIGHLIGHT ─────────────────────────────────────────────────── */
 .event-highlight{padding:16px 20px;background:#fff;text-align:center;}
@@ -175,8 +112,6 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:#1a1a2e;color:var(--
 .barlist-track{flex:1;background:#dde8fb;border-radius:3px;height:7px;overflow:hidden;}
 .barlist-fill{height:100%;border-radius:3px;background:var(--c-blue3);}
 .barlist-val{font-size:9px;font-weight:700;color:var(--c-navy);min-width:16px;}
-
-/* ── TWO-COL BARLISTS ───────────────────────────────────────────────── */
 .two-barlists{display:grid;grid-template-columns:1fr 1fr;gap:0;background:#f6faff;}
 .two-barlists .barlist-wrap{background:transparent;}
 
@@ -191,11 +126,10 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:#1a1a2e;color:var(--
 .impact-col .col-title{font-size:13px;font-weight:800;color:#fff;margin-bottom:14px;}
 .impact-big-num{font-size:36px;font-weight:900;color:#fff;line-height:1;}
 .impact-label{font-size:10px;color:rgba(255,255,255,.8);margin-bottom:12px;margin-top:2px;}
-.impact-sub-num{font-size:22px;font-weight:900;color:#fff;line-height:1;}
 .left-impact{background:var(--c-blue3);}
 .right-impact{background:var(--c-blue2);}
 
-/* ── HORIZONTAL BAR (data) ──────────────────────────────────────────── */
+/* ── HORIZONTAL BAR ─────────────────────────────────────────────────── */
 .hbar-section{padding:12px 20px;}
 .hbar-title{font-size:11px;font-weight:700;color:var(--c-navy);margin-bottom:10px;}
 .hbar-row{display:flex;align-items:center;gap:8px;margin-bottom:6px;}
@@ -208,15 +142,6 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:#1a1a2e;color:var(--
 .hbar-fill-val{font-size:8.5px;font-weight:700;color:#fff;white-space:nowrap;}
 .hbar-ext-val{font-size:8.5px;font-weight:700;color:var(--c-navy);margin-left:4px;}
 
-/* ── TRAFFIC BLOCKS ─────────────────────────────────────────────────── */
-.traffic-blocks{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:0 20px 16px;}
-.tblock{border-radius:8px;padding:12px 16px;}
-.tblock.paid{background:var(--c-blue3);}
-.tblock.organic{background:var(--c-blue2);}
-.tblock .tb-title{font-size:10px;font-weight:700;color:#fff;}
-.tblock .tb-num{font-size:24px;font-weight:900;color:#fff;line-height:1.2;}
-.tblock .tb-sub{font-size:8.5px;color:rgba(255,255,255,.8);}
-
 /* ── CONTENT HIGHLIGHTS ─────────────────────────────────────────────── */
 .highlights-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;padding:16px 20px;background:#fff;}
 .highlight-card{text-align:center;}
@@ -226,41 +151,27 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:#1a1a2e;color:var(--
 .highlight-card .h-metric{font-size:11px;font-weight:900;color:var(--c-blue3);margin-top:4px;}
 .highlight-card .h-metric-lbl{font-size:8px;color:var(--c-muted);}
 
-/* ── AREA SLIDE (Investment Banking, Inversiones Digitales, etc.) ─────── */
+/* ── AREA HEADER ─────────────────────────────────────────────────────── */
 .area-header{background:var(--c-navy);padding:14px 20px;display:flex;align-items:flex-start;justify-content:space-between;}
-.area-header .area-name{
-  background:var(--c-blue3);color:#fff;
-  font-size:14px;font-weight:800;padding:4px 14px;border-radius:6px;
-  display:inline-block;margin-bottom:4px;
-}
+.area-header .area-name{background:var(--c-blue3);color:#fff;font-size:14px;font-weight:800;padding:4px 14px;border-radius:6px;display:inline-block;margin-bottom:4px;}
 .area-header .area-sub{color:rgba(255,255,255,.85);font-size:12px;font-style:italic;}
 .area-header .btg-logo{flex-shrink:0;background:var(--c-navy);border-radius:50%;width:68px;height:68px;display:flex;align-items:center;justify-content:center;overflow:hidden;}
 .area-header .btg-logo img{width:54px;object-fit:contain;}
 
-.area-kpis{display:grid;grid-template-columns:repeat(2,1fr);background:var(--c-sky);}
-.area-kpis.cols3{grid-template-columns:repeat(3,1fr);}
+/* ── AREA KPIs ───────────────────────────────────────────────────────── */
 .area-kpi{padding:14px 16px;border-right:1px solid rgba(0,47,115,.12);}
 .area-kpi:last-child{border-right:none;}
 .area-kpi .ak-label{font-size:10px;color:var(--c-navy);margin-bottom:2px;}
 .area-kpi .ak-num{font-size:28px;font-weight:900;color:var(--c-navy);}
 .area-kpi .ak-sub{font-size:9px;color:var(--c-muted);margin-top:2px;}
 
+/* ── EVENT PHOTO ─────────────────────────────────────────────────────── */
 .area-event-photo{padding:14px 20px;background:#fff;text-align:center;}
 .area-event-photo img{width:100%;max-height:200px;object-fit:cover;border-radius:8px;}
 .area-event-photo .photo-caption{font-size:10.5px;color:var(--c-text);margin-top:8px;line-height:1.5;}
 .area-event-photo .photo-caption strong{color:var(--c-navy);}
 
-.area-media-row{display:grid;grid-template-columns:1fr 1fr;gap:0;}
-.area-media-col{padding:14px 20px;background:#f6faff;}
-.area-media-col .amc-title{font-size:12px;font-weight:700;color:var(--c-navy);margin-bottom:12px;text-align:center;}
-
-.fuentes-list{list-style:none;}
-.fuentes-list li{display:flex;align-items:center;gap:8px;margin-bottom:5px;}
-.fuentes-list .f-name{font-size:9.5px;text-align:right;width:130px;flex-shrink:0;color:var(--c-navy);}
-.fuentes-list .f-bar{flex:1;background:#dde8fb;border-radius:3px;height:7px;overflow:hidden;}
-.fuentes-list .f-fill{height:100%;background:var(--c-blue3);border-radius:3px;}
-.fuentes-list .f-val{font-size:9px;font-weight:700;color:var(--c-navy);}
-
+/* ── AREA CONTENT HIGHLIGHTS ─────────────────────────────────────────── */
 .area-content-highlights{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding:14px 20px;background:#fff;}
 .ach-card{text-align:center;}
 .ach-card img{width:75%;max-width:130px;border-radius:10px;box-shadow:0 2px 10px rgba(0,47,115,.12);}
@@ -269,16 +180,16 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:#1a1a2e;color:var(--
 .ach-card .ach-metric{font-size:10px;font-weight:900;color:var(--c-blue3);margin-top:3px;}
 .ach-card .ach-mlbl{font-size:7.5px;color:var(--c-muted);}
 
+/* ── WEB STATS ───────────────────────────────────────────────────────── */
 .area-web-stats{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:12px 20px 16px;}
 .aws{border-radius:8px;padding:10px 14px;}
 .aws.paid{background:var(--c-blue3);}
 .aws.organic{background:var(--c-blue2);}
 .aws .ws-lbl{font-size:9px;font-weight:700;color:#fff;}
 .aws .ws-num{font-size:22px;font-weight:900;color:#fff;line-height:1.2;}
-.aws .ws-sub{font-size:8px;color:rgba(255,255,255,.8);}
 .aws.na .ws-num{font-size:16px;}
 
-/* ── INV DIGITALES RRSS ──────────────────────────────────────────────── */
+/* ── RRSS DETAIL (Difusión slides) ───────────────────────────────────── */
 .rrss-detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;}
 .rrss-detail-col{padding:16px 20px;}
 .rrss-detail-col .rdc-title{font-size:13px;font-weight:800;color:#fff;margin-bottom:12px;}
@@ -292,33 +203,12 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:#1a1a2e;color:var(--
 .cpm-ctr .cc-num{font-size:18px;font-weight:900;color:#fff;}
 .cpm-ctr .cc-sub{font-size:7.5px;color:rgba(255,255,255,.6);line-height:1.3;}
 
-/* ── DIVIDER PAGE ────────────────────────────────────────────────────── */
-.page-divider{
-  background:var(--c-navy);
-  height:6px;
-  width:100%;
-}
+/* ── PAGE DIVIDER ────────────────────────────────────────────────────── */
+.page-divider{background:var(--c-navy);height:6px;width:100%;}
 
 /* ── FOOTNOTE ────────────────────────────────────────────────────────── */
 .footnote-band{background:#fff;padding:10px 20px;border-top:1px solid #e0e8f8;}
 .footnote-band p{font-size:8.5px;color:var(--c-muted);text-align:center;line-height:1.5;}
-
-/* ── SIMPLE SVG LINE CHART STYLES ────────────────────────────────────── */
-text.axis-label{font-size:6px;fill:#666;font-family:'Segoe UI',sans-serif;}
-line.grid{stroke:#e0e8f8;stroke-width:.5;}
-polyline.line{stroke:var(--c-blue3);stroke-width:1.5;fill:none;}
-circle.dot{fill:var(--c-blue3);stroke:#fff;stroke-width:1;}
-
-/* ── IMPRESIONES TABLE ───────────────────────────────────────────────── */
-.imp-table{width:100%;border-collapse:collapse;font-size:9px;}
-.imp-table td{padding:4px 8px;border-bottom:1px solid #eef2fb;}
-.imp-table tr:last-child td{border-bottom:none;}
-.imp-table .it-name{color:var(--c-navy);}
-.imp-table .it-bar-cell{width:50%;}
-.imp-table .it-bar-wrap{background:#dde8fb;border-radius:3px;height:12px;overflow:hidden;}
-.imp-table .it-bar-fill{height:100%;background:var(--c-blue3);border-radius:3px;}
-.imp-table .it-val{font-weight:700;color:var(--c-navy);text-align:right;white-space:nowrap;}
-.imp-table .it-extra{color:var(--c-muted);font-size:8px;}
 
 /* ── RESPONSIVE ──────────────────────────────────────────────────────── */
 @media(max-width:760px){
@@ -329,423 +219,438 @@ circle.dot{fill:var(--c-blue3);stroke:#fff;stroke-width:1;}
 </head>
 <body>
 
-<!-- ████████████████  SLIDE 1 – RESUMEN EJECUTIVO  ████████████████ -->
-<div class="slide">
+<!-- ████  SLIDE 1 – RESUMEN EJECUTIVO  ████ -->
+<div class="slide" style="background:#0d2055;">
 
-  <!-- Header -->
-  <div class="slide-header">
-    <div class="title-block">
-      <div class="label">Marketing y Comunicaciones</div>
-      <div class="subtitle">Reporte Q4 - 2025</div>
+  <!-- HEADER + INTRO + RRSS → fondo navy oscuro unificado -->
+  <div style="background:#0d2055;padding:20px 22px 18px;">
+
+    <!-- Header -->
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
+      <div>
+        <div style="font-size:21px;font-weight:900;color:#fff;line-height:1.2;">Marketing y Comunicaciones</div>
+        <div style="font-size:12px;color:rgba(255,255,255,.65);font-style:italic;margin-top:3px;">Reporte Q1 - 2026</div>
+      </div>
+      <div style="flex-shrink:0;">
+        <img src="btg-assets/img1.png" style="width:82px;object-fit:contain;display:block;" alt="BTG">
+      </div>
     </div>
-    <div class="btg-logo">
-      <img src="btg-assets/img1.png" alt="BTG Pactual">
+
+    <!-- Intro text -->
+    <div style="font-size:10px;color:rgba(255,255,255,.82);line-height:1.65;text-align:justify;margin-bottom:16px;">
+      <p style="margin-bottom:7px;">Durante el primer trimestre de 2026, el área de Marketing y Comunicaciones llevó a cabo distintas acciones relevantes. En los primeros meses del año se llevó a cabo una reorganización del área con aplicación de mejoras de SEO para mejorar la visibilidad y el posicionamiento del sitio. El trabajo se coordinó con el área de TI. En Technology se ejecutó una migración de datos a activos digitales. Tras su publicación en marzo, se presentó un impacto importante en el tráfico orgánico.</p>
+      <p>Finalmente, las audiencias y comunidades digitales mantuvieron un crecimiento sostenido, fortaleciendo la presencia de nuestra marca en los principales canales.</p>
+    </div>
+
+    <!-- Seguidores RRSS -->
+    <div style="font-size:12px;font-weight:700;color:rgba(255,255,255,.9);margin-bottom:8px;">Seguidores RRSS</div>
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:5px;">
+      <div style="background:rgba(255,255,255,.1);border-radius:6px;padding:9px 4px;text-align:center;">
+        <div style="font-size:9px;color:rgba(255,255,255,.6);margin-bottom:3px;">LinkedIn</div>
+        <div style="font-size:18px;font-weight:900;color:#fff;line-height:1.1;">53,2 K</div>
+        <div style="margin-top:4px;"><span style="background:#00bf63;color:#fff;font-size:7.5px;font-weight:700;padding:2px 5px;border-radius:8px;">+16%</span></div>
+        <div style="font-size:7px;color:rgba(255,255,255,.45);margin-top:2px;">crecimiento</div>
+      </div>
+      <div style="background:rgba(255,255,255,.1);border-radius:6px;padding:9px 4px;text-align:center;">
+        <div style="font-size:9px;color:rgba(255,255,255,.6);margin-bottom:3px;">Instagram</div>
+        <div style="font-size:18px;font-weight:900;color:#fff;line-height:1.1;">66,4 K</div>
+        <div style="margin-top:4px;"><span style="background:#00bf63;color:#fff;font-size:7.5px;font-weight:700;padding:2px 5px;border-radius:8px;">+82%</span></div>
+        <div style="font-size:7px;color:rgba(255,255,255,.45);margin-top:2px;">crecimiento</div>
+      </div>
+      <div style="background:rgba(255,255,255,.1);border-radius:6px;padding:9px 4px;text-align:center;">
+        <div style="font-size:9px;color:rgba(255,255,255,.6);margin-bottom:3px;">X (Twitter)</div>
+        <div style="font-size:18px;font-weight:900;color:#fff;line-height:1.1;">5,9 K</div>
+        <div style="margin-top:4px;"><span style="background:#00bf63;color:#fff;font-size:7.5px;font-weight:700;padding:2px 5px;border-radius:8px;">+16%</span></div>
+        <div style="font-size:7px;color:rgba(255,255,255,.45);margin-top:2px;">crecimiento</div>
+      </div>
+      <div style="background:rgba(255,255,255,.1);border-radius:6px;padding:9px 4px;text-align:center;">
+        <div style="font-size:9px;color:rgba(255,255,255,.6);margin-bottom:3px;">YouTube</div>
+        <div style="font-size:18px;font-weight:900;color:#fff;line-height:1.1;">3,5 K</div>
+        <div style="margin-top:4px;"><span style="background:#00bf63;color:#fff;font-size:7.5px;font-weight:700;padding:2px 5px;border-radius:8px;">+44%</span></div>
+        <div style="font-size:7px;color:rgba(255,255,255,.45);margin-top:2px;">crecimiento</div>
+      </div>
+      <div style="background:rgba(255,255,255,.1);border-radius:6px;padding:9px 4px;text-align:center;">
+        <div style="font-size:9px;color:rgba(255,255,255,.6);margin-bottom:3px;">Spotify</div>
+        <div style="font-size:18px;font-weight:900;color:#fff;line-height:1.1;">3,2 K</div>
+        <div style="margin-top:4px;"><span style="background:#00bf63;color:#fff;font-size:7.5px;font-weight:700;padding:2px 5px;border-radius:8px;">+14%</span></div>
+        <div style="font-size:7px;color:rgba(255,255,255,.45);margin-top:2px;">crecimiento</div>
+      </div>
+    </div>
+    <div style="font-size:8px;color:rgba(255,255,255,.45);text-align:right;margin-top:5px;">(*) 76 campañas promocionadas en el período</div>
+  </div>
+
+  <!-- MÉTRICAS → fondo blanco, separadores sutiles entre celdas -->
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);background:#ffffff;">
+    <div style="padding:13px 14px;border-right:1px solid #e4ecf7;">
+      <div style="font-size:25px;font-weight:900;color:#0d2055;line-height:1;">9,7 MM</div>
+      <div style="font-size:9px;color:#777;margin-top:3px;line-height:1.4;">Personas alcanzadas<br>en campañas</div>
+    </div>
+    <div style="padding:13px 14px;border-right:1px solid #e4ecf7;">
+      <div style="font-size:25px;font-weight:900;color:#0d2055;line-height:1;">76</div>
+      <div style="font-size:9px;color:#777;margin-top:3px;line-height:1.4;">Campañas<br>promocionadas</div>
+    </div>
+    <div style="padding:13px 14px;border-right:1px solid #e4ecf7;">
+      <div style="font-size:25px;font-weight:900;color:#0d2055;line-height:1;">709 K</div>
+      <div style="font-size:9px;color:#777;margin-top:3px;line-height:1.4;">Personas alcanzadas<br>en redes sociales</div>
+    </div>
+    <div style="padding:13px 14px;">
+      <div style="font-size:25px;font-weight:900;color:#0d2055;line-height:1;">257</div>
+      <div style="font-size:9px;color:#777;margin-top:3px;line-height:1.4;">Contenidos publicados<br>en redes sociales</div>
     </div>
   </div>
 
-  <!-- Intro text -->
-  <div class="band band-blue5" style="padding:16px 24px 32px;">
-    <div class="intro-text">
-      <p>Durante el último trimestre del año, el área de Marketing y Comunicaciones desarrolló una agenda continua de difusión de contenidos corporativos y de apoyo a las distintas áreas de negocio, con resultados visibles en términos de alcance orgánico y presencia de BTG Pactual en canales digitales. Durante el período, la marca registró una mayor aparición en resultados de búsqueda y en plataformas digitales vinculadas a información financiera.</p>
-      <p>En paralelo, se ejecutó una agenda de eventos y acciones de relacionamiento de cierre de año, entre los que destacaron el BTG Talks con Joaquín Niemann y los encuentros de fin de año por área de negocio. Estas instancias permitieron generar espacios de encuentro con clientes y cerrar el año con una presencia institucional activa.</p>
-      <p>Finalmente, durante el período se levantaron los resultados del estudio de imagen y posicionamiento de marca, los que constituyen una referencia para el análisis y la planificación del trabajo del área en el próximo período.</p>
+  <!-- TRÁFICO → fondo blanco, dos bloques azules -->
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:14px 18px;background:#ffffff;border-top:1px solid #e4ecf7;border-bottom:1px solid #e4ecf7;">
+    <div style="background:#1a5dc8;border-radius:8px;padding:12px 14px;">
+      <div style="font-size:9px;font-weight:700;color:#fff;margin-bottom:4px;">Tráfico Web Pagado</div>
+      <div style="font-size:24px;font-weight:900;color:#fff;line-height:1;">191 K</div>
+      <div style="font-size:7.5px;color:rgba(255,255,255,.75);margin-top:3px;">Usuarios dirigidos al sitio web<br>a través de publicidad pagada</div>
+    </div>
+    <div style="background:#1a5dc8;border-radius:8px;padding:12px 14px;opacity:.75;">
+      <div style="font-size:9px;font-weight:700;color:#fff;margin-bottom:4px;">Tráfico Web Orgánico</div>
+      <div style="font-size:24px;font-weight:900;color:#fff;line-height:1;">116 K</div>
+      <div style="font-size:7.5px;color:rgba(255,255,255,.75);margin-top:3px;">Usuarios que accedieron al sitio<br>sin intervención de publicidad</div>
     </div>
   </div>
 
-  <!-- Seguidores RRSS -->
-  <div class="band band-blue3">
-    <div class="rrss-title">Seguidores RRSS</div>
-    <div class="rrss-grid">
-      <div class="rrss-card">
-        <div class="platform">LinkedIn</div>
-        <div class="num">52,1 K</div>
-        <div class="growth"><span class="pct">21%</span> crecimiento en 12 meses</div>
-      </div>
-      <div class="rrss-card">
-        <div class="platform">Instagram</div>
-        <div class="num">57,8 K</div>
-        <div class="growth"><span class="pct">72%</span> crecimiento en 12 meses</div>
-      </div>
-      <div class="rrss-card">
-        <div class="platform">X (Twitter)</div>
-        <div class="num">5,9 K</div>
-        <div class="growth"><span class="pct" style="color:rgba(255,255,255,.5)">20%</span> crecimiento en 12 meses</div>
-      </div>
-      <div class="rrss-card">
-        <div class="platform">YouTube</div>
-        <div class="num">3,3 K</div>
-        <div class="growth"><span class="pct">50%</span> crecimiento en 12 meses</div>
-      </div>
-      <div class="rrss-card">
-        <div class="platform">Spotify</div>
-        <div class="num">3,0 K</div>
-        <div class="growth"><span class="pct">12%</span> crecimiento en 12 meses</div>
-      </div>
-    </div>
-    <div class="rrss-note">(*) No se incluyen datos de Twitter</div>
-  </div>
-
-  <!-- Campañas + Personas alcanzadas -->
-  <div class="metrics-row cols4" style="background:#fff;">
-    <div class="metric-cell">
-      <div class="num lg">12,9 MM*</div>
-      <div class="lbl">Personas alcanzadas en campañas</div>
-    </div>
-    <div class="metric-cell">
-      <div class="num lg">105</div>
-      <div class="lbl">Campañas promocionadas</div>
-    </div>
-    <div class="metric-cell">
-      <div class="num lg">2,9 MM</div>
-      <div class="lbl">Personas alcanzadas en redes sociales</div>
-    </div>
-    <div class="metric-cell">
-      <div class="num lg">512</div>
-      <div class="lbl">Contenidos publicados en redes sociales</div>
-    </div>
-  </div>
-  <div class="metric-note">(*) Durante el período, se activaron 32 campañas de Inversiones Digitales, 9 de Asset Management y 8 de BTG Corp.</div>
-
-  <!-- Tráfico web -->
-  <div class="traffic-row">
-    <div class="traffic-box left">
-      <div class="t-title">Tráfico Web Pagado</div>
-      <div class="t-num">216 K</div>
-      <div class="t-sub">Usuarios dirigidos al sitio web<br>a través de publicidad pagada</div>
-    </div>
-    <div class="traffic-box right">
-      <div class="t-title">Tráfico Web Orgánico</div>
-      <div class="t-num">150 K</div>
-      <div class="t-sub">Usuarios que acceden al sitio web<br>sin intervención de publicidad</div>
-    </div>
-  </div>
-
-  <!-- Line charts -->
-  <div class="charts-row">
-    <div class="chart-box">
-      <div class="c-title">Eventos por mes</div>
-      <div class="c-sub">(Últimos 12 meses)</div>
-      <svg viewBox="0 0 240 80">
-        <!-- Y axis -->
-        <text class="axis-label" x="14" y="10">14</text>
-        <text class="axis-label" x="14" y="24">12</text>
-        <text class="axis-label" x="14" y="38">10</text>
-        <text class="axis-label" x="14" y="52">8</text>
-        <text class="axis-label" x="14" y="66">4</text>
-        <text class="axis-label" x="14" y="76">0</text>
-        <!-- grid lines -->
-        <line class="grid" x1="24" y1="10" x2="236" y2="10"/>
-        <line class="grid" x1="24" y1="24" x2="236" y2="24"/>
-        <line class="grid" x1="24" y1="52" x2="236" y2="52"/>
-        <line class="grid" x1="24" y1="76" x2="236" y2="76"/>
-        <!-- Data: Ene(4),Feb(6),Mar(3),Abr(5),May(5),Jun(2),Jul(4),Ago(3),Sep(8),Oct(3),Nov(6),Dic(12) normalized to 0-76 range -->
-        <polyline class="line" points="
-          28,62 46,56 64,65 82,59 100,59 118,70 136,62 154,65 172,44 190,65 208,56 226,30"/>
-        <circle class="dot" cx="28" cy="62" r="2.5"/>
-        <circle class="dot" cx="46" cy="56" r="2.5"/>
-        <circle class="dot" cx="64" cy="65" r="2.5"/>
-        <circle class="dot" cx="82" cy="59" r="2.5"/>
-        <circle class="dot" cx="100" cy="59" r="2.5"/>
-        <circle class="dot" cx="118" cy="70" r="2.5"/>
-        <circle class="dot" cx="136" cy="62" r="2.5"/>
-        <circle class="dot" cx="154" cy="65" r="2.5"/>
-        <circle class="dot" cx="172" cy="44" r="2.5"/>
-        <circle class="dot" cx="190" cy="65" r="2.5"/>
-        <circle class="dot" cx="208" cy="56" r="2.5"/>
-        <circle class="dot" cx="226" cy="30" r="2.5"/>
-        <!-- X labels -->
-        <text class="axis-label" x="24" y="80" transform="rotate(-45,24,80)">Ene</text>
-        <text class="axis-label" x="60" y="80" transform="rotate(-45,60,80)">Abr</text>
-        <text class="axis-label" x="96" y="80" transform="rotate(-45,96,80)">Jul</text>
-        <text class="axis-label" x="132" y="80" transform="rotate(-45,132,80)">Sep</text>
-        <text class="axis-label" x="168" y="80" transform="rotate(-45,168,80)">Oct</text>
-        <text class="axis-label" x="204" y="80" transform="rotate(-45,204,80)">Dic</text>
+  <!-- GRÁFICOS DE LÍNEA → fondo blanco, 2 columnas -->
+  <div style="display:grid;grid-template-columns:1fr 1fr;background:#ffffff;padding:14px 16px 4px;">
+    <!-- Eventos por mes -->
+    <div style="padding-right:10px;border-right:1px solid #e4ecf7;">
+      <div style="font-size:10px;font-weight:700;color:#0d2055;line-height:1.3;margin-bottom:1px;">Eventos por mes</div>
+      <div style="font-size:7.5px;color:#999;margin-bottom:4px;">(Últimos 12 meses)</div>
+      <svg viewBox="0 0 300 110" width="100%" style="overflow:visible;display:block;">
+        <text x="18" y="86" font-size="7.5" fill="#aaa" text-anchor="end">0</text>
+        <text x="18" y="60" font-size="7.5" fill="#aaa" text-anchor="end">5</text>
+        <text x="18" y="33" font-size="7.5" fill="#aaa" text-anchor="end">10</text>
+        <line x1="20" y1="85" x2="296" y2="85" stroke="#eaeef5" stroke-width="1"/>
+        <line x1="20" y1="58" x2="296" y2="58" stroke="#eaeef5" stroke-width="1"/>
+        <line x1="20" y1="31" x2="296" y2="31" stroke="#eaeef5" stroke-width="1"/>
+        <!-- data: 6,4,2,4,10,4,13,9,3,3,1,9 · y=85-v*(54/13) · x step=25.1 from 20 -->
+        <polyline points="20,60 45,71 70,81 95,71 121,43 146,71 171,18 197,34 222,73 247,73 272,85 296,43"
+          fill="none" stroke="#1a5dc8" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/>
+        <circle cx="20"  cy="60" r="2.5" fill="#1a5dc8"/>
+        <circle cx="45"  cy="71" r="2.5" fill="#1a5dc8"/>
+        <circle cx="70"  cy="81" r="2.5" fill="#1a5dc8"/>
+        <circle cx="95"  cy="71" r="2.5" fill="#1a5dc8"/>
+        <circle cx="121" cy="43" r="2.5" fill="#1a5dc8"/>
+        <circle cx="146" cy="71" r="2.5" fill="#1a5dc8"/>
+        <circle cx="171" cy="18" r="2.5" fill="#1a5dc8"/>
+        <circle cx="197" cy="34" r="2.5" fill="#1a5dc8"/>
+        <circle cx="222" cy="73" r="2.5" fill="#1a5dc8"/>
+        <circle cx="247" cy="73" r="2.5" fill="#1a5dc8"/>
+        <circle cx="272" cy="85" r="2.5" fill="#1a5dc8"/>
+        <circle cx="296" cy="43" r="2.5" fill="#1a5dc8"/>
+        <text transform="rotate(-45,20,93)"  x="20"  y="93" font-size="6.5" fill="#aaa">Abr-25</text>
+        <text transform="rotate(-45,45,93)"  x="45"  y="93" font-size="6.5" fill="#aaa">May-25</text>
+        <text transform="rotate(-45,70,93)"  x="70"  y="93" font-size="6.5" fill="#aaa">Jun-25</text>
+        <text transform="rotate(-45,95,93)"  x="95"  y="93" font-size="6.5" fill="#aaa">Jul-25</text>
+        <text transform="rotate(-45,121,93)" x="121" y="93" font-size="6.5" fill="#aaa">Ago-25</text>
+        <text transform="rotate(-45,146,93)" x="146" y="93" font-size="6.5" fill="#aaa">Sep-25</text>
+        <text transform="rotate(-45,171,93)" x="171" y="93" font-size="6.5" fill="#aaa">Oct-25</text>
+        <text transform="rotate(-45,197,93)" x="197" y="93" font-size="6.5" fill="#aaa">Nov-25</text>
+        <text transform="rotate(-45,222,93)" x="222" y="93" font-size="6.5" fill="#aaa">Dic-25</text>
+        <text transform="rotate(-45,247,93)" x="247" y="93" font-size="6.5" fill="#aaa">Ene-26</text>
+        <text transform="rotate(-45,272,93)" x="272" y="93" font-size="6.5" fill="#aaa">Feb-26</text>
+        <text transform="rotate(-45,296,93)" x="296" y="93" font-size="6.5" fill="#aaa">Mar-26</text>
       </svg>
     </div>
-    <div class="chart-box">
-      <div class="c-title">Apariciones destacadas en prensa por mes</div>
-      <div class="c-sub">(Últimos 12 meses)</div>
-      <svg viewBox="0 0 240 80">
-        <text class="axis-label" x="10" y="10">30</text>
-        <text class="axis-label" x="10" y="28">25</text>
-        <text class="axis-label" x="10" y="46">15</text>
-        <text class="axis-label" x="10" y="64">5</text>
-        <text class="axis-label" x="10" y="76">0</text>
-        <line class="grid" x1="24" y1="10" x2="236" y2="10"/>
-        <line class="grid" x1="24" y1="28" x2="236" y2="28"/>
-        <line class="grid" x1="24" y1="46" x2="236" y2="46"/>
-        <line class="grid" x1="24" y1="76" x2="236" y2="76"/>
-        <polyline class="line" points="
-          28,50 46,40 64,56 82,44 100,38 118,52 136,36 154,44 172,30 190,40 208,24 226,14"/>
-        <circle class="dot" cx="28" cy="50" r="2.5"/>
-        <circle class="dot" cx="46" cy="40" r="2.5"/>
-        <circle class="dot" cx="64" cy="56" r="2.5"/>
-        <circle class="dot" cx="82" cy="44" r="2.5"/>
-        <circle class="dot" cx="100" cy="38" r="2.5"/>
-        <circle class="dot" cx="118" cy="52" r="2.5"/>
-        <circle class="dot" cx="136" cy="36" r="2.5"/>
-        <circle class="dot" cx="154" cy="44" r="2.5"/>
-        <circle class="dot" cx="172" cy="30" r="2.5"/>
-        <circle class="dot" cx="190" cy="40" r="2.5"/>
-        <circle class="dot" cx="208" cy="24" r="2.5"/>
-        <circle class="dot" cx="226" cy="14" r="2.5"/>
-        <text class="axis-label" x="24" y="80" transform="rotate(-45,24,80)">Ene</text>
-        <text class="axis-label" x="60" y="80" transform="rotate(-45,60,80)">Abr</text>
-        <text class="axis-label" x="96" y="80" transform="rotate(-45,96,80)">Jul</text>
-        <text class="axis-label" x="132" y="80" transform="rotate(-45,132,80)">Sep</text>
-        <text class="axis-label" x="168" y="80" transform="rotate(-45,168,80)">Oct</text>
-        <text class="axis-label" x="204" y="80" transform="rotate(-45,204,80)">Dic</text>
+    <!-- Apariciones en prensa -->
+    <div style="padding-left:10px;">
+      <div style="font-size:10px;font-weight:700;color:#0d2055;line-height:1.3;margin-bottom:1px;">Apariciones destacadas en prensa por mes</div>
+      <div style="font-size:7.5px;color:#999;margin-bottom:4px;">(Últimos 12 meses)</div>
+      <svg viewBox="0 0 300 110" width="100%" style="overflow:visible;display:block;">
+        <text x="18" y="86" font-size="7.5" fill="#aaa" text-anchor="end">0</text>
+        <text x="18" y="66" font-size="7.5" fill="#aaa" text-anchor="end">10</text>
+        <text x="18" y="46" font-size="7.5" fill="#aaa" text-anchor="end">20</text>
+        <text x="18" y="13" font-size="7.5" fill="#aaa" text-anchor="end">30</text>
+        <line x1="20" y1="85" x2="296" y2="85" stroke="#eaeef5" stroke-width="1"/>
+        <line x1="20" y1="65" x2="296" y2="65" stroke="#eaeef5" stroke-width="1"/>
+        <line x1="20" y1="45" x2="296" y2="45" stroke="#eaeef5" stroke-width="1"/>
+        <line x1="20" y1="12" x2="296" y2="12" stroke="#eaeef5" stroke-width="1"/>
+        <!-- data: 13,15,27,18,20,25,10,19,22,21,7,14 · y=85-v*(73/30) · step=25.1 -->
+        <polyline points="20,53 45,49 70,19 95,41 121,37 146,24 171,61 197,39 222,32 247,34 272,68 296,51"
+          fill="none" stroke="#1a5dc8" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/>
+        <circle cx="20"  cy="53" r="2.5" fill="#1a5dc8"/>
+        <circle cx="45"  cy="49" r="2.5" fill="#1a5dc8"/>
+        <circle cx="70"  cy="19" r="2.5" fill="#1a5dc8"/>
+        <circle cx="95"  cy="41" r="2.5" fill="#1a5dc8"/>
+        <circle cx="121" cy="37" r="2.5" fill="#1a5dc8"/>
+        <circle cx="146" cy="24" r="2.5" fill="#1a5dc8"/>
+        <circle cx="171" cy="61" r="2.5" fill="#1a5dc8"/>
+        <circle cx="197" cy="39" r="2.5" fill="#1a5dc8"/>
+        <circle cx="222" cy="32" r="2.5" fill="#1a5dc8"/>
+        <circle cx="247" cy="34" r="2.5" fill="#1a5dc8"/>
+        <circle cx="272" cy="68" r="2.5" fill="#1a5dc8"/>
+        <circle cx="296" cy="51" r="2.5" fill="#1a5dc8"/>
+        <text transform="rotate(-45,20,93)"  x="20"  y="93" font-size="6.5" fill="#aaa">Abr-25</text>
+        <text transform="rotate(-45,45,93)"  x="45"  y="93" font-size="6.5" fill="#aaa">May-25</text>
+        <text transform="rotate(-45,70,93)"  x="70"  y="93" font-size="6.5" fill="#aaa">Jun-25</text>
+        <text transform="rotate(-45,95,93)"  x="95"  y="93" font-size="6.5" fill="#aaa">Jul-25</text>
+        <text transform="rotate(-45,121,93)" x="121" y="93" font-size="6.5" fill="#aaa">Ago-25</text>
+        <text transform="rotate(-45,146,93)" x="146" y="93" font-size="6.5" fill="#aaa">Sep-25</text>
+        <text transform="rotate(-45,171,93)" x="171" y="93" font-size="6.5" fill="#aaa">Oct-25</text>
+        <text transform="rotate(-45,197,93)" x="197" y="93" font-size="6.5" fill="#aaa">Nov-25</text>
+        <text transform="rotate(-45,222,93)" x="222" y="93" font-size="6.5" fill="#aaa">Dic-25</text>
+        <text transform="rotate(-45,247,93)" x="247" y="93" font-size="6.5" fill="#aaa">Ene-26</text>
+        <text transform="rotate(-45,272,93)" x="272" y="93" font-size="6.5" fill="#aaa">Feb-26</text>
+        <text transform="rotate(-45,296,93)" x="296" y="93" font-size="6.5" fill="#aaa">Mar-26</text>
       </svg>
     </div>
   </div>
 
-  <!-- Bottom stats -->
-  <div class="bottom-stats">
-    <div class="bstat">
-      <div class="bnum">77</div>
-      <div class="blbl">Hitos comunicacionales</div>
+  <!-- BOTTOM STATS → sky blue con separadores entre celdas -->
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);background:#c8daf5;border-top:1px solid #b0c8e8;">
+    <div style="padding:13px 14px;border-right:1px solid #aac0e0;">
+      <div style="font-size:30px;font-weight:900;color:#1a5dc8;line-height:1;">58</div>
+      <div style="font-size:8.5px;font-weight:700;color:#0d2055;margin-top:3px;line-height:1.4;">Hitos<br>comunicacionales</div>
     </div>
-    <div class="bstat">
-      <div class="bnum">25</div>
-      <div class="blbl">Eventos</div>
+    <div style="padding:13px 14px;border-right:1px solid #aac0e0;">
+      <div style="font-size:30px;font-weight:900;color:#0d2055;line-height:1;">13</div>
+      <div style="font-size:8.5px;font-weight:700;color:#0d2055;margin-top:3px;line-height:1.4;">Eventos</div>
     </div>
-    <div class="bstat">
-      <div class="bnum">928</div>
-      <div class="blbl">Total asistentes</div>
+    <div style="padding:13px 14px;border-right:1px solid #aac0e0;">
+      <div style="font-size:30px;font-weight:900;color:#0d2055;line-height:1;">350</div>
+      <div style="font-size:8.5px;font-weight:700;color:#0d2055;margin-top:3px;line-height:1.4;">Total asistentes</div>
     </div>
-    <div class="bstat">
-      <div class="bnum">51</div>
-      <div class="blbl">Apariciones destacadas en prensa</div>
+    <div style="padding:13px 14px;">
+      <div style="font-size:30px;font-weight:900;color:#0d2055;line-height:1;">42</div>
+      <div style="font-size:8.5px;font-weight:700;color:#0d2055;margin-top:3px;line-height:1.4;">Apariciones<br>en prensa</div>
     </div>
   </div>
 
-  <!-- Hitos comunicacionales chart -->
-  <div class="hitos-section">
-    <div style="font-size:11px;font-weight:700;color:var(--c-navy);margin-bottom:10px;text-align:right;padding-right:4px;">Hitos comunicacionales</div>
-    <div class="hitos-row"><div class="hitos-name">Comentarios del Portfolio Manager</div><div class="hitos-bar-track"><div class="hitos-bar-fill" style="width:100%"></div></div><div class="hitos-val">15</div></div>
-    <div class="hitos-row"><div class="hitos-name">Review Accionario</div><div class="hitos-bar-track"><div class="hitos-bar-fill" style="width:86%"></div></div><div class="hitos-val">13</div></div>
-    <div class="hitos-row"><div class="hitos-name">BTG Weekly</div><div class="hitos-bar-track"><div class="hitos-bar-fill" style="width:80%"></div></div><div class="hitos-val">12</div></div>
-    <div class="hitos-row"><div class="hitos-name">BTG Podcast</div><div class="hitos-bar-track"><div class="hitos-bar-fill" style="width:53%"></div></div><div class="hitos-val">8</div></div>
-    <div class="hitos-row"><div class="hitos-name">BTG Insights</div><div class="hitos-bar-track"><div class="hitos-bar-fill" style="width:53%"></div></div><div class="hitos-val">8</div></div>
-    <div class="hitos-row"><div class="hitos-name">BTG Webinar</div><div class="hitos-bar-track"><div class="hitos-bar-fill" style="width:33%"></div></div><div class="hitos-val">5</div></div>
-    <div class="hitos-row"><div class="hitos-name">Blogs</div><div class="hitos-bar-track"><div class="hitos-bar-fill" style="width:26%"></div></div><div class="hitos-val">4</div></div>
-    <div class="hitos-row"><div class="hitos-name">Shorts</div><div class="hitos-bar-track"><div class="hitos-bar-fill" style="width:26%"></div></div><div class="hitos-val">4</div></div>
-    <div class="hitos-row"><div class="hitos-name">Refracciones</div><div class="hitos-bar-track"><div class="hitos-bar-fill" style="width:26%"></div></div><div class="hitos-val">4</div></div>
-    <div class="hitos-row"><div class="hitos-name">Visión de Estrategia</div><div class="hitos-bar-track"><div class="hitos-bar-fill" style="width:26%"></div></div><div class="hitos-val">4</div></div>
+  <!-- HITOS POR PRODUCTO → fondo blanco -->
+  <div style="padding:14px 20px 18px;background:#ffffff;border-top:1px solid #e4ecf7;">
+    <div style="font-size:10.5px;font-weight:700;color:#0d2055;margin-bottom:11px;">Resumen Hitos comunicacionales</div>
+    <div class="hitos-row"><div class="hitos-name">Comentarios del Portfolio Manager</div><div class="hitos-bar-track" style="background:#e4ecf7;"><div class="hitos-bar-fill" style="width:100%;background:#1a5dc8;"></div></div><div class="hitos-val">15</div></div>
+    <div class="hitos-row"><div class="hitos-name">BTG Weekly</div><div class="hitos-bar-track" style="background:#e4ecf7;"><div class="hitos-bar-fill" style="width:87%;background:#1a5dc8;"></div></div><div class="hitos-val">13</div></div>
+    <div class="hitos-row"><div class="hitos-name">Review Accionario</div><div class="hitos-bar-track" style="background:#e4ecf7;"><div class="hitos-bar-fill" style="width:80%;background:#1a5dc8;"></div></div><div class="hitos-val">12</div></div>
+    <div class="hitos-row"><div class="hitos-name">BTG Insights</div><div class="hitos-bar-track" style="background:#e4ecf7;"><div class="hitos-bar-fill" style="width:47%;background:#1a5dc8;"></div></div><div class="hitos-val">7</div></div>
+    <div class="hitos-row"><div class="hitos-name">BTG Podcast</div><div class="hitos-bar-track" style="background:#e4ecf7;"><div class="hitos-bar-fill" style="width:27%;background:#1a5dc8;"></div></div><div class="hitos-val">4</div></div>
+    <div class="hitos-row"><div class="hitos-name">Visión de Estrategia</div><div class="hitos-bar-track" style="background:#e4ecf7;"><div class="hitos-bar-fill" style="width:20%;background:#1a5dc8;"></div></div><div class="hitos-val">3</div></div>
+    <div class="hitos-row"><div class="hitos-name">Refracciones</div><div class="hitos-bar-track" style="background:#e4ecf7;"><div class="hitos-bar-fill" style="width:20%;background:#1a5dc8;"></div></div><div class="hitos-val">3</div></div>
+    <div class="hitos-row"><div class="hitos-name">Blogs</div><div class="hitos-bar-track" style="background:#e4ecf7;"><div class="hitos-bar-fill" style="width:7%;background:#1a5dc8;"></div></div><div class="hitos-val">1</div></div>
   </div>
-  <div class="hitos-footnote">*Se categorizará como "hito comunicacional" cualquier acción o producto comunicacional recurrente, que implique presupuesto, gestión intra-áreas y/o tenga un ecosistema propio (Ej. Refracciones)</div>
 
 </div><!-- /slide 1 -->
 
 <div class="page-divider"></div>
 
-<!-- ████████████████  SLIDE 2 – DESGLOSE EVENTOS & MEDIOS Q4 2025  ████████████████ -->
-<div class="slide">
+<!-- ████  SLIDE 2 – DESGLOSE EVENTOS & MEDIOS  ████ -->
+<div class="slide" style="background:#0d2055;">
 
   <!-- Header -->
-  <div class="slide-header">
-    <div class="title-block">
-      <div class="label" style="font-style:italic;background:transparent;padding:0;margin-bottom:4px;">Desglose Eventos &amp; Medios</div>
-      <div class="subtitle" style="font-style:italic;">Q4 2025</div>
+  <div style="background:#0d2055;padding:18px 22px 16px;display:flex;align-items:center;justify-content:space-between;">
+    <div>
+      <div style="font-size:19px;font-weight:900;color:#fff;line-height:1.2;">Desglose Eventos &amp; Medios</div>
+      <div style="font-size:12px;color:rgba(255,255,255,.65);font-style:italic;margin-top:3px;">Q1 2026</div>
     </div>
-    <div class="btg-logo">
-      <img src="btg-assets/img1.png" alt="BTG Pactual">
+    <img src="btg-assets/img1.png" style="width:82px;object-fit:contain;display:block;" alt="BTG">
+  </div>
+
+  <!-- KPIs sky blue -->
+  <div style="display:grid;grid-template-columns:1fr 1fr;background:#c8daf5;border-top:1px solid #aac0e0;">
+    <div style="padding:16px 20px;border-right:1px solid #aac0e0;">
+      <div style="font-size:10px;font-weight:700;color:#0d2055;margin-bottom:2px;">Eventos</div>
+      <div style="font-size:44px;font-weight:900;color:#0d2055;line-height:1;">13</div>
+      <div style="font-size:9px;color:#1a5dc8;font-weight:600;margin-top:4px;">Asistentes: 350</div>
+    </div>
+    <div style="padding:16px 20px;">
+      <div style="font-size:10px;font-weight:700;color:#0d2055;margin-bottom:2px;">Webinars</div>
+      <div style="font-size:44px;font-weight:900;color:#0d2055;line-height:1;">—</div>
+      <div style="font-size:9px;color:#555;margin-top:4px;">Sin webinars en Q1 2026</div>
     </div>
   </div>
 
-  <!-- Eventos / Webinars totals -->
-  <div class="metrics-row cols2" style="background:var(--c-blue3);">
-    <div class="metric-cell" style="text-align:center;border-right:1px solid rgba(255,255,255,.2);">
-      <div class="num lg" style="color:#fff;">Eventos</div>
-      <div style="font-size:42px;font-weight:900;color:#fff;line-height:1;">25</div>
-      <div style="font-size:10px;color:rgba(255,255,255,.8);margin-top:4px;">Asistentes: <strong>928</strong></div>
+  <!-- Barlists: eventos por área + webinars por área -->
+  <div style="display:grid;grid-template-columns:1fr 1fr;background:#ffffff;border-top:1px solid #e4ecf7;">
+    <div style="padding:14px 16px;border-right:1px solid #e4ecf7;">
+      <div style="font-size:10px;font-weight:700;color:#0d2055;margin-bottom:10px;">Eventos por área</div>
+      <div style="display:flex;align-items:center;gap:6px;margin-bottom:5px;"><div style="font-size:8.5px;color:#333;text-align:right;width:130px;flex-shrink:0;">Corporate Lending</div><div style="flex:1;background:#e4ecf7;border-radius:3px;height:7px;overflow:hidden;"><div style="width:100%;height:100%;background:#1a5dc8;border-radius:3px;"></div></div><div style="font-size:8.5px;font-weight:700;color:#0d2055;min-width:14px;">8</div></div>
+      <div style="display:flex;align-items:center;gap:6px;margin-bottom:5px;"><div style="font-size:8.5px;color:#333;text-align:right;width:130px;flex-shrink:0;">Investment Banking</div><div style="flex:1;background:#e4ecf7;border-radius:3px;height:7px;overflow:hidden;"><div style="width:75%;height:100%;background:#1a5dc8;border-radius:3px;"></div></div><div style="font-size:8.5px;font-weight:700;color:#0d2055;min-width:14px;">6</div></div>
+      <div style="display:flex;align-items:center;gap:6px;margin-bottom:5px;"><div style="font-size:8.5px;color:#333;text-align:right;width:130px;flex-shrink:0;">Sales &amp; Trading</div><div style="flex:1;background:#e4ecf7;border-radius:3px;height:7px;overflow:hidden;"><div style="width:25%;height:100%;background:#1a5dc8;border-radius:3px;"></div></div><div style="font-size:8.5px;font-weight:700;color:#0d2055;min-width:14px;">2</div></div>
+      <div style="display:flex;align-items:center;gap:6px;margin-bottom:5px;"><div style="font-size:8.5px;color:#333;text-align:right;width:130px;flex-shrink:0;">Inversiones Digitales</div><div style="flex:1;background:#e4ecf7;border-radius:3px;height:7px;overflow:hidden;"><div style="width:25%;height:100%;background:#1a5dc8;border-radius:3px;"></div></div><div style="font-size:8.5px;font-weight:700;color:#0d2055;min-width:14px;">2</div></div>
+      <div style="display:flex;align-items:center;gap:6px;margin-bottom:5px;"><div style="font-size:8.5px;color:#333;text-align:right;width:130px;flex-shrink:0;">Asset Management</div><div style="flex:1;background:#e4ecf7;border-radius:3px;height:7px;overflow:hidden;"><div style="width:12%;height:100%;background:#1a5dc8;border-radius:3px;"></div></div><div style="font-size:8.5px;font-weight:700;color:#0d2055;min-width:14px;">1</div></div>
+      <div style="display:flex;align-items:center;gap:6px;margin-bottom:5px;"><div style="font-size:8.5px;color:#333;text-align:right;width:130px;flex-shrink:0;">Wealth Management</div><div style="flex:1;background:#e4ecf7;border-radius:3px;height:7px;overflow:hidden;"><div style="width:0%;height:100%;background:#1a5dc8;border-radius:3px;"></div></div><div style="font-size:8.5px;font-weight:700;color:#aaa;min-width:14px;">—</div></div>
     </div>
-    <div class="metric-cell" style="text-align:center;">
-      <div class="num lg" style="color:#fff;">Webinars</div>
-      <div style="font-size:42px;font-weight:900;color:#fff;line-height:1;">5</div>
-    </div>
-  </div>
-
-  <!-- Bar charts: eventos + webinars -->
-  <div class="two-barlists">
-    <div class="barlist-wrap">
-      <div class="barlist-title">Eventos por área</div>
-      <div class="barlist-row"><div class="barlist-label">Corporate Lending</div><div class="barlist-track"><div class="barlist-fill" style="width:100%"></div></div><div class="barlist-val">12</div></div>
-      <div class="barlist-row"><div class="barlist-label">Investment Banking</div><div class="barlist-track"><div class="barlist-fill" style="width:67%"></div></div><div class="barlist-val">8</div></div>
-      <div class="barlist-row"><div class="barlist-label">Wealth Management</div><div class="barlist-track"><div class="barlist-fill" style="width:33%"></div></div><div class="barlist-val">4</div></div>
-      <div class="barlist-row"><div class="barlist-label">Sales &amp; Trading</div><div class="barlist-track"><div class="barlist-fill" style="width:25%"></div></div><div class="barlist-val">3</div></div>
-      <div class="barlist-row"><div class="barlist-label">Corporativo</div><div class="barlist-track"><div class="barlist-fill" style="width:17%"></div></div><div class="barlist-val">2</div></div>
-      <div class="barlist-row"><div class="barlist-label">Asset Management</div><div class="barlist-track"><div class="barlist-fill" style="width:8%"></div></div><div class="barlist-val">1</div></div>
-      <div class="barlist-row"><div class="barlist-label">Interno</div><div class="barlist-track"><div class="barlist-fill" style="width:8%"></div></div><div class="barlist-val">1</div></div>
-      <div class="barlist-row"><div class="barlist-label">Inversiones Digitales</div><div class="barlist-track"><div class="barlist-fill" style="width:8%"></div></div><div class="barlist-val">1</div></div>
-    </div>
-    <div class="barlist-wrap" style="border-left:1px solid rgba(0,47,115,.1);">
-      <div class="barlist-title">Webinars por área</div>
-      <div class="barlist-row"><div class="barlist-label">Asset Management</div><div class="barlist-track"><div class="barlist-fill" style="width:100%"></div></div><div class="barlist-val">2</div></div>
-      <div class="barlist-row"><div class="barlist-label">Wealth Management</div><div class="barlist-track"><div class="barlist-fill" style="width:50%"></div></div><div class="barlist-val">1</div></div>
-      <div class="barlist-row"><div class="barlist-label">Sales &amp; Trading</div><div class="barlist-track"><div class="barlist-fill" style="width:50%"></div></div><div class="barlist-val">1</div></div>
-      <div class="barlist-row"><div class="barlist-label">Inversiones Digitales</div><div class="barlist-track"><div class="barlist-fill" style="width:50%"></div></div><div class="barlist-val">1</div></div>
+    <div style="padding:14px 16px;">
+      <div style="font-size:10px;font-weight:700;color:#0d2055;margin-bottom:10px;">Webinars por área</div>
+      <div style="display:flex;align-items:center;gap:6px;margin-bottom:5px;"><div style="font-size:8.5px;color:#333;text-align:right;width:130px;flex-shrink:0;">Asset Management</div><div style="flex:1;background:#e4ecf7;border-radius:3px;height:7px;overflow:hidden;"><div style="width:0%;height:100%;background:#1a5dc8;border-radius:3px;"></div></div><div style="font-size:8.5px;font-weight:700;color:#aaa;min-width:14px;">—</div></div>
+      <div style="display:flex;align-items:center;gap:6px;margin-bottom:5px;"><div style="font-size:8.5px;color:#333;text-align:right;width:130px;flex-shrink:0;">Wealth Management</div><div style="flex:1;background:#e4ecf7;border-radius:3px;height:7px;overflow:hidden;"><div style="width:0%;height:100%;background:#1a5dc8;border-radius:3px;"></div></div><div style="font-size:8.5px;font-weight:700;color:#aaa;min-width:14px;">—</div></div>
+      <div style="display:flex;align-items:center;gap:6px;margin-bottom:5px;"><div style="font-size:8.5px;color:#333;text-align:right;width:130px;flex-shrink:0;">Sales &amp; Trading</div><div style="flex:1;background:#e4ecf7;border-radius:3px;height:7px;overflow:hidden;"><div style="width:0%;height:100%;background:#1a5dc8;border-radius:3px;"></div></div><div style="font-size:8.5px;font-weight:700;color:#aaa;min-width:14px;">—</div></div>
+      <div style="display:flex;align-items:center;gap:6px;margin-bottom:5px;"><div style="font-size:8.5px;color:#333;text-align:right;width:130px;flex-shrink:0;">Inversiones Digitales</div><div style="flex:1;background:#e4ecf7;border-radius:3px;height:7px;overflow:hidden;"><div style="width:0%;height:100%;background:#1a5dc8;border-radius:3px;"></div></div><div style="font-size:8.5px;font-weight:700;color:#aaa;min-width:14px;">—</div></div>
     </div>
   </div>
 
-  <!-- Evento destacado -->
-  <div class="section-heading">Evento destacado</div>
-  <div class="event-highlight">
-    <img src="btg-assets/5a22b2c6d6c3f534ad7710a4701cfb7e.jpg" alt="BTG Talks Joaquín Niemann">
-    <p>El evento destacado de este período fue el <strong>BTG Talks Joaquín Niemann</strong> en el <strong>Auditorio BTG Pactual</strong>, que reunió a 70 asistentes.</p>
+  <!-- Eventos destacados → navy bg con foto + descripción -->
+  <div style="background:#0d2055;padding:16px 20px;">
+    <div style="font-size:12px;font-weight:700;color:#fff;margin-bottom:12px;">Eventos destacados</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px;">
+      <img src="btg-assets/img2.jpg" style="width:100%;height:120px;object-fit:cover;border-radius:8px;" alt="Evento 1">
+      <img src="btg-assets/58f671e0316839d97a1d6cbb35c4e0dd.jpg" style="width:100%;height:120px;object-fit:cover;border-radius:8px;" alt="Evento 2">
+    </div>
+    <p style="font-size:9.5px;color:rgba(255,255,255,.85);line-height:1.6;">Durante el período, el evento destacado fue el <strong style="color:#fff;">Kick off - CB en Dondoh</strong>, que reunió a 60 clientes en un encuentro de inicio de año. Adicionalmente, se realizó el <strong style="color:#fff;">Asset Day Colombia</strong> en Marriot Bogotá, con la participación de 50 asistentes internacionales.</p>
   </div>
 
-  <!-- Apariciones en prensa -->
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:0;background:#f6faff;">
-    <div style="padding:14px 20px;border-right:1px solid rgba(0,47,115,.1);">
-      <div style="font-size:13px;font-weight:700;color:var(--c-navy);line-height:1.3;margin-bottom:6px;">Apariciones en prensa destacadas por área</div>
-      <div style="font-size:40px;font-weight:900;color:var(--c-navy);line-height:1;">51</div>
+  <!-- Prensa: número grande + barlist por área -->
+  <div style="display:grid;grid-template-columns:1fr 1.6fr;background:#ffffff;border-top:1px solid #e4ecf7;">
+    <div style="padding:16px 18px;border-right:1px solid #e4ecf7;display:flex;flex-direction:column;justify-content:center;">
+      <div style="font-size:10px;font-weight:700;color:#0d2055;line-height:1.4;margin-bottom:8px;">Apariciones en prensa destacadas por área</div>
+      <div style="font-size:52px;font-weight:900;color:#0d2055;line-height:1;">42</div>
     </div>
-    <div style="padding:14px 20px;">
-      <div class="barlist-title" style="text-align:left;font-size:11px;">Áreas principales</div>
-      <div class="barlist-row"><div class="barlist-label">Inversiones Digitales</div><div class="barlist-track"><div class="barlist-fill" style="width:100%"></div></div><div class="barlist-val">20</div></div>
-      <div class="barlist-row"><div class="barlist-label">Asset Management</div><div class="barlist-track"><div class="barlist-fill" style="width:65%"></div></div><div class="barlist-val">13</div></div>
-      <div class="barlist-row"><div class="barlist-label">Wealth Management</div><div class="barlist-track"><div class="barlist-fill" style="width:30%"></div></div><div class="barlist-val">6</div></div>
-      <div class="barlist-row"><div class="barlist-label">Corporativo</div><div class="barlist-track"><div class="barlist-fill" style="width:25%"></div></div><div class="barlist-val">5</div></div>
-      <div class="barlist-row"><div class="barlist-label">Investment Banking</div><div class="barlist-track"><div class="barlist-fill" style="width:15%"></div></div><div class="barlist-val">3</div></div>
-      <div class="barlist-row"><div class="barlist-label">Sales &amp; Trading</div><div class="barlist-track"><div class="barlist-fill" style="width:10%"></div></div><div class="barlist-val">2</div></div>
-      <div class="barlist-row"><div class="barlist-label">Corporate Lending</div><div class="barlist-track"><div class="barlist-fill" style="width:5%"></div></div><div class="barlist-val">1</div></div>
-      <div class="barlist-row"><div class="barlist-label">Research</div><div class="barlist-track"><div class="barlist-fill" style="width:5%"></div></div><div class="barlist-val">1</div></div>
+    <div style="padding:16px 16px;">
+      <div style="font-size:10px;font-weight:700;color:#0d2055;margin-bottom:10px;">Áreas principales</div>
+      <div style="display:flex;align-items:center;gap:6px;margin-bottom:5px;"><div style="font-size:8.5px;color:#333;text-align:right;width:130px;flex-shrink:0;">Asset Management</div><div style="flex:1;background:#e4ecf7;border-radius:3px;height:7px;overflow:hidden;"><div style="width:100%;height:100%;background:#1a5dc8;border-radius:3px;"></div></div><div style="font-size:8.5px;font-weight:700;color:#0d2055;min-width:16px;">14</div></div>
+      <div style="display:flex;align-items:center;gap:6px;margin-bottom:5px;"><div style="font-size:8.5px;color:#333;text-align:right;width:130px;flex-shrink:0;">Corporativo</div><div style="flex:1;background:#e4ecf7;border-radius:3px;height:7px;overflow:hidden;"><div style="width:71%;height:100%;background:#1a5dc8;border-radius:3px;"></div></div><div style="font-size:8.5px;font-weight:700;color:#0d2055;min-width:16px;">10</div></div>
+      <div style="display:flex;align-items:center;gap:6px;margin-bottom:5px;"><div style="font-size:8.5px;color:#333;text-align:right;width:130px;flex-shrink:0;">Wealth Management</div><div style="flex:1;background:#e4ecf7;border-radius:3px;height:7px;overflow:hidden;"><div style="width:57%;height:100%;background:#1a5dc8;border-radius:3px;"></div></div><div style="font-size:8.5px;font-weight:700;color:#0d2055;min-width:16px;">8</div></div>
+      <div style="display:flex;align-items:center;gap:6px;margin-bottom:5px;"><div style="font-size:8.5px;color:#333;text-align:right;width:130px;flex-shrink:0;">Sales &amp; Trading</div><div style="flex:1;background:#e4ecf7;border-radius:3px;height:7px;overflow:hidden;"><div style="width:43%;height:100%;background:#1a5dc8;border-radius:3px;"></div></div><div style="font-size:8.5px;font-weight:700;color:#0d2055;min-width:16px;">6</div></div>
+      <div style="display:flex;align-items:center;gap:6px;margin-bottom:5px;"><div style="font-size:8.5px;color:#333;text-align:right;width:130px;flex-shrink:0;">Inversiones Digitales</div><div style="flex:1;background:#e4ecf7;border-radius:3px;height:7px;overflow:hidden;"><div style="width:29%;height:100%;background:#1a5dc8;border-radius:3px;"></div></div><div style="font-size:8.5px;font-weight:700;color:#0d2055;min-width:16px;">4</div></div>
+      <div style="display:flex;align-items:center;gap:6px;margin-bottom:5px;"><div style="font-size:8.5px;color:#333;text-align:right;width:130px;flex-shrink:0;">Investment Banking</div><div style="flex:1;background:#e4ecf7;border-radius:3px;height:7px;overflow:hidden;"><div style="width:0%;height:100%;background:#1a5dc8;border-radius:3px;"></div></div><div style="font-size:8.5px;font-weight:700;color:#aaa;min-width:16px;">—</div></div>
+      <div style="display:flex;align-items:center;gap:6px;margin-bottom:5px;"><div style="font-size:8.5px;color:#333;text-align:right;width:130px;flex-shrink:0;">Corporate Lending</div><div style="flex:1;background:#e4ecf7;border-radius:3px;height:7px;overflow:hidden;"><div style="width:0%;height:100%;background:#1a5dc8;border-radius:3px;"></div></div><div style="font-size:8.5px;font-weight:700;color:#aaa;min-width:16px;">—</div></div>
     </div>
   </div>
 
-  <!-- Nota destacada -->
-  <div class="nota-section">
-    <div class="nota-title">Nota destacada</div>
-    <img src="btg-assets/f60bb3aee682ae7da8d218633b75f5f0.png" alt="Nota Rodrigo Oyarzo">
+  <!-- Nota destacada → navy bg -->
+  <div style="background:#0d2055;padding:16px 20px;">
+    <div style="font-size:12px;font-weight:700;color:#fff;margin-bottom:12px;">Nota destacada</div>
+    <div style="background:#fff;border-radius:8px;overflow:hidden;">
+      <img src="btg-assets/f60bb3aee682ae7da8d218633b75f5f0.png" style="width:100%;height:auto;display:block;" alt="Nota destacada">
+    </div>
+    <p style="font-size:9px;color:rgba(255,255,255,.75);margin-top:10px;line-height:1.5;">Rodrigo Oyarzo, Banco BTG Pactual: <em>"Estamos en la mitad de una fusión de dos bancos medianos, proceso que va a brindar una oportunidad"</em></p>
   </div>
 
 </div><!-- /slide 2 -->
 
 <div class="page-divider"></div>
 
-<!-- ████████████████  SLIDE 3 – IMPACTO DIGITAL Q4 2025  ████████████████ -->
-<div class="slide">
+<!-- ████  SLIDE 3 – IMPACTO DIGITAL  ████ -->
+<div class="slide" style="background:#0d2055;">
 
-  <div class="slide-header">
-    <div class="title-block">
-      <div class="label" style="font-style:italic;background:transparent;padding:0;">Impacto Digital - Q4 2025</div>
+  <!-- Header navy -->
+  <div style="background:#0d2055;padding:18px 22px 16px;display:flex;align-items:center;justify-content:space-between;">
+    <div>
+      <div style="font-size:19px;font-weight:900;color:#fff;line-height:1.2;">Impacto Digital</div>
+      <div style="font-size:12px;color:rgba(255,255,255,.65);font-style:italic;margin-top:3px;">Q1 2026</div>
     </div>
-    <div class="btg-logo"><img src="btg-assets/img1.png" alt="BTG Pactual"></div>
+    <img src="btg-assets/img1.png" style="width:82px;object-fit:contain;display:block;" alt="BTG">
   </div>
 
-  <!-- Campañas + Redes top stats -->
-  <div class="impact-grid">
-    <div class="impact-col left-impact">
-      <div class="col-title">Campañas digitales</div>
-      <div class="impact-label">Campañas totales</div>
-      <div class="impact-big-num">105</div>
-      <div style="height:12px;"></div>
-      <div class="impact-label">Personas alcanzadas totales</div>
-      <div class="impact-big-num">12,9 MM*</div>
-    </div>
-    <div class="impact-col right-impact">
-      <div class="col-title">Redes Sociales</div>
-      <div class="impact-label">Contenidos publicados totales</div>
-      <div class="impact-big-num">512</div>
-      <div style="height:12px;"></div>
-      <div class="impact-label">Personas alcanzadas totales</div>
-      <div class="impact-big-num">2,9 MM</div>
-    </div>
-  </div>
+  <!-- 2 columnas principales: Campañas Digitales | Redes Sociales -->
+  <div style="display:grid;grid-template-columns:1fr 1fr;background:#ffffff;border-top:1px solid #e4ecf7;">
 
-  <!-- Personas alcanzadas por área + Impresiones por área -->
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:0;">
-    <div class="hbar-section" style="background:#f0f6ff;border-right:1px solid #dde8fb;">
-      <div class="hbar-title">Personas alcanzadas por área</div>
-      <div class="hbar-row">
-        <div class="hbar-name">Inversiones Digitales</div>
-        <div class="hbar-track"><div class="hbar-fill c1" style="width:100%"><span class="hbar-fill-val">11.562.202</span></div></div>
-      </div>
-      <div class="hbar-row">
-        <div class="hbar-name">Asset Management</div>
-        <div class="hbar-track"><div class="hbar-fill c2" style="width:27%"><span class="hbar-fill-val">3.110.402</span></div></div>
-      </div>
-      <div class="hbar-row">
-        <div class="hbar-name">Corporativo</div>
-        <div class="hbar-track"><div class="hbar-fill c3" style="width:21%"><span class="hbar-fill-val">2.439.164</span></div></div>
-      </div>
-      <div style="font-size:8px;color:var(--c-muted);margin-top:8px;line-height:1.4;">(*) Durante el período, se activaron 32 campañas de Inversiones Digitales, 9 de Asset Management y 8 de BTG Corp.</div>
-    </div>
-    <div class="hbar-section" style="background:#f6faff;">
-      <div class="hbar-title">Impresiones totales por área</div>
-      <div class="hbar-row"><div class="hbar-name">Sales &amp; Trading</div><div class="hbar-track"><div class="hbar-fill c1" style="width:100%"></div></div><span class="hbar-ext-val">2.180.000</span></div>
-      <div class="hbar-row"><div class="hbar-name">Corporativo</div><div class="hbar-track"><div class="hbar-fill c2" style="width:87%"></div></div><span class="hbar-ext-val">1.900.000</span></div>
-      <div class="hbar-row"><div class="hbar-name">Wealth Management</div><div class="hbar-track"><div class="hbar-fill c1" style="width:67%"></div></div><span class="hbar-ext-val">1.459.000</span></div>
-      <div class="hbar-row"><div class="hbar-name">Inversiones Digitales</div><div class="hbar-track"><div class="hbar-fill c2" style="width:57%"></div></div><span class="hbar-ext-val">1.250.760</span></div>
-      <div class="hbar-row"><div class="hbar-name">Asset Management</div><div class="hbar-track"><div class="hbar-fill c3" style="width:21%"></div></div><span class="hbar-ext-val">469.060</span></div>
-      <div class="hbar-row"><div class="hbar-name">Investment Banking</div><div class="hbar-track"><div class="hbar-fill c1" style="width:2%"></div></div><span class="hbar-ext-val">38.406</span></div>
-      <div class="hbar-row"><div class="hbar-name">Corporate Lending</div><div class="hbar-track"><div class="hbar-fill c2" style="width:1%"></div></div><span class="hbar-ext-val">22.186</span></div>
-    </div>
-  </div>
+    <!-- COLUMNA IZQUIERDA: Campañas Digitales -->
+    <div style="padding:14px 16px;border-right:1px solid #e4ecf7;">
+      <div style="font-size:11px;font-weight:800;color:#0d2055;margin-bottom:11px;padding-bottom:7px;border-bottom:2px solid #1a5dc8;">Campañas digitales</div>
 
-  <!-- Clics + Impresiones por plataforma -->
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:0;">
-    <div class="hbar-section" style="background:#f0f6ff;border-right:1px solid #dde8fb;">
-      <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:8px;">
-        <div>
-          <div class="hbar-title" style="margin-bottom:2px;">Clics en anuncios</div>
-          <div style="font-size:8.5px;color:var(--c-muted);">(*) Clics en los enlaces al landing promocionado</div>
+      <!-- KPIs campañas -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:12px;">
+        <div style="background:#c8daf5;border-radius:6px;padding:8px 10px;">
+          <div style="font-size:7.5px;color:#0d2055;font-weight:600;margin-bottom:2px;">Campañas totales</div>
+          <div style="font-size:22px;font-weight:900;color:#0d2055;line-height:1;">76</div>
         </div>
-        <div style="font-size:30px;font-weight:900;color:var(--c-blue3);white-space:nowrap;">732 K</div>
+        <div style="background:#c8daf5;border-radius:6px;padding:8px 10px;">
+          <div style="font-size:7.5px;color:#0d2055;font-weight:600;margin-bottom:2px;">Personas alcanzadas</div>
+          <div style="font-size:22px;font-weight:900;color:#0d2055;line-height:1;">9,7 MM</div>
+        </div>
       </div>
-      <div class="hbar-title" style="margin-top:8px;">Clics en anuncios por área</div>
-      <div class="hbar-row"><div class="hbar-name">Inversiones Digitales</div><div class="hbar-track"><div class="hbar-fill c1" style="width:100%"><span class="hbar-fill-val">602.380</span></div></div></div>
-      <div class="hbar-row"><div class="hbar-name">Corporativo</div><div class="hbar-track"><div class="hbar-fill c2" style="width:2%"></div></div><span class="hbar-ext-val">10.034</span></div>
-      <div class="hbar-row"><div class="hbar-name">Asset Management</div><div class="hbar-track"><div class="hbar-fill c3" style="width:1%"></div></div><span class="hbar-ext-val">7.717</span></div>
-      <div style="font-size:8px;color:var(--c-muted);margin-top:10px;line-height:1.4;">(*) Una misma persona podría ser alcanzada en contenidos pertenecientes a distintas áreas. Adicionalmente, un mismo contenido podría pertenecer a dos áreas diferentes.<br>(*) No se incluyen datos de Twitter</div>
+
+      <!-- Clics en anuncios -->
+      <div style="margin-bottom:4px;display:flex;align-items:baseline;justify-content:space-between;">
+        <div style="font-size:9.5px;font-weight:700;color:#0d2055;">Clics en anuncios</div>
+        <div style="font-size:20px;font-weight:900;color:#1a5dc8;line-height:1;">665 K</div>
+      </div>
+      <div style="font-size:7.5px;color:#888;margin-bottom:9px;">Clics en los enlaces al landing promocionado</div>
+
+      <!-- Clics por área -->
+      <div style="font-size:9px;font-weight:700;color:#0d2055;margin-bottom:6px;">Clics en anuncios por área</div>
+      <div style="display:flex;align-items:center;gap:5px;margin-bottom:5px;"><div style="font-size:7.5px;color:#333;text-align:right;width:95px;flex-shrink:0;">Inv. Digitales</div><div style="flex:1;background:#e4ecf7;border-radius:3px;height:6px;overflow:hidden;"><div style="width:100%;height:100%;background:#1a5dc8;border-radius:3px;"></div></div><div style="font-size:7.5px;font-weight:700;color:#0d2055;min-width:28px;text-align:right;">638 K</div></div>
+      <div style="display:flex;align-items:center;gap:5px;margin-bottom:5px;"><div style="font-size:7.5px;color:#333;text-align:right;width:95px;flex-shrink:0;">Corporativo</div><div style="flex:1;background:#e4ecf7;border-radius:3px;height:6px;overflow:hidden;"><div style="width:2.4%;height:100%;background:#1a5dc8;border-radius:3px;"></div></div><div style="font-size:7.5px;font-weight:700;color:#0d2055;min-width:28px;text-align:right;">15 K</div></div>
+      <div style="display:flex;align-items:center;gap:5px;"><div style="font-size:7.5px;color:#333;text-align:right;width:95px;flex-shrink:0;">Asset Management</div><div style="flex:1;background:#e4ecf7;border-radius:3px;height:6px;overflow:hidden;"><div style="width:1.7%;height:100%;background:#1a5dc8;border-radius:3px;"></div></div><div style="font-size:7.5px;font-weight:700;color:#0d2055;min-width:28px;text-align:right;">11 K</div></div>
     </div>
-    <div class="hbar-section" style="background:#f6faff;">
-      <div class="hbar-title">Impresiones totales por plataforma</div>
-      <div class="hbar-row"><div class="hbar-name">Instagram</div><div class="hbar-track"><div class="hbar-fill c1" style="width:100%"><span class="hbar-fill-val">4.385.629</span></div></div></div>
-      <div class="hbar-row"><div class="hbar-name">Youtube</div><div class="hbar-track"><div class="hbar-fill c2" style="width:30%"><span class="hbar-fill-val">1.293.355</span></div></div></div>
-      <div class="hbar-row"><div class="hbar-name">Twitter*</div><div class="hbar-track"><div class="hbar-fill c3" style="width:22%"><span class="hbar-fill-val">960.835</span></div></div></div>
-      <div class="hbar-row"><div class="hbar-name">LinkedIn</div><div class="hbar-track"><div class="hbar-fill c1" style="width:17%"><span class="hbar-fill-val">752.276</span></div></div></div>
-      <div class="hbar-row"><div class="hbar-name">LinkedIn Newsletter</div><div class="hbar-track"><div class="hbar-fill c2" style="width:1%"></div></div><span class="hbar-ext-val">46.427</span></div>
-      <div style="font-size:8px;color:var(--c-muted);margin-top:8px;line-height:1.4;">(*) Impresiones: cantidad de veces que un anuncio se muestra a un usuario.<br>(*) No se incluyen datos de Twitter para diciembre</div>
+
+    <!-- COLUMNA DERECHA: Redes Sociales -->
+    <div style="padding:14px 16px;">
+      <div style="font-size:11px;font-weight:800;color:#0d2055;margin-bottom:11px;padding-bottom:7px;border-bottom:2px solid #1a5dc8;">Redes Sociales</div>
+
+      <!-- KPIs RRSS -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:12px;">
+        <div style="background:#c8daf5;border-radius:6px;padding:8px 10px;">
+          <div style="font-size:7.5px;color:#0d2055;font-weight:600;margin-bottom:2px;">Contenidos publicados</div>
+          <div style="font-size:22px;font-weight:900;color:#0d2055;line-height:1;">257</div>
+        </div>
+        <div style="background:#c8daf5;border-radius:6px;padding:8px 10px;">
+          <div style="font-size:7.5px;color:#0d2055;font-weight:600;margin-bottom:2px;">Personas alcanzadas</div>
+          <div style="font-size:22px;font-weight:900;color:#0d2055;line-height:1;">709 K</div>
+        </div>
+      </div>
+
+      <!-- Impresiones por área -->
+      <div style="font-size:9px;font-weight:700;color:#0d2055;margin-bottom:6px;">Impresiones totales por área</div>
+      <div style="display:flex;align-items:center;gap:5px;margin-bottom:4px;"><div style="font-size:7.5px;color:#333;text-align:right;width:95px;flex-shrink:0;">Corporativo</div><div style="flex:1;background:#e4ecf7;border-radius:3px;height:6px;overflow:hidden;"><div style="width:100%;height:100%;background:#1a5dc8;border-radius:3px;"></div></div><div style="font-size:7.5px;font-weight:700;color:#0d2055;min-width:30px;text-align:right;">1,6 MM</div></div>
+      <div style="display:flex;align-items:center;gap:5px;margin-bottom:4px;"><div style="font-size:7.5px;color:#333;text-align:right;width:95px;flex-shrink:0;">Wealth Mgmt</div><div style="flex:1;background:#e4ecf7;border-radius:3px;height:6px;overflow:hidden;"><div style="width:87%;height:100%;background:#1a5dc8;border-radius:3px;"></div></div><div style="font-size:7.5px;font-weight:700;color:#0d2055;min-width:30px;text-align:right;">1,4 MM</div></div>
+      <div style="display:flex;align-items:center;gap:5px;margin-bottom:4px;"><div style="font-size:7.5px;color:#333;text-align:right;width:95px;flex-shrink:0;">Sales &amp; Trading</div><div style="flex:1;background:#e4ecf7;border-radius:3px;height:6px;overflow:hidden;"><div style="width:68%;height:100%;background:#1a5dc8;border-radius:3px;"></div></div><div style="font-size:7.5px;font-weight:700;color:#0d2055;min-width:30px;text-align:right;">1,1 MM</div></div>
+      <div style="display:flex;align-items:center;gap:5px;margin-bottom:10px;"><div style="font-size:7.5px;color:#333;text-align:right;width:95px;flex-shrink:0;">Asset Mgmt</div><div style="flex:1;background:#e4ecf7;border-radius:3px;height:6px;overflow:hidden;"><div style="width:23%;height:100%;background:#1a5dc8;border-radius:3px;"></div></div><div style="font-size:7.5px;font-weight:700;color:#0d2055;min-width:30px;text-align:right;">371 K</div></div>
+
+      <!-- Impresiones por plataforma -->
+      <div style="font-size:9px;font-weight:700;color:#0d2055;margin-bottom:6px;">Impresiones totales por plataforma</div>
+      <div style="display:flex;align-items:center;gap:5px;margin-bottom:4px;"><div style="font-size:7.5px;color:#333;text-align:right;width:95px;flex-shrink:0;">Instagram</div><div style="flex:1;background:#e4ecf7;border-radius:3px;height:6px;overflow:hidden;"><div style="width:100%;height:100%;background:#1a5dc8;border-radius:3px;"></div></div><div style="font-size:7.5px;font-weight:700;color:#0d2055;min-width:30px;text-align:right;">3,5 MM</div></div>
+      <div style="display:flex;align-items:center;gap:5px;margin-bottom:4px;"><div style="font-size:7.5px;color:#333;text-align:right;width:95px;flex-shrink:0;">YouTube</div><div style="flex:1;background:#e4ecf7;border-radius:3px;height:6px;overflow:hidden;"><div style="width:21%;height:100%;background:#1a5dc8;border-radius:3px;"></div></div><div style="font-size:7.5px;font-weight:700;color:#0d2055;min-width:30px;text-align:right;">762 K</div></div>
+      <div style="display:flex;align-items:center;gap:5px;margin-bottom:4px;"><div style="font-size:7.5px;color:#333;text-align:right;width:95px;flex-shrink:0;">LinkedIn</div><div style="flex:1;background:#e4ecf7;border-radius:3px;height:6px;overflow:hidden;"><div style="width:7%;height:100%;background:#1a5dc8;border-radius:3px;"></div></div><div style="font-size:7.5px;font-weight:700;color:#0d2055;min-width:30px;text-align:right;">264 K</div></div>
+      <div style="display:flex;align-items:center;gap:5px;"><div style="font-size:7.5px;color:#333;text-align:right;width:95px;flex-shrink:0;">LI Newsletter</div><div style="flex:1;background:#e4ecf7;border-radius:3px;height:6px;overflow:hidden;"><div style="width:1%;height:100%;background:#1a5dc8;border-radius:3px;"></div></div><div style="font-size:7.5px;font-weight:700;color:#0d2055;min-width:30px;text-align:right;">43 K</div></div>
     </div>
   </div>
 
-  <!-- Tráfico web blocks -->
-  <div class="traffic-blocks">
-    <div class="tblock paid">
-      <div class="tb-title">Tráfico web pagado</div>
-      <div class="tb-num">216 K usuarios</div>
+  <!-- Tráfico web (franja pequeña) -->
+  <div style="display:grid;grid-template-columns:1fr 1fr;background:#ffffff;border-top:1px solid #e4ecf7;">
+    <div style="padding:11px 16px;border-right:1px solid #e4ecf7;display:flex;align-items:center;gap:12px;">
+      <div style="background:#1a5dc8;border-radius:6px;padding:8px 14px;flex-shrink:0;">
+        <div style="font-size:7.5px;font-weight:700;color:#fff;">Tráfico web pagado</div>
+        <div style="font-size:18px;font-weight:900;color:#fff;line-height:1.2;">192 K</div>
+        <div style="font-size:7px;color:rgba(255,255,255,.75);">usuarios</div>
+      </div>
+      <div style="font-size:8px;color:#555;line-height:1.5;">Usuarios dirigidos al sitio web a través de publicidad pagada</div>
     </div>
-    <div class="tblock organic">
-      <div class="tb-title">Tráfico web orgánico</div>
-      <div class="tb-num">150 K usuarios</div>
+    <div style="padding:11px 16px;display:flex;align-items:center;gap:12px;">
+      <div style="background:#1a5dc8;border-radius:6px;padding:8px 14px;flex-shrink:0;opacity:.75;">
+        <div style="font-size:7.5px;font-weight:700;color:#fff;">Tráfico web orgánico</div>
+        <div style="font-size:18px;font-weight:900;color:#fff;line-height:1.2;">116 K</div>
+        <div style="font-size:7px;color:rgba(255,255,255,.75);">usuarios</div>
+      </div>
+      <div style="font-size:8px;color:#555;line-height:1.5;">Usuarios que accedieron al sitio sin intervención de publicidad</div>
     </div>
   </div>
 
   <!-- Contenidos destacados en RRSS -->
-  <div class="section-heading">Contenidos destacados en RRSS</div>
-  <div class="highlights-row">
-    <div class="highlight-card">
-      <img src="btg-assets/img1.png" alt="Refracciones" style="background:#002f73;padding:20px;border-radius:12px;">
-      <div class="h-name">Refracciones – IDENTIDAD</div>
-      <div class="h-platform">Instagram</div>
-      <div class="h-metric">542.879</div>
-      <div class="h-metric-lbl">Impresiones</div>
-    </div>
-    <div class="highlight-card">
-      <img src="btg-assets/8bb3dbf0edbd523069d1513ea2818d85.png" alt="BTG Talks Niemann">
-      <div class="h-name">BTG Talks | Joaquín Niemann por sí mismo: autorretrato del éxito</div>
-      <div class="h-platform">YouTube Shorts</div>
-      <div class="h-metric">114.559</div>
-      <div class="h-metric-lbl">Reproducciones</div>
-    </div>
-    <div class="highlight-card">
-      <img src="btg-assets/7f062815eb9335c5f08f0f8cd06328da.png" alt="Global Earlybird">
-      <div class="h-name">Global Earlybird</div>
-      <div class="h-platform">Twitter</div>
-      <div class="h-metric">306.058</div>
-      <div class="h-metric-lbl">Impresiones</div>
+  <div style="background:#0d2055;padding:14px 20px;">
+    <div style="font-size:12px;font-weight:700;color:#fff;margin-bottom:11px;">Contenidos destacados en RRSS</div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;">
+      <div style="background:rgba(255,255,255,.1);border-radius:8px;overflow:hidden;">
+        <img src="btg-assets/9d958e6e3d7c51f5eb7ac43c964d47d2.png" style="width:100%;width:100%;height:auto;display:block;" alt="">
+        <div style="padding:9px 10px;">
+          <div style="font-size:8px;color:rgba(255,255,255,.85);line-height:1.45;margin-bottom:4px;">BTG Podcast | Filantropía y grandes patrimonios</div>
+          <div style="font-size:7.5px;color:#7fa8d8;margin-bottom:5px;">Instagram</div>
+          <div style="font-size:15px;font-weight:900;color:#fff;line-height:1;">669.062</div>
+          <div style="font-size:7px;color:rgba(255,255,255,.55);">Impresiones</div>
+        </div>
+      </div>
+      <div style="background:rgba(255,255,255,.1);border-radius:8px;overflow:hidden;">
+        <img src="btg-assets/d202e731e03999c079bc2ea197752b54.png" style="width:100%;width:100%;height:auto;display:block;" alt="">
+        <div style="padding:9px 10px;">
+          <div style="font-size:8px;color:rgba(255,255,255,.85);line-height:1.45;margin-bottom:4px;">Money Talks | Isabel Allendes, Investment Advisory Group Director BTG WM</div>
+          <div style="font-size:7.5px;color:#7fa8d8;margin-bottom:5px;">Instagram</div>
+          <div style="font-size:15px;font-weight:900;color:#fff;line-height:1;">34.031</div>
+          <div style="font-size:7px;color:rgba(255,255,255,.55);">Reproducciones</div>
+        </div>
+      </div>
+      <div style="background:rgba(255,255,255,.1);border-radius:8px;overflow:hidden;">
+        <img src="btg-assets/8bb3dbf0edbd523069d1513ea2818d85.png" style="width:100%;width:100%;height:auto;display:block;" alt="">
+        <div style="padding:9px 10px;">
+          <div style="font-size:8px;color:rgba(255,255,255,.85);line-height:1.45;margin-bottom:4px;">BTG Call | Análisis de las elecciones 2025 — Mauricio Canas y Juan Pablo Lavín</div>
+          <div style="font-size:7.5px;color:#7fa8d8;margin-bottom:5px;">LinkedIn</div>
+          <div style="font-size:15px;font-weight:900;color:#fff;line-height:1;">37.865</div>
+          <div style="font-size:7px;color:rgba(255,255,255,.55);">Impresiones</div>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -753,226 +658,409 @@ circle.dot{fill:var(--c-blue3);stroke:#fff;stroke-width:1;}
 
 <div class="page-divider"></div>
 
-<!-- ████████████████  SLIDE 4 – INVERSIONES DIGITALES: EVENTOS & MEDIOS  ████████████████ -->
-<div class="slide">
+<!-- ████  SLIDE 4 – INVERSIONES DIGITALES: EVENTOS & MEDIOS  ████ -->
+<div class="slide" style="background:#0d2055;">
 
-  <div class="area-header">
+  <!-- Header navy -->
+  <div style="background:#0d2055;padding:18px 22px 16px;display:flex;align-items:center;justify-content:space-between;">
     <div>
-      <div class="area-name">Inversiones Digitales</div>
-      <div class="area-sub">Eventos &amp; Medios - Q4 2025</div>
+      <div style="font-size:19px;font-weight:900;color:#fff;line-height:1.2;">Inversiones Digitales</div>
+      <div style="font-size:12px;color:rgba(255,255,255,.65);font-style:italic;margin-top:3px;">Eventos &amp; Medios - Q1 2026</div>
     </div>
-    <div class="btg-logo"><img src="btg-assets/img1.png" alt="BTG Pactual"></div>
+    <img src="btg-assets/img1.png" style="width:82px;object-fit:contain;display:block;" alt="BTG">
   </div>
 
-  <div class="area-kpis">
-    <div class="area-kpi">
-      <div class="ak-label">Eventos destacados</div>
-      <div class="ak-num">1</div>
+  <!-- KPIs sky blue -->
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;background:#c8daf5;border-top:1px solid #aac0e0;">
+    <div style="padding:14px 18px;border-right:1px solid #aac0e0;">
+      <div style="font-size:9px;font-weight:700;color:#0d2055;margin-bottom:4px;">Eventos destacados</div>
+      <div style="font-size:38px;font-weight:900;color:#0d2055;line-height:1;">2</div>
     </div>
-    <div class="area-kpi">
-      <div class="ak-label">Asistentes</div>
-      <div class="ak-num">20</div>
+    <div style="padding:14px 18px;border-right:1px solid #aac0e0;">
+      <div style="font-size:9px;font-weight:700;color:#0d2055;margin-bottom:4px;">Asistentes</div>
+      <div style="font-size:38px;font-weight:900;color:#0d2055;line-height:1;">75</div>
     </div>
-  </div>
-
-  <div class="section-heading" style="background:#f6faff;">Eventos destacados</div>
-  <div class="area-event-photo">
-    <img src="btg-assets/58f671e0316839d97a1d6cbb35c4e0dd.jpg" alt="Almuerzo enólogo Viña Vik">
-    <div class="photo-caption">Almuerzo enólogo <strong>Viña Vik</strong>, en el cual participaron 20 clientes.</div>
-  </div>
-
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:0;background:#f6faff;">
-    <div style="padding:16px 20px;border-right:1px solid rgba(0,47,115,.1);">
-      <div style="font-size:13px;font-weight:700;color:var(--c-navy);line-height:1.3;margin-bottom:6px;">Apariciones en prensa destacadas</div>
-      <div style="font-size:40px;font-weight:900;color:var(--c-navy);line-height:1;">20</div>
-    </div>
-    <div style="padding:16px 20px;">
-      <div class="barlist-title" style="text-align:left;">Fuentes principales</div>
-      <div class="barlist-row"><div class="barlist-label">CNN Chile</div><div class="barlist-track"><div class="barlist-fill" style="width:100%"></div></div><div class="barlist-val">4</div></div>
-      <div class="barlist-row"><div class="barlist-label">El Diario Financiero</div><div class="barlist-track"><div class="barlist-fill" style="width:75%"></div></div><div class="barlist-val">3</div></div>
-      <div class="barlist-row"><div class="barlist-label">df.cl</div><div class="barlist-track"><div class="barlist-fill" style="width:75%"></div></div><div class="barlist-val">3</div></div>
-      <div class="barlist-row"><div class="barlist-label">Radio Duna</div><div class="barlist-track"><div class="barlist-fill" style="width:25%"></div></div><div class="barlist-val">1</div></div>
-      <div class="barlist-row"><div class="barlist-label">El Mercurio</div><div class="barlist-track"><div class="barlist-fill" style="width:25%"></div></div><div class="barlist-val">1</div></div>
-      <div class="barlist-row"><div class="barlist-label">FundsSociety.com</div><div class="barlist-track"><div class="barlist-fill" style="width:25%"></div></div><div class="barlist-val">1</div></div>
-      <div class="barlist-row"><div class="barlist-label">Latercera.com</div><div class="barlist-track"><div class="barlist-fill" style="width:25%"></div></div><div class="barlist-val">1</div></div>
-      <div class="barlist-row"><div class="barlist-label">Radio Futuro</div><div class="barlist-track"><div class="barlist-fill" style="width:25%"></div></div><div class="barlist-val">1</div></div>
-      <div class="barlist-row"><div class="barlist-label">SeñalDF</div><div class="barlist-track"><div class="barlist-fill" style="width:25%"></div></div><div class="barlist-val">1</div></div>
+    <div style="padding:14px 18px;">
+      <div style="font-size:9px;font-weight:700;color:#0d2055;margin-bottom:4px;">Apariciones en prensa</div>
+      <div style="font-size:38px;font-weight:900;color:#0d2055;line-height:1;">4</div>
     </div>
   </div>
 
-  <div class="nota-section">
-    <div class="nota-title">Nota destacada</div>
-    <img src="btg-assets/b6bafb8547f582bc6c1adb5a4718deae.png" alt="Nota Rollán BTG Pactual Digital" style="max-width:340px;">
+  <!-- Asistentes por evento – donut chart -->
+  <div style="background:#1a5dc8;padding:14px 20px 18px;">
+    <div style="font-size:13px;font-weight:900;color:#fff;margin-bottom:4px;">Asistentes por evento</div>
+    <div style="display:flex;align-items:center;justify-content:center;">
+      <!--
+        r=50 → circunferencia=314.16
+        Seg 1: Desayuno 60/75=80% → 251.3 | Seg 2: Otros 15/75=20% → 62.8
+        rotate(-90) → arranca desde las 12
+        Midpoint seg1: 144° CW desde top → SVG angle=54° → label en (188,152)
+        Midpoint seg2: 324° CW desde top → SVG angle=234° → label en (68,22)
+      -->
+      <svg viewBox="0 0 280 185" width="100%" style="max-width:380px;overflow:visible;">
+        <!-- pista fondo -->
+        <circle cx="140" cy="90" r="50" fill="none" stroke="rgba(255,255,255,.2)" stroke-width="26"/>
+        <!-- seg 1: Desayuno agencias 60 (80%) – blanco brillante -->
+        <circle cx="140" cy="90" r="50" fill="none" stroke="rgba(255,255,255,.88)" stroke-width="26"
+          stroke-dasharray="251.3 62.8" stroke-dashoffset="0"
+          transform="rotate(-90 140 90)"/>
+        <!-- seg 2: Otros 15 (20%) – blanco tenue -->
+        <circle cx="140" cy="90" r="50" fill="none" stroke="rgba(255,255,255,.35)" stroke-width="26"
+          stroke-dasharray="62.8 251.3" stroke-dashoffset="-251.3"
+          transform="rotate(-90 140 90)"/>
+        <!-- label seg 2: Otros 15 → upper-left -->
+        <text x="58" y="28" fill="white" font-size="9" text-anchor="middle" font-family="sans-serif">Otros</text>
+        <text x="58" y="42" fill="white" font-size="14" font-weight="bold" text-anchor="middle" font-family="sans-serif">15</text>
+        <!-- label seg 1: Desayuno 60 → lower-right -->
+        <text x="210" y="148" fill="white" font-size="9" text-anchor="middle" font-family="sans-serif">Desayuno</text>
+        <text x="210" y="160" fill="white" font-size="9" text-anchor="middle" font-family="sans-serif">agencias ID</text>
+        <text x="210" y="174" fill="white" font-size="14" font-weight="bold" text-anchor="middle" font-family="sans-serif">60</text>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Evento destacado navy -->
+  <div style="background:#0d2055;padding:22px 24px 24px;">
+    <div style="font-size:16px;font-weight:800;color:#fff;margin-bottom:16px;text-align:center;">Evento destacado</div>
+    <img src="btg-assets/58f671e0316839d97a1d6cbb35c4e0dd.jpg" style="width:62%;height:auto;border-radius:8px;display:block;margin:0 auto 14px;" alt="Evento ID">
+    <p style="font-size:9.5px;color:rgba(255,255,255,.85);line-height:1.6;text-align:center;"><strong style="color:#fff;">Desayuno agencias – ID en Auditorio BTG Pactual</strong>, con la participación de 60 asistentes.</p>
+  </div>
+
+  <!-- Prensa: número grande + fuentes -->
+  <div style="display:grid;grid-template-columns:1fr 1.6fr;background:#ffffff;border-top:1px solid #e4ecf7;">
+    <div style="padding:16px 18px;border-right:1px solid #e4ecf7;display:flex;flex-direction:column;justify-content:center;">
+      <div style="font-size:10px;font-weight:700;color:#0d2055;line-height:1.4;margin-bottom:8px;">Apariciones en prensa destacadas</div>
+      <div style="font-size:52px;font-weight:900;color:#0d2055;line-height:1;">4</div>
+    </div>
+    <div style="padding:16px 16px;">
+      <div style="font-size:10px;font-weight:700;color:#0d2055;margin-bottom:10px;">Fuentes principales</div>
+      <div style="display:flex;align-items:center;gap:6px;margin-bottom:5px;"><div style="font-size:8.5px;color:#333;text-align:right;width:80px;flex-shrink:0;">13c</div><div style="flex:1;background:#e4ecf7;border-radius:3px;height:7px;overflow:hidden;"><div style="width:100%;height:100%;background:#1a5dc8;border-radius:3px;"></div></div><div style="font-size:8.5px;font-weight:700;color:#0d2055;min-width:14px;">1</div></div>
+      <div style="display:flex;align-items:center;gap:6px;margin-bottom:5px;"><div style="font-size:8.5px;color:#333;text-align:right;width:80px;flex-shrink:0;">CNN Chile</div><div style="flex:1;background:#e4ecf7;border-radius:3px;height:7px;overflow:hidden;"><div style="width:100%;height:100%;background:#1a5dc8;border-radius:3px;"></div></div><div style="font-size:8.5px;font-weight:700;color:#0d2055;min-width:14px;">1</div></div>
+      <div style="display:flex;align-items:center;gap:6px;margin-bottom:5px;"><div style="font-size:8.5px;color:#333;text-align:right;width:80px;flex-shrink:0;">Infinita</div><div style="flex:1;background:#e4ecf7;border-radius:3px;height:7px;overflow:hidden;"><div style="width:100%;height:100%;background:#1a5dc8;border-radius:3px;"></div></div><div style="font-size:8.5px;font-weight:700;color:#0d2055;min-width:14px;">1</div></div>
+      <div style="display:flex;align-items:center;gap:6px;"><div style="font-size:8.5px;color:#333;text-align:right;width:80px;flex-shrink:0;">Infinita.cl</div><div style="flex:1;background:#e4ecf7;border-radius:3px;height:7px;overflow:hidden;"><div style="width:100%;height:100%;background:#1a5dc8;border-radius:3px;"></div></div><div style="font-size:8.5px;font-weight:700;color:#0d2055;min-width:14px;">1</div></div>
+    </div>
+  </div>
+
+  <!-- Nota destacada navy -->
+  <div style="background:#0d2055;padding:22px 24px 24px;">
+    <div style="font-size:16px;font-weight:800;color:#fff;margin-bottom:16px;text-align:center;">Nota destacada</div>
+    <img src="btg-assets/b6bafb8547f582bc6c1adb5a4718deae.png" style="width:45%;height:auto;border-radius:8px;display:block;margin:0 auto 14px;" alt="Nota destacada">
+    <p style="font-size:9px;color:rgba(255,255,255,.75);line-height:1.6;text-align:center;font-style:italic;">Rodrigo Oyarzo, Banco BTG Pactual: <em>"Estamos en la mitad de una fusión de dos bancos medianos, proceso que va a brindar una oportunidad"</em></p>
   </div>
 
 </div><!-- /slide 4 -->
 
 <div class="page-divider"></div>
 
-<!-- ████████████████  SLIDE 5 – INVERSIONES DIGITALES: DIFUSIÓN RRSS  ████████████████ -->
-<div class="slide">
+<!-- ████  SLIDE 5 – INVERSIONES DIGITALES: DIFUSIÓN RRSS  ████ -->
+<div class="slide" style="background:#0d2055;">
 
-  <div class="area-header">
+  <!-- Header navy -->
+  <div style="background:#0d2055;padding:20px 24px 18px;display:flex;align-items:center;justify-content:space-between;">
     <div>
-      <div class="area-name">Inversiones Digitales</div>
-      <div class="area-sub">Difusión en RRSS - Q4 2025</div>
+      <div style="font-size:22px;font-weight:900;color:#fff;line-height:1.2;">Inversiones Digitales</div>
+      <div style="font-size:13px;color:rgba(255,255,255,.65);font-style:italic;margin-top:4px;">Difusión en RRSS – Q1 2026</div>
     </div>
-    <div class="btg-logo"><img src="btg-assets/img1.png" alt="BTG Pactual"></div>
+    <img src="btg-assets/img1.png" style="width:82px;object-fit:contain;display:block;" alt="BTG">
   </div>
 
-  <div class="rrss-detail-grid">
-    <div class="rrss-detail-col left-impact">
-      <div class="rdc-title">Campañas</div>
-      <div class="rrss-stat">
-        <div class="rs-label">Campañas totales</div>
-        <div class="rs-num">32</div>
-      </div>
-      <div class="rrss-stat">
-        <div class="rs-label">Personas únicas alcanzadas Q4</div>
-        <div class="rs-num">11,6 MM*</div>
-      </div>
-      <div class="cpm-ctr">
-        <div class="cc">
-          <div class="cc-label">CPM</div>
-          <div class="cc-num">$979</div>
-          <div class="cc-sub">Costo por mil impresiones<br>*Sólo campañas de alcance</div>
+  <!-- 2 columnas principales -->
+  <div style="display:grid;grid-template-columns:1fr 1fr;background:#1a5dc8;">
+
+    <!-- ── CAMPAÑAS ── -->
+    <div style="padding:20px 22px;border-right:1px solid rgba(255,255,255,.2);display:flex;flex-direction:column;gap:14px;">
+
+      <div style="font-size:12px;font-weight:900;color:#fff;text-transform:uppercase;letter-spacing:1px;padding-bottom:10px;border-bottom:2px solid rgba(255,255,255,.2);">Campañas</div>
+
+      <!-- KPIs -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+        <div style="background:rgba(255,255,255,.13);border-radius:8px;padding:12px 14px;">
+          <div style="font-size:9.5px;color:rgba(255,255,255,.65);margin-bottom:4px;">Campañas totales</div>
+          <div style="font-size:32px;font-weight:900;color:#fff;line-height:1;">42</div>
         </div>
-        <div class="cc">
-          <div class="cc-label">CTR</div>
-          <div class="cc-num">1,40%</div>
-          <div class="cc-sub">Tasa de clics en el enlace<br>*Sólo campañas de conversión y tráfico</div>
+        <div style="background:rgba(255,255,255,.13);border-radius:8px;padding:12px 14px;">
+          <div style="font-size:9.5px;color:rgba(255,255,255,.65);margin-bottom:4px;">Personas alcanzadas</div>
+          <div style="font-size:24px;font-weight:900;color:#fff;line-height:1.1;">9,6 MM</div>
         </div>
       </div>
-      <div class="rrss-stat" style="margin-top:10px;">
-        <div class="rs-label">Registros web pagados</div>
-        <div class="rs-num">2.470</div>
+
+      <!-- Módulo: Personas por mes -->
+      <div style="background:rgba(0,0,0,.18);border-radius:8px;padding:12px 14px;">
+        <div style="font-size:9.5px;font-weight:700;color:rgba(255,255,255,.75);margin-bottom:10px;">Personas alcanzadas por mes</div>
+        <!-- baseline: y=72, max-h=52; bars w=26, centers: 30, 72, 114 en viewBox 0 0 144 90 -->
+        <svg viewBox="0 0 144 90" width="100%" style="display:block;">
+          <line x1="4" y1="72" x2="140" y2="72" stroke="rgba(255,255,255,.15)" stroke-width="1"/>
+          <!-- 4.8M=100%→52; 3.9M=81.25%→42; 4.2M=87.5%→46 -->
+          <rect x="17" y="20" width="26" height="52" rx="3" fill="rgba(255,255,255,.85)"/>
+          <rect x="59" y="30" width="26" height="42" rx="3" fill="rgba(255,255,255,.65)"/>
+          <rect x="101" y="26" width="26" height="46" rx="3" fill="rgba(255,255,255,.75)"/>
+          <text x="30" y="15" font-size="8" fill="white" text-anchor="middle" font-family="sans-serif" font-weight="bold">4,8M</text>
+          <text x="72" y="25" font-size="8" fill="white" text-anchor="middle" font-family="sans-serif" font-weight="bold">3,9M</text>
+          <text x="114" y="21" font-size="8" fill="white" text-anchor="middle" font-family="sans-serif" font-weight="bold">4,2M</text>
+          <text x="30" y="84" font-size="7.5" fill="rgba(255,255,255,.6)" text-anchor="middle" font-family="sans-serif">Ene</text>
+          <text x="72" y="84" font-size="7.5" fill="rgba(255,255,255,.6)" text-anchor="middle" font-family="sans-serif">Feb</text>
+          <text x="114" y="84" font-size="7.5" fill="rgba(255,255,255,.6)" text-anchor="middle" font-family="sans-serif">Mar</text>
+        </svg>
       </div>
+
+      <!-- CPM / CTR -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+        <div style="background:rgba(0,0,0,.22);border-radius:8px;padding:11px 14px;text-align:center;">
+          <div style="font-size:9px;font-weight:700;color:rgba(255,255,255,.65);margin-bottom:3px;">CPM</div>
+          <div style="font-size:22px;font-weight:900;color:#fff;line-height:1;">$820</div>
+          <div style="font-size:8px;color:rgba(255,255,255,.45);margin-top:3px;">Costo por mil impr.</div>
+        </div>
+        <div style="background:rgba(0,0,0,.22);border-radius:8px;padding:11px 14px;text-align:center;">
+          <div style="font-size:9px;font-weight:700;color:rgba(255,255,255,.65);margin-bottom:3px;">CTR</div>
+          <div style="font-size:22px;font-weight:900;color:#fff;line-height:1;">1,6%</div>
+          <div style="font-size:8px;color:rgba(255,255,255,.45);margin-top:3px;">Tasa clics en enlace</div>
+        </div>
+      </div>
+
+      <!-- Módulo: Registros OBOL -->
+      <div style="background:rgba(0,0,0,.18);border-radius:8px;padding:12px 14px;">
+        <div style="font-size:9.5px;color:rgba(255,255,255,.65);margin-bottom:2px;">Registros web pagados (OBOL)</div>
+        <div style="font-size:28px;font-weight:900;color:#fff;line-height:1.1;margin-bottom:10px;">3.304</div>
+        <!-- baseline y=72, max-h=52; 1.331=100%→52; 1.081=81.2%→42; 892=67%→35 -->
+        <svg viewBox="0 0 144 90" width="100%" style="display:block;">
+          <line x1="4" y1="72" x2="140" y2="72" stroke="rgba(255,255,255,.15)" stroke-width="1"/>
+          <rect x="17" y="20" width="26" height="52" rx="3" fill="rgba(255,255,255,.85)"/>
+          <rect x="59" y="30" width="26" height="42" rx="3" fill="rgba(255,255,255,.65)"/>
+          <rect x="101" y="37" width="26" height="35" rx="3" fill="rgba(255,255,255,.5)"/>
+          <text x="30" y="15" font-size="8" fill="white" text-anchor="middle" font-family="sans-serif" font-weight="bold">1.331</text>
+          <text x="72" y="25" font-size="8" fill="white" text-anchor="middle" font-family="sans-serif" font-weight="bold">1.081</text>
+          <text x="114" y="32" font-size="8" fill="white" text-anchor="middle" font-family="sans-serif" font-weight="bold">892</text>
+          <text x="30" y="84" font-size="7.5" fill="rgba(255,255,255,.6)" text-anchor="middle" font-family="sans-serif">Ene</text>
+          <text x="72" y="84" font-size="7.5" fill="rgba(255,255,255,.6)" text-anchor="middle" font-family="sans-serif">Feb</text>
+          <text x="114" y="84" font-size="7.5" fill="rgba(255,255,255,.6)" text-anchor="middle" font-family="sans-serif">Mar</text>
+        </svg>
+      </div>
+
     </div>
-    <div class="rrss-detail-col right-impact">
-      <div class="rdc-title">Redes Sociales</div>
-      <div class="rrss-stat">
-        <div class="rs-label">Contenidos publicados</div>
-        <div class="rs-num">68</div>
+
+    <!-- ── REDES SOCIALES ── -->
+    <div style="padding:20px 22px;display:flex;flex-direction:column;gap:14px;">
+
+      <div style="font-size:12px;font-weight:900;color:#fff;text-transform:uppercase;letter-spacing:1px;padding-bottom:10px;border-bottom:2px solid rgba(255,255,255,.2);">Redes Sociales</div>
+
+      <!-- KPIs -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+        <div style="background:rgba(255,255,255,.13);border-radius:8px;padding:12px 14px;">
+          <div style="font-size:9.5px;color:rgba(255,255,255,.65);margin-bottom:4px;">Contenidos publicados</div>
+          <div style="font-size:32px;font-weight:900;color:#fff;line-height:1;">10</div>
+        </div>
+        <div style="background:rgba(255,255,255,.13);border-radius:8px;padding:12px 14px;">
+          <div style="font-size:9.5px;color:rgba(255,255,255,.65);margin-bottom:4px;">Impresiones</div>
+          <div style="font-size:24px;font-weight:900;color:#fff;line-height:1.1;">32.266</div>
+        </div>
       </div>
-      <div class="rrss-stat">
-        <div class="rs-label">Impresiones</div>
-        <div class="rs-num">1,2 MM</div>
+
+      <!-- Módulo: Impresiones mensuales -->
+      <div style="background:rgba(0,0,0,.18);border-radius:8px;padding:12px 14px;">
+        <div style="font-size:9.5px;font-weight:700;color:rgba(255,255,255,.75);margin-bottom:10px;">Impresiones mensuales</div>
+        <!-- max=19184: 7126=37.1%→19; 5956=31%→16; 19184=100%→52; baseline y=72 -->
+        <svg viewBox="0 0 144 90" width="100%" style="display:block;">
+          <line x1="4" y1="72" x2="140" y2="72" stroke="rgba(255,255,255,.15)" stroke-width="1"/>
+          <rect x="17" y="53" width="26" height="19" rx="3" fill="rgba(255,255,255,.6)"/>
+          <rect x="59" y="56" width="26" height="16" rx="3" fill="rgba(255,255,255,.5)"/>
+          <rect x="101" y="20" width="26" height="52" rx="3" fill="rgba(255,255,255,.9)"/>
+          <text x="30" y="48" font-size="8" fill="white" text-anchor="middle" font-family="sans-serif" font-weight="bold">7.126</text>
+          <text x="72" y="51" font-size="8" fill="white" text-anchor="middle" font-family="sans-serif" font-weight="bold">5.956</text>
+          <text x="114" y="15" font-size="8" fill="white" text-anchor="middle" font-family="sans-serif" font-weight="bold">19.184</text>
+          <text x="30" y="84" font-size="7.5" fill="rgba(255,255,255,.6)" text-anchor="middle" font-family="sans-serif">Ene</text>
+          <text x="72" y="84" font-size="7.5" fill="rgba(255,255,255,.6)" text-anchor="middle" font-family="sans-serif">Feb</text>
+          <text x="114" y="84" font-size="7.5" fill="rgba(255,255,255,.6)" text-anchor="middle" font-family="sans-serif">Mar</text>
+        </svg>
       </div>
-      <div style="font-size:9px;color:rgba(255,255,255,.7);margin-top:8px;margin-bottom:6px;">Impresiones por plataforma</div>
-      <div class="barlist-row" style="margin-bottom:4px;"><div class="barlist-label" style="color:rgba(255,255,255,.9);width:100px;">Instagram</div><div class="barlist-track" style="background:rgba(255,255,255,.2);"><div class="barlist-fill" style="width:100%;background:rgba(255,255,255,.5);"></div></div></div>
-      <div class="barlist-row" style="margin-bottom:4px;"><div class="barlist-label" style="color:rgba(255,255,255,.9);width:100px;">Youtube</div><div class="barlist-track" style="background:rgba(255,255,255,.2);"><div class="barlist-fill" style="width:40%;background:rgba(255,255,255,.5);"></div></div><div class="barlist-val" style="color:#fff;font-size:8px;">320.511</div></div>
-      <div class="barlist-row" style="margin-bottom:4px;"><div class="barlist-label" style="color:rgba(255,255,255,.9);width:100px;">LinkedIn</div><div class="barlist-track" style="background:rgba(255,255,255,.2);"><div class="barlist-fill" style="width:10%;background:rgba(255,255,255,.5);"></div></div><div class="barlist-val" style="color:#fff;font-size:8px;">81.601</div></div>
-      <div class="barlist-row" style="margin-bottom:4px;"><div class="barlist-label" style="color:rgba(255,255,255,.9);width:100px;">LI Newsletter</div><div class="barlist-track" style="background:rgba(255,255,255,.2);"><div class="barlist-fill" style="width:1%;background:rgba(255,255,255,.5);"></div></div><div class="barlist-val" style="color:#fff;font-size:8px;">6.555</div></div>
+
+      <!-- Módulo: Impresiones por plataforma -->
+      <div style="background:rgba(0,0,0,.18);border-radius:8px;padding:12px 14px;">
+        <div style="font-size:9.5px;font-weight:700;color:rgba(255,255,255,.75);margin-bottom:10px;">Impresiones por plataforma</div>
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+          <div style="font-size:9px;color:rgba(255,255,255,.8);width:58px;flex-shrink:0;">LinkedIn</div>
+          <div style="flex:1;background:rgba(255,255,255,.15);border-radius:3px;height:8px;overflow:hidden;"><div style="width:100%;height:100%;background:rgba(255,255,255,.8);border-radius:3px;"></div></div>
+          <div style="font-size:9px;font-weight:700;color:#fff;min-width:36px;text-align:right;">19.646</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+          <div style="font-size:9px;color:rgba(255,255,255,.8);width:58px;flex-shrink:0;">Instagram</div>
+          <div style="flex:1;background:rgba(255,255,255,.15);border-radius:3px;height:8px;overflow:hidden;"><div style="width:41%;height:100%;background:rgba(255,255,255,.8);border-radius:3px;"></div></div>
+          <div style="font-size:9px;font-weight:700;color:#fff;min-width:36px;text-align:right;">8.109</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <div style="font-size:9px;color:rgba(255,255,255,.8);width:58px;flex-shrink:0;">YouTube</div>
+          <div style="flex:1;background:rgba(255,255,255,.15);border-radius:3px;height:8px;overflow:hidden;"><div style="width:23%;height:100%;background:rgba(255,255,255,.8);border-radius:3px;"></div></div>
+          <div style="font-size:9px;font-weight:700;color:#fff;min-width:36px;text-align:right;">4.511</div>
+        </div>
+      </div>
+
+      <!-- Tráfico web integrado en columna derecha -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:auto;">
+        <div style="background:rgba(0,0,0,.28);border-radius:8px;padding:13px 15px;">
+          <div style="font-size:9px;font-weight:700;color:rgba(255,255,255,.65);margin-bottom:4px;">Tráfico web pagado</div>
+          <div style="font-size:24px;font-weight:900;color:#fff;line-height:1.1;">171 K</div>
+          <div style="font-size:8px;color:rgba(255,255,255,.45);margin-top:2px;">usuarios</div>
+        </div>
+        <div style="background:rgba(0,0,0,.18);border-radius:8px;padding:13px 15px;">
+          <div style="font-size:9px;font-weight:700;color:rgba(255,255,255,.65);margin-bottom:4px;">Tráfico web orgánico</div>
+          <div style="font-size:24px;font-weight:900;color:#fff;line-height:1.1;">103 K</div>
+          <div style="font-size:8px;color:rgba(255,255,255,.45);margin-top:2px;">usuarios</div>
+        </div>
+      </div>
+
     </div>
   </div>
 
-  <div class="traffic-blocks" style="padding-top:12px;">
-    <div class="tblock paid">
-      <div class="tb-title">Tráfico web pagado</div>
-      <div class="tb-num">196 K usuarios</div>
-    </div>
-    <div class="tblock organic">
-      <div class="tb-title">Tráfico web orgánico</div>
-      <div class="tb-num">132 K usuarios</div>
+  <!-- Contenidos orgánicos destacados -->
+  <div style="background:#0d2055;padding:18px 24px 22px;">
+    <div style="font-size:13px;font-weight:800;color:#fff;margin-bottom:12px;text-transform:uppercase;letter-spacing:.8px;">Contenidos orgánicos destacados</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+
+      <!-- Card 1 — vertical -->
+      <div style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;">
+        <div style="background:rgba(0,0,0,.3);padding:12px;display:flex;align-items:center;justify-content:center;min-height:160px;">
+          <img src="btg-assets/62e0f554add56682d8659231c9c2d8b2.png"
+               style="max-width:100%;max-height:150px;width:auto;height:auto;object-fit:contain;border-radius:6px;display:block;" alt="">
+        </div>
+        <div style="padding:12px 14px;display:flex;flex-direction:column;gap:5px;">
+          <div style="font-size:9.5px;color:rgba(255,255,255,.8);line-height:1.5;">Encuentro "Chile en foco: oportunidades y desafíos en Activos Locales"</div>
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-top:2px;">
+            <div style="font-size:8.5px;color:#7fa8d8;font-weight:700;">LinkedIn</div>
+            <div style="text-align:right;">
+              <div style="font-size:20px;font-weight:900;color:#fff;line-height:1;">8.395</div>
+              <div style="font-size:7.5px;color:rgba(255,255,255,.4);">Impresiones</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 — vertical -->
+      <div style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;">
+        <div style="background:rgba(0,0,0,.3);padding:12px;display:flex;align-items:center;justify-content:center;min-height:160px;">
+          <img src="btg-assets/8bb3dbf0edbd523069d1513ea2818d85.png"
+               style="max-width:100%;max-height:150px;width:auto;height:auto;object-fit:contain;border-radius:6px;display:block;" alt="">
+        </div>
+        <div style="padding:12px 14px;display:flex;flex-direction:column;gap:5px;">
+          <div style="font-size:9.5px;color:rgba(255,255,255,.8);line-height:1.5;">BTG Call Elecciones 2025 — análisis del escenario electoral</div>
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-top:2px;">
+            <div style="font-size:8.5px;color:#7fa8d8;font-weight:700;">LinkedIn</div>
+            <div style="text-align:right;">
+              <div style="font-size:20px;font-weight:900;color:#fff;line-height:1;">3.511</div>
+              <div style="font-size:7.5px;color:rgba(255,255,255,.4);">Impresiones</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
-
-  <div class="section-heading">Contenidos orgánicos destacados</div>
-  <div class="area-content-highlights">
-    <div class="ach-card">
-      <img src="btg-assets/62e0f554add56682d8659231c9c2d8b2.png" alt="Resultados empresa">
-      <div class="ach-name">Resultados empresa Q4</div>
-      <div class="ach-platform">LinkedIn</div>
-    </div>
-    <div class="ach-card">
-      <img src="btg-assets/8bb3dbf0edbd523069d1513ea2818d85.png" alt="BTG Call Elecciones">
-      <div class="ach-name">BTG Call | Análisis de las elecciones 2025</div>
-      <div class="ach-platform">LinkedIn</div>
-    </div>
-    <div class="ach-card">
-      <img src="btg-assets/7f062815eb9335c5f08f0f8cd06328da.png" alt="Programas económicos">
-      <div class="ach-name">Comparación programas económicos presidenciales</div>
-      <div class="ach-platform">Instagram · LinkedIn</div>
-    </div>
-  </div>
-
-  <div class="footnote-band"><p>*Registros web generados a través de campañas pagadas. Se refiere a nuevos clientes (cuentas creadas) que realizaron el proceso de onboarding online (OBOL).<br>(*) No se incluyen datos de Twitter</p></div>
 
 </div><!-- /slide 5 -->
 
 <div class="page-divider"></div>
 
-<!-- ████████████████  SLIDE 6 – INVESTMENT BANKING: EVENTOS & MEDIOS  ████████████████ -->
-<div class="slide">
+<!-- ████  SLIDE 6 – ASSET MANAGEMENT: EVENTOS & MEDIOS  ████ -->
+<div class="slide" style="background:#fff;">
 
-  <div class="area-header">
+  <!-- Header navy -->
+  <div style="background:#0d2055;padding:20px 24px 18px;display:flex;align-items:center;justify-content:space-between;">
     <div>
-      <div class="area-name">Investment Banking</div>
-      <div class="area-sub">Eventos &amp; Medios - Q4 2025</div>
+      <div style="font-size:22px;font-weight:900;color:#fff;line-height:1.2;">Asset Management</div>
+      <div style="font-size:13px;color:rgba(255,255,255,.65);font-style:italic;margin-top:4px;">Eventos &amp; Medios – Q1 2026</div>
     </div>
-    <div class="btg-logo"><img src="btg-assets/img1.png" alt="BTG Pactual"></div>
+    <img src="btg-assets/img1.png" style="width:82px;object-fit:contain;display:block;" alt="BTG">
   </div>
 
-  <div style="display:grid;grid-template-columns:repeat(3,1fr);background:var(--c-sky);">
-    <div class="area-kpi">
-      <div class="ak-label">Apariciones en Prensa destacadas</div>
-      <div class="ak-num">3</div>
+  <!-- KPIs sky-blue -->
+  <div style="display:grid;grid-template-columns:1fr 1fr;background:#c8daf5;">
+    <div style="padding:16px 24px;border-right:1px solid rgba(0,47,115,.12);">
+      <div style="font-size:10px;color:#1a3a6e;margin-bottom:4px;font-weight:600;">Eventos destacados</div>
+      <div style="font-size:36px;font-weight:900;color:#0d2055;line-height:1;">1</div>
+      <div style="font-size:9.5px;color:#3a5a9e;margin-top:3px;">50 asistentes</div>
     </div>
-    <div class="area-kpi" style="border-left:1px solid rgba(0,47,115,.12);">
-      <div class="ak-label">Contenidos publicados</div>
-      <div class="ak-num">3</div>
-    </div>
-    <div class="area-kpi" style="border-left:1px solid rgba(0,47,115,.12);">
-      <div class="ak-label">Impresiones</div>
-      <div class="ak-num">35K</div>
-    </div>
-  </div>
-
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:0;background:#f6faff;border-bottom:1px solid #dde8fb;">
-    <div style="padding:16px 20px;border-right:1px solid rgba(0,47,115,.1);">
-      <div class="barlist-title" style="text-align:left;">Fuentes principales</div>
-      <div class="barlist-row"><div class="barlist-label">El Diario Financiero</div><div class="barlist-track"><div class="barlist-fill" style="width:100%"></div></div><div class="barlist-val">1</div></div>
-      <div class="barlist-row"><div class="barlist-label">SeñalDF</div><div class="barlist-track"><div class="barlist-fill" style="width:100%"></div></div><div class="barlist-val">1</div></div>
-      <div class="barlist-row"><div class="barlist-label">El Mercurio</div><div class="barlist-track"><div class="barlist-fill" style="width:100%"></div></div><div class="barlist-val">1</div></div>
-    </div>
-    <div style="padding:16px 20px;">
-      <div class="barlist-title" style="text-align:left;">Impresiones por plataforma</div>
-      <div class="barlist-row"><div class="barlist-label">LinkedIn</div><div class="barlist-track"><div class="barlist-fill" style="width:100%"></div></div><div class="barlist-val">32.801</div></div>
-      <div class="barlist-row"><div class="barlist-label">Instagram</div><div class="barlist-track"><div class="barlist-fill" style="width:7%"></div></div><div class="barlist-val">2.279</div></div>
+    <div style="padding:16px 24px;">
+      <div style="font-size:10px;color:#1a3a6e;margin-bottom:4px;font-weight:600;">Apariciones en Prensa</div>
+      <div style="font-size:36px;font-weight:900;color:#0d2055;line-height:1;">14</div>
     </div>
   </div>
 
-  <div class="nota-section">
-    <div class="nota-title">Nota destacada</div>
-    <img src="btg-assets/8caa5610e352dd0a85d13f003c0f309b.png" alt="Head IB BTG Pactual nota">
-  </div>
-
-  <div class="section-heading">Contenidos orgánicos destacados</div>
-  <div class="area-content-highlights" style="grid-template-columns:repeat(2,1fr);">
-    <div class="ach-card">
-      <img src="btg-assets/d202e731e03999c079bc2ea197752b54.png" alt="Money Talks Isabel Allendes">
-      <div class="ach-name">Money Talks | Isabel Allendes</div>
-      <div class="ach-platform">Instagram</div>
-      <div class="ach-metric">2.279</div>
-      <div class="ach-mlbl">Impresiones</div>
-    </div>
-    <div class="ach-card">
-      <img src="btg-assets/62e0f554add56682d8659231c9c2d8b2.png" alt="Regreso de SQM">
-      <div class="ach-name">Regreso de SQM al mercado local</div>
-      <div class="ach-platform">LinkedIn</div>
-      <div class="ach-metric">19.558</div>
-      <div class="ach-mlbl">Impresiones</div>
+  <!-- Asistentes por evento -->
+  <div style="background:#f0f5ff;padding:14px 24px;border-bottom:1px solid #dde8fb;">
+    <div style="font-size:10.5px;font-weight:700;color:#0d2055;margin-bottom:10px;text-transform:uppercase;letter-spacing:.5px;">Asistentes por evento</div>
+    <div style="display:flex;align-items:center;gap:10px;">
+      <div style="font-size:9.5px;color:#2a4a8e;width:200px;flex-shrink:0;">Asset Day Colombia · Marriot Bogotá</div>
+      <div style="flex:1;background:#d0dff5;border-radius:4px;height:10px;overflow:hidden;">
+        <div style="width:100%;height:100%;background:#1a5dc8;border-radius:4px;"></div>
+      </div>
+      <div style="font-size:12px;font-weight:800;color:#0d2055;min-width:28px;text-align:right;">50</div>
     </div>
   </div>
 
-  <div class="area-web-stats">
-    <div class="aws na organic">
-      <div class="ws-lbl">Tráfico web pagado</div>
-      <div class="ws-num">N/A</div>
+  <!-- Evento destacado: foto + descripción -->
+  <div style="background:#0d2055;display:flex;align-items:stretch;">
+    <div style="width:42%;flex-shrink:0;overflow:hidden;">
+      <img src="btg-assets/img2.jpg" style="width:100%;height:100%;object-fit:cover;display:block;" alt="Asset Day Colombia">
     </div>
-    <div class="aws organic">
-      <div class="ws-lbl">Tráfico web orgánico</div>
-      <div class="ws-num">813 usuarios</div>
+    <div style="flex:1;padding:22px 24px;display:flex;flex-direction:column;justify-content:center;gap:10px;">
+      <div style="font-size:11px;font-weight:800;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:.8px;">Evento destacado</div>
+      <div style="font-size:16px;font-weight:900;color:#fff;line-height:1.3;">Asset Day Colombia</div>
+      <div style="font-size:11px;color:rgba(255,255,255,.75);line-height:1.6;">Se destacó el evento <strong style="color:#fff;">Asset Day Colombia</strong> realizado en el Marriot Bogotá. El encuentro reunió a clientes e inversionistas estratégicos con 50 asistentes.</div>
+      <div style="display:flex;align-items:center;gap:6px;margin-top:4px;">
+        <div style="background:rgba(255,255,255,.15);border-radius:20px;padding:4px 12px;font-size:9px;color:rgba(255,255,255,.8);">50 asistentes</div>
+        <div style="background:rgba(255,255,255,.15);border-radius:20px;padding:4px 12px;font-size:9px;color:rgba(255,255,255,.8);">Bogotá, Colombia</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Prensa: big number + fuentes -->
+  <div style="display:grid;grid-template-columns:1fr 2fr;background:#fff;border-top:1px solid #e4ecf7;border-bottom:1px solid #e4ecf7;">
+    <div style="padding:18px 24px;border-right:1px solid #e4ecf7;display:flex;flex-direction:column;justify-content:center;">
+      <div style="font-size:10.5px;font-weight:700;color:#0d2055;margin-bottom:6px;">Apariciones en prensa</div>
+      <div style="font-size:48px;font-weight:900;color:#0d2055;line-height:1;">14</div>
+    </div>
+    <div style="padding:18px 24px;">
+      <div style="font-size:10.5px;font-weight:700;color:#0d2055;margin-bottom:12px;text-transform:uppercase;letter-spacing:.5px;">Fuentes principales</div>
+      <!-- max=3 → 100% -->
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:7px;">
+        <div style="font-size:9px;color:#2a4a8e;width:120px;flex-shrink:0;">Df.cl</div>
+        <div style="flex:1;background:#e4ecf7;border-radius:3px;height:7px;overflow:hidden;"><div style="width:100%;height:100%;background:#1a5dc8;border-radius:3px;"></div></div>
+        <div style="font-size:9.5px;font-weight:700;color:#0d2055;min-width:16px;text-align:right;">3</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:7px;">
+        <div style="font-size:9px;color:#2a4a8e;width:120px;flex-shrink:0;">El Diario Financiero</div>
+        <div style="flex:1;background:#e4ecf7;border-radius:3px;height:7px;overflow:hidden;"><div style="width:100%;height:100%;background:#1a5dc8;border-radius:3px;"></div></div>
+        <div style="font-size:9.5px;font-weight:700;color:#0d2055;min-width:16px;text-align:right;">3</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:7px;">
+        <div style="font-size:9px;color:#2a4a8e;width:120px;flex-shrink:0;">El Mercurio</div>
+        <div style="flex:1;background:#e4ecf7;border-radius:3px;height:7px;overflow:hidden;"><div style="width:100%;height:100%;background:#1a5dc8;border-radius:3px;"></div></div>
+        <div style="font-size:9.5px;font-weight:700;color:#0d2055;min-width:16px;text-align:right;">3</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:7px;">
+        <div style="font-size:9px;color:#2a4a8e;width:120px;flex-shrink:0;">elmercurio.cl</div>
+        <div style="flex:1;background:#e4ecf7;border-radius:3px;height:7px;overflow:hidden;"><div style="width:100%;height:100%;background:#1a5dc8;border-radius:3px;"></div></div>
+        <div style="font-size:9.5px;font-weight:700;color:#0d2055;min-width:16px;text-align:right;">3</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:7px;">
+        <div style="font-size:9px;color:#2a4a8e;width:120px;flex-shrink:0;">fundsociety.com</div>
+        <div style="flex:1;background:#e4ecf7;border-radius:3px;height:7px;overflow:hidden;"><div style="width:33%;height:100%;background:#1a5dc8;border-radius:3px;"></div></div>
+        <div style="font-size:9.5px;font-weight:700;color:#0d2055;min-width:16px;text-align:right;">1</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="font-size:9px;color:#2a4a8e;width:120px;flex-shrink:0;">Latercera.com</div>
+        <div style="flex:1;background:#e4ecf7;border-radius:3px;height:7px;overflow:hidden;"><div style="width:33%;height:100%;background:#1a5dc8;border-radius:3px;"></div></div>
+        <div style="font-size:9.5px;font-weight:700;color:#0d2055;min-width:16px;text-align:right;">1</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Nota destacada -->
+  <div style="background:#0d2055;padding:18px 24px 22px;">
+    <div style="font-size:11px;font-weight:800;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:.8px;margin-bottom:12px;">Nota destacada</div>
+    <div style="display:flex;justify-content:center;">
+      <div style="width:55%;max-width:340px;">
+        <img src="btg-assets/img3.png" style="width:100%;height:auto;display:block;border-radius:6px;" alt="Nota destacada">
+        <div style="font-size:9px;color:rgba(255,255,255,.55);text-align:center;margin-top:8px;font-style:italic;">Rodrigo Oyarzo, Banco BTG Pactual: "Estamos en la mitad de una fusión de dos bancos medianos, proceso que va a brindar una oportunidad"</div>
+      </div>
     </div>
   </div>
 
@@ -980,214 +1068,747 @@ circle.dot{fill:var(--c-blue3);stroke:#fff;stroke-width:1;}
 
 <div class="page-divider"></div>
 
-<!-- ████████████████  SLIDE 7 – WEALTH MANAGEMENT  ████████████████ -->
-<div class="slide">
+<!-- ████  SLIDE 7 – ASSET MANAGEMENT: DIFUSIÓN RRSS  ████ -->
+<div class="slide" style="background:#0d2055;">
 
-  <div class="area-header">
+  <!-- Header navy -->
+  <div style="background:#0d2055;padding:20px 24px 18px;display:flex;align-items:center;justify-content:space-between;">
     <div>
-      <div class="area-name">Wealth Management</div>
-      <div class="area-sub">Eventos &amp; Medios - Q4 2025</div>
+      <div style="font-size:22px;font-weight:900;color:#fff;line-height:1.2;">Asset Management</div>
+      <div style="font-size:13px;color:rgba(255,255,255,.65);font-style:italic;margin-top:4px;">Difusión en RRSS – Q1 2026</div>
     </div>
-    <div class="btg-logo"><img src="btg-assets/img1.png" alt="BTG Pactual"></div>
+    <img src="btg-assets/img1.png" style="width:82px;object-fit:contain;display:block;" alt="BTG">
   </div>
 
-  <div style="display:grid;grid-template-columns:repeat(3,1fr);background:var(--c-sky);">
-    <div class="area-kpi"><div class="ak-label">Eventos</div><div class="ak-num">4</div></div>
-    <div class="area-kpi" style="border-left:1px solid rgba(0,47,115,.12);"><div class="ak-label">Webinars</div><div class="ak-num">1</div></div>
-    <div class="area-kpi" style="border-left:1px solid rgba(0,47,115,.12);"><div class="ak-label">Apariciones en prensa</div><div class="ak-num">6</div></div>
+  <!-- 2 columnas azules -->
+  <div style="display:grid;grid-template-columns:1fr 1fr;background:#1a5dc8;">
+
+    <!-- ── CAMPAÑAS ── -->
+    <div style="padding:20px 22px;border-right:1px solid rgba(255,255,255,.2);display:flex;flex-direction:column;gap:14px;">
+
+      <div style="font-size:12px;font-weight:900;color:#fff;text-transform:uppercase;letter-spacing:1px;padding-bottom:10px;border-bottom:2px solid rgba(255,255,255,.2);">Campañas</div>
+
+      <!-- KPIs -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+        <div style="background:rgba(255,255,255,.13);border-radius:8px;padding:12px 14px;">
+          <div style="font-size:9.5px;color:rgba(255,255,255,.65);margin-bottom:4px;">Campañas totales</div>
+          <div style="font-size:32px;font-weight:900;color:#fff;line-height:1;">10</div>
+        </div>
+        <div style="background:rgba(255,255,255,.13);border-radius:8px;padding:12px 14px;">
+          <div style="font-size:9.5px;color:rgba(255,255,255,.65);margin-bottom:4px;">Cuentas creadas</div>
+          <div style="font-size:28px;font-weight:900;color:#fff;line-height:1.1;">487</div>
+        </div>
+      </div>
+
+      <!-- Módulo: Cuentas por mes -->
+      <div style="background:rgba(0,0,0,.18);border-radius:8px;padding:12px 14px;">
+        <div style="font-size:9.5px;font-weight:700;color:rgba(255,255,255,.75);margin-bottom:10px;">Cuentas creadas por mes</div>
+        <!-- Ene 180=100%→52, Feb 165=92%→48, Mar 142=79%→41; baseline y=72 -->
+        <svg viewBox="0 0 144 90" width="100%" style="display:block;">
+          <line x1="4" y1="72" x2="140" y2="72" stroke="rgba(255,255,255,.15)" stroke-width="1"/>
+          <rect x="17" y="20" width="26" height="52" rx="3" fill="rgba(255,255,255,.85)"/>
+          <rect x="59" y="24" width="26" height="48" rx="3" fill="rgba(255,255,255,.65)"/>
+          <rect x="101" y="31" width="26" height="41" rx="3" fill="rgba(255,255,255,.5)"/>
+          <text x="30" y="15" font-size="8" fill="white" text-anchor="middle" font-family="sans-serif" font-weight="bold">180</text>
+          <text x="72" y="19" font-size="8" fill="white" text-anchor="middle" font-family="sans-serif" font-weight="bold">165</text>
+          <text x="114" y="26" font-size="8" fill="white" text-anchor="middle" font-family="sans-serif" font-weight="bold">142</text>
+          <text x="30" y="84" font-size="7.5" fill="rgba(255,255,255,.6)" text-anchor="middle" font-family="sans-serif">Ene</text>
+          <text x="72" y="84" font-size="7.5" fill="rgba(255,255,255,.6)" text-anchor="middle" font-family="sans-serif">Feb</text>
+          <text x="114" y="84" font-size="7.5" fill="rgba(255,255,255,.6)" text-anchor="middle" font-family="sans-serif">Mar</text>
+        </svg>
+      </div>
+
+      <!-- CAC / Aportantes -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+        <div style="background:rgba(0,0,0,.22);border-radius:8px;padding:11px 14px;text-align:center;">
+          <div style="font-size:9px;font-weight:700;color:rgba(255,255,255,.65);margin-bottom:3px;">CAC</div>
+          <div style="font-size:18px;font-weight:900;color:#fff;line-height:1;">$27.771</div>
+          <div style="font-size:8px;color:rgba(255,255,255,.45);margin-top:3px;">Costo de adquisición</div>
+        </div>
+        <div style="background:rgba(0,0,0,.22);border-radius:8px;padding:11px 14px;text-align:center;">
+          <div style="font-size:9px;font-weight:700;color:rgba(255,255,255,.65);margin-bottom:3px;">Aportantes</div>
+          <div style="font-size:22px;font-weight:900;color:#fff;line-height:1;">867</div>
+          <div style="font-size:8px;color:rgba(255,255,255,.45);margin-top:3px;">Total Q1 2026</div>
+        </div>
+      </div>
+
+      <!-- Monto aportes -->
+      <div style="background:rgba(0,0,0,.18);border-radius:8px;padding:12px 14px;">
+        <div style="font-size:9.5px;color:rgba(255,255,255,.65);margin-bottom:4px;">Monto total de aportes</div>
+        <div style="font-size:28px;font-weight:900;color:#fff;line-height:1;">$5.536 MM</div>
+      </div>
+
+    </div>
+
+    <!-- ── REDES SOCIALES ── -->
+    <div style="padding:20px 22px;display:flex;flex-direction:column;gap:14px;">
+
+      <div style="font-size:12px;font-weight:900;color:#fff;text-transform:uppercase;letter-spacing:1px;padding-bottom:10px;border-bottom:2px solid rgba(255,255,255,.2);">Redes Sociales</div>
+
+      <!-- KPIs -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+        <div style="background:rgba(255,255,255,.13);border-radius:8px;padding:12px 14px;">
+          <div style="font-size:9.5px;color:rgba(255,255,255,.65);margin-bottom:4px;">Contenidos publicados</div>
+          <div style="font-size:32px;font-weight:900;color:#fff;line-height:1;">63</div>
+        </div>
+        <div style="background:rgba(255,255,255,.13);border-radius:8px;padding:12px 14px;">
+          <div style="font-size:9.5px;color:rgba(255,255,255,.65);margin-bottom:4px;">Impresiones</div>
+          <div style="font-size:22px;font-weight:900;color:#fff;line-height:1.1;">371.249</div>
+        </div>
+      </div>
+
+      <!-- Módulo: Impresiones mensuales -->
+      <div style="background:rgba(0,0,0,.18);border-radius:8px;padding:12px 14px;">
+        <div style="font-size:9.5px;font-weight:700;color:rgba(255,255,255,.75);margin-bottom:10px;">Impresiones mensuales</div>
+        <!-- 98K=61%→32, 112K=70%→36, 161K=100%→52; baseline y=72 -->
+        <svg viewBox="0 0 144 90" width="100%" style="display:block;">
+          <line x1="4" y1="72" x2="140" y2="72" stroke="rgba(255,255,255,.15)" stroke-width="1"/>
+          <rect x="17" y="40" width="26" height="32" rx="3" fill="rgba(255,255,255,.6)"/>
+          <rect x="59" y="36" width="26" height="36" rx="3" fill="rgba(255,255,255,.7)"/>
+          <rect x="101" y="20" width="26" height="52" rx="3" fill="rgba(255,255,255,.9)"/>
+          <text x="30" y="35" font-size="8" fill="white" text-anchor="middle" font-family="sans-serif" font-weight="bold">98K</text>
+          <text x="72" y="31" font-size="8" fill="white" text-anchor="middle" font-family="sans-serif" font-weight="bold">112K</text>
+          <text x="114" y="15" font-size="8" fill="white" text-anchor="middle" font-family="sans-serif" font-weight="bold">161K</text>
+          <text x="30" y="84" font-size="7.5" fill="rgba(255,255,255,.6)" text-anchor="middle" font-family="sans-serif">Ene</text>
+          <text x="72" y="84" font-size="7.5" fill="rgba(255,255,255,.6)" text-anchor="middle" font-family="sans-serif">Feb</text>
+          <text x="114" y="84" font-size="7.5" fill="rgba(255,255,255,.6)" text-anchor="middle" font-family="sans-serif">Mar</text>
+        </svg>
+      </div>
+
+      <!-- Módulo: Impresiones por plataforma -->
+      <div style="background:rgba(0,0,0,.18);border-radius:8px;padding:12px 14px;">
+        <div style="font-size:9.5px;font-weight:700;color:rgba(255,255,255,.75);margin-bottom:10px;">Impresiones por plataforma</div>
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+          <div style="font-size:9px;color:rgba(255,255,255,.8);width:58px;flex-shrink:0;">Instagram</div>
+          <div style="flex:1;background:rgba(255,255,255,.15);border-radius:3px;height:8px;overflow:hidden;"><div style="width:100%;height:100%;background:rgba(255,255,255,.8);border-radius:3px;"></div></div>
+          <div style="font-size:9px;font-weight:700;color:#fff;min-width:42px;text-align:right;">243.027</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+          <div style="font-size:9px;color:rgba(255,255,255,.8);width:58px;flex-shrink:0;">LinkedIn</div>
+          <div style="flex:1;background:rgba(255,255,255,.15);border-radius:3px;height:8px;overflow:hidden;"><div style="width:41%;height:100%;background:rgba(255,255,255,.8);border-radius:3px;"></div></div>
+          <div style="font-size:9px;font-weight:700;color:#fff;min-width:42px;text-align:right;">100.476</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <div style="font-size:9px;color:rgba(255,255,255,.8);width:58px;flex-shrink:0;">YouTube</div>
+          <div style="flex:1;background:rgba(255,255,255,.15);border-radius:3px;height:8px;overflow:hidden;"><div style="width:11%;height:100%;background:rgba(255,255,255,.8);border-radius:3px;"></div></div>
+          <div style="font-size:9px;font-weight:700;color:#fff;min-width:42px;text-align:right;">27.746</div>
+        </div>
+      </div>
+
+      <!-- Tráfico web -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:auto;">
+        <div style="background:rgba(0,0,0,.28);border-radius:8px;padding:13px 15px;">
+          <div style="font-size:9px;font-weight:700;color:rgba(255,255,255,.65);margin-bottom:4px;">Tráfico web pagado</div>
+          <div style="font-size:20px;font-weight:900;color:#fff;line-height:1.1;">20.326</div>
+          <div style="font-size:8px;color:rgba(255,255,255,.45);margin-top:2px;">usuarios</div>
+        </div>
+        <div style="background:rgba(0,0,0,.18);border-radius:8px;padding:13px 15px;">
+          <div style="font-size:9px;font-weight:700;color:rgba(255,255,255,.65);margin-bottom:4px;">Tráfico web orgánico</div>
+          <div style="font-size:20px;font-weight:900;color:#fff;line-height:1.1;">10.706</div>
+          <div style="font-size:8px;color:rgba(255,255,255,.45);margin-top:2px;">usuarios</div>
+        </div>
+      </div>
+
+    </div>
   </div>
 
-  <div class="section-heading">Contenidos orgánicos destacados</div>
-  <div class="area-content-highlights" style="grid-template-columns:repeat(2,1fr);">
-    <div class="ach-card">
-      <img src="btg-assets/9d958e6e3d7c51f5eb7ac43c964d47d2.png" alt="BTG Podcast Filantropía">
-      <div class="ach-name">Filantropía y grandes patrimonios</div>
-      <div class="ach-platform">BTG Podcast</div>
-    </div>
-    <div class="ach-card">
-      <img src="btg-assets/d202e731e03999c079bc2ea197752b54.png" alt="Money Talks">
-      <div class="ach-name">Money Talks – Episodio especial</div>
-      <div class="ach-platform">Instagram · LinkedIn</div>
-    </div>
-  </div>
+  <!-- Contenidos orgánicos destacados -->
+  <div style="background:#0d2055;padding:18px 24px 22px;">
+    <div style="font-size:13px;font-weight:800;color:#fff;margin-bottom:12px;text-transform:uppercase;letter-spacing:.8px;">Contenidos orgánicos destacados</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;">
 
-  <div class="area-web-stats">
-    <div class="aws paid"><div class="ws-lbl">Tráfico web pagado</div><div class="ws-num">N/A</div></div>
-    <div class="aws organic"><div class="ws-lbl">Tráfico web orgánico</div><div class="ws-num">Orgánico</div></div>
+      <div style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;">
+        <div style="background:rgba(0,0,0,.3);padding:10px;display:flex;align-items:center;justify-content:center;min-height:130px;">
+          <img src="btg-assets/7f062815eb9335c5f08f0f8cd06328da.png" style="max-width:100%;max-height:120px;width:auto;height:auto;object-fit:contain;border-radius:6px;display:block;" alt="">
+        </div>
+        <div style="padding:10px 12px;display:flex;flex-direction:column;gap:4px;">
+          <div style="font-size:8.5px;color:rgba(255,255,255,.8);line-height:1.45;">Comparación de programas económicos presidenciales</div>
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-top:2px;">
+            <div style="font-size:8px;color:#7fa8d8;font-weight:700;">Instagram</div>
+            <div style="text-align:right;">
+              <div style="font-size:16px;font-weight:900;color:#fff;line-height:1;">76.641</div>
+              <div style="font-size:7px;color:rgba(255,255,255,.4);">Impresiones</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;">
+        <div style="background:rgba(0,0,0,.3);padding:10px;display:flex;align-items:center;justify-content:center;min-height:130px;">
+          <img src="btg-assets/62e0f554add56682d8659231c9c2d8b2.png" style="max-width:100%;max-height:120px;width:auto;height:auto;object-fit:contain;border-radius:6px;display:block;" alt="">
+        </div>
+        <div style="padding:10px 12px;display:flex;flex-direction:column;gap:4px;">
+          <div style="font-size:8.5px;color:rgba(255,255,255,.8);line-height:1.45;">Visión de Estrategia Asset Management | Enero 2026</div>
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-top:2px;">
+            <div style="font-size:8px;color:#7fa8d8;font-weight:700;">YouTube</div>
+            <div style="text-align:right;">
+              <div style="font-size:16px;font-weight:900;color:#fff;line-height:1;">426</div>
+              <div style="font-size:7px;color:rgba(255,255,255,.4);">Reproducciones</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;">
+        <div style="background:rgba(0,0,0,.3);padding:10px;display:flex;align-items:center;justify-content:center;min-height:130px;">
+          <img src="btg-assets/8bb3dbf0edbd523069d1513ea2818d85.png" style="max-width:100%;max-height:120px;width:auto;height:auto;object-fit:contain;border-radius:6px;display:block;" alt="">
+        </div>
+        <div style="padding:10px 12px;display:flex;flex-direction:column;gap:4px;">
+          <div style="font-size:8.5px;color:rgba(255,255,255,.8);line-height:1.45;">Equipo AM reconocido por El Mercurio Inversiones</div>
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-top:2px;">
+            <div style="font-size:8px;color:#7fa8d8;font-weight:700;">LinkedIn</div>
+            <div style="text-align:right;">
+              <div style="font-size:16px;font-weight:900;color:#fff;line-height:1;">25.737</div>
+              <div style="font-size:7px;color:rgba(255,255,255,.4);">Impresiones</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
   </div>
 
 </div><!-- /slide 7 -->
 
 <div class="page-divider"></div>
 
-<!-- ████████████████  SLIDE 8 – ASSET MANAGEMENT  ████████████████ -->
-<div class="slide">
+<!-- ████  SLIDE 8 – SALES & TRADING: EVENTOS & MEDIOS  ████ -->
+<div class="slide" style="background:#fff;">
 
-  <div class="area-header">
+  <!-- Header navy -->
+  <div style="background:#0d2055;padding:20px 24px 18px;display:flex;align-items:center;justify-content:space-between;">
     <div>
-      <div class="area-name">Asset Management</div>
-      <div class="area-sub">Eventos &amp; Medios - Q4 2025</div>
+      <div style="font-size:22px;font-weight:900;color:#fff;line-height:1.2;">Sales &amp; Trading</div>
+      <div style="font-size:13px;color:rgba(255,255,255,.65);font-style:italic;margin-top:4px;">Eventos &amp; Medios – Q1 2026</div>
     </div>
-    <div class="btg-logo"><img src="btg-assets/img1.png" alt="BTG Pactual"></div>
+    <img src="btg-assets/img1.png" style="width:82px;object-fit:contain;display:block;" alt="BTG">
   </div>
 
-  <div style="display:grid;grid-template-columns:repeat(3,1fr);background:var(--c-sky);">
-    <div class="area-kpi"><div class="ak-label">Eventos</div><div class="ak-num">1</div></div>
-    <div class="area-kpi" style="border-left:1px solid rgba(0,47,115,.12);"><div class="ak-label">Webinars</div><div class="ak-num">2</div></div>
-    <div class="area-kpi" style="border-left:1px solid rgba(0,47,115,.12);"><div class="ak-label">Apariciones en prensa</div><div class="ak-num">13</div></div>
+  <!-- KPIs sky-blue — 3 columnas -->
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;background:#c8daf5;">
+    <div style="padding:16px 24px;border-right:1px solid rgba(0,47,115,.12);">
+      <div style="font-size:10px;color:#1a3a6e;margin-bottom:4px;font-weight:600;">Eventos</div>
+      <div style="font-size:36px;font-weight:900;color:#0d2055;line-height:1;">2</div>
+    </div>
+    <div style="padding:16px 24px;border-right:1px solid rgba(0,47,115,.12);">
+      <div style="font-size:10px;color:#1a3a6e;margin-bottom:4px;font-weight:600;">Asistentes</div>
+      <div style="font-size:36px;font-weight:900;color:#0d2055;line-height:1;">72</div>
+    </div>
+    <div style="padding:16px 24px;">
+      <div style="font-size:10px;color:#1a3a6e;margin-bottom:4px;font-weight:600;">Apariciones en Prensa</div>
+      <div style="font-size:36px;font-weight:900;color:#0d2055;line-height:1;">6</div>
+    </div>
   </div>
 
-  <div style="background:#f6faff;padding:16px 20px;">
-    <div class="barlist-title">Fuentes principales de prensa</div>
-    <div class="barlist-row"><div class="barlist-label">El Diario Financiero</div><div class="barlist-track"><div class="barlist-fill" style="width:100%"></div></div><div class="barlist-val">5</div></div>
-    <div class="barlist-row"><div class="barlist-label">Pulso</div><div class="barlist-track"><div class="barlist-fill" style="width:60%"></div></div><div class="barlist-val">3</div></div>
-    <div class="barlist-row"><div class="barlist-label">FundsSociety</div><div class="barlist-track"><div class="barlist-fill" style="width:40%"></div></div><div class="barlist-val">2</div></div>
-    <div class="barlist-row"><div class="barlist-label">Otros</div><div class="barlist-track"><div class="barlist-fill" style="width:60%"></div></div><div class="barlist-val">3</div></div>
+  <!-- Asistentes por evento -->
+  <div style="background:#f0f5ff;padding:14px 24px;border-bottom:1px solid #dde8fb;">
+    <div style="font-size:10.5px;font-weight:700;color:#0d2055;margin-bottom:10px;text-transform:uppercase;letter-spacing:.5px;">Asistentes por evento</div>
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
+      <div style="font-size:9.5px;color:#2a4a8e;width:200px;flex-shrink:0;">Kick off – CB en Dondoh</div>
+      <div style="flex:1;background:#d0dff5;border-radius:4px;height:10px;overflow:hidden;"><div style="width:100%;height:100%;background:#1a5dc8;border-radius:4px;"></div></div>
+      <div style="font-size:12px;font-weight:800;color:#0d2055;min-width:28px;text-align:right;">60</div>
+    </div>
+    <div style="display:flex;align-items:center;gap:10px;">
+      <div style="font-size:9.5px;color:#2a4a8e;width:200px;flex-shrink:0;">Clínica Padel Javier Valdés</div>
+      <div style="flex:1;background:#d0dff5;border-radius:4px;height:10px;overflow:hidden;"><div style="width:20%;height:100%;background:#1a5dc8;border-radius:4px;"></div></div>
+      <div style="font-size:12px;font-weight:800;color:#0d2055;min-width:28px;text-align:right;">12</div>
+    </div>
   </div>
 
-  <div class="area-web-stats">
-    <div class="aws paid"><div class="ws-lbl">Tráfico web pagado</div><div class="ws-num">N/A</div></div>
-    <div class="aws organic"><div class="ws-lbl">Tráfico web orgánico</div><div class="ws-num">Orgánico</div></div>
+  <!-- Evento destacado: foto + descripción -->
+  <div style="background:#0d2055;display:flex;align-items:stretch;">
+    <div style="width:42%;flex-shrink:0;overflow:hidden;">
+      <img src="btg-assets/img2.jpg" style="width:100%;height:100%;object-fit:cover;display:block;" alt="Kick off CB en Dondoh">
+    </div>
+    <div style="flex:1;padding:22px 24px;display:flex;flex-direction:column;justify-content:center;gap:10px;">
+      <div style="font-size:11px;font-weight:800;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:.8px;">Evento destacado</div>
+      <div style="font-size:16px;font-weight:900;color:#fff;line-height:1.3;">Kick off – CB en Dondoh</div>
+      <div style="font-size:11px;color:rgba(255,255,255,.75);line-height:1.6;">Encuentro de apertura del equipo de <strong style="color:#fff;">Corporate Banking</strong> realizado en Dondoh. Reunió a clientes y equipo comercial con un total de 60 asistentes.</div>
+      <div style="display:flex;align-items:center;gap:6px;margin-top:4px;">
+        <div style="background:rgba(255,255,255,.15);border-radius:20px;padding:4px 12px;font-size:9px;color:rgba(255,255,255,.8);">60 asistentes</div>
+        <div style="background:rgba(255,255,255,.15);border-radius:20px;padding:4px 12px;font-size:9px;color:rgba(255,255,255,.8);">Kick off Q1</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Prensa: big number + fuentes -->
+  <div style="display:grid;grid-template-columns:1fr 2fr;background:#fff;border-top:1px solid #e4ecf7;border-bottom:1px solid #e4ecf7;">
+    <div style="padding:18px 24px;border-right:1px solid #e4ecf7;display:flex;flex-direction:column;justify-content:center;">
+      <div style="font-size:10.5px;font-weight:700;color:#0d2055;margin-bottom:6px;">Apariciones en prensa</div>
+      <div style="font-size:48px;font-weight:900;color:#0d2055;line-height:1;">6</div>
+    </div>
+    <div style="padding:18px 24px;">
+      <div style="font-size:10.5px;font-weight:700;color:#0d2055;margin-bottom:12px;text-transform:uppercase;letter-spacing:.5px;">Fuentes principales</div>
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:7px;">
+        <div style="font-size:9px;color:#2a4a8e;width:120px;flex-shrink:0;">elmercurio.cl</div>
+        <div style="flex:1;background:#e4ecf7;border-radius:3px;height:7px;overflow:hidden;"><div style="width:100%;height:100%;background:#1a5dc8;border-radius:3px;"></div></div>
+        <div style="font-size:9.5px;font-weight:700;color:#0d2055;min-width:16px;text-align:right;">2</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:7px;">
+        <div style="font-size:9px;color:#2a4a8e;width:120px;flex-shrink:0;">Ex-ante.cl</div>
+        <div style="flex:1;background:#e4ecf7;border-radius:3px;height:7px;overflow:hidden;"><div style="width:50%;height:100%;background:#1a5dc8;border-radius:3px;"></div></div>
+        <div style="font-size:9.5px;font-weight:700;color:#0d2055;min-width:16px;text-align:right;">1</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:7px;">
+        <div style="font-size:9px;color:#2a4a8e;width:120px;flex-shrink:0;">Latercera.com</div>
+        <div style="flex:1;background:#e4ecf7;border-radius:3px;height:7px;overflow:hidden;"><div style="width:50%;height:100%;background:#1a5dc8;border-radius:3px;"></div></div>
+        <div style="font-size:9.5px;font-weight:700;color:#0d2055;min-width:16px;text-align:right;">1</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:7px;">
+        <div style="font-size:9px;color:#2a4a8e;width:120px;flex-shrink:0;">Radio Duna</div>
+        <div style="flex:1;background:#e4ecf7;border-radius:3px;height:7px;overflow:hidden;"><div style="width:50%;height:100%;background:#1a5dc8;border-radius:3px;"></div></div>
+        <div style="font-size:9.5px;font-weight:700;color:#0d2055;min-width:16px;text-align:right;">1</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="font-size:9px;color:#2a4a8e;width:120px;flex-shrink:0;">Valorfuturo.com</div>
+        <div style="flex:1;background:#e4ecf7;border-radius:3px;height:7px;overflow:hidden;"><div style="width:50%;height:100%;background:#1a5dc8;border-radius:3px;"></div></div>
+        <div style="font-size:9.5px;font-weight:700;color:#0d2055;min-width:16px;text-align:right;">1</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Nota destacada -->
+  <div style="background:#0d2055;padding:18px 24px 22px;">
+    <div style="font-size:11px;font-weight:800;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:.8px;margin-bottom:12px;">Nota destacada</div>
+    <div style="display:flex;justify-content:center;">
+      <div style="width:55%;max-width:340px;">
+        <img src="btg-assets/img3.png" style="width:100%;height:auto;display:block;border-radius:6px;" alt="Nota destacada">
+        <div style="font-size:9px;color:rgba(255,255,255,.55);text-align:center;margin-top:8px;font-style:italic;">BTG Pactual cambia sus perspectivas para Empresas Copec — elmercurio.cl</div>
+      </div>
+    </div>
   </div>
 
 </div><!-- /slide 8 -->
 
 <div class="page-divider"></div>
 
-<!-- ████████████████  SLIDE 9 – CORPORATIVO  ████████████████ -->
-<div class="slide">
+<!-- ████  SLIDE 9 – SALES & TRADING: DIFUSIÓN RRSS  ████ -->
+<div class="slide" style="background:#0d2055;">
 
-  <div class="area-header">
+  <!-- Header navy -->
+  <div style="background:#0d2055;padding:20px 24px 18px;display:flex;align-items:center;justify-content:space-between;">
     <div>
-      <div class="area-name">Corporativo</div>
-      <div class="area-sub">Eventos &amp; Medios - Q4 2025</div>
+      <div style="font-size:22px;font-weight:900;color:#fff;line-height:1.2;">Sales &amp; Trading</div>
+      <div style="font-size:13px;color:rgba(255,255,255,.65);font-style:italic;margin-top:4px;">Difusión en RRSS – Q1 2026</div>
     </div>
-    <div class="btg-logo"><img src="btg-assets/img1.png" alt="BTG Pactual"></div>
+    <img src="btg-assets/img1.png" style="width:82px;object-fit:contain;display:block;" alt="BTG">
   </div>
 
-  <div style="display:grid;grid-template-columns:repeat(3,1fr);background:var(--c-sky);">
-    <div class="area-kpi"><div class="ak-label">Eventos</div><div class="ak-num">2</div></div>
-    <div class="area-kpi" style="border-left:1px solid rgba(0,47,115,.12);"><div class="ak-label">Apariciones en prensa</div><div class="ak-num">5</div></div>
-    <div class="area-kpi" style="border-left:1px solid rgba(0,47,115,.12);"><div class="ak-label">Alcance campañas</div><div class="ak-num">10.034</div><div class="ak-sub">Clics en anuncios</div></div>
+  <!-- 2 columnas azules -->
+  <div style="display:grid;grid-template-columns:1fr 1fr;background:#1a5dc8;">
+
+    <!-- ── REDES SOCIALES ── -->
+    <div style="padding:20px 22px;border-right:1px solid rgba(255,255,255,.2);display:flex;flex-direction:column;gap:14px;">
+
+      <div style="font-size:12px;font-weight:900;color:#fff;text-transform:uppercase;letter-spacing:1px;padding-bottom:10px;border-bottom:2px solid rgba(255,255,255,.2);">Redes Sociales</div>
+
+      <!-- KPIs -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+        <div style="background:rgba(255,255,255,.13);border-radius:8px;padding:12px 14px;">
+          <div style="font-size:9.5px;color:rgba(255,255,255,.65);margin-bottom:4px;">Contenidos publicados</div>
+          <div style="font-size:32px;font-weight:900;color:#fff;line-height:1;">102</div>
+        </div>
+        <div style="background:rgba(255,255,255,.13);border-radius:8px;padding:12px 14px;">
+          <div style="font-size:9.5px;color:rgba(255,255,255,.65);margin-bottom:4px;">Impresiones</div>
+          <div style="font-size:26px;font-weight:900;color:#fff;line-height:1.1;">1,1 MM</div>
+        </div>
+      </div>
+
+      <!-- Módulo: Contenidos por mes -->
+      <div style="background:rgba(0,0,0,.18);border-radius:8px;padding:12px 14px;">
+        <div style="font-size:9.5px;font-weight:700;color:rgba(255,255,255,.75);margin-bottom:10px;">Contenidos por mes</div>
+        <!-- Ene 36=100%→52, Feb 30=83%→43, Mar 36=100%→52; baseline y=72 -->
+        <svg viewBox="0 0 144 90" width="100%" style="display:block;">
+          <line x1="4" y1="72" x2="140" y2="72" stroke="rgba(255,255,255,.15)" stroke-width="1"/>
+          <rect x="17" y="20" width="26" height="52" rx="3" fill="rgba(255,255,255,.85)"/>
+          <rect x="59" y="29" width="26" height="43" rx="3" fill="rgba(255,255,255,.65)"/>
+          <rect x="101" y="20" width="26" height="52" rx="3" fill="rgba(255,255,255,.85)"/>
+          <text x="30" y="15" font-size="8" fill="white" text-anchor="middle" font-family="sans-serif" font-weight="bold">36</text>
+          <text x="72" y="24" font-size="8" fill="white" text-anchor="middle" font-family="sans-serif" font-weight="bold">30</text>
+          <text x="114" y="15" font-size="8" fill="white" text-anchor="middle" font-family="sans-serif" font-weight="bold">36</text>
+          <text x="30" y="84" font-size="7.5" fill="rgba(255,255,255,.6)" text-anchor="middle" font-family="sans-serif">Ene</text>
+          <text x="72" y="84" font-size="7.5" fill="rgba(255,255,255,.6)" text-anchor="middle" font-family="sans-serif">Feb</text>
+          <text x="114" y="84" font-size="7.5" fill="rgba(255,255,255,.6)" text-anchor="middle" font-family="sans-serif">Mar</text>
+        </svg>
+      </div>
+
+    </div>
+
+    <!-- ── PLATAFORMAS + TRÁFICO ── -->
+    <div style="padding:20px 22px;display:flex;flex-direction:column;gap:14px;">
+
+      <div style="font-size:12px;font-weight:900;color:#fff;text-transform:uppercase;letter-spacing:1px;padding-bottom:10px;border-bottom:2px solid rgba(255,255,255,.2);">Impresiones por plataforma</div>
+
+      <!-- Módulo plataformas -->
+      <div style="background:rgba(0,0,0,.18);border-radius:8px;padding:14px 16px;display:flex;flex-direction:column;gap:10px;">
+        <div style="display:flex;align-items:center;gap:8px;">
+          <div style="font-size:9px;color:rgba(255,255,255,.8);width:90px;flex-shrink:0;">Instagram</div>
+          <div style="flex:1;background:rgba(255,255,255,.15);border-radius:3px;height:8px;overflow:hidden;"><div style="width:100%;height:100%;background:rgba(255,255,255,.85);border-radius:3px;"></div></div>
+          <div style="font-size:9px;font-weight:700;color:#fff;min-width:48px;text-align:right;">564.577</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <div style="font-size:9px;color:rgba(255,255,255,.8);width:90px;flex-shrink:0;">YouTube</div>
+          <div style="flex:1;background:rgba(255,255,255,.15);border-radius:3px;height:8px;overflow:hidden;"><div style="width:86%;height:100%;background:rgba(255,255,255,.8);border-radius:3px;"></div></div>
+          <div style="font-size:9px;font-weight:700;color:#fff;min-width:48px;text-align:right;">487.722</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <div style="font-size:9px;color:rgba(255,255,255,.8);width:90px;flex-shrink:0;">LI Newsletter</div>
+          <div style="flex:1;background:rgba(255,255,255,.15);border-radius:3px;height:8px;overflow:hidden;"><div style="width:8%;height:100%;background:rgba(255,255,255,.7);border-radius:3px;"></div></div>
+          <div style="font-size:9px;font-weight:700;color:#fff;min-width:48px;text-align:right;">43.214</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <div style="font-size:9px;color:rgba(255,255,255,.8);width:90px;flex-shrink:0;">LinkedIn</div>
+          <div style="flex:1;background:rgba(255,255,255,.15);border-radius:3px;height:8px;overflow:hidden;"><div style="width:3%;height:100%;background:rgba(255,255,255,.65);border-radius:3px;"></div></div>
+          <div style="font-size:9px;font-weight:700;color:#fff;min-width:48px;text-align:right;">19.617</div>
+        </div>
+      </div>
+
+      <!-- Tráfico web orgánico -->
+      <div style="background:rgba(0,0,0,.28);border-radius:8px;padding:14px 16px;margin-top:auto;">
+        <div style="font-size:9px;font-weight:700;color:rgba(255,255,255,.65);margin-bottom:4px;">Tráfico web orgánico</div>
+        <div style="font-size:28px;font-weight:900;color:#fff;line-height:1.1;">320 <span style="font-size:13px;font-weight:400;opacity:.65;">usuarios</span></div>
+      </div>
+
+    </div>
   </div>
 
-  <div class="nota-section">
-    <div class="nota-title">Nota destacada</div>
-    <img src="btg-assets/f60bb3aee682ae7da8d218633b75f5f0.png" alt="Rodrigo Oyarzo nota">
-  </div>
+  <!-- Contenidos orgánicos destacados -->
+  <div style="background:#0d2055;padding:18px 24px 22px;">
+    <div style="font-size:13px;font-weight:800;color:#fff;margin-bottom:12px;text-transform:uppercase;letter-spacing:.8px;">Contenidos orgánicos destacados</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;">
 
-  <div class="section-heading">Evento destacado</div>
-  <div class="area-event-photo">
-    <img src="btg-assets/58f671e0316839d97a1d6cbb35c4e0dd.jpg" alt="Evento corporativo BTG">
-    <div class="photo-caption">Encuentro de cierre de año <strong>BTG Pactual Chile</strong>.</div>
+      <div style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;">
+        <div style="background:rgba(0,0,0,.3);padding:10px;display:flex;align-items:center;justify-content:center;min-height:130px;">
+          <img src="btg-assets/62e0f554add56682d8659231c9c2d8b2.png" style="max-width:100%;max-height:120px;object-fit:contain;border-radius:6px;display:block;" alt="">
+        </div>
+        <div style="padding:10px 12px;display:flex;flex-direction:column;gap:4px;">
+          <div style="font-size:8.5px;color:rgba(255,255,255,.8);line-height:1.45;">¿Está comenzando un nuevo ciclo estructural para las acciones chilenas?</div>
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-top:2px;">
+            <div style="font-size:8px;color:#7fa8d8;font-weight:700;">Instagram</div>
+            <div style="text-align:right;">
+              <div style="font-size:16px;font-weight:900;color:#fff;line-height:1;">156.095</div>
+              <div style="font-size:7px;color:rgba(255,255,255,.4);">Impresiones</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;">
+        <div style="background:rgba(0,0,0,.3);padding:10px;display:flex;align-items:center;justify-content:center;min-height:130px;">
+          <img src="btg-assets/8bb3dbf0edbd523069d1513ea2818d85.png" style="max-width:100%;max-height:120px;object-fit:contain;border-radius:6px;display:block;" alt="">
+        </div>
+        <div style="padding:10px 12px;display:flex;flex-direction:column;gap:4px;">
+          <div style="font-size:8.5px;color:rgba(255,255,255,.8);line-height:1.45;">El equipo de S&amp;T invitó a sus clientes institucionales a un encuentro</div>
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-top:2px;">
+            <div style="font-size:8px;color:#7fa8d8;font-weight:700;">LinkedIn</div>
+            <div style="text-align:right;">
+              <div style="font-size:16px;font-weight:900;color:#fff;line-height:1;">6.257</div>
+              <div style="font-size:7px;color:rgba(255,255,255,.4);">Impresiones</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;">
+        <div style="background:rgba(0,0,0,.3);padding:10px;display:flex;align-items:center;justify-content:center;min-height:130px;">
+          <img src="btg-assets/7f062815eb9335c5f08f0f8cd06328da.png" style="max-width:100%;max-height:120px;object-fit:contain;border-radius:6px;display:block;" alt="">
+        </div>
+        <div style="padding:10px 12px;display:flex;flex-direction:column;gap:4px;">
+          <div style="font-size:8.5px;color:rgba(255,255,255,.8);line-height:1.45;">Review Accionario local 26 al 30 de Enero</div>
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-top:2px;">
+            <div style="font-size:8px;color:#7fa8d8;font-weight:700;">YouTube</div>
+            <div style="text-align:right;">
+              <div style="font-size:16px;font-weight:900;color:#fff;line-height:1;">33.370</div>
+              <div style="font-size:7px;color:rgba(255,255,255,.4);">Reproducciones</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
   </div>
 
 </div><!-- /slide 9 -->
 
 <div class="page-divider"></div>
 
-<!-- ████████████████  SLIDE 10 – CORPORATE LENDING  ████████████████ -->
-<div class="slide">
+<!-- ████  SLIDE 10 – WEALTH MANAGEMENT: EVENTOS & MEDIOS  ████ -->
+<div class="slide" style="background:#fff;">
 
-  <div class="area-header">
+  <!-- Header navy -->
+  <div style="background:#0d2055;padding:20px 24px 18px;display:flex;align-items:center;justify-content:space-between;">
     <div>
-      <div class="area-name">Corporate Lending</div>
-      <div class="area-sub">Eventos &amp; Medios - Q4 2025</div>
+      <div style="font-size:22px;font-weight:900;color:#fff;line-height:1.2;">Wealth Management</div>
+      <div style="font-size:13px;color:rgba(255,255,255,.65);font-style:italic;margin-top:4px;">Eventos &amp; Medios – Q1 2026</div>
     </div>
-    <div class="btg-logo"><img src="btg-assets/img1.png" alt="BTG Pactual"></div>
+    <img src="btg-assets/img1.png" style="width:82px;object-fit:contain;display:block;" alt="BTG">
   </div>
 
-  <div style="display:grid;grid-template-columns:repeat(3,1fr);background:var(--c-sky);">
-    <div class="area-kpi"><div class="ak-label">Eventos</div><div class="ak-num">12</div></div>
-    <div class="area-kpi" style="border-left:1px solid rgba(0,47,115,.12);"><div class="ak-label">Apariciones en prensa</div><div class="ak-num">1</div></div>
-    <div class="area-kpi" style="border-left:1px solid rgba(0,47,115,.12);"><div class="ak-label">Área más activa en eventos</div><div class="ak-num" style="font-size:12px;padding-top:4px;">Q4 2025</div></div>
+  <!-- KPIs sky-blue -->
+  <div style="display:grid;grid-template-columns:1fr 1fr;background:#c8daf5;">
+    <div style="padding:16px 24px;border-right:1px solid rgba(0,47,115,.12);">
+      <div style="font-size:10px;color:#1a3a6e;margin-bottom:4px;font-weight:600;">Eventos destacados</div>
+      <div style="font-size:36px;font-weight:900;color:#0d2055;line-height:1;">—</div>
+      <div style="font-size:9.5px;color:#3a5a9e;margin-top:3px;">Sin eventos este período</div>
+    </div>
+    <div style="padding:16px 24px;">
+      <div style="font-size:10px;color:#1a3a6e;margin-bottom:4px;font-weight:600;">Apariciones en Prensa</div>
+      <div style="font-size:36px;font-weight:900;color:#0d2055;line-height:1;">8</div>
+    </div>
   </div>
 
-  <div class="barlist-wrap" style="background:#f6faff;">
-    <div class="barlist-title">Distribución de eventos en el período</div>
-    <div class="barlist-row"><div class="barlist-label">Oct-2025</div><div class="barlist-track"><div class="barlist-fill" style="width:100%"></div></div><div class="barlist-val">5</div></div>
-    <div class="barlist-row"><div class="barlist-label">Nov-2025</div><div class="barlist-track"><div class="barlist-fill" style="width:60%"></div></div><div class="barlist-val">3</div></div>
-    <div class="barlist-row"><div class="barlist-label">Dic-2025</div><div class="barlist-track"><div class="barlist-fill" style="width:80%"></div></div><div class="barlist-val">4</div></div>
+  <!-- Sin eventos — aviso -->
+  <div style="background:#f0f5ff;padding:16px 24px;border-bottom:1px solid #dde8fb;display:flex;align-items:center;gap:14px;">
+    <div style="background:#c8daf5;border-radius:8px;padding:10px 16px;flex-shrink:0;">
+      <div style="font-size:10px;font-weight:700;color:#0d2055;">Eventos</div>
+      <div style="font-size:24px;font-weight:900;color:#0d2055;line-height:1;">—</div>
+    </div>
+    <div style="font-size:10px;color:#4a6a9e;line-height:1.6;">No se registraron eventos presenciales durante el Q1 2026 para el área de Wealth Management.</div>
   </div>
 
-  <div class="area-web-stats">
-    <div class="aws paid"><div class="ws-lbl">Tráfico web pagado</div><div class="ws-num">N/A</div></div>
-    <div class="aws organic"><div class="ws-lbl">Tráfico web orgánico</div><div class="ws-num">Orgánico</div></div>
+  <!-- Prensa: big number + fuentes -->
+  <div style="display:grid;grid-template-columns:1fr 2fr;background:#fff;border-top:1px solid #e4ecf7;border-bottom:1px solid #e4ecf7;">
+    <div style="padding:18px 24px;border-right:1px solid #e4ecf7;display:flex;flex-direction:column;justify-content:center;">
+      <div style="font-size:10.5px;font-weight:700;color:#0d2055;margin-bottom:6px;">Apariciones en prensa</div>
+      <div style="font-size:48px;font-weight:900;color:#0d2055;line-height:1;">8</div>
+    </div>
+    <div style="padding:18px 24px;">
+      <div style="font-size:10.5px;font-weight:700;color:#0d2055;margin-bottom:12px;text-transform:uppercase;letter-spacing:.5px;">Fuentes principales</div>
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:7px;">
+        <div style="font-size:9px;color:#2a4a8e;width:130px;flex-shrink:0;">Df.cl</div>
+        <div style="flex:1;background:#e4ecf7;border-radius:3px;height:7px;overflow:hidden;"><div style="width:100%;height:100%;background:#1a5dc8;border-radius:3px;"></div></div>
+        <div style="font-size:9.5px;font-weight:700;color:#0d2055;min-width:16px;text-align:right;">2</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:7px;">
+        <div style="font-size:9px;color:#2a4a8e;width:130px;flex-shrink:0;">El Diario Financiero</div>
+        <div style="flex:1;background:#e4ecf7;border-radius:3px;height:7px;overflow:hidden;"><div style="width:100%;height:100%;background:#1a5dc8;border-radius:3px;"></div></div>
+        <div style="font-size:9.5px;font-weight:700;color:#0d2055;min-width:16px;text-align:right;">2</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:7px;">
+        <div style="font-size:9px;color:#2a4a8e;width:130px;flex-shrink:0;">Duna</div>
+        <div style="flex:1;background:#e4ecf7;border-radius:3px;height:7px;overflow:hidden;"><div style="width:50%;height:100%;background:#1a5dc8;border-radius:3px;"></div></div>
+        <div style="font-size:9.5px;font-weight:700;color:#0d2055;min-width:16px;text-align:right;">1</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:7px;">
+        <div style="font-size:9px;color:#2a4a8e;width:130px;flex-shrink:0;">Latercera.com</div>
+        <div style="flex:1;background:#e4ecf7;border-radius:3px;height:7px;overflow:hidden;"><div style="width:50%;height:100%;background:#1a5dc8;border-radius:3px;"></div></div>
+        <div style="font-size:9.5px;font-weight:700;color:#0d2055;min-width:16px;text-align:right;">1</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:7px;">
+        <div style="font-size:9px;color:#2a4a8e;width:130px;flex-shrink:0;">Radio Infinita</div>
+        <div style="flex:1;background:#e4ecf7;border-radius:3px;height:7px;overflow:hidden;"><div style="width:50%;height:100%;background:#1a5dc8;border-radius:3px;"></div></div>
+        <div style="font-size:9.5px;font-weight:700;color:#0d2055;min-width:16px;text-align:right;">1</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="font-size:9px;color:#2a4a8e;width:130px;flex-shrink:0;">SeñalDF</div>
+        <div style="flex:1;background:#e4ecf7;border-radius:3px;height:7px;overflow:hidden;"><div style="width:50%;height:100%;background:#1a5dc8;border-radius:3px;"></div></div>
+        <div style="font-size:9.5px;font-weight:700;color:#0d2055;min-width:16px;text-align:right;">1</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sin nota destacada -->
+  <div style="background:#0d2055;padding:20px 24px;display:flex;align-items:center;justify-content:center;min-height:80px;">
+    <div style="font-size:11px;color:rgba(255,255,255,.4);font-style:italic;text-align:center;">Sin nota destacada este período</div>
   </div>
 
 </div><!-- /slide 10 -->
 
 <div class="page-divider"></div>
 
-<!-- ████████████████  SLIDE 11 – SALES & TRADING  ████████████████ -->
+<!-- ████  SLIDE 11 – WEALTH MANAGEMENT: DIFUSIÓN RRSS  ████ -->
 <div class="slide">
-
   <div class="area-header">
     <div>
-      <div class="area-name">Sales &amp; Trading</div>
-      <div class="area-sub">Eventos &amp; Medios - Q4 2025</div>
+      <div class="area-name">Wealth Management</div>
+      <div class="area-sub">Difusión en RRSS - Q1 2026</div>
+    </div>
+    <div class="btg-logo"><img src="btg-assets/img1.png" alt="BTG Pactual"></div>
+  </div>
+
+  <div class="rrss-detail-grid">
+    <div class="rrss-detail-col left-impact">
+      <div class="rdc-title">Redes Sociales</div>
+      <div class="rrss-stat"><div class="rs-label">Contenidos publicados</div><div class="rs-num">43</div></div>
+      <div class="rrss-stat"><div class="rs-label">Impresiones totales</div><div class="rs-num">1,4 MM</div></div>
+      <div style="font-size:9px;color:rgba(255,255,255,.7);margin-top:8px;margin-bottom:6px;">Impresiones por plataforma</div>
+      <div class="barlist-row" style="margin-bottom:4px;"><div class="barlist-label" style="color:rgba(255,255,255,.9);width:100px;">Instagram</div><div class="barlist-track" style="background:rgba(255,255,255,.2);"><div class="barlist-fill" style="width:100%;background:rgba(255,255,255,.5);"></div></div><div class="barlist-val" style="color:#fff;font-size:8px;">1.141.174</div></div>
+      <div class="barlist-row" style="margin-bottom:4px;"><div class="barlist-label" style="color:rgba(255,255,255,.9);width:100px;">YouTube</div><div class="barlist-track" style="background:rgba(255,255,255,.2);"><div class="barlist-fill" style="width:20%;background:rgba(255,255,255,.5);"></div></div><div class="barlist-val" style="color:#fff;font-size:8px;">222.932</div></div>
+      <div class="barlist-row" style="margin-bottom:4px;"><div class="barlist-label" style="color:rgba(255,255,255,.9);width:100px;">LinkedIn</div><div class="barlist-track" style="background:rgba(255,255,255,.2);"><div class="barlist-fill" style="width:6%;background:rgba(255,255,255,.5);"></div></div><div class="barlist-val" style="color:#fff;font-size:8px;">66.196</div></div>
+    </div>
+    <div class="rrss-detail-col right-impact">
+      <div class="rdc-title">Mailing</div>
+      <div class="rrss-stat"><div class="rs-label">Campañas de Mailing</div><div class="rs-num">83</div></div>
+      <div class="rrss-stat"><div class="rs-label">Tasa de apertura</div><div class="rs-num">44,6%</div></div>
+      <div style="margin-top:20px;">
+        <div style="font-size:9px;color:rgba(255,255,255,.7);margin-bottom:4px;">Tráfico web orgánico</div>
+        <div style="font-size:22px;font-weight:900;color:#fff;">805 usuarios</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-heading">Contenidos orgánicos destacados</div>
+  <div class="area-content-highlights">
+    <div class="ach-card">
+      <img src="btg-assets/9d958e6e3d7c51f5eb7ac43c964d47d2.png" alt="BTG Podcast WM">
+      <div class="ach-name">BTG Podcast | Joaquín Spörke | ¿Se debilita el rol del dólar?</div>
+      <div class="ach-platform">Instagram</div>
+      <div class="ach-metric">669.062</div>
+      <div class="ach-mlbl">Impresiones</div>
+    </div>
+    <div class="ach-card">
+      <img src="btg-assets/7f062815eb9335c5f08f0f8cd06328da.png" alt="Filantropía">
+      <div class="ach-name">La filantropía ya no es solo donar: es planificar, invertir y profesionalizar</div>
+      <div class="ach-platform">LinkedIn</div>
+      <div class="ach-metric">37.865</div>
+      <div class="ach-mlbl">Impresiones</div>
+    </div>
+    <div class="ach-card">
+      <img src="btg-assets/d202e731e03999c079bc2ea197752b54.png" alt="BTG Podcast YouTube">
+      <div class="ach-name">BTG Podcast | ¿Se debilita el rol del dólar como activo refugio?</div>
+      <div class="ach-platform">YouTube</div>
+      <div class="ach-metric">46.473</div>
+      <div class="ach-mlbl">Reproducciones</div>
+    </div>
+  </div>
+</div><!-- /slide 11 -->
+
+<div class="page-divider"></div>
+
+<!-- ████  SLIDE 12 – CORPORATE LENDING: EVENTOS & MEDIOS  ████ -->
+<div class="slide">
+  <div class="area-header">
+    <div>
+      <div class="area-name">Corporate Lending</div>
+      <div class="area-sub">Eventos &amp; Medios - Q1 2026</div>
     </div>
     <div class="btg-logo"><img src="btg-assets/img1.png" alt="BTG Pactual"></div>
   </div>
 
   <div style="display:grid;grid-template-columns:repeat(3,1fr);background:var(--c-sky);">
-    <div class="area-kpi"><div class="ak-label">Eventos</div><div class="ak-num">3</div></div>
-    <div class="area-kpi" style="border-left:1px solid rgba(0,47,115,.12);"><div class="ak-label">Webinars</div><div class="ak-num">1</div></div>
-    <div class="area-kpi" style="border-left:1px solid rgba(0,47,115,.12);"><div class="ak-label">Apariciones en prensa</div><div class="ak-num">2</div></div>
+    <div class="area-kpi"><div class="ak-label">Total eventos</div><div class="ak-num">8</div></div>
+    <div class="area-kpi" style="border-left:1px solid rgba(0,47,115,.12);"><div class="ak-label">Total asistentes</div><div class="ak-num">153</div></div>
+    <div class="area-kpi" style="border-left:1px solid rgba(0,47,115,.12);"><div class="ak-label">Apariciones en Prensa</div><div class="ak-num">—</div></div>
   </div>
 
-  <div style="background:#f6faff;padding:16px 20px;">
-    <div class="barlist-title">Impresiones totales por área</div>
-    <div class="barlist-row"><div class="barlist-label">Sales &amp; Trading</div><div class="barlist-track"><div class="barlist-fill" style="width:100%"></div></div><div class="barlist-val">2.180.000</div></div>
-    <div style="font-size:9px;color:var(--c-muted);margin-top:6px;">Mayor área por impresiones orgánicas en el período</div>
+  <div style="background:#f6faff;padding:12px 20px;border-bottom:1px solid #dde8fb;">
+    <div class="barlist-title" style="text-align:left;">Asistentes por evento</div>
+    <div class="barlist-row"><div class="barlist-label">Cóctel primer semestre</div><div class="barlist-track"><div class="barlist-fill" style="width:100%"></div></div><div class="barlist-val">50</div></div>
+    <div class="barlist-row"><div class="barlist-label">En off: Martín Arrau</div><div class="barlist-track"><div class="barlist-fill" style="width:40%"></div></div><div class="barlist-val">20</div></div>
+    <div class="barlist-row"><div class="barlist-label">Comida fidelización</div><div class="barlist-track"><div class="barlist-fill" style="width:40%"></div></div><div class="barlist-val">20</div></div>
+    <div class="barlist-row"><div class="barlist-label">Desayuno Pablo Cruz</div><div class="barlist-track"><div class="barlist-fill" style="width:30%"></div></div><div class="barlist-val">15</div></div>
+    <div class="barlist-row"><div class="barlist-label">UC - Coquimbo Unido</div><div class="barlist-track"><div class="barlist-fill" style="width:24%"></div></div><div class="barlist-val">12</div></div>
+    <div class="barlist-row"><div class="barlist-label">UC - Everton</div><div class="barlist-track"><div class="barlist-fill" style="width:24%"></div></div><div class="barlist-val">12</div></div>
+    <div class="barlist-row"><div class="barlist-label">Concierto Bryan Adams</div><div class="barlist-track"><div class="barlist-fill" style="width:24%"></div></div><div class="barlist-val">12</div></div>
+    <div class="barlist-row"><div class="barlist-label">UC - Concepción</div><div class="barlist-track"><div class="barlist-fill" style="width:24%"></div></div><div class="barlist-val">12</div></div>
   </div>
 
-  <div class="area-web-stats">
-    <div class="aws paid"><div class="ws-lbl">Tráfico web pagado</div><div class="ws-num">N/A</div></div>
-    <div class="aws organic"><div class="ws-lbl">Tráfico web orgánico</div><div class="ws-num">Orgánico</div></div>
+  <div class="section-heading">Evento destacado</div>
+  <div class="area-event-photo">
+    <img src="btg-assets/58f671e0316839d97a1d6cbb35c4e0dd.jpg" alt="Evento Corporate Lending Q1 2026">
+    <div class="photo-caption"><strong>Cóctel primer semestre en La Dicha</strong> · 50 asistentes</div>
   </div>
 
-</div><!-- /slide 11 -->
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:12px 20px;background:#fff;">
+    <div style="background:#f6faff;border-radius:8px;padding:12px 16px;">
+      <div style="font-size:9px;font-weight:700;color:var(--c-navy);">Redes Sociales</div>
+      <div style="font-size:22px;font-weight:900;color:var(--c-navy);line-height:1.2;margin-top:4px;">17.519</div>
+      <div style="font-size:8.5px;color:var(--c-muted);">Impresiones · 3 contenidos</div>
+    </div>
+    <div class="aws organic" style="border-radius:8px;">
+      <div class="ws-lbl">Tráfico web orgánico</div>
+      <div class="ws-num">233 usuarios</div>
+    </div>
+  </div>
+
+  <div class="section-heading">Contenidos orgánicos destacados</div>
+  <div class="area-content-highlights" style="grid-template-columns:repeat(1,1fr);">
+    <div class="ach-card" style="max-width:260px;margin:0 auto;">
+      <img src="btg-assets/img2.jpg" alt="CL LinkedIn">
+      <div class="ach-name">El equipo de Créditos Corporativos reunió a 50 clientes —CFOs y CEOs— en un encuentro para fortalecer vínculos</div>
+      <div class="ach-platform">LinkedIn</div>
+      <div class="ach-metric">12.765</div>
+      <div class="ach-mlbl">Impresiones</div>
+    </div>
+  </div>
+</div><!-- /slide 12 -->
 
 <div class="page-divider"></div>
 
-<!-- ████████████████  SLIDE 12 – RESEARCH  ████████████████ -->
+<!-- ████  SLIDE 13 – INVESTMENT BANKING: EVENTOS & MEDIOS  ████ -->
 <div class="slide">
-
   <div class="area-header">
     <div>
-      <div class="area-name">Research</div>
-      <div class="area-sub">Eventos &amp; Medios - Q4 2025</div>
+      <div class="area-name">Investment Banking</div>
+      <div class="area-sub">Eventos &amp; Medios - Q1 2026</div>
     </div>
     <div class="btg-logo"><img src="btg-assets/img1.png" alt="BTG Pactual"></div>
   </div>
 
   <div style="display:grid;grid-template-columns:repeat(2,1fr);background:var(--c-sky);">
-    <div class="area-kpi"><div class="ak-label">Apariciones en prensa</div><div class="ak-num">1</div></div>
-    <div class="area-kpi" style="border-left:1px solid rgba(0,47,115,.12);"><div class="ak-label">Contenidos destacados</div><div class="ak-num">—</div></div>
+    <div class="area-kpi"><div class="ak-label">Eventos</div><div class="ak-num">—</div></div>
+    <div class="area-kpi" style="border-left:1px solid rgba(0,47,115,.12);"><div class="ak-label">Apariciones en Prensa</div><div class="ak-num">—</div></div>
   </div>
 
-  <div class="area-content-highlights" style="grid-template-columns:1fr;">
-    <div class="ach-card">
-      <img src="btg-assets/7f062815eb9335c5f08f0f8cd06328da.png" alt="Programas económicos">
-      <div class="ach-name">Comparación de los programas económicos presidenciales – Segunda vuelta 2025</div>
-      <div class="ach-platform">Análisis de Research BTG Pactual</div>
+  <div class="nota-section" style="padding:20px;">
+    <div class="nota-title">Sin eventos ni apariciones en prensa este período</div>
+    <p style="font-size:11px;color:var(--c-muted);margin-top:6px;">Investment Banking no registró eventos presenciales ni apariciones en prensa destacadas durante Q1 2026.</p>
+  </div>
+</div><!-- /slide 13 -->
+
+<div class="page-divider"></div>
+
+<!-- ████  SLIDE 14 – INVESTMENT BANKING: DIFUSIÓN RRSS  ████ -->
+<div class="slide">
+  <div class="area-header">
+    <div>
+      <div class="area-name">Investment Banking</div>
+      <div class="area-sub">Difusión en RRSS - Q1 2026</div>
+    </div>
+    <div class="btg-logo"><img src="btg-assets/img1.png" alt="BTG Pactual"></div>
+  </div>
+
+  <div class="rrss-detail-grid">
+    <div class="rrss-detail-col left-impact">
+      <div class="rdc-title">Redes Sociales</div>
+      <div class="rrss-stat"><div class="rs-label">Contenidos publicados</div><div class="rs-num">3</div></div>
+      <div class="rrss-stat"><div class="rs-label">Impresiones totales</div><div class="rs-num">7.481</div></div>
+      <div style="font-size:9px;color:rgba(255,255,255,.7);margin-top:8px;margin-bottom:6px;">Contenidos por mes</div>
+      <div class="barlist-row" style="margin-bottom:4px;"><div class="barlist-label" style="color:rgba(255,255,255,.9);width:70px;">Enero</div><div class="barlist-track" style="background:rgba(255,255,255,.2);"><div class="barlist-fill" style="width:0%;background:rgba(255,255,255,.5);"></div></div><div class="barlist-val" style="color:#fff;font-size:8px;">0</div></div>
+      <div class="barlist-row" style="margin-bottom:4px;"><div class="barlist-label" style="color:rgba(255,255,255,.9);width:70px;">Febrero</div><div class="barlist-track" style="background:rgba(255,255,255,.2);"><div class="barlist-fill" style="width:100%;background:rgba(255,255,255,.5);"></div></div><div class="barlist-val" style="color:#fff;font-size:8px;">2</div></div>
+      <div class="barlist-row" style="margin-bottom:4px;"><div class="barlist-label" style="color:rgba(255,255,255,.9);width:70px;">Marzo</div><div class="barlist-track" style="background:rgba(255,255,255,.2);"><div class="barlist-fill" style="width:50%;background:rgba(255,255,255,.5);"></div></div><div class="barlist-val" style="color:#fff;font-size:8px;">1</div></div>
+    </div>
+    <div class="rrss-detail-col right-impact">
+      <div class="rdc-title">Impresiones por plataforma</div>
+      <div class="barlist-row" style="margin-bottom:6px;"><div class="barlist-label" style="color:rgba(255,255,255,.9);width:100px;">LinkedIn</div><div class="barlist-track" style="background:rgba(255,255,255,.2);"><div class="barlist-fill" style="width:100%;background:rgba(255,255,255,.5);"></div></div><div class="barlist-val" style="color:#fff;font-size:8px;">6.531</div></div>
+      <div class="barlist-row" style="margin-bottom:6px;"><div class="barlist-label" style="color:rgba(255,255,255,.9);width:100px;">Instagram</div><div class="barlist-track" style="background:rgba(255,255,255,.2);"><div class="barlist-fill" style="width:15%;background:rgba(255,255,255,.5);"></div></div><div class="barlist-val" style="color:#fff;font-size:8px;">950</div></div>
+      <div style="margin-top:20px;">
+        <div style="font-size:9px;color:rgba(255,255,255,.7);margin-bottom:4px;">Tráfico web orgánico</div>
+        <div style="font-size:22px;font-weight:900;color:#fff;">761 usuarios</div>
+      </div>
     </div>
   </div>
 
-  <div class="area-web-stats">
-    <div class="aws paid"><div class="ws-lbl">Tráfico web pagado</div><div class="ws-num">N/A</div></div>
-    <div class="aws organic"><div class="ws-lbl">Tráfico web orgánico</div><div class="ws-num">Orgánico</div></div>
+  <div class="section-heading">Contenidos orgánicos destacados</div>
+  <div class="area-content-highlights" style="grid-template-columns:repeat(1,1fr);">
+    <div class="ach-card" style="max-width:260px;margin:0 auto;">
+      <img src="btg-assets/8caa5610e352dd0a85d13f003c0f309b.png" alt="IB LinkedIn">
+      <div class="ach-name">Felicitamos a nuestros equipos de IB y CL por su participación como Agente Estructurador, Financista y Hedge Provider</div>
+      <div class="ach-platform">LinkedIn</div>
+      <div class="ach-metric">3.310</div>
+      <div class="ach-mlbl">Impresiones</div>
+    </div>
   </div>
 
-</div><!-- /slide 12 -->
+  <div style="font-size:8px;color:var(--c-muted);text-align:center;padding:8px 20px 16px;">(*) No se incluyen datos de Twitter para el cálculo de impresiones totales</div>
+</div><!-- /slide 14 -->
 
 <div class="page-divider" style="height:1px;background:rgba(255,255,255,.1);"></div>
 
-<!-- ████████████████  FOOTER  ████████████████ -->
+<!-- FOOTER -->
 <div style="background:var(--c-blue1);color:rgba(255,255,255,.5);text-align:center;padding:28px 20px;font-size:11px;">
   <div style="color:rgba(255,255,255,.9);font-weight:700;font-size:13px;margin-bottom:6px;">BTG Pactual Chile</div>
-  <div>Reporte Q4 2025 · Marketing y Comunicaciones · Uso Interno</div>
+  <div>Reporte Q1 2026 · Marketing y Comunicaciones · Uso Interno</div>
 </div>
 
 </body>
