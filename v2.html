@@ -1,1460 +1,430 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BTG Pactual — Informe Q1 2026</title>
-  <style>
-    /* ─── Reset & base ─────────────────────────────────────────── */
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --navy:  #0a1628;
-      --blue1: #0d2055;
-      --blue2: #1a3a7a;
-      --blue3: #1a5dc8;
-      --blue4: #2d7aff;
-      --sky:   #c8daf5;
-      --white: #ffffff;
-      --muted: rgba(255,255,255,.5);
-      --dim:   rgba(255,255,255,.12);
-    }
-
-    html {
-      scroll-snap-type: y mandatory;
-      overflow-y: scroll;
-      height: 100%;
-    }
-
-    body {
-      font-family: 'Segoe UI', system-ui, sans-serif;
-      background: var(--navy);
-      color: var(--white);
-    }
-
-    /* ─── Slide base types ──────────────────────────────────────── */
-
-    /* Cover slide */
-    .slide-cover {
-      width: 100vw;
-      height: 100vh;
-      scroll-snap-align: start;
-      background: var(--navy);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    /* Area slides: 3-column grid */
-    .slide {
-      width: 100vw;
-      height: 100vh;
-      scroll-snap-align: start;
-      display: grid;
-      grid-template-columns: 200px 1fr 1fr;
-      overflow: hidden;
-      position: relative;
-    }
-
-    /* ─── Cover decoration ──────────────────────────────────────── */
-    .cover-bg-circle {
-      position: absolute;
-      border-radius: 50%;
-      pointer-events: none;
-    }
-    .cover-bg-circle.c1 {
-      width: 600px; height: 600px;
-      background: radial-gradient(circle, rgba(45,122,255,.12) 0%, transparent 70%);
-      top: -100px; right: -150px;
-    }
-    .cover-bg-circle.c2 {
-      width: 400px; height: 400px;
-      background: radial-gradient(circle, rgba(26,93,200,.1) 0%, transparent 70%);
-      bottom: -50px; left: -100px;
-    }
-
-    .cover-logo {
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--sky);
-      margin-bottom: 48px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .cover-logo-icon {
-      width: 36px; height: 36px;
-      background: var(--blue3);
-      border-radius: 6px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 16px; font-weight: 900;
-    }
-
-    .cover-eyebrow {
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      color: var(--blue4);
-      margin-bottom: 16px;
-    }
-
-    .cover-title {
-      font-size: clamp(48px, 6vw, 80px);
-      font-weight: 900;
-      color: var(--white);
-      line-height: 1.05;
-      letter-spacing: -1px;
-      margin-bottom: 16px;
-    }
-
-    .cover-subtitle {
-      font-size: 18px;
-      font-weight: 400;
-      color: rgba(255,255,255,.55);
-      margin-bottom: 60px;
-    }
-
-    .cover-divider {
-      width: 60px; height: 2px;
-      background: var(--blue4);
-      margin: 0 auto 60px;
-      border-radius: 2px;
-    }
-
-    .cover-footer {
-      font-size: 11px;
-      color: rgba(255,255,255,.25);
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      position: absolute;
-      bottom: 32px;
-    }
-
-    .cover-areas {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      justify-content: center;
-      max-width: 700px;
-    }
-    .cover-area-pill {
-      background: rgba(255,255,255,.06);
-      border: 1px solid rgba(255,255,255,.1);
-      padding: 6px 14px;
-      border-radius: 20px;
-      font-size: 11px;
-      font-weight: 600;
-      color: rgba(255,255,255,.5);
-      letter-spacing: .5px;
-    }
-
-    /* ─── Left panel (identity) ─────────────────────────────────── */
-    .panel-id {
-      background: #070f1e;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      padding: 40px 28px;
-      position: relative;
-      overflow: hidden;
-      border-right: 1px solid rgba(255,255,255,.08);
-    }
-
-    /* Giant chapter number watermark */
-    .panel-id .chapter-num {
-      position: absolute;
-      bottom: -20px;
-      left: -10px;
-      font-size: 160px;
-      font-weight: 900;
-      color: rgba(255,255,255,.04);
-      line-height: 1;
-      pointer-events: none;
-      user-select: none;
-      letter-spacing: -8px;
-    }
-
-    /* Top accent line */
-    .panel-id::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 3px;
-      background: linear-gradient(90deg, var(--blue3), transparent);
-    }
-
-    .panel-id .area-label {
-      background: var(--blue3);
-      color: #fff;
-      font-size: 9px;
-      font-weight: 700;
-      padding: 3px 10px;
-      border-radius: 4px;
-      display: inline-block;
-      letter-spacing: .5px;
-      text-transform: uppercase;
-      margin-bottom: 12px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .panel-id .area-name {
-      font-size: 22px;
-      font-weight: 900;
-      color: #fff;
-      line-height: 1.2;
-      margin-bottom: 10px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .panel-id .area-q {
-      font-size: 12px;
-      color: rgba(255,255,255,.3);
-      font-style: italic;
-      position: relative;
-      z-index: 1;
-    }
-
-    /* ─── Center panel (E&M) ────────────────────────────────────── */
-    .panel-em {
-      background: var(--blue1);
-      display: flex;
-      flex-direction: column;
-      padding: 32px 36px;
-      border-right: 1px solid rgba(255,255,255,.06);
-      overflow: hidden;
-    }
-
-    /* ─── Right panel (RRSS) ────────────────────────────────────── */
-    .panel-rrss {
-      background: var(--blue2);
-      display: flex;
-      flex-direction: column;
-      padding: 32px 36px;
-      overflow: hidden;
-    }
-
-    /* ─── Section labels ────────────────────────────────────────── */
-    .sec-label {
-      font-size: 9px;
-      font-weight: 700;
-      color: rgba(255,255,255,.4);
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin-bottom: 20px;
-      padding-bottom: 10px;
-      border-bottom: 1px solid rgba(255,255,255,.08);
-      flex-shrink: 0;
-    }
-
-    /* Sub-section label (within RRSS) */
-    .sub-label {
-      font-size: 9px;
-      font-weight: 700;
-      color: rgba(255,255,255,.3);
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      margin-bottom: 10px;
-    }
-
-    /* ─── KPI grid ──────────────────────────────────────────────── */
-    .kpi-row {
-      display: grid;
-      gap: 10px;
-      margin-bottom: 20px;
-      flex-shrink: 0;
-    }
-    .kpi-row.cols-2 { grid-template-columns: 1fr 1fr; }
-    .kpi-row.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
-
-    .kpi-cell {
-      background: rgba(255,255,255,.06);
-      border-radius: 8px;
-      padding: 14px 16px;
-    }
-    .kpi-cell .kl {
-      font-size: 9px;
-      font-weight: 600;
-      color: rgba(255,255,255,.5);
-      margin-bottom: 4px;
-      text-transform: uppercase;
-      letter-spacing: .5px;
-    }
-    .kpi-cell .kn {
-      font-size: 32px;
-      font-weight: 900;
-      color: #fff;
-      line-height: 1;
-    }
-    .kpi-cell .ks {
-      font-size: 10px;
-      color: rgba(255,255,255,.4);
-      margin-top: 3px;
-    }
-
-    /* ─── Barlist ───────────────────────────────────────────────── */
-    .barlist {
-      display: flex;
-      flex-direction: column;
-      gap: 7px;
-    }
-
-    .bl-row {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .bl-label {
-      font-size: 10px;
-      color: rgba(255,255,255,.7);
-      flex-shrink: 0;
-      text-align: right;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
-    .bl-track {
-      flex: 1;
-      background: rgba(255,255,255,.1);
-      border-radius: 3px;
-      height: 6px;
-      overflow: hidden;
-    }
-
-    .bl-fill {
-      height: 100%;
-      border-radius: 3px;
-      background: rgba(255,255,255,.6);
-      transition: width .4s ease;
-    }
-
-    .bl-fill.accent { background: var(--blue4); }
-
-    .bl-val {
-      font-size: 10px;
-      font-weight: 700;
-      color: #fff;
-      min-width: 40px;
-      text-align: right;
-      flex-shrink: 0;
-    }
-
-    /* ─── Barlist heading ───────────────────────────────────────── */
-    .barlist-heading {
-      font-size: 9px;
-      font-weight: 700;
-      color: rgba(255,255,255,.35);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 8px;
-    }
-
-    /* ─── Divider ───────────────────────────────────────────────── */
-    .panel-divider {
-      height: 1px;
-      background: rgba(255,255,255,.08);
-      margin: 14px 0;
-      flex-shrink: 0;
-    }
-
-    /* ─── Notice (sin eventos) ──────────────────────────────────── */
-    .notice {
-      flex: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 13px;
-      color: rgba(255,255,255,.2);
-      font-style: italic;
-      text-align: center;
-    }
-
-    /* ─── Big metric ────────────────────────────────────────────── */
-    .big-metric {
-      margin-bottom: 14px;
-      flex-shrink: 0;
-    }
-    .big-metric .bm-label {
-      font-size: 10px;
-      color: rgba(255,255,255,.5);
-      margin-bottom: 3px;
-      text-transform: uppercase;
-      letter-spacing: .5px;
-    }
-    .big-metric .bm-num {
-      font-size: 44px;
-      font-weight: 900;
-      color: #fff;
-      line-height: 1;
-    }
-    .big-metric .bm-sub {
-      font-size: 11px;
-      color: rgba(255,255,255,.4);
-      margin-top: 3px;
-    }
-
-    /* ─── Inline metric row (two side-by-side big metrics) ─────── */
-    .metric-row {
-      display: flex;
-      gap: 12px;
-      margin-bottom: 14px;
-      flex-shrink: 0;
-    }
-    .metric-row .big-metric { margin-bottom: 0; flex: 1; }
-
-    /* ─── Pill row ──────────────────────────────────────────────── */
-    .pill-row {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      margin-bottom: 14px;
-      flex-shrink: 0;
-    }
-    .pill {
-      background: rgba(255,255,255,.08);
-      border-radius: 20px;
-      padding: 5px 12px;
-      font-size: 11px;
-      font-weight: 600;
-      color: rgba(255,255,255,.8);
-    }
-    .pill span { color: var(--sky); }
-
-    /* ─── Traffic / highlight block ────────────────────────────── */
-    .traffic-block {
-      margin-top: auto;
-      background: rgba(255,255,255,.07);
-      border-radius: 8px;
-      padding: 12px 16px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-shrink: 0;
-    }
-    .traffic-block .tb-left .tb-label {
-      font-size: 9px;
-      color: rgba(255,255,255,.4);
-      text-transform: uppercase;
-      letter-spacing: .5px;
-    }
-    .traffic-block .tb-left .tb-sub {
-      font-size: 10px;
-      color: rgba(255,255,255,.3);
-      margin-top: 1px;
-    }
-    .traffic-block .tb-num {
-      font-size: 22px;
-      font-weight: 900;
-      color: #fff;
-    }
-
-    /* ─── Event highlight card ──────────────────────────────────── */
-    .event-card {
-      background: rgba(255,255,255,.05);
-      border-radius: 8px;
-      padding: 14px 16px;
-      margin-bottom: 14px;
-      flex-shrink: 0;
-    }
-    .event-card .ec-name {
-      font-size: 13px;
-      font-weight: 700;
-      color: #fff;
-      margin-bottom: 8px;
-    }
-    .event-card .ec-badges {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-    .ec-badge {
-      background: var(--blue3);
-      color: #fff;
-      font-size: 10px;
-      font-weight: 600;
-      padding: 3px 10px;
-      border-radius: 4px;
-    }
-
-    /* ─── Area note ─────────────────────────────────────────────── */
-    .area-note {
-      font-size: 10px;
-      color: rgba(255,255,255,.3);
-      font-style: italic;
-      margin-top: auto;
-      padding-top: 10px;
-      border-top: 1px solid rgba(255,255,255,.06);
-      flex-shrink: 0;
-    }
-
-    /* ─── Footnote ──────────────────────────────────────────────── */
-    .footnote {
-      font-size: 9px;
-      color: rgba(255,255,255,.25);
-      font-style: italic;
-      margin-top: 8px;
-      flex-shrink: 0;
-    }
-
-    /* ─── Nav dots ──────────────────────────────────────────────── */
-    #nav-dots {
-      position: fixed;
-      right: 20px;
-      top: 50%;
-      transform: translateY(-50%);
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      z-index: 100;
-    }
-    .dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: rgba(255,255,255,.25);
-      cursor: pointer;
-      transition: background .2s, transform .2s;
-    }
-    .dot.active {
-      background: #fff;
-      transform: scale(1.4);
-    }
-  </style>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>BTG Pactual — Informe Q1 2026</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-snap-type:y mandatory;overflow-y:scroll;height:100%;}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:#050d1a;}
+.slide{width:100vw;height:100vh;scroll-snap-align:start;display:grid;grid-template-columns:38% 62%;overflow:hidden;position:relative;}
+.slide-cover{width:100vw;height:100vh;scroll-snap-align:start;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;background:radial-gradient(ellipse at 30% 50%,#0d2055 0%,#050d1a 70%);position:relative;overflow:hidden;}
+.lp{background:#070f1e;display:flex;flex-direction:column;justify-content:space-between;padding:44px 40px;position:relative;overflow:hidden;border-right:1px solid rgba(255,255,255,.06);}
+.lp-wm{position:absolute;bottom:-40px;left:-20px;font-size:220px;font-weight:900;color:rgba(255,255,255,.04);line-height:1;pointer-events:none;user-select:none;}
+.lp-top{display:flex;align-items:center;gap:10px;}
+.lp-top img{width:50px;object-fit:contain;}
+.lp-top .q{font-size:11px;color:rgba(255,255,255,.3);font-style:italic;}
+.lp-pill{background:#1a5dc8;color:#fff;font-size:9px;font-weight:700;padding:3px 12px;border-radius:4px;display:inline-block;letter-spacing:1px;text-transform:uppercase;margin-bottom:12px;}
+.lp-name{font-size:42px;font-weight:900;color:#fff;line-height:1.1;}
+.lp-kpis{display:flex;flex-direction:column;gap:18px;}
+.lp-kpi .kn{font-size:52px;font-weight:900;color:#fff;line-height:1;}
+.lp-kpi .kn.dash{color:rgba(255,255,255,.2);}
+.lp-kpi .kl{font-size:10px;color:rgba(255,255,255,.35);margin-top:2px;text-transform:uppercase;letter-spacing:.5px;}
+.lp-kpi .ks{font-size:10px;color:rgba(255,255,255,.25);margin-top:1px;}
+.rp{background:#0d2055;display:flex;flex-direction:column;height:100%;padding:36px 44px;overflow:hidden;}
+.half{flex:1;display:flex;flex-direction:column;overflow:hidden;}
+.half:first-child{padding-bottom:20px;}
+.sep{height:1px;background:rgba(255,255,255,.07);margin:0 0 20px;}
+.sec-lbl{font-size:9px;font-weight:700;color:rgba(255,255,255,.35);letter-spacing:2px;text-transform:uppercase;margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid rgba(255,255,255,.07);}
+.half-inner{display:grid;grid-template-columns:1fr 1fr;gap:28px;flex:1;overflow:hidden;}
+.hi-col{display:flex;flex-direction:column;overflow:hidden;}
+.bl{display:flex;flex-direction:column;gap:7px;}
+.bl-row{display:flex;align-items:center;gap:8px;}
+.bl-lbl{font-size:9.5px;color:rgba(255,255,255,.6);flex-shrink:0;text-align:right;}
+.bl-track{flex:1;background:rgba(255,255,255,.1);border-radius:3px;height:5px;overflow:hidden;}
+.bl-fill{height:100%;border-radius:3px;background:rgba(255,255,255,.55);}
+.bl-val{font-size:9.5px;font-weight:700;color:#fff;min-width:36px;text-align:right;flex-shrink:0;}
+.big-n{font-size:68px;font-weight:900;color:#fff;line-height:1;margin-bottom:6px;}
+.big-n-lbl{font-size:9px;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:1px;margin-bottom:14px;}
+.sub-lbl{font-size:9px;font-weight:700;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;}
+.met-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px;}
+.met-cell{background:rgba(255,255,255,.06);border-radius:6px;padding:10px 12px;}
+.met-cell .mn{font-size:20px;font-weight:900;color:#fff;}
+.met-cell .ml{font-size:9px;color:rgba(255,255,255,.4);margin-top:2px;}
+.traf{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:auto;padding-top:12px;}
+.traf-block{background:rgba(255,255,255,.07);border-radius:8px;padding:12px 14px;}
+.traf-block .tl{font-size:8.5px;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px;}
+.traf-block .tn{font-size:24px;font-weight:900;color:#fff;}
+.traf-block .tn.dash{color:rgba(255,255,255,.2);}
+.notice{flex:1;display:flex;align-items:center;}
+.notice p{font-size:12px;color:rgba(255,255,255,.22);font-style:italic;}
+.badge{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.65);font-size:9px;padding:3px 10px;border-radius:20px;display:inline-block;margin-right:6px;margin-bottom:6px;}
+.cover-pills{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:28px;}
+.cover-pill{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.55);font-size:11px;padding:6px 16px;border-radius:20px;cursor:pointer;transition:all .2s;}
+.cover-pill:hover{background:rgba(255,255,255,.15);color:#fff;}
+#nav{position:fixed;right:18px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:7px;z-index:100;}
+.dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.2);cursor:pointer;transition:all .2s;}
+.dot.active{background:#fff;transform:scale(1.5);}
+</style>
 </head>
 <body>
 
-<!-- ── NAV DOTS ──────────────────────────────────────────────────── -->
-<div id="nav-dots">
-  <div class="dot" data-slide="0"></div>
-  <div class="dot" data-slide="1"></div>
-  <div class="dot" data-slide="2"></div>
-  <div class="dot" data-slide="3"></div>
-  <div class="dot" data-slide="4"></div>
-  <div class="dot" data-slide="5"></div>
-  <div class="dot" data-slide="6"></div>
+<div class="slide-cover" id="s0">
+  <div style="position:absolute;font-size:400px;font-weight:900;color:rgba(255,255,255,.02);bottom:-80px;left:-60px;line-height:1;pointer-events:none;">Q1</div>
+  <img src="btg-assets/img1.png" style="width:80px;object-fit:contain;margin-bottom:24px;" alt="BTG">
+  <div style="font-size:10px;font-weight:700;color:rgba(255,255,255,.4);letter-spacing:3px;text-transform:uppercase;margin-bottom:14px;">Marketing &amp; Comunicaciones</div>
+  <div style="font-size:72px;font-weight:900;color:#fff;line-height:1;margin-bottom:12px;">INFORME Q1 2026</div>
+  <div style="font-size:16px;color:rgba(255,255,255,.4);">Resumen de actividad enero · febrero · marzo</div>
+  <div style="width:60px;height:2px;background:#1a5dc8;margin:28px auto;"></div>
+  <div class="cover-pills">
+    <div class="cover-pill" onclick="go(1)">01 · Inversiones Digitales</div>
+    <div class="cover-pill" onclick="go(2)">02 · Asset Management</div>
+    <div class="cover-pill" onclick="go(3)">03 · Sales &amp; Trading</div>
+    <div class="cover-pill" onclick="go(4)">04 · Wealth Management</div>
+    <div class="cover-pill" onclick="go(5)">05 · Corporate Lending</div>
+    <div class="cover-pill" onclick="go(6)">06 · Investment Banking</div>
+  </div>
+  <div style="position:absolute;bottom:24px;font-size:11px;color:rgba(255,255,255,.2);">BTG Pactual Chile · Q1 2026 · Uso Interno</div>
 </div>
 
-
-<!-- ══════════════════════════════════════════════════════════════ -->
-<!--  SLIDE 0 — COVER                                              -->
-<!-- ══════════════════════════════════════════════════════════════ -->
-<section class="slide-cover" id="slide-0">
-  <!-- Background decoration circles -->
-  <div class="cover-bg-circle c1"></div>
-  <div class="cover-bg-circle c2"></div>
-
-  <!-- Logo -->
-  <div class="cover-logo">
-    <div class="cover-logo-icon">B</div>
-    BTG Pactual
+<!-- 01 INVERSIONES DIGITALES -->
+<div class="slide" id="s1">
+  <div class="lp">
+    <div class="lp-wm">01</div>
+    <div class="lp-top"><img src="btg-assets/img1.png" alt="BTG"><span class="q">Q1 2026</span></div>
+    <div><div class="lp-pill">Área 01</div><div class="lp-name">Inversiones<br>Digitales</div></div>
+    <div class="lp-kpis">
+      <div class="lp-kpi"><div class="kn">2</div><div class="kl">Eventos</div></div>
+      <div class="lp-kpi"><div class="kn">75</div><div class="kl">Asistentes</div></div>
+      <div class="lp-kpi"><div class="kn">4</div><div class="kl">Prensa</div></div>
+    </div>
   </div>
-
-  <!-- Eyebrow -->
-  <div class="cover-eyebrow">Marketing & Comunicaciones</div>
-
-  <!-- Main title -->
-  <div class="cover-title">INFORME Q1 2026</div>
-
-  <!-- Subtitle -->
-  <div class="cover-subtitle">Resumen de actividad enero · febrero · marzo</div>
-
-  <!-- Divider -->
-  <div class="cover-divider"></div>
-
-  <!-- Area pills -->
-  <div class="cover-areas">
-    <div class="cover-area-pill">01 · Inversiones Digitales</div>
-    <div class="cover-area-pill">02 · Asset Management</div>
-    <div class="cover-area-pill">03 · Sales &amp; Trading</div>
-    <div class="cover-area-pill">04 · Wealth Management</div>
-    <div class="cover-area-pill">05 · Corporate Lending</div>
-    <div class="cover-area-pill">06 · Investment Banking</div>
+  <div class="rp">
+    <div class="half">
+      <div class="sec-lbl">Eventos &amp; Medios</div>
+      <div class="half-inner">
+        <div class="hi-col">
+          <div class="sub-lbl">Asistentes por evento</div>
+          <div class="bl">
+            <div class="bl-row"><div class="bl-lbl" style="width:150px;">Desayuno agencias ID</div><div class="bl-track"><div class="bl-fill" style="width:100%"></div></div><div class="bl-val">60</div></div>
+            <div class="bl-row"><div class="bl-lbl" style="width:150px;">Otros</div><div class="bl-track"><div class="bl-fill" style="width:25%"></div></div><div class="bl-val">15</div></div>
+          </div>
+        </div>
+        <div class="hi-col">
+          <div class="big-n">4</div><div class="big-n-lbl">Apariciones en prensa</div>
+          <div class="bl">
+            <div class="bl-row"><div class="bl-lbl" style="width:80px;">13c</div><div class="bl-track"><div class="bl-fill" style="width:25%"></div></div><div class="bl-val">1</div></div>
+            <div class="bl-row"><div class="bl-lbl" style="width:80px;">CNN Chile</div><div class="bl-track"><div class="bl-fill" style="width:25%"></div></div><div class="bl-val">1</div></div>
+            <div class="bl-row"><div class="bl-lbl" style="width:80px;">Infinita</div><div class="bl-track"><div class="bl-fill" style="width:25%"></div></div><div class="bl-val">1</div></div>
+            <div class="bl-row"><div class="bl-lbl" style="width:80px;">Infinita.cl</div><div class="bl-track"><div class="bl-fill" style="width:25%"></div></div><div class="bl-val">1</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="sep"></div>
+    <div class="half">
+      <div class="sec-lbl">Difusión en RRSS</div>
+      <div class="half-inner">
+        <div class="hi-col">
+          <div class="met-row"><div class="met-cell"><div class="mn">10</div><div class="ml">Contenidos</div></div><div class="met-cell"><div class="mn">32.266</div><div class="ml">Impresiones</div></div></div>
+          <div class="sub-lbl">Plataformas</div>
+          <div class="bl">
+            <div class="bl-row"><div class="bl-lbl" style="width:80px;">LinkedIn</div><div class="bl-track"><div class="bl-fill" style="width:100%"></div></div><div class="bl-val">19.646</div></div>
+            <div class="bl-row"><div class="bl-lbl" style="width:80px;">Instagram</div><div class="bl-track"><div class="bl-fill" style="width:41%"></div></div><div class="bl-val">8.109</div></div>
+            <div class="bl-row"><div class="bl-lbl" style="width:80px;">YouTube</div><div class="bl-track"><div class="bl-fill" style="width:23%"></div></div><div class="bl-val">4.511</div></div>
+          </div>
+        </div>
+        <div class="hi-col">
+          <div class="sub-lbl">Campañas</div>
+          <div class="met-row"><div class="met-cell"><div class="mn">42</div><div class="ml">Campañas</div></div><div class="met-cell"><div class="mn">9,6 MM</div><div class="ml">Alcanzadas</div></div></div>
+          <div class="met-row"><div class="met-cell"><div class="mn">$820</div><div class="ml">CPM</div></div><div class="met-cell"><div class="mn">1,6%</div><div class="ml">CTR</div></div></div>
+          <div class="traf"><div class="traf-block"><div class="tl">Tráfico pagado</div><div class="tn">171K</div></div><div class="traf-block"><div class="tl">Tráfico orgánico</div><div class="tn">103K</div></div></div>
+        </div>
+      </div>
+    </div>
   </div>
+</div>
 
-  <!-- Footer -->
-  <div class="cover-footer">BTG Pactual Chile · Q1 2026</div>
-</section>
-
-
-<!-- ══════════════════════════════════════════════════════════════ -->
-<!--  SLIDE 01 — INVERSIONES DIGITALES                             -->
-<!-- ══════════════════════════════════════════════════════════════ -->
-<section class="slide" id="slide-1">
-
-  <!-- LEFT: identity -->
-  <div class="panel-id">
-    <div class="chapter-num">01</div>
-    <div class="area-label">Área 01</div>
-    <div class="area-name">Inversiones<br>Digitales</div>
-    <div class="area-q">Q1 2026</div>
+<!-- 02 ASSET MANAGEMENT -->
+<div class="slide" id="s2">
+  <div class="lp">
+    <div class="lp-wm">02</div>
+    <div class="lp-top"><img src="btg-assets/img1.png" alt="BTG"><span class="q">Q1 2026</span></div>
+    <div><div class="lp-pill">Área 02</div><div class="lp-name">Asset<br>Management</div></div>
+    <div class="lp-kpis">
+      <div class="lp-kpi"><div class="kn">1</div><div class="kl">Evento</div><div class="ks">50 asistentes</div></div>
+      <div class="lp-kpi"><div class="kn">14</div><div class="kl">Prensa</div></div>
+      <div class="lp-kpi"><div class="kn">487</div><div class="kl">Cuentas creadas</div></div>
+    </div>
   </div>
-
-  <!-- CENTER: Eventos & Medios -->
-  <div class="panel-em">
-    <div class="sec-label">Eventos &amp; Medios</div>
-
-    <!-- KPIs -->
-    <div class="kpi-row cols-3">
-      <div class="kpi-cell">
-        <div class="kl">Eventos</div>
-        <div class="kn">2</div>
-      </div>
-      <div class="kpi-cell">
-        <div class="kl">Asistentes</div>
-        <div class="kn">75</div>
-      </div>
-      <div class="kpi-cell">
-        <div class="kl">Prensa</div>
-        <div class="kn">4</div>
-      </div>
-    </div>
-
-    <!-- Asistentes por evento -->
-    <div class="barlist-heading">Asistentes por evento</div>
-    <div class="barlist" style="margin-bottom: 18px;">
-      <div class="bl-row">
-        <div class="bl-label" style="width:180px;">Desayuno agencias ID</div>
-        <div class="bl-track"><div class="bl-fill accent" style="width:100%"></div></div>
-        <div class="bl-val">60</div>
-      </div>
-      <div class="bl-row">
-        <div class="bl-label" style="width:180px;">Otros</div>
-        <div class="bl-track"><div class="bl-fill accent" style="width:25%"></div></div>
-        <div class="bl-val">15</div>
+  <div class="rp">
+    <div class="half">
+      <div class="sec-lbl">Eventos &amp; Medios</div>
+      <div class="half-inner">
+        <div class="hi-col">
+          <div class="sub-lbl">Evento destacado</div>
+          <div style="font-size:20px;font-weight:900;color:#fff;margin-bottom:8px;">Asset Day Colombia</div>
+          <div style="margin-bottom:14px;"><span class="badge">50 asistentes</span><span class="badge">Marriot Bogotá</span></div>
+          <div class="bl"><div class="bl-row"><div class="bl-lbl" style="width:150px;">Asset Day Colombia</div><div class="bl-track"><div class="bl-fill" style="width:100%"></div></div><div class="bl-val">50</div></div></div>
+        </div>
+        <div class="hi-col">
+          <div class="big-n">14</div><div class="big-n-lbl">Apariciones en prensa</div>
+          <div class="bl">
+            <div class="bl-row"><div class="bl-lbl" style="width:140px;">Df.cl</div><div class="bl-track"><div class="bl-fill" style="width:100%"></div></div><div class="bl-val">3</div></div>
+            <div class="bl-row"><div class="bl-lbl" style="width:140px;">El Diario Financiero</div><div class="bl-track"><div class="bl-fill" style="width:100%"></div></div><div class="bl-val">3</div></div>
+            <div class="bl-row"><div class="bl-lbl" style="width:140px;">El Mercurio</div><div class="bl-track"><div class="bl-fill" style="width:100%"></div></div><div class="bl-val">3</div></div>
+            <div class="bl-row"><div class="bl-lbl" style="width:140px;">fundsociety.com</div><div class="bl-track"><div class="bl-fill" style="width:33%"></div></div><div class="bl-val">1</div></div>
+            <div class="bl-row"><div class="bl-lbl" style="width:140px;">Latercera.com</div><div class="bl-track"><div class="bl-fill" style="width:33%"></div></div><div class="bl-val">1</div></div>
+          </div>
+        </div>
       </div>
     </div>
-
-    <div class="panel-divider"></div>
-
-    <!-- Prensa fuentes -->
-    <div class="barlist-heading">Prensa — Fuentes</div>
-    <div class="barlist">
-      <div class="bl-row">
-        <div class="bl-label" style="width:120px;">13c</div>
-        <div class="bl-track"><div class="bl-fill" style="width:25%"></div></div>
-        <div class="bl-val">1</div>
-      </div>
-      <div class="bl-row">
-        <div class="bl-label" style="width:120px;">CNN Chile</div>
-        <div class="bl-track"><div class="bl-fill" style="width:25%"></div></div>
-        <div class="bl-val">1</div>
-      </div>
-      <div class="bl-row">
-        <div class="bl-label" style="width:120px;">Infinita</div>
-        <div class="bl-track"><div class="bl-fill" style="width:25%"></div></div>
-        <div class="bl-val">1</div>
-      </div>
-      <div class="bl-row">
-        <div class="bl-label" style="width:120px;">Infinita.cl</div>
-        <div class="bl-track"><div class="bl-fill" style="width:25%"></div></div>
-        <div class="bl-val">1</div>
+    <div class="sep"></div>
+    <div class="half">
+      <div class="sec-lbl">Difusión en RRSS</div>
+      <div class="half-inner">
+        <div class="hi-col">
+          <div class="met-row"><div class="met-cell"><div class="mn">63</div><div class="ml">Contenidos</div></div><div class="met-cell"><div class="mn">371K</div><div class="ml">Impresiones</div></div></div>
+          <div class="sub-lbl">Plataformas</div>
+          <div class="bl">
+            <div class="bl-row"><div class="bl-lbl" style="width:80px;">Instagram</div><div class="bl-track"><div class="bl-fill" style="width:100%"></div></div><div class="bl-val">243K</div></div>
+            <div class="bl-row"><div class="bl-lbl" style="width:80px;">LinkedIn</div><div class="bl-track"><div class="bl-fill" style="width:41%"></div></div><div class="bl-val">100K</div></div>
+            <div class="bl-row"><div class="bl-lbl" style="width:80px;">YouTube</div><div class="bl-track"><div class="bl-fill" style="width:11%"></div></div><div class="bl-val">27.7K</div></div>
+          </div>
+        </div>
+        <div class="hi-col">
+          <div class="sub-lbl">Campañas</div>
+          <div class="met-row"><div class="met-cell"><div class="mn">10</div><div class="ml">Campañas</div></div><div class="met-cell"><div class="mn">$5.536MM</div><div class="ml">Aportes</div></div></div>
+          <div class="met-row"><div class="met-cell"><div class="mn">$27.771</div><div class="ml">CAC</div></div><div class="met-cell"><div class="mn">867</div><div class="ml">Aportantes</div></div></div>
+          <div class="traf"><div class="traf-block"><div class="tl">Tráfico pagado</div><div class="tn">20.326</div></div><div class="traf-block"><div class="tl">Tráfico orgánico</div><div class="tn">10.706</div></div></div>
+        </div>
       </div>
     </div>
-
   </div>
+</div>
 
-  <!-- RIGHT: RRSS -->
-  <div class="panel-rrss">
-    <div class="sec-label">Difusión en RRSS</div>
-
-    <!-- Sub: Campañas -->
-    <div class="sub-label">Campañas</div>
-    <div class="metric-row">
-      <div class="big-metric">
-        <div class="bm-label">Campañas</div>
-        <div class="bm-num">42</div>
-      </div>
-      <div class="big-metric">
-        <div class="bm-label">Alcanzadas</div>
-        <div class="bm-num">9,6 MM</div>
-      </div>
+<!-- 03 SALES & TRADING -->
+<div class="slide" id="s3">
+  <div class="lp">
+    <div class="lp-wm">03</div>
+    <div class="lp-top"><img src="btg-assets/img1.png" alt="BTG"><span class="q">Q1 2026</span></div>
+    <div><div class="lp-pill">Área 03</div><div class="lp-name">Sales &amp;<br>Trading</div></div>
+    <div class="lp-kpis">
+      <div class="lp-kpi"><div class="kn">2</div><div class="kl">Eventos</div></div>
+      <div class="lp-kpi"><div class="kn">72</div><div class="kl">Asistentes</div></div>
+      <div class="lp-kpi"><div class="kn">6</div><div class="kl">Prensa</div></div>
     </div>
-
-    <div class="pill-row">
-      <div class="pill">CPM <span>$820</span></div>
-      <div class="pill">CTR <span>1,6%</span></div>
-    </div>
-
-    <div class="big-metric">
-      <div class="bm-label">OBOL — Registros</div>
-      <div class="bm-num" style="font-size:28px;">3.304</div>
-    </div>
-
-    <div class="traffic-block" style="margin-top:0; margin-bottom:16px;">
-      <div class="tb-left">
-        <div class="tb-label">Tráfico pagado</div>
-        <div class="tb-sub">Usuarios web</div>
-      </div>
-      <div class="tb-num">171 K</div>
-    </div>
-
-    <div class="panel-divider"></div>
-
-    <!-- Sub: Redes Sociales -->
-    <div class="sub-label">Redes Sociales</div>
-    <div class="metric-row">
-      <div class="big-metric">
-        <div class="bm-label">Contenidos</div>
-        <div class="bm-num">10</div>
-      </div>
-      <div class="big-metric">
-        <div class="bm-label">Impresiones</div>
-        <div class="bm-num">32.266</div>
-      </div>
-    </div>
-
-    <div class="barlist" style="margin-bottom:14px;">
-      <div class="bl-row">
-        <div class="bl-label" style="width:110px;">LinkedIn</div>
-        <div class="bl-track"><div class="bl-fill accent" style="width:100%"></div></div>
-        <div class="bl-val">19.646</div>
-      </div>
-      <div class="bl-row">
-        <div class="bl-label" style="width:110px;">Instagram</div>
-        <div class="bl-track"><div class="bl-fill accent" style="width:41%"></div></div>
-        <div class="bl-val">8.109</div>
-      </div>
-      <div class="bl-row">
-        <div class="bl-label" style="width:110px;">YouTube</div>
-        <div class="bl-track"><div class="bl-fill accent" style="width:23%"></div></div>
-        <div class="bl-val">4.511</div>
-      </div>
-    </div>
-
-    <div class="traffic-block">
-      <div class="tb-left">
-        <div class="tb-label">Tráfico orgánico</div>
-        <div class="tb-sub">Usuarios web</div>
-      </div>
-      <div class="tb-num">103 K</div>
-    </div>
-
   </div>
-</section>
-
-
-<!-- ══════════════════════════════════════════════════════════════ -->
-<!--  SLIDE 02 — ASSET MANAGEMENT                                  -->
-<!-- ══════════════════════════════════════════════════════════════ -->
-<section class="slide" id="slide-2">
-
-  <!-- LEFT: identity -->
-  <div class="panel-id">
-    <div class="chapter-num">02</div>
-    <div class="area-label">Área 02</div>
-    <div class="area-name">Asset<br>Management</div>
-    <div class="area-q">Q1 2026</div>
+  <div class="rp">
+    <div class="half">
+      <div class="sec-lbl">Eventos &amp; Medios</div>
+      <div class="half-inner">
+        <div class="hi-col">
+          <div class="sub-lbl">Asistentes por evento</div>
+          <div class="bl">
+            <div class="bl-row"><div class="bl-lbl" style="width:160px;">Kick off – CB en Dondoh</div><div class="bl-track"><div class="bl-fill" style="width:100%"></div></div><div class="bl-val">60</div></div>
+            <div class="bl-row"><div class="bl-lbl" style="width:160px;">Clínica Padel J. Valdés</div><div class="bl-track"><div class="bl-fill" style="width:20%"></div></div><div class="bl-val">12</div></div>
+          </div>
+        </div>
+        <div class="hi-col">
+          <div class="big-n">6</div><div class="big-n-lbl">Apariciones en prensa</div>
+          <div class="bl">
+            <div class="bl-row"><div class="bl-lbl" style="width:110px;">elmercurio.cl</div><div class="bl-track"><div class="bl-fill" style="width:100%"></div></div><div class="bl-val">2</div></div>
+            <div class="bl-row"><div class="bl-lbl" style="width:110px;">Ex-ante.cl</div><div class="bl-track"><div class="bl-fill" style="width:50%"></div></div><div class="bl-val">1</div></div>
+            <div class="bl-row"><div class="bl-lbl" style="width:110px;">Latercera.com</div><div class="bl-track"><div class="bl-fill" style="width:50%"></div></div><div class="bl-val">1</div></div>
+            <div class="bl-row"><div class="bl-lbl" style="width:110px;">Radio Duna</div><div class="bl-track"><div class="bl-fill" style="width:50%"></div></div><div class="bl-val">1</div></div>
+            <div class="bl-row"><div class="bl-lbl" style="width:110px;">Valorfuturo.com</div><div class="bl-track"><div class="bl-fill" style="width:50%"></div></div><div class="bl-val">1</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="sep"></div>
+    <div class="half">
+      <div class="sec-lbl">Difusión en RRSS</div>
+      <div class="half-inner">
+        <div class="hi-col">
+          <div class="met-row"><div class="met-cell"><div class="mn">102</div><div class="ml">Contenidos</div></div><div class="met-cell"><div class="mn">1,1 MM</div><div class="ml">Impresiones</div></div></div>
+          <div class="sub-lbl">Plataformas</div>
+          <div class="bl">
+            <div class="bl-row"><div class="bl-lbl" style="width:100px;">Instagram</div><div class="bl-track"><div class="bl-fill" style="width:100%"></div></div><div class="bl-val">564K</div></div>
+            <div class="bl-row"><div class="bl-lbl" style="width:100px;">YouTube</div><div class="bl-track"><div class="bl-fill" style="width:86%"></div></div><div class="bl-val">487K</div></div>
+            <div class="bl-row"><div class="bl-lbl" style="width:100px;">LI Newsletter</div><div class="bl-track"><div class="bl-fill" style="width:8%"></div></div><div class="bl-val">43K</div></div>
+            <div class="bl-row"><div class="bl-lbl" style="width:100px;">LinkedIn</div><div class="bl-track"><div class="bl-fill" style="width:3%"></div></div><div class="bl-val">19.6K</div></div>
+          </div>
+        </div>
+        <div class="hi-col">
+          <div class="sub-lbl">Por mes</div>
+          <div class="bl" style="margin-bottom:16px;">
+            <div class="bl-row"><div class="bl-lbl" style="width:70px;">Enero</div><div class="bl-track"><div class="bl-fill" style="width:100%"></div></div><div class="bl-val">36</div></div>
+            <div class="bl-row"><div class="bl-lbl" style="width:70px;">Febrero</div><div class="bl-track"><div class="bl-fill" style="width:83%"></div></div><div class="bl-val">30</div></div>
+            <div class="bl-row"><div class="bl-lbl" style="width:70px;">Marzo</div><div class="bl-track"><div class="bl-fill" style="width:100%"></div></div><div class="bl-val">36</div></div>
+          </div>
+          <div class="traf"><div class="traf-block" style="grid-column:1/-1"><div class="tl">Tráfico orgánico</div><div class="tn">320</div></div></div>
+        </div>
+      </div>
+    </div>
   </div>
+</div>
 
-  <!-- CENTER: Eventos & Medios -->
-  <div class="panel-em">
-    <div class="sec-label">Eventos &amp; Medios</div>
-
-    <!-- KPIs -->
-    <div class="kpi-row cols-2">
-      <div class="kpi-cell">
-        <div class="kl">Eventos</div>
-        <div class="kn">1</div>
-        <div class="ks">50 asistentes</div>
-      </div>
-      <div class="kpi-cell">
-        <div class="kl">Prensa</div>
-        <div class="kn">14</div>
-      </div>
+<!-- 04 WEALTH MANAGEMENT -->
+<div class="slide" id="s4">
+  <div class="lp">
+    <div class="lp-wm">04</div>
+    <div class="lp-top"><img src="btg-assets/img1.png" alt="BTG"><span class="q">Q1 2026</span></div>
+    <div><div class="lp-pill">Área 04</div><div class="lp-name">Wealth<br>Management</div></div>
+    <div class="lp-kpis">
+      <div class="lp-kpi"><div class="kn dash">—</div><div class="kl">Eventos</div></div>
+      <div class="lp-kpi"><div class="kn">8</div><div class="kl">Prensa</div></div>
+      <div class="lp-kpi"><div class="kn">83</div><div class="kl">Campañas mailing</div></div>
     </div>
-
-    <!-- Evento destacado -->
-    <div class="barlist-heading">Evento destacado</div>
-    <div class="event-card">
-      <div class="ec-name">Asset Day Colombia</div>
-      <div class="ec-badges">
-        <div class="ec-badge">50 asistentes</div>
-        <div class="ec-badge">Marriot Bogotá</div>
-      </div>
-    </div>
-
-    <div class="panel-divider"></div>
-
-    <!-- Fuentes de prensa -->
-    <div class="barlist-heading">Prensa — Fuentes</div>
-    <div class="barlist">
-      <div class="bl-row">
-        <div class="bl-label" style="width:160px;">Df.cl</div>
-        <div class="bl-track"><div class="bl-fill" style="width:100%"></div></div>
-        <div class="bl-val">3</div>
-      </div>
-      <div class="bl-row">
-        <div class="bl-label" style="width:160px;">El Diario Financiero</div>
-        <div class="bl-track"><div class="bl-fill" style="width:100%"></div></div>
-        <div class="bl-val">3</div>
-      </div>
-      <div class="bl-row">
-        <div class="bl-label" style="width:160px;">El Mercurio</div>
-        <div class="bl-track"><div class="bl-fill" style="width:100%"></div></div>
-        <div class="bl-val">3</div>
-      </div>
-      <div class="bl-row">
-        <div class="bl-label" style="width:160px;">fundsociety.com</div>
-        <div class="bl-track"><div class="bl-fill" style="width:33%"></div></div>
-        <div class="bl-val">1</div>
-      </div>
-      <div class="bl-row">
-        <div class="bl-label" style="width:160px;">Latercera.com</div>
-        <div class="bl-track"><div class="bl-fill" style="width:33%"></div></div>
-        <div class="bl-val">1</div>
-      </div>
-    </div>
-
   </div>
-
-  <!-- RIGHT: RRSS -->
-  <div class="panel-rrss">
-    <div class="sec-label">Difusión en RRSS</div>
-
-    <!-- Sub: Campañas -->
-    <div class="sub-label">Campañas</div>
-    <div class="metric-row">
-      <div class="big-metric">
-        <div class="bm-label">Campañas</div>
-        <div class="bm-num">10</div>
-      </div>
-      <div class="big-metric">
-        <div class="bm-label">Cuentas creadas</div>
-        <div class="bm-num">487</div>
-      </div>
-    </div>
-
-    <div class="pill-row">
-      <div class="pill">CAC <span>$27.771</span></div>
-      <div class="pill">Aportantes <span>867</span></div>
-    </div>
-
-    <div class="big-metric">
-      <div class="bm-label">Monto aportes</div>
-      <div class="bm-num" style="font-size:28px;">$5.536 MM</div>
-    </div>
-
-    <div class="panel-divider"></div>
-
-    <!-- Sub: Redes Sociales -->
-    <div class="sub-label">Redes Sociales</div>
-    <div class="metric-row">
-      <div class="big-metric">
-        <div class="bm-label">Contenidos</div>
-        <div class="bm-num">63</div>
-      </div>
-      <div class="big-metric">
-        <div class="bm-label">Impresiones</div>
-        <div class="bm-num">371 K</div>
+  <div class="rp">
+    <div class="half">
+      <div class="sec-lbl">Eventos &amp; Medios</div>
+      <div class="half-inner">
+        <div class="hi-col"><div class="notice"><p>Sin eventos presenciales este período</p></div></div>
+        <div class="hi-col">
+          <div class="big-n">8</div><div class="big-n-lbl">Apariciones en prensa</div>
+          <div class="bl">
+            <div class="bl-row"><div class="bl-lbl" style="width:130px;">Df.cl</div><div class="bl-track"><div class="bl-fill" style="width:100%"></div></div><div class="bl-val">2</div></div>
+            <div class="bl-row"><div class="bl-lbl" style="width:130px;">El Diario Financiero</div><div class="bl-track"><div class="bl-fill" style="width:100%"></div></div><div class="bl-val">2</div></div>
+            <div class="bl-row"><div class="bl-lbl" style="width:130px;">Duna</div><div class="bl-track"><div class="bl-fill" style="width:50%"></div></div><div class="bl-val">1</div></div>
+            <div class="bl-row"><div class="bl-lbl" style="width:130px;">Latercera.com</div><div class="bl-track"><div class="bl-fill" style="width:50%"></div></div><div class="bl-val">1</div></div>
+            <div class="bl-row"><div class="bl-lbl" style="width:130px;">Radio Infinita</div><div class="bl-track"><div class="bl-fill" style="width:50%"></div></div><div class="bl-val">1</div></div>
+            <div class="bl-row"><div class="bl-lbl" style="width:130px;">SeñalDF</div><div class="bl-track"><div class="bl-fill" style="width:50%"></div></div><div class="bl-val">1</div></div>
+          </div>
+        </div>
       </div>
     </div>
-
-    <div class="barlist" style="margin-bottom:14px;">
-      <div class="bl-row">
-        <div class="bl-label" style="width:110px;">Instagram</div>
-        <div class="bl-track"><div class="bl-fill accent" style="width:100%"></div></div>
-        <div class="bl-val">243 K</div>
-      </div>
-      <div class="bl-row">
-        <div class="bl-label" style="width:110px;">LinkedIn</div>
-        <div class="bl-track"><div class="bl-fill accent" style="width:41%"></div></div>
-        <div class="bl-val">100 K</div>
-      </div>
-      <div class="bl-row">
-        <div class="bl-label" style="width:110px;">YouTube</div>
-        <div class="bl-track"><div class="bl-fill accent" style="width:11%"></div></div>
-        <div class="bl-val">27,7 K</div>
+    <div class="sep"></div>
+    <div class="half">
+      <div class="sec-lbl">Difusión en RRSS</div>
+      <div class="half-inner">
+        <div class="hi-col">
+          <div class="met-row"><div class="met-cell"><div class="mn">43</div><div class="ml">Contenidos</div></div><div class="met-cell"><div class="mn">1,4 MM</div><div class="ml">Impresiones</div></div></div>
+          <div class="sub-lbl">Plataformas</div>
+          <div class="bl">
+            <div class="bl-row"><div class="bl-lbl" style="width:80px;">Instagram</div><div class="bl-track"><div class="bl-fill" style="width:100%"></div></div><div class="bl-val">1.141K</div></div>
+            <div class="bl-row"><div class="bl-lbl" style="width:80px;">YouTube</div><div class="bl-track"><div class="bl-fill" style="width:19%"></div></div><div class="bl-val">222K</div></div>
+            <div class="bl-row"><div class="bl-lbl" style="width:80px;">LinkedIn</div><div class="bl-track"><div class="bl-fill" style="width:6%"></div></div><div class="bl-val">66K</div></div>
+          </div>
+        </div>
+        <div class="hi-col">
+          <div class="sub-lbl">Mailing</div>
+          <div class="met-row"><div class="met-cell"><div class="mn">83</div><div class="ml">Campañas</div></div><div class="met-cell"><div class="mn">44,6%</div><div class="ml">Apertura</div></div></div>
+          <div class="traf"><div class="traf-block" style="grid-column:1/-1"><div class="tl">Tráfico orgánico</div><div class="tn">805</div></div></div>
+        </div>
       </div>
     </div>
-
-    <div class="traffic-block">
-      <div class="tb-left">
-        <div class="tb-label">Tráfico orgánico</div>
-        <div class="tb-sub">Usuarios web</div>
-      </div>
-      <div class="tb-num">10.706</div>
-    </div>
-
   </div>
-</section>
+</div>
 
-
-<!-- ══════════════════════════════════════════════════════════════ -->
-<!--  SLIDE 03 — SALES & TRADING                                   -->
-<!-- ══════════════════════════════════════════════════════════════ -->
-<section class="slide" id="slide-3">
-
-  <!-- LEFT: identity -->
-  <div class="panel-id">
-    <div class="chapter-num">03</div>
-    <div class="area-label">Área 03</div>
-    <div class="area-name">Sales &amp;<br>Trading</div>
-    <div class="area-q">Q1 2026</div>
+<!-- 05 CORPORATE LENDING -->
+<div class="slide" id="s5">
+  <div class="lp">
+    <div class="lp-wm">05</div>
+    <div class="lp-top"><img src="btg-assets/img1.png" alt="BTG"><span class="q">Q1 2026</span></div>
+    <div><div class="lp-pill">Área 05</div><div class="lp-name">Corporate<br>Lending</div></div>
+    <div class="lp-kpis">
+      <div class="lp-kpi"><div class="kn">8</div><div class="kl">Eventos</div></div>
+      <div class="lp-kpi"><div class="kn">153</div><div class="kl">Asistentes</div></div>
+      <div class="lp-kpi"><div class="kn dash">—</div><div class="kl">Prensa</div></div>
+    </div>
   </div>
-
-  <!-- CENTER: Eventos & Medios -->
-  <div class="panel-em">
-    <div class="sec-label">Eventos &amp; Medios</div>
-
-    <!-- KPIs -->
-    <div class="kpi-row cols-3">
-      <div class="kpi-cell">
-        <div class="kl">Eventos</div>
-        <div class="kn">2</div>
-      </div>
-      <div class="kpi-cell">
-        <div class="kl">Asistentes</div>
-        <div class="kn">72</div>
-      </div>
-      <div class="kpi-cell">
-        <div class="kl">Prensa</div>
-        <div class="kn">6</div>
-      </div>
-    </div>
-
-    <!-- Asistentes por evento -->
-    <div class="barlist-heading">Asistentes por evento</div>
-    <div class="barlist" style="margin-bottom:18px;">
-      <div class="bl-row">
-        <div class="bl-label" style="width:200px;">Kick off – CB en Dondoh</div>
-        <div class="bl-track"><div class="bl-fill accent" style="width:100%"></div></div>
-        <div class="bl-val">60</div>
-      </div>
-      <div class="bl-row">
-        <div class="bl-label" style="width:200px;">Clínica Padel Javier Valdés</div>
-        <div class="bl-track"><div class="bl-fill accent" style="width:20%"></div></div>
-        <div class="bl-val">12</div>
+  <div class="rp">
+    <div class="half">
+      <div class="sec-lbl">Eventos &amp; Medios</div>
+      <div class="half-inner">
+        <div class="hi-col" style="grid-column:1/-1">
+          <div class="sub-lbl">Asistentes por evento</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px 28px;">
+            <div class="bl-row"><div class="bl-lbl" style="width:160px;font-size:9px;">Cóctel primer semestre</div><div class="bl-track"><div class="bl-fill" style="width:100%"></div></div><div class="bl-val">50</div></div>
+            <div class="bl-row"><div class="bl-lbl" style="width:160px;font-size:9px;">UC - Coquimbo Unido</div><div class="bl-track"><div class="bl-fill" style="width:24%"></div></div><div class="bl-val">12</div></div>
+            <div class="bl-row"><div class="bl-lbl" style="width:160px;font-size:9px;">En off: Martín Arrau</div><div class="bl-track"><div class="bl-fill" style="width:40%"></div></div><div class="bl-val">20</div></div>
+            <div class="bl-row"><div class="bl-lbl" style="width:160px;font-size:9px;">UC - Everton</div><div class="bl-track"><div class="bl-fill" style="width:24%"></div></div><div class="bl-val">12</div></div>
+            <div class="bl-row"><div class="bl-lbl" style="width:160px;font-size:9px;">Comida fidelización</div><div class="bl-track"><div class="bl-fill" style="width:40%"></div></div><div class="bl-val">20</div></div>
+            <div class="bl-row"><div class="bl-lbl" style="width:160px;font-size:9px;">Concierto Bryan Adams</div><div class="bl-track"><div class="bl-fill" style="width:24%"></div></div><div class="bl-val">12</div></div>
+            <div class="bl-row"><div class="bl-lbl" style="width:160px;font-size:9px;">Desayuno Pablo Cruz</div><div class="bl-track"><div class="bl-fill" style="width:30%"></div></div><div class="bl-val">15</div></div>
+            <div class="bl-row"><div class="bl-lbl" style="width:160px;font-size:9px;">UC - Concepción</div><div class="bl-track"><div class="bl-fill" style="width:24%"></div></div><div class="bl-val">12</div></div>
+          </div>
+        </div>
       </div>
     </div>
-
-    <div class="panel-divider"></div>
-
-    <!-- Fuentes prensa -->
-    <div class="barlist-heading">Prensa — Fuentes</div>
-    <div class="barlist">
-      <div class="bl-row">
-        <div class="bl-label" style="width:140px;">elmercurio.cl</div>
-        <div class="bl-track"><div class="bl-fill" style="width:100%"></div></div>
-        <div class="bl-val">2</div>
-      </div>
-      <div class="bl-row">
-        <div class="bl-label" style="width:140px;">Ex-ante.cl</div>
-        <div class="bl-track"><div class="bl-fill" style="width:50%"></div></div>
-        <div class="bl-val">1</div>
-      </div>
-      <div class="bl-row">
-        <div class="bl-label" style="width:140px;">Latercera.com</div>
-        <div class="bl-track"><div class="bl-fill" style="width:50%"></div></div>
-        <div class="bl-val">1</div>
-      </div>
-      <div class="bl-row">
-        <div class="bl-label" style="width:140px;">Radio Duna</div>
-        <div class="bl-track"><div class="bl-fill" style="width:50%"></div></div>
-        <div class="bl-val">1</div>
-      </div>
-      <div class="bl-row">
-        <div class="bl-label" style="width:140px;">Valorfuturo.com</div>
-        <div class="bl-track"><div class="bl-fill" style="width:50%"></div></div>
-        <div class="bl-val">1</div>
+    <div class="sep"></div>
+    <div class="half">
+      <div class="sec-lbl">Difusión en RRSS</div>
+      <div class="half-inner">
+        <div class="hi-col">
+          <div class="met-row"><div class="met-cell"><div class="mn">3</div><div class="ml">Contenidos</div></div><div class="met-cell"><div class="mn">17.519</div><div class="ml">Impresiones</div></div></div>
+          <div class="sub-lbl">Plataformas</div>
+          <div class="bl">
+            <div class="bl-row"><div class="bl-lbl" style="width:80px;">LinkedIn</div><div class="bl-track"><div class="bl-fill" style="width:100%"></div></div><div class="bl-val">12.765</div></div>
+            <div class="bl-row"><div class="bl-lbl" style="width:80px;">Instagram</div><div class="bl-track"><div class="bl-fill" style="width:19%"></div></div><div class="bl-val">2.443</div></div>
+          </div>
+        </div>
+        <div class="hi-col">
+          <div class="traf" style="margin-top:0"><div class="traf-block" style="grid-column:1/-1"><div class="tl">Tráfico orgánico</div><div class="tn">233</div></div></div>
+          <div style="margin-top:14px;font-size:10px;color:rgba(255,255,255,.2);font-style:italic;">Área con alta actividad presencial durante Q1 2026</div>
+        </div>
       </div>
     </div>
-
   </div>
+</div>
 
-  <!-- RIGHT: RRSS -->
-  <div class="panel-rrss">
-    <div class="sec-label">Difusión en RRSS</div>
-
-    <!-- Sub: Redes Sociales -->
-    <div class="sub-label">Redes Sociales</div>
-    <div class="metric-row">
-      <div class="big-metric">
-        <div class="bm-label">Contenidos</div>
-        <div class="bm-num">102</div>
-      </div>
-      <div class="big-metric">
-        <div class="bm-label">Impresiones</div>
-        <div class="bm-num">1,1 MM</div>
-      </div>
+<!-- 06 INVESTMENT BANKING -->
+<div class="slide" id="s6">
+  <div class="lp">
+    <div class="lp-wm">06</div>
+    <div class="lp-top"><img src="btg-assets/img1.png" alt="BTG"><span class="q">Q1 2026</span></div>
+    <div><div class="lp-pill">Área 06</div><div class="lp-name">Investment<br>Banking</div></div>
+    <div class="lp-kpis">
+      <div class="lp-kpi"><div class="kn dash">—</div><div class="kl">Eventos</div></div>
+      <div class="lp-kpi"><div class="kn dash">—</div><div class="kl">Prensa</div></div>
+      <div class="lp-kpi"><div class="kn">3</div><div class="kl">Contenidos RRSS</div></div>
     </div>
-
-    <!-- Por mes -->
-    <div class="barlist-heading">Por mes</div>
-    <div class="barlist" style="margin-bottom:14px;">
-      <div class="bl-row">
-        <div class="bl-label" style="width:60px;">Enero</div>
-        <div class="bl-track"><div class="bl-fill" style="width:100%"></div></div>
-        <div class="bl-val">36</div>
-      </div>
-      <div class="bl-row">
-        <div class="bl-label" style="width:60px;">Febrero</div>
-        <div class="bl-track"><div class="bl-fill" style="width:83%"></div></div>
-        <div class="bl-val">30</div>
-      </div>
-      <div class="bl-row">
-        <div class="bl-label" style="width:60px;">Marzo</div>
-        <div class="bl-track"><div class="bl-fill" style="width:100%"></div></div>
-        <div class="bl-val">36</div>
-      </div>
-    </div>
-
-    <div class="panel-divider"></div>
-
-    <!-- Sub: Plataformas -->
-    <div class="sub-label">Plataformas</div>
-    <div class="barlist" style="margin-bottom:14px;">
-      <div class="bl-row">
-        <div class="bl-label" style="width:120px;">Instagram</div>
-        <div class="bl-track"><div class="bl-fill accent" style="width:100%"></div></div>
-        <div class="bl-val">564 K</div>
-      </div>
-      <div class="bl-row">
-        <div class="bl-label" style="width:120px;">YouTube</div>
-        <div class="bl-track"><div class="bl-fill accent" style="width:86%"></div></div>
-        <div class="bl-val">487 K</div>
-      </div>
-      <div class="bl-row">
-        <div class="bl-label" style="width:120px;">LI Newsletter</div>
-        <div class="bl-track"><div class="bl-fill accent" style="width:8%"></div></div>
-        <div class="bl-val">43 K</div>
-      </div>
-      <div class="bl-row">
-        <div class="bl-label" style="width:120px;">LinkedIn</div>
-        <div class="bl-track"><div class="bl-fill accent" style="width:3%"></div></div>
-        <div class="bl-val">19,6 K</div>
-      </div>
-    </div>
-
-    <div class="traffic-block">
-      <div class="tb-left">
-        <div class="tb-label">Tráfico orgánico</div>
-        <div class="tb-sub">Usuarios web</div>
-      </div>
-      <div class="tb-num">320</div>
-    </div>
-
   </div>
-</section>
-
-
-<!-- ══════════════════════════════════════════════════════════════ -->
-<!--  SLIDE 04 — WEALTH MANAGEMENT                                 -->
-<!-- ══════════════════════════════════════════════════════════════ -->
-<section class="slide" id="slide-4">
-
-  <!-- LEFT: identity -->
-  <div class="panel-id">
-    <div class="chapter-num">04</div>
-    <div class="area-label">Área 04</div>
-    <div class="area-name">Wealth<br>Management</div>
-    <div class="area-q">Q1 2026</div>
+  <div class="rp">
+    <div class="half">
+      <div class="sec-lbl">Eventos &amp; Medios</div>
+      <div class="half-inner">
+        <div class="hi-col"><div class="notice"><p>Sin eventos presenciales este período</p></div></div>
+        <div class="hi-col"><div class="notice"><p>Sin apariciones en prensa este período</p></div></div>
+      </div>
+    </div>
+    <div class="sep"></div>
+    <div class="half">
+      <div class="sec-lbl">Difusión en RRSS</div>
+      <div class="half-inner">
+        <div class="hi-col">
+          <div class="met-row"><div class="met-cell"><div class="mn">3</div><div class="ml">Contenidos</div></div><div class="met-cell"><div class="mn">7.481</div><div class="ml">Impresiones</div></div></div>
+          <div class="sub-lbl">Plataformas</div>
+          <div class="bl">
+            <div class="bl-row"><div class="bl-lbl" style="width:80px;">LinkedIn</div><div class="bl-track"><div class="bl-fill" style="width:100%"></div></div><div class="bl-val">6.531</div></div>
+            <div class="bl-row"><div class="bl-lbl" style="width:80px;">Instagram</div><div class="bl-track"><div class="bl-fill" style="width:15%"></div></div><div class="bl-val">950</div></div>
+          </div>
+        </div>
+        <div class="hi-col">
+          <div class="sub-lbl">Por mes</div>
+          <div class="bl" style="margin-bottom:16px;">
+            <div class="bl-row"><div class="bl-lbl" style="width:70px;">Enero</div><div class="bl-track"><div class="bl-fill" style="width:0%"></div></div><div class="bl-val">0</div></div>
+            <div class="bl-row"><div class="bl-lbl" style="width:70px;">Febrero</div><div class="bl-track"><div class="bl-fill" style="width:100%"></div></div><div class="bl-val">2</div></div>
+            <div class="bl-row"><div class="bl-lbl" style="width:70px;">Marzo</div><div class="bl-track"><div class="bl-fill" style="width:50%"></div></div><div class="bl-val">1</div></div>
+          </div>
+          <div class="traf"><div class="traf-block" style="grid-column:1/-1"><div class="tl">Tráfico orgánico</div><div class="tn">761</div></div></div>
+          <div style="margin-top:10px;font-size:9px;color:rgba(255,255,255,.2);">(*) No se incluyen datos de Twitter</div>
+        </div>
+      </div>
+    </div>
   </div>
+</div>
 
-  <!-- CENTER: Eventos & Medios -->
-  <div class="panel-em">
-    <div class="sec-label">Eventos &amp; Medios</div>
+<div id="nav">
+  <div class="dot active" onclick="go(0)"></div>
+  <div class="dot" onclick="go(1)"></div>
+  <div class="dot" onclick="go(2)"></div>
+  <div class="dot" onclick="go(3)"></div>
+  <div class="dot" onclick="go(4)"></div>
+  <div class="dot" onclick="go(5)"></div>
+  <div class="dot" onclick="go(6)"></div>
+</div>
 
-    <!-- KPIs -->
-    <div class="kpi-row cols-2">
-      <div class="kpi-cell">
-        <div class="kl">Eventos</div>
-        <div class="kn" style="color:rgba(255,255,255,.25);">—</div>
-      </div>
-      <div class="kpi-cell">
-        <div class="kl">Prensa</div>
-        <div class="kn">8</div>
-      </div>
-    </div>
-
-    <!-- Sin eventos notice -->
-    <div style="background:rgba(255,255,255,.03); border-radius:8px; padding:12px 16px; margin-bottom:16px; border-left:2px solid rgba(255,255,255,.1);">
-      <div style="font-size:11px; color:rgba(255,255,255,.25); font-style:italic;">Sin eventos presenciales este período</div>
-    </div>
-
-    <div class="panel-divider"></div>
-
-    <!-- Prensa -->
-    <div class="metric-row" style="margin-bottom:14px;">
-      <div class="big-metric">
-        <div class="bm-label">Apariciones prensa</div>
-        <div class="bm-num">8</div>
-      </div>
-    </div>
-
-    <div class="barlist-heading">Fuentes</div>
-    <div class="barlist">
-      <div class="bl-row">
-        <div class="bl-label" style="width:150px;">Df.cl</div>
-        <div class="bl-track"><div class="bl-fill" style="width:100%"></div></div>
-        <div class="bl-val">2</div>
-      </div>
-      <div class="bl-row">
-        <div class="bl-label" style="width:150px;">El Diario Financiero</div>
-        <div class="bl-track"><div class="bl-fill" style="width:100%"></div></div>
-        <div class="bl-val">2</div>
-      </div>
-      <div class="bl-row">
-        <div class="bl-label" style="width:150px;">Duna</div>
-        <div class="bl-track"><div class="bl-fill" style="width:50%"></div></div>
-        <div class="bl-val">1</div>
-      </div>
-      <div class="bl-row">
-        <div class="bl-label" style="width:150px;">Latercera.com</div>
-        <div class="bl-track"><div class="bl-fill" style="width:50%"></div></div>
-        <div class="bl-val">1</div>
-      </div>
-      <div class="bl-row">
-        <div class="bl-label" style="width:150px;">Radio Infinita</div>
-        <div class="bl-track"><div class="bl-fill" style="width:50%"></div></div>
-        <div class="bl-val">1</div>
-      </div>
-      <div class="bl-row">
-        <div class="bl-label" style="width:150px;">SeñalDF</div>
-        <div class="bl-track"><div class="bl-fill" style="width:50%"></div></div>
-        <div class="bl-val">1</div>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- RIGHT: RRSS -->
-  <div class="panel-rrss">
-    <div class="sec-label">Difusión en RRSS</div>
-
-    <!-- Sub: Redes Sociales -->
-    <div class="sub-label">Redes Sociales</div>
-    <div class="metric-row">
-      <div class="big-metric">
-        <div class="bm-label">Contenidos</div>
-        <div class="bm-num">43</div>
-      </div>
-      <div class="big-metric">
-        <div class="bm-label">Impresiones</div>
-        <div class="bm-num">1,4 MM</div>
-      </div>
-    </div>
-
-    <div class="barlist" style="margin-bottom:16px;">
-      <div class="bl-row">
-        <div class="bl-label" style="width:110px;">Instagram</div>
-        <div class="bl-track"><div class="bl-fill accent" style="width:100%"></div></div>
-        <div class="bl-val">1.141 K</div>
-      </div>
-      <div class="bl-row">
-        <div class="bl-label" style="width:110px;">YouTube</div>
-        <div class="bl-track"><div class="bl-fill accent" style="width:19%"></div></div>
-        <div class="bl-val">222 K</div>
-      </div>
-      <div class="bl-row">
-        <div class="bl-label" style="width:110px;">LinkedIn</div>
-        <div class="bl-track"><div class="bl-fill accent" style="width:6%"></div></div>
-        <div class="bl-val">66 K</div>
-      </div>
-    </div>
-
-    <div class="panel-divider"></div>
-
-    <!-- Sub: Mailing -->
-    <div class="sub-label">Mailing</div>
-    <div class="metric-row">
-      <div class="big-metric">
-        <div class="bm-label">Campañas</div>
-        <div class="bm-num">83</div>
-      </div>
-      <div class="big-metric">
-        <div class="bm-label">Tasa apertura</div>
-        <div class="bm-num">44,6%</div>
-      </div>
-    </div>
-
-    <div class="traffic-block">
-      <div class="tb-left">
-        <div class="tb-label">Tráfico orgánico</div>
-        <div class="tb-sub">Usuarios web</div>
-      </div>
-      <div class="tb-num">805</div>
-    </div>
-
-  </div>
-</section>
-
-
-<!-- ══════════════════════════════════════════════════════════════ -->
-<!--  SLIDE 05 — CORPORATE LENDING                                 -->
-<!-- ══════════════════════════════════════════════════════════════ -->
-<section class="slide" id="slide-5">
-
-  <!-- LEFT: identity -->
-  <div class="panel-id">
-    <div class="chapter-num">05</div>
-    <div class="area-label">Área 05</div>
-    <div class="area-name">Corporate<br>Lending</div>
-    <div class="area-q">Q1 2026</div>
-  </div>
-
-  <!-- CENTER: Eventos & Medios -->
-  <div class="panel-em">
-    <div class="sec-label">Eventos &amp; Medios</div>
-
-    <!-- KPIs -->
-    <div class="kpi-row cols-3">
-      <div class="kpi-cell">
-        <div class="kl">Eventos</div>
-        <div class="kn">8</div>
-      </div>
-      <div class="kpi-cell">
-        <div class="kl">Asistentes</div>
-        <div class="kn">153</div>
-      </div>
-      <div class="kpi-cell">
-        <div class="kl">Prensa</div>
-        <div class="kn" style="color:rgba(255,255,255,.25);">—</div>
-      </div>
-    </div>
-
-    <!-- Asistentes por evento -->
-    <div class="barlist-heading">Asistentes por evento</div>
-    <div class="barlist">
-      <div class="bl-row">
-        <div class="bl-label" style="width:190px;">Cóctel primer semestre</div>
-        <div class="bl-track"><div class="bl-fill accent" style="width:100%"></div></div>
-        <div class="bl-val">50</div>
-      </div>
-      <div class="bl-row">
-        <div class="bl-label" style="width:190px;">En off: Martín Arrau</div>
-        <div class="bl-track"><div class="bl-fill accent" style="width:40%"></div></div>
-        <div class="bl-val">20</div>
-      </div>
-      <div class="bl-row">
-        <div class="bl-label" style="width:190px;">Comida fidelización</div>
-        <div class="bl-track"><div class="bl-fill accent" style="width:40%"></div></div>
-        <div class="bl-val">20</div>
-      </div>
-      <div class="bl-row">
-        <div class="bl-label" style="width:190px;">Desayuno Pablo Cruz</div>
-        <div class="bl-track"><div class="bl-fill accent" style="width:30%"></div></div>
-        <div class="bl-val">15</div>
-      </div>
-      <div class="bl-row">
-        <div class="bl-label" style="width:190px;">UC - Coquimbo Unido</div>
-        <div class="bl-track"><div class="bl-fill accent" style="width:24%"></div></div>
-        <div class="bl-val">12</div>
-      </div>
-      <div class="bl-row">
-        <div class="bl-label" style="width:190px;">UC - Everton</div>
-        <div class="bl-track"><div class="bl-fill accent" style="width:24%"></div></div>
-        <div class="bl-val">12</div>
-      </div>
-      <div class="bl-row">
-        <div class="bl-label" style="width:190px;">Concierto Bryan Adams</div>
-        <div class="bl-track"><div class="bl-fill accent" style="width:24%"></div></div>
-        <div class="bl-val">12</div>
-      </div>
-      <div class="bl-row">
-        <div class="bl-label" style="width:190px;">UC - Concepción</div>
-        <div class="bl-track"><div class="bl-fill accent" style="width:24%"></div></div>
-        <div class="bl-val">12</div>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- RIGHT: RRSS -->
-  <div class="panel-rrss">
-    <div class="sec-label">Difusión en RRSS</div>
-
-    <!-- Sub: Redes Sociales -->
-    <div class="sub-label">Redes Sociales</div>
-    <div class="metric-row">
-      <div class="big-metric">
-        <div class="bm-label">Contenidos</div>
-        <div class="bm-num">3</div>
-      </div>
-      <div class="big-metric">
-        <div class="bm-label">Impresiones</div>
-        <div class="bm-num">17.519</div>
-      </div>
-    </div>
-
-    <div class="barlist" style="margin-bottom:16px;">
-      <div class="bl-row">
-        <div class="bl-label" style="width:110px;">LinkedIn</div>
-        <div class="bl-track"><div class="bl-fill accent" style="width:73%"></div></div>
-        <div class="bl-val">12.765</div>
-      </div>
-      <div class="bl-row">
-        <div class="bl-label" style="width:110px;">Instagram</div>
-        <div class="bl-track"><div class="bl-fill accent" style="width:14%"></div></div>
-        <div class="bl-val">2.443</div>
-      </div>
-      <div class="bl-row">
-        <div class="bl-label" style="width:110px;">Otros</div>
-        <div class="bl-track"><div class="bl-fill accent" style="width:13%"></div></div>
-        <div class="bl-val">2.311</div>
-      </div>
-    </div>
-
-    <div class="traffic-block">
-      <div class="tb-left">
-        <div class="tb-label">Tráfico orgánico</div>
-        <div class="tb-sub">Usuarios web</div>
-      </div>
-      <div class="tb-num">233</div>
-    </div>
-
-    <div class="area-note">
-      Área con alta actividad presencial — la presencia digital complementa relaciones de largo plazo
-    </div>
-
-  </div>
-</section>
-
-
-<!-- ══════════════════════════════════════════════════════════════ -->
-<!--  SLIDE 06 — INVESTMENT BANKING                                -->
-<!-- ══════════════════════════════════════════════════════════════ -->
-<section class="slide" id="slide-6">
-
-  <!-- LEFT: identity -->
-  <div class="panel-id">
-    <div class="chapter-num">06</div>
-    <div class="area-label">Área 06</div>
-    <div class="area-name">Investment<br>Banking</div>
-    <div class="area-q">Q1 2026</div>
-  </div>
-
-  <!-- CENTER: Eventos & Medios -->
-  <div class="panel-em">
-    <div class="sec-label">Eventos &amp; Medios</div>
-
-    <!-- KPIs -->
-    <div class="kpi-row cols-2">
-      <div class="kpi-cell">
-        <div class="kl">Eventos</div>
-        <div class="kn" style="color:rgba(255,255,255,.25);">—</div>
-      </div>
-      <div class="kpi-cell">
-        <div class="kl">Prensa</div>
-        <div class="kn" style="color:rgba(255,255,255,.25);">—</div>
-      </div>
-    </div>
-
-    <!-- Sin actividad notice -->
-    <div class="notice">
-      Sin eventos ni apariciones<br>en prensa este período
-    </div>
-
-  </div>
-
-  <!-- RIGHT: RRSS -->
-  <div class="panel-rrss">
-    <div class="sec-label">Difusión en RRSS</div>
-
-    <!-- Sub: Redes Sociales -->
-    <div class="sub-label">Redes Sociales</div>
-    <div class="metric-row">
-      <div class="big-metric">
-        <div class="bm-label">Contenidos</div>
-        <div class="bm-num">3</div>
-      </div>
-      <div class="big-metric">
-        <div class="bm-label">Impresiones</div>
-        <div class="bm-num">7.481</div>
-      </div>
-    </div>
-
-    <!-- Por mes -->
-    <div class="barlist-heading">Por mes</div>
-    <div class="barlist" style="margin-bottom:14px;">
-      <div class="bl-row">
-        <div class="bl-label" style="width:80px;">Enero</div>
-        <div class="bl-track"><div class="bl-fill" style="width:0%"></div></div>
-        <div class="bl-val">0</div>
-      </div>
-      <div class="bl-row">
-        <div class="bl-label" style="width:80px;">Febrero</div>
-        <div class="bl-track"><div class="bl-fill" style="width:100%"></div></div>
-        <div class="bl-val">2</div>
-      </div>
-      <div class="bl-row">
-        <div class="bl-label" style="width:80px;">Marzo</div>
-        <div class="bl-track"><div class="bl-fill" style="width:50%"></div></div>
-        <div class="bl-val">1</div>
-      </div>
-    </div>
-
-    <div class="panel-divider"></div>
-
-    <!-- Plataformas -->
-    <div class="barlist-heading">Plataformas</div>
-    <div class="barlist" style="margin-bottom:14px;">
-      <div class="bl-row">
-        <div class="bl-label" style="width:110px;">LinkedIn</div>
-        <div class="bl-track"><div class="bl-fill accent" style="width:100%"></div></div>
-        <div class="bl-val">6.531</div>
-      </div>
-      <div class="bl-row">
-        <div class="bl-label" style="width:110px;">Instagram</div>
-        <div class="bl-track"><div class="bl-fill accent" style="width:15%"></div></div>
-        <div class="bl-val">950</div>
-      </div>
-    </div>
-
-    <div class="traffic-block">
-      <div class="tb-left">
-        <div class="tb-label">Tráfico orgánico</div>
-        <div class="tb-sub">Usuarios web</div>
-      </div>
-      <div class="tb-num">761</div>
-    </div>
-
-    <div class="footnote">(*) No se incluyen datos de Twitter</div>
-
-  </div>
-</section>
-
-
-<!-- ─── Navigation & IntersectionObserver JS ──────────────────── -->
 <script>
-  (function () {
-    const slides  = document.querySelectorAll('.slide, .slide-cover');
-    const dots    = document.querySelectorAll('.dot');
-
-    // Click on dot → scroll to slide
-    dots.forEach(function (dot) {
-      dot.addEventListener('click', function () {
-        const idx = parseInt(dot.dataset.slide, 10);
-        slides[idx].scrollIntoView({ behavior: 'smooth' });
-      });
-    });
-
-    // IntersectionObserver → update active dot
-    const observer = new IntersectionObserver(
-      function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            const idx = Array.from(slides).indexOf(entry.target);
-            dots.forEach(function (d) { d.classList.remove('active'); });
-            if (dots[idx]) { dots[idx].classList.add('active'); }
-          }
-        });
-      },
-      { threshold: 0.5 }
-    );
-
-    slides.forEach(function (slide) { observer.observe(slide); });
-  })();
+const ids=['s0','s1','s2','s3','s4','s5','s6'];
+const dots=document.querySelectorAll('.dot');
+function go(i){document.getElementById(ids[i]).scrollIntoView({behavior:'smooth'});}
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){const i=ids.indexOf(e.target.id);dots.forEach((d,j)=>d.classList.toggle('active',i===j));}});},{threshold:0.6});
+ids.forEach(id=>obs.observe(document.getElementById(id)));
 </script>
-
 </body>
 </html>
