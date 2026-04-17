@@ -658,299 +658,302 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:#1a1a2e;color:var(--
 
 <div class="page-divider"></div>
 
-<!-- ████  SLIDE 4 – INVERSIONES DIGITALES: EVENTOS & MEDIOS  ████ -->
-<div class="slide" style="background:#0d2055;">
+<!-- ████  SLIDE 4 – INVERSIONES DIGITALES (COMBINED)  ████ -->
+<div class="slide" style="background:#fff;">
 
-  <!-- Header navy -->
-  <div style="background:#0d2055;padding:18px 22px 16px;display:flex;align-items:center;justify-content:space-between;">
-    <div>
-      <div style="font-size:19px;font-weight:900;color:#fff;line-height:1.2;">Inversiones Digitales</div>
-      <div style="font-size:12px;color:rgba(255,255,255,.65);font-style:italic;margin-top:3px;">Eventos &amp; Medios - Q1 2026</div>
+  <!-- Header -->
+  <div style="background:#0d2055;padding:16px 22px 14px;display:flex;align-items:center;justify-content:space-between;">
+    <div style="display:flex;align-items:center;gap:14px;">
+      <div style="font-size:48px;font-weight:900;color:rgba(255,255,255,.1);line-height:1;font-variant-numeric:tabular-nums;flex-shrink:0;">01</div>
+      <div>
+        <div style="background:#1a5dc8;color:#fff;font-size:14px;font-weight:800;padding:4px 14px;border-radius:6px;display:inline-block;margin-bottom:4px;">Inversiones Digitales</div>
+        <div style="font-size:12px;color:rgba(255,255,255,.65);font-style:italic;margin-top:2px;">Eventos &amp; Medios + Difusión RRSS – Q1 2026</div>
+      </div>
     </div>
-    <img src="btg-assets/img1.png" style="width:82px;object-fit:contain;display:block;" alt="BTG">
+    <img src="btg-assets/img1.png" style="width:70px;object-fit:contain;" alt="BTG">
   </div>
 
-  <!-- KPIs sky blue -->
-  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;background:#c8daf5;border-top:1px solid #aac0e0;">
-    <div style="padding:14px 18px;border-right:1px solid #aac0e0;">
-      <div style="font-size:9px;font-weight:700;color:#0d2055;margin-bottom:4px;">Eventos destacados</div>
-      <div style="font-size:38px;font-weight:900;color:#0d2055;line-height:1;">2</div>
-    </div>
-    <div style="padding:14px 18px;border-right:1px solid #aac0e0;">
-      <div style="font-size:9px;font-weight:700;color:#0d2055;margin-bottom:4px;">Asistentes</div>
-      <div style="font-size:38px;font-weight:900;color:#0d2055;line-height:1;">75</div>
-    </div>
-    <div style="padding:14px 18px;">
-      <div style="font-size:9px;font-weight:700;color:#0d2055;margin-bottom:4px;">Apariciones en prensa</div>
-      <div style="font-size:38px;font-weight:900;color:#0d2055;line-height:1;">4</div>
-    </div>
+  <!-- E&M Label -->
+  <div style="background:#0d2055;padding:5px 22px;border-top:1px solid rgba(255,255,255,.1);">
+    <span style="font-size:9px;font-weight:700;color:rgba(255,255,255,.45);letter-spacing:1.5px;text-transform:uppercase;">EVENTOS &amp; MEDIOS</span>
   </div>
 
-  <!-- Asistentes por evento – donut chart -->
-  <div style="background:#1a5dc8;padding:14px 20px 18px;">
-    <div style="font-size:13px;font-weight:900;color:#fff;margin-bottom:4px;">Asistentes por evento</div>
-    <div style="display:flex;align-items:center;justify-content:center;">
-      <!--
-        r=50 → circunferencia=314.16
-        Seg 1: Desayuno 60/75=80% → 251.3 | Seg 2: Otros 15/75=20% → 62.8
-        rotate(-90) → arranca desde las 12
-        Midpoint seg1: 144° CW desde top → SVG angle=54° → label en (188,152)
-        Midpoint seg2: 324° CW desde top → SVG angle=234° → label en (68,22)
-      -->
-      <svg viewBox="0 0 280 185" width="100%" style="max-width:380px;overflow:visible;">
-        <!-- pista fondo -->
-        <circle cx="140" cy="90" r="50" fill="none" stroke="rgba(255,255,255,.2)" stroke-width="26"/>
-        <!-- seg 1: Desayuno agencias 60 (80%) – blanco brillante -->
-        <circle cx="140" cy="90" r="50" fill="none" stroke="rgba(255,255,255,.88)" stroke-width="26"
-          stroke-dasharray="251.3 62.8" stroke-dashoffset="0"
-          transform="rotate(-90 140 90)"/>
-        <!-- seg 2: Otros 15 (20%) – blanco tenue -->
-        <circle cx="140" cy="90" r="50" fill="none" stroke="rgba(255,255,255,.35)" stroke-width="26"
-          stroke-dasharray="62.8 251.3" stroke-dashoffset="-251.3"
-          transform="rotate(-90 140 90)"/>
-        <!-- label seg 2: Otros 15 → upper-left -->
-        <text x="58" y="28" fill="white" font-size="9" text-anchor="middle" font-family="sans-serif">Otros</text>
-        <text x="58" y="42" fill="white" font-size="14" font-weight="bold" text-anchor="middle" font-family="sans-serif">15</text>
-        <!-- label seg 1: Desayuno 60 → lower-right -->
-        <text x="210" y="148" fill="white" font-size="9" text-anchor="middle" font-family="sans-serif">Desayuno</text>
-        <text x="210" y="160" fill="white" font-size="9" text-anchor="middle" font-family="sans-serif">agencias ID</text>
-        <text x="210" y="174" fill="white" font-size="14" font-weight="bold" text-anchor="middle" font-family="sans-serif">60</text>
-      </svg>
+  <!-- KPI row E&M -->
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);background:#c8daf5;">
+    <div style="padding:12px 18px;border-right:1px solid rgba(0,47,115,.12);">
+      <div style="font-size:9px;font-weight:700;color:#0d2055;margin-bottom:3px;">Eventos</div>
+      <div style="font-size:28px;font-weight:900;color:#0d2055;line-height:1;">2</div>
+    </div>
+    <div style="padding:12px 18px;border-right:1px solid rgba(0,47,115,.12);">
+      <div style="font-size:9px;font-weight:700;color:#0d2055;margin-bottom:3px;">Asistentes</div>
+      <div style="font-size:28px;font-weight:900;color:#0d2055;line-height:1;">75</div>
+    </div>
+    <div style="padding:12px 18px;">
+      <div style="font-size:9px;font-weight:700;color:#0d2055;margin-bottom:3px;">Apariciones prensa</div>
+      <div style="font-size:28px;font-weight:900;color:#0d2055;line-height:1;">4</div>
     </div>
   </div>
 
-  <!-- Evento destacado navy -->
-  <div style="background:#0d2055;padding:22px 24px 24px;">
-    <div style="font-size:16px;font-weight:800;color:#fff;margin-bottom:16px;text-align:center;">Evento destacado</div>
-    <img src="btg-assets/58f671e0316839d97a1d6cbb35c4e0dd.jpg" style="width:62%;height:auto;border-radius:8px;display:block;margin:0 auto 14px;" alt="Evento ID">
-    <p style="font-size:9.5px;color:rgba(255,255,255,.85);line-height:1.6;text-align:center;"><strong style="color:#fff;">Desayuno agencias – ID en Auditorio BTG Pactual</strong>, con la participación de 60 asistentes.</p>
+  <!-- E&M body 2-col -->
+  <div style="display:grid;grid-template-columns:1fr 1fr;">
+    <!-- Left: Asistentes por evento -->
+    <div style="background:#f0f5ff;padding:14px 18px;border-right:1px solid #dde8fb;">
+      <div style="font-size:9.5px;font-weight:700;color:#0d2055;margin-bottom:10px;text-transform:uppercase;letter-spacing:.5px;">Asistentes por evento</div>
+      <div style="display:flex;align-items:center;gap:6px;margin-bottom:5px;">
+        <div style="font-size:8.5px;color:#2a4a8e;text-align:right;width:110px;flex-shrink:0;">Desayuno agencias ID</div>
+        <div style="flex:1;background:#d0dff5;border-radius:3px;height:7px;overflow:hidden;"><div style="width:100%;height:100%;background:#1a5dc8;border-radius:3px;"></div></div>
+        <div style="font-size:8.5px;font-weight:700;color:#0d2055;min-width:16px;">60</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:6px;">
+        <div style="font-size:8.5px;color:#2a4a8e;text-align:right;width:110px;flex-shrink:0;">Otros</div>
+        <div style="flex:1;background:#d0dff5;border-radius:3px;height:7px;overflow:hidden;"><div style="width:25%;height:100%;background:#1a5dc8;border-radius:3px;"></div></div>
+        <div style="font-size:8.5px;font-weight:700;color:#0d2055;min-width:16px;">15</div>
+      </div>
+    </div>
+    <!-- Right: Prensa fuentes -->
+    <div style="background:#f0f5ff;padding:14px 18px;">
+      <div style="font-size:9.5px;font-weight:700;color:#0d2055;margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px;">Prensa – Fuentes</div>
+      <div style="font-size:28px;font-weight:900;color:#0d2055;line-height:1;margin-bottom:8px;">4</div>
+      <div style="display:flex;align-items:center;gap:6px;margin-bottom:5px;">
+        <div style="font-size:8.5px;color:#2a4a8e;text-align:right;width:80px;flex-shrink:0;">13c</div>
+        <div style="flex:1;background:#d0dff5;border-radius:3px;height:7px;overflow:hidden;"><div style="width:25%;height:100%;background:#1a5dc8;border-radius:3px;"></div></div>
+        <div style="font-size:8.5px;font-weight:700;color:#0d2055;min-width:16px;">1</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:6px;margin-bottom:5px;">
+        <div style="font-size:8.5px;color:#2a4a8e;text-align:right;width:80px;flex-shrink:0;">CNN Chile</div>
+        <div style="flex:1;background:#d0dff5;border-radius:3px;height:7px;overflow:hidden;"><div style="width:25%;height:100%;background:#1a5dc8;border-radius:3px;"></div></div>
+        <div style="font-size:8.5px;font-weight:700;color:#0d2055;min-width:16px;">1</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:6px;margin-bottom:5px;">
+        <div style="font-size:8.5px;color:#2a4a8e;text-align:right;width:80px;flex-shrink:0;">Infinita</div>
+        <div style="flex:1;background:#d0dff5;border-radius:3px;height:7px;overflow:hidden;"><div style="width:25%;height:100%;background:#1a5dc8;border-radius:3px;"></div></div>
+        <div style="font-size:8.5px;font-weight:700;color:#0d2055;min-width:16px;">1</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:6px;">
+        <div style="font-size:8.5px;color:#2a4a8e;text-align:right;width:80px;flex-shrink:0;">Infinita.cl</div>
+        <div style="flex:1;background:#d0dff5;border-radius:3px;height:7px;overflow:hidden;"><div style="width:25%;height:100%;background:#1a5dc8;border-radius:3px;"></div></div>
+        <div style="font-size:8.5px;font-weight:700;color:#0d2055;min-width:16px;">1</div>
+      </div>
+    </div>
   </div>
 
-  <!-- Prensa: número grande + fuentes -->
-  <div style="display:grid;grid-template-columns:1fr 1.6fr;background:#ffffff;border-top:1px solid #e4ecf7;">
-    <div style="padding:16px 18px;border-right:1px solid #e4ecf7;display:flex;flex-direction:column;justify-content:center;">
-      <div style="font-size:10px;font-weight:700;color:#0d2055;line-height:1.4;margin-bottom:8px;">Apariciones en prensa destacadas</div>
-      <div style="font-size:52px;font-weight:900;color:#0d2055;line-height:1;">4</div>
-    </div>
-    <div style="padding:16px 16px;">
-      <div style="font-size:10px;font-weight:700;color:#0d2055;margin-bottom:10px;">Fuentes principales</div>
-      <div style="display:flex;align-items:center;gap:6px;margin-bottom:5px;"><div style="font-size:8.5px;color:#333;text-align:right;width:80px;flex-shrink:0;">13c</div><div style="flex:1;background:#e4ecf7;border-radius:3px;height:7px;overflow:hidden;"><div style="width:100%;height:100%;background:#1a5dc8;border-radius:3px;"></div></div><div style="font-size:8.5px;font-weight:700;color:#0d2055;min-width:14px;">1</div></div>
-      <div style="display:flex;align-items:center;gap:6px;margin-bottom:5px;"><div style="font-size:8.5px;color:#333;text-align:right;width:80px;flex-shrink:0;">CNN Chile</div><div style="flex:1;background:#e4ecf7;border-radius:3px;height:7px;overflow:hidden;"><div style="width:100%;height:100%;background:#1a5dc8;border-radius:3px;"></div></div><div style="font-size:8.5px;font-weight:700;color:#0d2055;min-width:14px;">1</div></div>
-      <div style="display:flex;align-items:center;gap:6px;margin-bottom:5px;"><div style="font-size:8.5px;color:#333;text-align:right;width:80px;flex-shrink:0;">Infinita</div><div style="flex:1;background:#e4ecf7;border-radius:3px;height:7px;overflow:hidden;"><div style="width:100%;height:100%;background:#1a5dc8;border-radius:3px;"></div></div><div style="font-size:8.5px;font-weight:700;color:#0d2055;min-width:14px;">1</div></div>
-      <div style="display:flex;align-items:center;gap:6px;"><div style="font-size:8.5px;color:#333;text-align:right;width:80px;flex-shrink:0;">Infinita.cl</div><div style="flex:1;background:#e4ecf7;border-radius:3px;height:7px;overflow:hidden;"><div style="width:100%;height:100%;background:#1a5dc8;border-radius:3px;"></div></div><div style="font-size:8.5px;font-weight:700;color:#0d2055;min-width:14px;">1</div></div>
-    </div>
+  <!-- RRSS Label -->
+  <div style="background:#1a5dc8;padding:5px 22px;">
+    <span style="font-size:9px;font-weight:700;color:rgba(255,255,255,.75);letter-spacing:1.5px;text-transform:uppercase;">DIFUSIÓN EN RRSS</span>
   </div>
 
-  <!-- Nota destacada navy -->
-  <div style="background:#0d2055;padding:22px 24px 24px;">
-    <div style="font-size:16px;font-weight:800;color:#fff;margin-bottom:16px;text-align:center;">Nota destacada</div>
-    <img src="btg-assets/b6bafb8547f582bc6c1adb5a4718deae.png" style="width:45%;height:auto;border-radius:8px;display:block;margin:0 auto 14px;" alt="Nota destacada">
-    <p style="font-size:9px;color:rgba(255,255,255,.75);line-height:1.6;text-align:center;font-style:italic;">Rodrigo Oyarzo, Banco BTG Pactual: <em>"Estamos en la mitad de una fusión de dos bancos medianos, proceso que va a brindar una oportunidad"</em></p>
+  <!-- RRSS body 2-col -->
+  <div style="display:grid;grid-template-columns:1fr 1fr;background:#1a2d6e;">
+    <!-- Left: Campañas -->
+    <div style="background:rgba(0,0,0,.2);padding:14px 18px;border-right:1px solid rgba(255,255,255,.1);">
+      <div style="font-size:9.5px;font-weight:700;color:rgba(255,255,255,.75);margin-bottom:8px;text-transform:uppercase;letter-spacing:.8px;">Campañas</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:8px;">
+        <div>
+          <div style="font-size:8px;color:rgba(255,255,255,.55);margin-bottom:2px;">Campañas totales</div>
+          <div style="font-size:24px;font-weight:900;color:#fff;line-height:1;">42</div>
+        </div>
+        <div>
+          <div style="font-size:8px;color:rgba(255,255,255,.55);margin-bottom:2px;">Alcanzadas</div>
+          <div style="font-size:20px;font-weight:900;color:#fff;line-height:1.1;">9,6 MM</div>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-bottom:8px;">
+        <div style="background:rgba(255,255,255,.1);border-radius:4px;padding:5px 8px;text-align:center;">
+          <div style="font-size:7.5px;color:rgba(255,255,255,.55);">CPM</div>
+          <div style="font-size:12px;font-weight:800;color:#fff;">$820</div>
+        </div>
+        <div style="background:rgba(255,255,255,.1);border-radius:4px;padding:5px 8px;text-align:center;">
+          <div style="font-size:7.5px;color:rgba(255,255,255,.55);">CTR</div>
+          <div style="font-size:12px;font-weight:800;color:#fff;">1,6%</div>
+        </div>
+      </div>
+      <div style="font-size:8px;color:rgba(255,255,255,.55);margin-bottom:2px;">OBOL registros</div>
+      <div style="font-size:18px;font-weight:900;color:#fff;line-height:1;margin-bottom:6px;">3.304</div>
+      <div style="font-size:8px;color:rgba(255,255,255,.55);margin-bottom:2px;">Tráfico pagado</div>
+      <div style="font-size:18px;font-weight:900;color:#fff;line-height:1;">171 K <span style="font-size:8px;font-weight:400;color:rgba(255,255,255,.45);">usuarios</span></div>
+    </div>
+    <!-- Right: Redes Sociales -->
+    <div style="background:rgba(0,0,0,.1);padding:14px 18px;">
+      <div style="font-size:9.5px;font-weight:700;color:rgba(255,255,255,.75);margin-bottom:8px;text-transform:uppercase;letter-spacing:.8px;">Redes Sociales</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:8px;">
+        <div>
+          <div style="font-size:8px;color:rgba(255,255,255,.55);margin-bottom:2px;">Contenidos</div>
+          <div style="font-size:24px;font-weight:900;color:#fff;line-height:1;">10</div>
+        </div>
+        <div>
+          <div style="font-size:8px;color:rgba(255,255,255,.55);margin-bottom:2px;">Impresiones</div>
+          <div style="font-size:20px;font-weight:900;color:#fff;line-height:1.1;">32.266</div>
+        </div>
+      </div>
+      <div style="font-size:8px;color:rgba(255,255,255,.55);margin-bottom:6px;text-transform:uppercase;letter-spacing:.8px;">Plataformas</div>
+      <div style="display:flex;align-items:center;gap:6px;margin-bottom:5px;">
+        <div style="font-size:8.5px;color:rgba(255,255,255,.7);text-align:right;width:65px;flex-shrink:0;">LinkedIn</div>
+        <div style="flex:1;background:rgba(255,255,255,.15);border-radius:3px;height:7px;overflow:hidden;"><div style="width:100%;height:100%;background:rgba(255,255,255,.75);border-radius:3px;"></div></div>
+        <div style="font-size:8.5px;font-weight:700;color:#fff;min-width:38px;">19.646</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:6px;margin-bottom:5px;">
+        <div style="font-size:8.5px;color:rgba(255,255,255,.7);text-align:right;width:65px;flex-shrink:0;">Instagram</div>
+        <div style="flex:1;background:rgba(255,255,255,.15);border-radius:3px;height:7px;overflow:hidden;"><div style="width:41%;height:100%;background:rgba(255,255,255,.75);border-radius:3px;"></div></div>
+        <div style="font-size:8.5px;font-weight:700;color:#fff;min-width:38px;">8.109</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:6px;margin-bottom:8px;">
+        <div style="font-size:8.5px;color:rgba(255,255,255,.7);text-align:right;width:65px;flex-shrink:0;">YouTube</div>
+        <div style="flex:1;background:rgba(255,255,255,.15);border-radius:3px;height:7px;overflow:hidden;"><div style="width:23%;height:100%;background:rgba(255,255,255,.75);border-radius:3px;"></div></div>
+        <div style="font-size:8.5px;font-weight:700;color:#fff;min-width:38px;">4.511</div>
+      </div>
+      <div style="font-size:8px;color:rgba(255,255,255,.55);margin-bottom:2px;">Tráfico orgánico</div>
+      <div style="font-size:18px;font-weight:900;color:#fff;line-height:1;">103 K <span style="font-size:8px;font-weight:400;color:rgba(255,255,255,.45);">usuarios</span></div>
+    </div>
   </div>
 
 </div><!-- /slide 4 -->
 
 <div class="page-divider"></div>
 
-<!-- ████  SLIDE 5 – INVERSIONES DIGITALES: DIFUSIÓN RRSS  ████ -->
-<div class="slide" style="background:#0d2055;">
+<!-- ████  SLIDE 5 – ASSET MANAGEMENT (COMBINED)  ████ -->
+<div class="slide" style="background:#fff;">
 
-  <!-- Header navy -->
-  <div style="background:#0d2055;padding:20px 24px 18px;display:flex;align-items:center;justify-content:space-between;">
-    <div>
-      <div style="font-size:22px;font-weight:900;color:#fff;line-height:1.2;">Inversiones Digitales</div>
-      <div style="font-size:13px;color:rgba(255,255,255,.65);font-style:italic;margin-top:4px;">Difusión en RRSS – Q1 2026</div>
+  <!-- Header -->
+  <div style="background:#0d2055;padding:16px 22px 14px;display:flex;align-items:center;justify-content:space-between;">
+    <div style="display:flex;align-items:center;gap:14px;">
+      <div style="font-size:48px;font-weight:900;color:rgba(255,255,255,.1);line-height:1;font-variant-numeric:tabular-nums;flex-shrink:0;">02</div>
+      <div>
+        <div style="background:#1a5dc8;color:#fff;font-size:14px;font-weight:800;padding:4px 14px;border-radius:6px;display:inline-block;margin-bottom:4px;">Asset Management</div>
+        <div style="font-size:12px;color:rgba(255,255,255,.65);font-style:italic;margin-top:2px;">Eventos &amp; Medios + Difusión RRSS – Q1 2026</div>
+      </div>
     </div>
-    <img src="btg-assets/img1.png" style="width:82px;object-fit:contain;display:block;" alt="BTG">
+    <img src="btg-assets/img1.png" style="width:70px;object-fit:contain;" alt="BTG">
   </div>
 
-  <!-- 2 columnas principales -->
-  <div style="display:grid;grid-template-columns:1fr 1fr;background:#1a5dc8;">
+  <!-- E&M Label -->
+  <div style="background:#0d2055;padding:5px 22px;border-top:1px solid rgba(255,255,255,.1);">
+    <span style="font-size:9px;font-weight:700;color:rgba(255,255,255,.45);letter-spacing:1.5px;text-transform:uppercase;">EVENTOS &amp; MEDIOS</span>
+  </div>
 
-    <!-- ── CAMPAÑAS ── -->
-    <div style="padding:20px 22px;border-right:1px solid rgba(255,255,255,.2);display:flex;flex-direction:column;gap:14px;">
-
-      <div style="font-size:12px;font-weight:900;color:#fff;text-transform:uppercase;letter-spacing:1px;padding-bottom:10px;border-bottom:2px solid rgba(255,255,255,.2);">Campañas</div>
-
-      <!-- KPIs -->
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
-        <div style="background:rgba(255,255,255,.13);border-radius:8px;padding:12px 14px;">
-          <div style="font-size:9.5px;color:rgba(255,255,255,.65);margin-bottom:4px;">Campañas totales</div>
-          <div style="font-size:32px;font-weight:900;color:#fff;line-height:1;">42</div>
-        </div>
-        <div style="background:rgba(255,255,255,.13);border-radius:8px;padding:12px 14px;">
-          <div style="font-size:9.5px;color:rgba(255,255,255,.65);margin-bottom:4px;">Personas alcanzadas</div>
-          <div style="font-size:24px;font-weight:900;color:#fff;line-height:1.1;">9,6 MM</div>
-        </div>
-      </div>
-
-      <!-- Módulo: Personas por mes -->
-      <div style="background:rgba(0,0,0,.18);border-radius:8px;padding:12px 14px;">
-        <div style="font-size:9.5px;font-weight:700;color:rgba(255,255,255,.75);margin-bottom:10px;">Personas alcanzadas por mes</div>
-        <!-- baseline: y=72, max-h=52; bars w=26, centers: 30, 72, 114 en viewBox 0 0 144 90 -->
-        <svg viewBox="0 0 144 90" width="100%" style="display:block;">
-          <line x1="4" y1="72" x2="140" y2="72" stroke="rgba(255,255,255,.15)" stroke-width="1"/>
-          <!-- 4.8M=100%→52; 3.9M=81.25%→42; 4.2M=87.5%→46 -->
-          <rect x="17" y="20" width="26" height="52" rx="3" fill="rgba(255,255,255,.85)"/>
-          <rect x="59" y="30" width="26" height="42" rx="3" fill="rgba(255,255,255,.65)"/>
-          <rect x="101" y="26" width="26" height="46" rx="3" fill="rgba(255,255,255,.75)"/>
-          <text x="30" y="15" font-size="8" fill="white" text-anchor="middle" font-family="sans-serif" font-weight="bold">4,8M</text>
-          <text x="72" y="25" font-size="8" fill="white" text-anchor="middle" font-family="sans-serif" font-weight="bold">3,9M</text>
-          <text x="114" y="21" font-size="8" fill="white" text-anchor="middle" font-family="sans-serif" font-weight="bold">4,2M</text>
-          <text x="30" y="84" font-size="7.5" fill="rgba(255,255,255,.6)" text-anchor="middle" font-family="sans-serif">Ene</text>
-          <text x="72" y="84" font-size="7.5" fill="rgba(255,255,255,.6)" text-anchor="middle" font-family="sans-serif">Feb</text>
-          <text x="114" y="84" font-size="7.5" fill="rgba(255,255,255,.6)" text-anchor="middle" font-family="sans-serif">Mar</text>
-        </svg>
-      </div>
-
-      <!-- CPM / CTR -->
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
-        <div style="background:rgba(0,0,0,.22);border-radius:8px;padding:11px 14px;text-align:center;">
-          <div style="font-size:9px;font-weight:700;color:rgba(255,255,255,.65);margin-bottom:3px;">CPM</div>
-          <div style="font-size:22px;font-weight:900;color:#fff;line-height:1;">$820</div>
-          <div style="font-size:8px;color:rgba(255,255,255,.45);margin-top:3px;">Costo por mil impr.</div>
-        </div>
-        <div style="background:rgba(0,0,0,.22);border-radius:8px;padding:11px 14px;text-align:center;">
-          <div style="font-size:9px;font-weight:700;color:rgba(255,255,255,.65);margin-bottom:3px;">CTR</div>
-          <div style="font-size:22px;font-weight:900;color:#fff;line-height:1;">1,6%</div>
-          <div style="font-size:8px;color:rgba(255,255,255,.45);margin-top:3px;">Tasa clics en enlace</div>
-        </div>
-      </div>
-
-      <!-- Módulo: Registros OBOL -->
-      <div style="background:rgba(0,0,0,.18);border-radius:8px;padding:12px 14px;">
-        <div style="font-size:9.5px;color:rgba(255,255,255,.65);margin-bottom:2px;">Registros web pagados (OBOL)</div>
-        <div style="font-size:28px;font-weight:900;color:#fff;line-height:1.1;margin-bottom:10px;">3.304</div>
-        <!-- baseline y=72, max-h=52; 1.331=100%→52; 1.081=81.2%→42; 892=67%→35 -->
-        <svg viewBox="0 0 144 90" width="100%" style="display:block;">
-          <line x1="4" y1="72" x2="140" y2="72" stroke="rgba(255,255,255,.15)" stroke-width="1"/>
-          <rect x="17" y="20" width="26" height="52" rx="3" fill="rgba(255,255,255,.85)"/>
-          <rect x="59" y="30" width="26" height="42" rx="3" fill="rgba(255,255,255,.65)"/>
-          <rect x="101" y="37" width="26" height="35" rx="3" fill="rgba(255,255,255,.5)"/>
-          <text x="30" y="15" font-size="8" fill="white" text-anchor="middle" font-family="sans-serif" font-weight="bold">1.331</text>
-          <text x="72" y="25" font-size="8" fill="white" text-anchor="middle" font-family="sans-serif" font-weight="bold">1.081</text>
-          <text x="114" y="32" font-size="8" fill="white" text-anchor="middle" font-family="sans-serif" font-weight="bold">892</text>
-          <text x="30" y="84" font-size="7.5" fill="rgba(255,255,255,.6)" text-anchor="middle" font-family="sans-serif">Ene</text>
-          <text x="72" y="84" font-size="7.5" fill="rgba(255,255,255,.6)" text-anchor="middle" font-family="sans-serif">Feb</text>
-          <text x="114" y="84" font-size="7.5" fill="rgba(255,255,255,.6)" text-anchor="middle" font-family="sans-serif">Mar</text>
-        </svg>
-      </div>
-
+  <!-- KPI row E&M -->
+  <div style="display:grid;grid-template-columns:repeat(2,1fr);background:#c8daf5;">
+    <div style="padding:12px 18px;border-right:1px solid rgba(0,47,115,.12);">
+      <div style="font-size:9px;font-weight:700;color:#0d2055;margin-bottom:3px;">Eventos</div>
+      <div style="font-size:28px;font-weight:900;color:#0d2055;line-height:1;">1</div>
+      <div style="font-size:8px;color:#3a5a9e;margin-top:2px;">50 asistentes</div>
     </div>
-
-    <!-- ── REDES SOCIALES ── -->
-    <div style="padding:20px 22px;display:flex;flex-direction:column;gap:14px;">
-
-      <div style="font-size:12px;font-weight:900;color:#fff;text-transform:uppercase;letter-spacing:1px;padding-bottom:10px;border-bottom:2px solid rgba(255,255,255,.2);">Redes Sociales</div>
-
-      <!-- KPIs -->
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
-        <div style="background:rgba(255,255,255,.13);border-radius:8px;padding:12px 14px;">
-          <div style="font-size:9.5px;color:rgba(255,255,255,.65);margin-bottom:4px;">Contenidos publicados</div>
-          <div style="font-size:32px;font-weight:900;color:#fff;line-height:1;">10</div>
-        </div>
-        <div style="background:rgba(255,255,255,.13);border-radius:8px;padding:12px 14px;">
-          <div style="font-size:9.5px;color:rgba(255,255,255,.65);margin-bottom:4px;">Impresiones</div>
-          <div style="font-size:24px;font-weight:900;color:#fff;line-height:1.1;">32.266</div>
-        </div>
-      </div>
-
-      <!-- Módulo: Impresiones mensuales -->
-      <div style="background:rgba(0,0,0,.18);border-radius:8px;padding:12px 14px;">
-        <div style="font-size:9.5px;font-weight:700;color:rgba(255,255,255,.75);margin-bottom:10px;">Impresiones mensuales</div>
-        <!-- max=19184: 7126=37.1%→19; 5956=31%→16; 19184=100%→52; baseline y=72 -->
-        <svg viewBox="0 0 144 90" width="100%" style="display:block;">
-          <line x1="4" y1="72" x2="140" y2="72" stroke="rgba(255,255,255,.15)" stroke-width="1"/>
-          <rect x="17" y="53" width="26" height="19" rx="3" fill="rgba(255,255,255,.6)"/>
-          <rect x="59" y="56" width="26" height="16" rx="3" fill="rgba(255,255,255,.5)"/>
-          <rect x="101" y="20" width="26" height="52" rx="3" fill="rgba(255,255,255,.9)"/>
-          <text x="30" y="48" font-size="8" fill="white" text-anchor="middle" font-family="sans-serif" font-weight="bold">7.126</text>
-          <text x="72" y="51" font-size="8" fill="white" text-anchor="middle" font-family="sans-serif" font-weight="bold">5.956</text>
-          <text x="114" y="15" font-size="8" fill="white" text-anchor="middle" font-family="sans-serif" font-weight="bold">19.184</text>
-          <text x="30" y="84" font-size="7.5" fill="rgba(255,255,255,.6)" text-anchor="middle" font-family="sans-serif">Ene</text>
-          <text x="72" y="84" font-size="7.5" fill="rgba(255,255,255,.6)" text-anchor="middle" font-family="sans-serif">Feb</text>
-          <text x="114" y="84" font-size="7.5" fill="rgba(255,255,255,.6)" text-anchor="middle" font-family="sans-serif">Mar</text>
-        </svg>
-      </div>
-
-      <!-- Módulo: Impresiones por plataforma -->
-      <div style="background:rgba(0,0,0,.18);border-radius:8px;padding:12px 14px;">
-        <div style="font-size:9.5px;font-weight:700;color:rgba(255,255,255,.75);margin-bottom:10px;">Impresiones por plataforma</div>
-        <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
-          <div style="font-size:9px;color:rgba(255,255,255,.8);width:58px;flex-shrink:0;">LinkedIn</div>
-          <div style="flex:1;background:rgba(255,255,255,.15);border-radius:3px;height:8px;overflow:hidden;"><div style="width:100%;height:100%;background:rgba(255,255,255,.8);border-radius:3px;"></div></div>
-          <div style="font-size:9px;font-weight:700;color:#fff;min-width:36px;text-align:right;">19.646</div>
-        </div>
-        <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
-          <div style="font-size:9px;color:rgba(255,255,255,.8);width:58px;flex-shrink:0;">Instagram</div>
-          <div style="flex:1;background:rgba(255,255,255,.15);border-radius:3px;height:8px;overflow:hidden;"><div style="width:41%;height:100%;background:rgba(255,255,255,.8);border-radius:3px;"></div></div>
-          <div style="font-size:9px;font-weight:700;color:#fff;min-width:36px;text-align:right;">8.109</div>
-        </div>
-        <div style="display:flex;align-items:center;gap:8px;">
-          <div style="font-size:9px;color:rgba(255,255,255,.8);width:58px;flex-shrink:0;">YouTube</div>
-          <div style="flex:1;background:rgba(255,255,255,.15);border-radius:3px;height:8px;overflow:hidden;"><div style="width:23%;height:100%;background:rgba(255,255,255,.8);border-radius:3px;"></div></div>
-          <div style="font-size:9px;font-weight:700;color:#fff;min-width:36px;text-align:right;">4.511</div>
-        </div>
-      </div>
-
-      <!-- Tráfico web integrado en columna derecha -->
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:auto;">
-        <div style="background:rgba(0,0,0,.28);border-radius:8px;padding:13px 15px;">
-          <div style="font-size:9px;font-weight:700;color:rgba(255,255,255,.65);margin-bottom:4px;">Tráfico web pagado</div>
-          <div style="font-size:24px;font-weight:900;color:#fff;line-height:1.1;">171 K</div>
-          <div style="font-size:8px;color:rgba(255,255,255,.45);margin-top:2px;">usuarios</div>
-        </div>
-        <div style="background:rgba(0,0,0,.18);border-radius:8px;padding:13px 15px;">
-          <div style="font-size:9px;font-weight:700;color:rgba(255,255,255,.65);margin-bottom:4px;">Tráfico web orgánico</div>
-          <div style="font-size:24px;font-weight:900;color:#fff;line-height:1.1;">103 K</div>
-          <div style="font-size:8px;color:rgba(255,255,255,.45);margin-top:2px;">usuarios</div>
-        </div>
-      </div>
-
+    <div style="padding:12px 18px;">
+      <div style="font-size:9px;font-weight:700;color:#0d2055;margin-bottom:3px;">Apariciones prensa</div>
+      <div style="font-size:28px;font-weight:900;color:#0d2055;line-height:1;">14</div>
     </div>
   </div>
 
-  <!-- Contenidos orgánicos destacados -->
-  <div style="background:#0d2055;padding:18px 24px 22px;">
-    <div style="font-size:13px;font-weight:800;color:#fff;margin-bottom:12px;text-transform:uppercase;letter-spacing:.8px;">Contenidos orgánicos destacados</div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+  <!-- E&M body 2-col -->
+  <div style="display:grid;grid-template-columns:1fr 1fr;">
+    <!-- Left: Evento destacado -->
+    <div style="background:#f0f5ff;padding:14px 18px;border-right:1px solid #dde8fb;">
+      <div style="font-size:9.5px;font-weight:700;color:#0d2055;margin-bottom:8px;text-transform:uppercase;letter-spacing:.5px;">Evento destacado</div>
+      <div style="font-size:13px;font-weight:800;color:#0d2055;margin-bottom:6px;">Asset Day Colombia</div>
+      <div style="display:flex;gap:4px;flex-wrap:wrap;margin-bottom:8px;">
+        <span style="background:#1a5dc8;color:#fff;font-size:7.5px;font-weight:700;padding:3px 8px;border-radius:10px;">50 asistentes</span>
+        <span style="background:#0d2055;color:#fff;font-size:7.5px;font-weight:700;padding:3px 8px;border-radius:10px;">Marriot Bogotá</span>
+      </div>
+      <div style="font-size:8.5px;color:#4a6a9e;line-height:1.5;">Encuentro estratégico con clientes e inversionistas clave en Colombia.</div>
+    </div>
+    <!-- Right: Prensa fuentes -->
+    <div style="background:#f0f5ff;padding:14px 18px;">
+      <div style="font-size:9.5px;font-weight:700;color:#0d2055;margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px;">Prensa – Fuentes</div>
+      <div style="font-size:28px;font-weight:900;color:#0d2055;line-height:1;margin-bottom:8px;">14</div>
+      <div style="display:flex;align-items:center;gap:6px;margin-bottom:5px;">
+        <div style="font-size:8.5px;color:#2a4a8e;text-align:right;width:100px;flex-shrink:0;">Df.cl</div>
+        <div style="flex:1;background:#d0dff5;border-radius:3px;height:7px;overflow:hidden;"><div style="width:100%;height:100%;background:#1a5dc8;border-radius:3px;"></div></div>
+        <div style="font-size:8.5px;font-weight:700;color:#0d2055;min-width:16px;">3</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:6px;margin-bottom:5px;">
+        <div style="font-size:8.5px;color:#2a4a8e;text-align:right;width:100px;flex-shrink:0;">El Diario Financiero</div>
+        <div style="flex:1;background:#d0dff5;border-radius:3px;height:7px;overflow:hidden;"><div style="width:100%;height:100%;background:#1a5dc8;border-radius:3px;"></div></div>
+        <div style="font-size:8.5px;font-weight:700;color:#0d2055;min-width:16px;">3</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:6px;margin-bottom:5px;">
+        <div style="font-size:8.5px;color:#2a4a8e;text-align:right;width:100px;flex-shrink:0;">El Mercurio</div>
+        <div style="flex:1;background:#d0dff5;border-radius:3px;height:7px;overflow:hidden;"><div style="width:100%;height:100%;background:#1a5dc8;border-radius:3px;"></div></div>
+        <div style="font-size:8.5px;font-weight:700;color:#0d2055;min-width:16px;">3</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:6px;">
+        <div style="font-size:8.5px;color:#2a4a8e;text-align:right;width:100px;flex-shrink:0;">fundsociety.com</div>
+        <div style="flex:1;background:#d0dff5;border-radius:3px;height:7px;overflow:hidden;"><div style="width:33%;height:100%;background:#1a5dc8;border-radius:3px;"></div></div>
+        <div style="font-size:8.5px;font-weight:700;color:#0d2055;min-width:16px;">1</div>
+      </div>
+    </div>
+  </div>
 
-      <!-- Card 1 — vertical -->
-      <div style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;">
-        <div style="background:rgba(0,0,0,.3);padding:12px;display:flex;align-items:center;justify-content:center;min-height:160px;">
-          <img src="btg-assets/62e0f554add56682d8659231c9c2d8b2.png"
-               style="max-width:100%;max-height:150px;width:auto;height:auto;object-fit:contain;border-radius:6px;display:block;" alt="">
+  <!-- RRSS Label -->
+  <div style="background:#1a5dc8;padding:5px 22px;">
+    <span style="font-size:9px;font-weight:700;color:rgba(255,255,255,.75);letter-spacing:1.5px;text-transform:uppercase;">DIFUSIÓN EN RRSS</span>
+  </div>
+
+  <!-- RRSS body 2-col -->
+  <div style="display:grid;grid-template-columns:1fr 1fr;background:#1a2d6e;">
+    <!-- Left: Campañas -->
+    <div style="background:rgba(0,0,0,.2);padding:14px 18px;border-right:1px solid rgba(255,255,255,.1);">
+      <div style="font-size:9.5px;font-weight:700;color:rgba(255,255,255,.75);margin-bottom:8px;text-transform:uppercase;letter-spacing:.8px;">Campañas</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:8px;">
+        <div>
+          <div style="font-size:8px;color:rgba(255,255,255,.55);margin-bottom:2px;">Campañas</div>
+          <div style="font-size:24px;font-weight:900;color:#fff;line-height:1;">10</div>
         </div>
-        <div style="padding:12px 14px;display:flex;flex-direction:column;gap:5px;">
-          <div style="font-size:9.5px;color:rgba(255,255,255,.8);line-height:1.5;">Encuentro "Chile en foco: oportunidades y desafíos en Activos Locales"</div>
-          <div style="display:flex;align-items:center;justify-content:space-between;margin-top:2px;">
-            <div style="font-size:8.5px;color:#7fa8d8;font-weight:700;">LinkedIn</div>
-            <div style="text-align:right;">
-              <div style="font-size:20px;font-weight:900;color:#fff;line-height:1;">8.395</div>
-              <div style="font-size:7.5px;color:rgba(255,255,255,.4);">Impresiones</div>
-            </div>
-          </div>
+        <div>
+          <div style="font-size:8px;color:rgba(255,255,255,.55);margin-bottom:2px;">Cuentas creadas</div>
+          <div style="font-size:20px;font-weight:900;color:#fff;line-height:1.1;">487</div>
         </div>
       </div>
-
-      <!-- Card 2 — vertical -->
-      <div style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;">
-        <div style="background:rgba(0,0,0,.3);padding:12px;display:flex;align-items:center;justify-content:center;min-height:160px;">
-          <img src="btg-assets/8bb3dbf0edbd523069d1513ea2818d85.png"
-               style="max-width:100%;max-height:150px;width:auto;height:auto;object-fit:contain;border-radius:6px;display:block;" alt="">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-bottom:8px;">
+        <div style="background:rgba(255,255,255,.1);border-radius:4px;padding:5px 8px;text-align:center;">
+          <div style="font-size:7.5px;color:rgba(255,255,255,.55);">CAC</div>
+          <div style="font-size:11px;font-weight:800;color:#fff;">$27.771</div>
         </div>
-        <div style="padding:12px 14px;display:flex;flex-direction:column;gap:5px;">
-          <div style="font-size:9.5px;color:rgba(255,255,255,.8);line-height:1.5;">BTG Call Elecciones 2025 — análisis del escenario electoral</div>
-          <div style="display:flex;align-items:center;justify-content:space-between;margin-top:2px;">
-            <div style="font-size:8.5px;color:#7fa8d8;font-weight:700;">LinkedIn</div>
-            <div style="text-align:right;">
-              <div style="font-size:20px;font-weight:900;color:#fff;line-height:1;">3.511</div>
-              <div style="font-size:7.5px;color:rgba(255,255,255,.4);">Impresiones</div>
-            </div>
-          </div>
+        <div style="background:rgba(255,255,255,.1);border-radius:4px;padding:5px 8px;text-align:center;">
+          <div style="font-size:7.5px;color:rgba(255,255,255,.55);">Aportantes</div>
+          <div style="font-size:11px;font-weight:800;color:#fff;">867</div>
         </div>
       </div>
-
+      <div style="font-size:8px;color:rgba(255,255,255,.55);margin-bottom:2px;">Monto aportes</div>
+      <div style="font-size:18px;font-weight:900;color:#fff;line-height:1;">$5.536 MM</div>
+    </div>
+    <!-- Right: Redes Sociales -->
+    <div style="background:rgba(0,0,0,.1);padding:14px 18px;">
+      <div style="font-size:9.5px;font-weight:700;color:rgba(255,255,255,.75);margin-bottom:8px;text-transform:uppercase;letter-spacing:.8px;">Redes Sociales</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:8px;">
+        <div>
+          <div style="font-size:8px;color:rgba(255,255,255,.55);margin-bottom:2px;">Contenidos</div>
+          <div style="font-size:24px;font-weight:900;color:#fff;line-height:1;">63</div>
+        </div>
+        <div>
+          <div style="font-size:8px;color:rgba(255,255,255,.55);margin-bottom:2px;">Impresiones</div>
+          <div style="font-size:20px;font-weight:900;color:#fff;line-height:1.1;">371 K</div>
+        </div>
+      </div>
+      <div style="font-size:8px;color:rgba(255,255,255,.55);margin-bottom:6px;text-transform:uppercase;letter-spacing:.8px;">Plataformas</div>
+      <div style="display:flex;align-items:center;gap:6px;margin-bottom:5px;">
+        <div style="font-size:8.5px;color:rgba(255,255,255,.7);text-align:right;width:65px;flex-shrink:0;">Instagram</div>
+        <div style="flex:1;background:rgba(255,255,255,.15);border-radius:3px;height:7px;overflow:hidden;"><div style="width:100%;height:100%;background:rgba(255,255,255,.75);border-radius:3px;"></div></div>
+        <div style="font-size:8.5px;font-weight:700;color:#fff;min-width:38px;">243 K</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:6px;margin-bottom:5px;">
+        <div style="font-size:8.5px;color:rgba(255,255,255,.7);text-align:right;width:65px;flex-shrink:0;">LinkedIn</div>
+        <div style="flex:1;background:rgba(255,255,255,.15);border-radius:3px;height:7px;overflow:hidden;"><div style="width:41%;height:100%;background:rgba(255,255,255,.75);border-radius:3px;"></div></div>
+        <div style="font-size:8.5px;font-weight:700;color:#fff;min-width:38px;">100 K</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:6px;margin-bottom:8px;">
+        <div style="font-size:8.5px;color:rgba(255,255,255,.7);text-align:right;width:65px;flex-shrink:0;">YouTube</div>
+        <div style="flex:1;background:rgba(255,255,255,.15);border-radius:3px;height:7px;overflow:hidden;"><div style="width:11%;height:100%;background:rgba(255,255,255,.75);border-radius:3px;"></div></div>
+        <div style="font-size:8.5px;font-weight:700;color:#fff;min-width:38px;">27,7 K</div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;">
+        <div>
+          <div style="font-size:7.5px;color:rgba(255,255,255,.55);margin-bottom:2px;">Tráfico pagado</div>
+          <div style="font-size:14px;font-weight:800;color:#fff;">20.326</div>
+        </div>
+        <div>
+          <div style="font-size:7.5px;color:rgba(255,255,255,.55);margin-bottom:2px;">Tráfico orgánico</div>
+          <div style="font-size:14px;font-weight:800;color:#fff;">10.706</div>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -958,109 +961,152 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:#1a1a2e;color:var(--
 
 <div class="page-divider"></div>
 
-<!-- ████  SLIDE 6 – ASSET MANAGEMENT: EVENTOS & MEDIOS  ████ -->
+<!-- ████  SLIDE 6 – SALES & TRADING (COMBINED)  ████ -->
 <div class="slide" style="background:#fff;">
 
-  <!-- Header navy -->
-  <div style="background:#0d2055;padding:20px 24px 18px;display:flex;align-items:center;justify-content:space-between;">
-    <div>
-      <div style="font-size:22px;font-weight:900;color:#fff;line-height:1.2;">Asset Management</div>
-      <div style="font-size:13px;color:rgba(255,255,255,.65);font-style:italic;margin-top:4px;">Eventos &amp; Medios – Q1 2026</div>
-    </div>
-    <img src="btg-assets/img1.png" style="width:82px;object-fit:contain;display:block;" alt="BTG">
-  </div>
-
-  <!-- KPIs sky-blue -->
-  <div style="display:grid;grid-template-columns:1fr 1fr;background:#c8daf5;">
-    <div style="padding:16px 24px;border-right:1px solid rgba(0,47,115,.12);">
-      <div style="font-size:10px;color:#1a3a6e;margin-bottom:4px;font-weight:600;">Eventos destacados</div>
-      <div style="font-size:36px;font-weight:900;color:#0d2055;line-height:1;">1</div>
-      <div style="font-size:9.5px;color:#3a5a9e;margin-top:3px;">50 asistentes</div>
-    </div>
-    <div style="padding:16px 24px;">
-      <div style="font-size:10px;color:#1a3a6e;margin-bottom:4px;font-weight:600;">Apariciones en Prensa</div>
-      <div style="font-size:36px;font-weight:900;color:#0d2055;line-height:1;">14</div>
-    </div>
-  </div>
-
-  <!-- Asistentes por evento -->
-  <div style="background:#f0f5ff;padding:14px 24px;border-bottom:1px solid #dde8fb;">
-    <div style="font-size:10.5px;font-weight:700;color:#0d2055;margin-bottom:10px;text-transform:uppercase;letter-spacing:.5px;">Asistentes por evento</div>
-    <div style="display:flex;align-items:center;gap:10px;">
-      <div style="font-size:9.5px;color:#2a4a8e;width:200px;flex-shrink:0;">Asset Day Colombia · Marriot Bogotá</div>
-      <div style="flex:1;background:#d0dff5;border-radius:4px;height:10px;overflow:hidden;">
-        <div style="width:100%;height:100%;background:#1a5dc8;border-radius:4px;"></div>
+  <!-- Header -->
+  <div style="background:#0d2055;padding:16px 22px 14px;display:flex;align-items:center;justify-content:space-between;">
+    <div style="display:flex;align-items:center;gap:14px;">
+      <div style="font-size:48px;font-weight:900;color:rgba(255,255,255,.1);line-height:1;font-variant-numeric:tabular-nums;flex-shrink:0;">03</div>
+      <div>
+        <div style="background:#1a5dc8;color:#fff;font-size:14px;font-weight:800;padding:4px 14px;border-radius:6px;display:inline-block;margin-bottom:4px;">Sales &amp; Trading</div>
+        <div style="font-size:12px;color:rgba(255,255,255,.65);font-style:italic;margin-top:2px;">Eventos &amp; Medios + Difusión RRSS – Q1 2026</div>
       </div>
-      <div style="font-size:12px;font-weight:800;color:#0d2055;min-width:28px;text-align:right;">50</div>
     </div>
+    <img src="btg-assets/img1.png" style="width:70px;object-fit:contain;" alt="BTG">
   </div>
 
-  <!-- Evento destacado: foto + descripción -->
-  <div style="background:#0d2055;display:flex;align-items:stretch;">
-    <div style="width:42%;flex-shrink:0;overflow:hidden;">
-      <img src="btg-assets/img2.jpg" style="width:100%;height:100%;object-fit:cover;display:block;" alt="Asset Day Colombia">
+  <!-- E&M Label -->
+  <div style="background:#0d2055;padding:5px 22px;border-top:1px solid rgba(255,255,255,.1);">
+    <span style="font-size:9px;font-weight:700;color:rgba(255,255,255,.45);letter-spacing:1.5px;text-transform:uppercase;">EVENTOS &amp; MEDIOS</span>
+  </div>
+
+  <!-- KPI row E&M -->
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);background:#c8daf5;">
+    <div style="padding:12px 18px;border-right:1px solid rgba(0,47,115,.12);">
+      <div style="font-size:9px;font-weight:700;color:#0d2055;margin-bottom:3px;">Eventos</div>
+      <div style="font-size:28px;font-weight:900;color:#0d2055;line-height:1;">2</div>
     </div>
-    <div style="flex:1;padding:22px 24px;display:flex;flex-direction:column;justify-content:center;gap:10px;">
-      <div style="font-size:11px;font-weight:800;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:.8px;">Evento destacado</div>
-      <div style="font-size:16px;font-weight:900;color:#fff;line-height:1.3;">Asset Day Colombia</div>
-      <div style="font-size:11px;color:rgba(255,255,255,.75);line-height:1.6;">Se destacó el evento <strong style="color:#fff;">Asset Day Colombia</strong> realizado en el Marriot Bogotá. El encuentro reunió a clientes e inversionistas estratégicos con 50 asistentes.</div>
-      <div style="display:flex;align-items:center;gap:6px;margin-top:4px;">
-        <div style="background:rgba(255,255,255,.15);border-radius:20px;padding:4px 12px;font-size:9px;color:rgba(255,255,255,.8);">50 asistentes</div>
-        <div style="background:rgba(255,255,255,.15);border-radius:20px;padding:4px 12px;font-size:9px;color:rgba(255,255,255,.8);">Bogotá, Colombia</div>
-      </div>
+    <div style="padding:12px 18px;border-right:1px solid rgba(0,47,115,.12);">
+      <div style="font-size:9px;font-weight:700;color:#0d2055;margin-bottom:3px;">Asistentes</div>
+      <div style="font-size:28px;font-weight:900;color:#0d2055;line-height:1;">72</div>
+    </div>
+    <div style="padding:12px 18px;">
+      <div style="font-size:9px;font-weight:700;color:#0d2055;margin-bottom:3px;">Apariciones prensa</div>
+      <div style="font-size:28px;font-weight:900;color:#0d2055;line-height:1;">6</div>
     </div>
   </div>
 
-  <!-- Prensa: big number + fuentes -->
-  <div style="display:grid;grid-template-columns:1fr 2fr;background:#fff;border-top:1px solid #e4ecf7;border-bottom:1px solid #e4ecf7;">
-    <div style="padding:18px 24px;border-right:1px solid #e4ecf7;display:flex;flex-direction:column;justify-content:center;">
-      <div style="font-size:10.5px;font-weight:700;color:#0d2055;margin-bottom:6px;">Apariciones en prensa</div>
-      <div style="font-size:48px;font-weight:900;color:#0d2055;line-height:1;">14</div>
+  <!-- E&M body 2-col -->
+  <div style="display:grid;grid-template-columns:1fr 1fr;">
+    <!-- Left: Asistentes por evento -->
+    <div style="background:#f0f5ff;padding:14px 18px;border-right:1px solid #dde8fb;">
+      <div style="font-size:9.5px;font-weight:700;color:#0d2055;margin-bottom:10px;text-transform:uppercase;letter-spacing:.5px;">Asistentes por evento</div>
+      <div style="display:flex;align-items:center;gap:6px;margin-bottom:5px;">
+        <div style="font-size:8px;color:#2a4a8e;text-align:right;width:120px;flex-shrink:0;">Kick off – CB en Dondoh</div>
+        <div style="flex:1;background:#d0dff5;border-radius:3px;height:7px;overflow:hidden;"><div style="width:100%;height:100%;background:#1a5dc8;border-radius:3px;"></div></div>
+        <div style="font-size:8.5px;font-weight:700;color:#0d2055;min-width:16px;">60</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:6px;">
+        <div style="font-size:8px;color:#2a4a8e;text-align:right;width:120px;flex-shrink:0;">Clínica Padel J. Valdés</div>
+        <div style="flex:1;background:#d0dff5;border-radius:3px;height:7px;overflow:hidden;"><div style="width:20%;height:100%;background:#1a5dc8;border-radius:3px;"></div></div>
+        <div style="font-size:8.5px;font-weight:700;color:#0d2055;min-width:16px;">12</div>
+      </div>
     </div>
-    <div style="padding:18px 24px;">
-      <div style="font-size:10.5px;font-weight:700;color:#0d2055;margin-bottom:12px;text-transform:uppercase;letter-spacing:.5px;">Fuentes principales</div>
-      <!-- max=3 → 100% -->
-      <div style="display:flex;align-items:center;gap:8px;margin-bottom:7px;">
-        <div style="font-size:9px;color:#2a4a8e;width:120px;flex-shrink:0;">Df.cl</div>
-        <div style="flex:1;background:#e4ecf7;border-radius:3px;height:7px;overflow:hidden;"><div style="width:100%;height:100%;background:#1a5dc8;border-radius:3px;"></div></div>
-        <div style="font-size:9.5px;font-weight:700;color:#0d2055;min-width:16px;text-align:right;">3</div>
+    <!-- Right: Prensa fuentes -->
+    <div style="background:#f0f5ff;padding:14px 18px;">
+      <div style="font-size:9.5px;font-weight:700;color:#0d2055;margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px;">Prensa – Fuentes</div>
+      <div style="font-size:28px;font-weight:900;color:#0d2055;line-height:1;margin-bottom:8px;">6</div>
+      <div style="display:flex;align-items:center;gap:6px;margin-bottom:5px;">
+        <div style="font-size:8.5px;color:#2a4a8e;text-align:right;width:90px;flex-shrink:0;">elmercurio.cl</div>
+        <div style="flex:1;background:#d0dff5;border-radius:3px;height:7px;overflow:hidden;"><div style="width:100%;height:100%;background:#1a5dc8;border-radius:3px;"></div></div>
+        <div style="font-size:8.5px;font-weight:700;color:#0d2055;min-width:16px;">2</div>
       </div>
-      <div style="display:flex;align-items:center;gap:8px;margin-bottom:7px;">
-        <div style="font-size:9px;color:#2a4a8e;width:120px;flex-shrink:0;">El Diario Financiero</div>
-        <div style="flex:1;background:#e4ecf7;border-radius:3px;height:7px;overflow:hidden;"><div style="width:100%;height:100%;background:#1a5dc8;border-radius:3px;"></div></div>
-        <div style="font-size:9.5px;font-weight:700;color:#0d2055;min-width:16px;text-align:right;">3</div>
+      <div style="display:flex;align-items:center;gap:6px;margin-bottom:5px;">
+        <div style="font-size:8.5px;color:#2a4a8e;text-align:right;width:90px;flex-shrink:0;">Ex-ante.cl</div>
+        <div style="flex:1;background:#d0dff5;border-radius:3px;height:7px;overflow:hidden;"><div style="width:50%;height:100%;background:#1a5dc8;border-radius:3px;"></div></div>
+        <div style="font-size:8.5px;font-weight:700;color:#0d2055;min-width:16px;">1</div>
       </div>
-      <div style="display:flex;align-items:center;gap:8px;margin-bottom:7px;">
-        <div style="font-size:9px;color:#2a4a8e;width:120px;flex-shrink:0;">El Mercurio</div>
-        <div style="flex:1;background:#e4ecf7;border-radius:3px;height:7px;overflow:hidden;"><div style="width:100%;height:100%;background:#1a5dc8;border-radius:3px;"></div></div>
-        <div style="font-size:9.5px;font-weight:700;color:#0d2055;min-width:16px;text-align:right;">3</div>
+      <div style="display:flex;align-items:center;gap:6px;margin-bottom:5px;">
+        <div style="font-size:8.5px;color:#2a4a8e;text-align:right;width:90px;flex-shrink:0;">Latercera.com</div>
+        <div style="flex:1;background:#d0dff5;border-radius:3px;height:7px;overflow:hidden;"><div style="width:50%;height:100%;background:#1a5dc8;border-radius:3px;"></div></div>
+        <div style="font-size:8.5px;font-weight:700;color:#0d2055;min-width:16px;">1</div>
       </div>
-      <div style="display:flex;align-items:center;gap:8px;margin-bottom:7px;">
-        <div style="font-size:9px;color:#2a4a8e;width:120px;flex-shrink:0;">elmercurio.cl</div>
-        <div style="flex:1;background:#e4ecf7;border-radius:3px;height:7px;overflow:hidden;"><div style="width:100%;height:100%;background:#1a5dc8;border-radius:3px;"></div></div>
-        <div style="font-size:9.5px;font-weight:700;color:#0d2055;min-width:16px;text-align:right;">3</div>
+      <div style="display:flex;align-items:center;gap:6px;margin-bottom:5px;">
+        <div style="font-size:8.5px;color:#2a4a8e;text-align:right;width:90px;flex-shrink:0;">Radio Duna</div>
+        <div style="flex:1;background:#d0dff5;border-radius:3px;height:7px;overflow:hidden;"><div style="width:50%;height:100%;background:#1a5dc8;border-radius:3px;"></div></div>
+        <div style="font-size:8.5px;font-weight:700;color:#0d2055;min-width:16px;">1</div>
       </div>
-      <div style="display:flex;align-items:center;gap:8px;margin-bottom:7px;">
-        <div style="font-size:9px;color:#2a4a8e;width:120px;flex-shrink:0;">fundsociety.com</div>
-        <div style="flex:1;background:#e4ecf7;border-radius:3px;height:7px;overflow:hidden;"><div style="width:33%;height:100%;background:#1a5dc8;border-radius:3px;"></div></div>
-        <div style="font-size:9.5px;font-weight:700;color:#0d2055;min-width:16px;text-align:right;">1</div>
-      </div>
-      <div style="display:flex;align-items:center;gap:8px;">
-        <div style="font-size:9px;color:#2a4a8e;width:120px;flex-shrink:0;">Latercera.com</div>
-        <div style="flex:1;background:#e4ecf7;border-radius:3px;height:7px;overflow:hidden;"><div style="width:33%;height:100%;background:#1a5dc8;border-radius:3px;"></div></div>
-        <div style="font-size:9.5px;font-weight:700;color:#0d2055;min-width:16px;text-align:right;">1</div>
+      <div style="display:flex;align-items:center;gap:6px;">
+        <div style="font-size:8.5px;color:#2a4a8e;text-align:right;width:90px;flex-shrink:0;">Valorfuturo.com</div>
+        <div style="flex:1;background:#d0dff5;border-radius:3px;height:7px;overflow:hidden;"><div style="width:50%;height:100%;background:#1a5dc8;border-radius:3px;"></div></div>
+        <div style="font-size:8.5px;font-weight:700;color:#0d2055;min-width:16px;">1</div>
       </div>
     </div>
   </div>
 
-  <!-- Nota destacada -->
-  <div style="background:#0d2055;padding:18px 24px 22px;">
-    <div style="font-size:11px;font-weight:800;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:.8px;margin-bottom:12px;">Nota destacada</div>
-    <div style="display:flex;justify-content:center;">
-      <div style="width:55%;max-width:340px;">
-        <img src="btg-assets/img3.png" style="width:100%;height:auto;display:block;border-radius:6px;" alt="Nota destacada">
-        <div style="font-size:9px;color:rgba(255,255,255,.55);text-align:center;margin-top:8px;font-style:italic;">Rodrigo Oyarzo, Banco BTG Pactual: "Estamos en la mitad de una fusión de dos bancos medianos, proceso que va a brindar una oportunidad"</div>
+  <!-- RRSS Label -->
+  <div style="background:#1a5dc8;padding:5px 22px;">
+    <span style="font-size:9px;font-weight:700;color:rgba(255,255,255,.75);letter-spacing:1.5px;text-transform:uppercase;">DIFUSIÓN EN RRSS</span>
+  </div>
+
+  <!-- RRSS body 2-col -->
+  <div style="display:grid;grid-template-columns:1fr 1fr;background:#1a2d6e;">
+    <!-- Left: Redes Sociales -->
+    <div style="background:rgba(0,0,0,.2);padding:14px 18px;border-right:1px solid rgba(255,255,255,.1);">
+      <div style="font-size:9.5px;font-weight:700;color:rgba(255,255,255,.75);margin-bottom:8px;text-transform:uppercase;letter-spacing:.8px;">Redes Sociales</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:8px;">
+        <div>
+          <div style="font-size:8px;color:rgba(255,255,255,.55);margin-bottom:2px;">Contenidos</div>
+          <div style="font-size:24px;font-weight:900;color:#fff;line-height:1;">102</div>
+        </div>
+        <div>
+          <div style="font-size:8px;color:rgba(255,255,255,.55);margin-bottom:2px;">Impresiones</div>
+          <div style="font-size:20px;font-weight:900;color:#fff;line-height:1.1;">1,1 MM</div>
+        </div>
       </div>
+      <div style="font-size:8px;color:rgba(255,255,255,.55);margin-bottom:6px;text-transform:uppercase;letter-spacing:.8px;">Contenidos por mes</div>
+      <div style="display:flex;align-items:center;gap:6px;margin-bottom:5px;">
+        <div style="font-size:8.5px;color:rgba(255,255,255,.7);text-align:right;width:55px;flex-shrink:0;">Enero</div>
+        <div style="flex:1;background:rgba(255,255,255,.15);border-radius:3px;height:7px;overflow:hidden;"><div style="width:100%;height:100%;background:rgba(255,255,255,.75);border-radius:3px;"></div></div>
+        <div style="font-size:8.5px;font-weight:700;color:#fff;min-width:20px;">36</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:6px;margin-bottom:5px;">
+        <div style="font-size:8.5px;color:rgba(255,255,255,.7);text-align:right;width:55px;flex-shrink:0;">Febrero</div>
+        <div style="flex:1;background:rgba(255,255,255,.15);border-radius:3px;height:7px;overflow:hidden;"><div style="width:83%;height:100%;background:rgba(255,255,255,.75);border-radius:3px;"></div></div>
+        <div style="font-size:8.5px;font-weight:700;color:#fff;min-width:20px;">30</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:6px;">
+        <div style="font-size:8.5px;color:rgba(255,255,255,.7);text-align:right;width:55px;flex-shrink:0;">Marzo</div>
+        <div style="flex:1;background:rgba(255,255,255,.15);border-radius:3px;height:7px;overflow:hidden;"><div style="width:100%;height:100%;background:rgba(255,255,255,.75);border-radius:3px;"></div></div>
+        <div style="font-size:8.5px;font-weight:700;color:#fff;min-width:20px;">36</div>
+      </div>
+    </div>
+    <!-- Right: Plataformas & Tráfico -->
+    <div style="background:rgba(0,0,0,.1);padding:14px 18px;">
+      <div style="font-size:9.5px;font-weight:700;color:rgba(255,255,255,.75);margin-bottom:8px;text-transform:uppercase;letter-spacing:.8px;">Plataformas &amp; Tráfico</div>
+      <div style="display:flex;align-items:center;gap:6px;margin-bottom:5px;">
+        <div style="font-size:8.5px;color:rgba(255,255,255,.7);text-align:right;width:80px;flex-shrink:0;">Instagram</div>
+        <div style="flex:1;background:rgba(255,255,255,.15);border-radius:3px;height:7px;overflow:hidden;"><div style="width:100%;height:100%;background:rgba(255,255,255,.75);border-radius:3px;"></div></div>
+        <div style="font-size:8.5px;font-weight:700;color:#fff;min-width:38px;">564 K</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:6px;margin-bottom:5px;">
+        <div style="font-size:8.5px;color:rgba(255,255,255,.7);text-align:right;width:80px;flex-shrink:0;">YouTube</div>
+        <div style="flex:1;background:rgba(255,255,255,.15);border-radius:3px;height:7px;overflow:hidden;"><div style="width:86%;height:100%;background:rgba(255,255,255,.75);border-radius:3px;"></div></div>
+        <div style="font-size:8.5px;font-weight:700;color:#fff;min-width:38px;">487 K</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:6px;margin-bottom:5px;">
+        <div style="font-size:8.5px;color:rgba(255,255,255,.7);text-align:right;width:80px;flex-shrink:0;">LI Newsletter</div>
+        <div style="flex:1;background:rgba(255,255,255,.15);border-radius:3px;height:7px;overflow:hidden;"><div style="width:8%;height:100%;background:rgba(255,255,255,.75);border-radius:3px;"></div></div>
+        <div style="font-size:8.5px;font-weight:700;color:#fff;min-width:38px;">43 K</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:6px;margin-bottom:10px;">
+        <div style="font-size:8.5px;color:rgba(255,255,255,.7);text-align:right;width:80px;flex-shrink:0;">LinkedIn</div>
+        <div style="flex:1;background:rgba(255,255,255,.15);border-radius:3px;height:7px;overflow:hidden;"><div style="width:3%;height:100%;background:rgba(255,255,255,.75);border-radius:3px;"></div></div>
+        <div style="font-size:8.5px;font-weight:700;color:#fff;min-width:38px;">19,6 K</div>
+      </div>
+      <div style="font-size:8px;color:rgba(255,255,255,.55);margin-bottom:2px;">Tráfico orgánico</div>
+      <div style="font-size:18px;font-weight:900;color:#fff;line-height:1;">320 <span style="font-size:8px;font-weight:400;color:rgba(255,255,255,.45);">usuarios</span></div>
     </div>
   </div>
 
@@ -1068,203 +1114,132 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:#1a1a2e;color:var(--
 
 <div class="page-divider"></div>
 
-<!-- ████  SLIDE 7 – ASSET MANAGEMENT: DIFUSIÓN RRSS  ████ -->
-<div class="slide" style="background:#0d2055;">
+<!-- ████  SLIDE 7 – WEALTH MANAGEMENT (COMBINED)  ████ -->
+<div class="slide" style="background:#fff;">
 
-  <!-- Header navy -->
-  <div style="background:#0d2055;padding:20px 24px 18px;display:flex;align-items:center;justify-content:space-between;">
-    <div>
-      <div style="font-size:22px;font-weight:900;color:#fff;line-height:1.2;">Asset Management</div>
-      <div style="font-size:13px;color:rgba(255,255,255,.65);font-style:italic;margin-top:4px;">Difusión en RRSS – Q1 2026</div>
+  <!-- Header -->
+  <div style="background:#0d2055;padding:16px 22px 14px;display:flex;align-items:center;justify-content:space-between;">
+    <div style="display:flex;align-items:center;gap:14px;">
+      <div style="font-size:48px;font-weight:900;color:rgba(255,255,255,.1);line-height:1;font-variant-numeric:tabular-nums;flex-shrink:0;">04</div>
+      <div>
+        <div style="background:#1a5dc8;color:#fff;font-size:14px;font-weight:800;padding:4px 14px;border-radius:6px;display:inline-block;margin-bottom:4px;">Wealth Management</div>
+        <div style="font-size:12px;color:rgba(255,255,255,.65);font-style:italic;margin-top:2px;">Eventos &amp; Medios + Difusión RRSS – Q1 2026</div>
+      </div>
     </div>
-    <img src="btg-assets/img1.png" style="width:82px;object-fit:contain;display:block;" alt="BTG">
+    <img src="btg-assets/img1.png" style="width:70px;object-fit:contain;" alt="BTG">
   </div>
 
-  <!-- 2 columnas azules -->
-  <div style="display:grid;grid-template-columns:1fr 1fr;background:#1a5dc8;">
+  <!-- E&M Label -->
+  <div style="background:#0d2055;padding:5px 22px;border-top:1px solid rgba(255,255,255,.1);">
+    <span style="font-size:9px;font-weight:700;color:rgba(255,255,255,.45);letter-spacing:1.5px;text-transform:uppercase;">EVENTOS &amp; MEDIOS</span>
+  </div>
 
-    <!-- ── CAMPAÑAS ── -->
-    <div style="padding:20px 22px;border-right:1px solid rgba(255,255,255,.2);display:flex;flex-direction:column;gap:14px;">
-
-      <div style="font-size:12px;font-weight:900;color:#fff;text-transform:uppercase;letter-spacing:1px;padding-bottom:10px;border-bottom:2px solid rgba(255,255,255,.2);">Campañas</div>
-
-      <!-- KPIs -->
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
-        <div style="background:rgba(255,255,255,.13);border-radius:8px;padding:12px 14px;">
-          <div style="font-size:9.5px;color:rgba(255,255,255,.65);margin-bottom:4px;">Campañas totales</div>
-          <div style="font-size:32px;font-weight:900;color:#fff;line-height:1;">10</div>
-        </div>
-        <div style="background:rgba(255,255,255,.13);border-radius:8px;padding:12px 14px;">
-          <div style="font-size:9.5px;color:rgba(255,255,255,.65);margin-bottom:4px;">Cuentas creadas</div>
-          <div style="font-size:28px;font-weight:900;color:#fff;line-height:1.1;">487</div>
-        </div>
-      </div>
-
-      <!-- Módulo: Cuentas por mes -->
-      <div style="background:rgba(0,0,0,.18);border-radius:8px;padding:12px 14px;">
-        <div style="font-size:9.5px;font-weight:700;color:rgba(255,255,255,.75);margin-bottom:10px;">Cuentas creadas por mes</div>
-        <!-- Ene 180=100%→52, Feb 165=92%→48, Mar 142=79%→41; baseline y=72 -->
-        <svg viewBox="0 0 144 90" width="100%" style="display:block;">
-          <line x1="4" y1="72" x2="140" y2="72" stroke="rgba(255,255,255,.15)" stroke-width="1"/>
-          <rect x="17" y="20" width="26" height="52" rx="3" fill="rgba(255,255,255,.85)"/>
-          <rect x="59" y="24" width="26" height="48" rx="3" fill="rgba(255,255,255,.65)"/>
-          <rect x="101" y="31" width="26" height="41" rx="3" fill="rgba(255,255,255,.5)"/>
-          <text x="30" y="15" font-size="8" fill="white" text-anchor="middle" font-family="sans-serif" font-weight="bold">180</text>
-          <text x="72" y="19" font-size="8" fill="white" text-anchor="middle" font-family="sans-serif" font-weight="bold">165</text>
-          <text x="114" y="26" font-size="8" fill="white" text-anchor="middle" font-family="sans-serif" font-weight="bold">142</text>
-          <text x="30" y="84" font-size="7.5" fill="rgba(255,255,255,.6)" text-anchor="middle" font-family="sans-serif">Ene</text>
-          <text x="72" y="84" font-size="7.5" fill="rgba(255,255,255,.6)" text-anchor="middle" font-family="sans-serif">Feb</text>
-          <text x="114" y="84" font-size="7.5" fill="rgba(255,255,255,.6)" text-anchor="middle" font-family="sans-serif">Mar</text>
-        </svg>
-      </div>
-
-      <!-- CAC / Aportantes -->
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
-        <div style="background:rgba(0,0,0,.22);border-radius:8px;padding:11px 14px;text-align:center;">
-          <div style="font-size:9px;font-weight:700;color:rgba(255,255,255,.65);margin-bottom:3px;">CAC</div>
-          <div style="font-size:18px;font-weight:900;color:#fff;line-height:1;">$27.771</div>
-          <div style="font-size:8px;color:rgba(255,255,255,.45);margin-top:3px;">Costo de adquisición</div>
-        </div>
-        <div style="background:rgba(0,0,0,.22);border-radius:8px;padding:11px 14px;text-align:center;">
-          <div style="font-size:9px;font-weight:700;color:rgba(255,255,255,.65);margin-bottom:3px;">Aportantes</div>
-          <div style="font-size:22px;font-weight:900;color:#fff;line-height:1;">867</div>
-          <div style="font-size:8px;color:rgba(255,255,255,.45);margin-top:3px;">Total Q1 2026</div>
-        </div>
-      </div>
-
-      <!-- Monto aportes -->
-      <div style="background:rgba(0,0,0,.18);border-radius:8px;padding:12px 14px;">
-        <div style="font-size:9.5px;color:rgba(255,255,255,.65);margin-bottom:4px;">Monto total de aportes</div>
-        <div style="font-size:28px;font-weight:900;color:#fff;line-height:1;">$5.536 MM</div>
-      </div>
-
+  <!-- KPI row E&M (solo prensa) -->
+  <div style="display:grid;grid-template-columns:repeat(2,1fr);background:#c8daf5;">
+    <div style="padding:12px 18px;border-right:1px solid rgba(0,47,115,.12);">
+      <div style="font-size:9px;font-weight:700;color:#0d2055;margin-bottom:3px;">Eventos</div>
+      <div style="font-size:28px;font-weight:900;color:#0d2055;line-height:1;">—</div>
     </div>
-
-    <!-- ── REDES SOCIALES ── -->
-    <div style="padding:20px 22px;display:flex;flex-direction:column;gap:14px;">
-
-      <div style="font-size:12px;font-weight:900;color:#fff;text-transform:uppercase;letter-spacing:1px;padding-bottom:10px;border-bottom:2px solid rgba(255,255,255,.2);">Redes Sociales</div>
-
-      <!-- KPIs -->
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
-        <div style="background:rgba(255,255,255,.13);border-radius:8px;padding:12px 14px;">
-          <div style="font-size:9.5px;color:rgba(255,255,255,.65);margin-bottom:4px;">Contenidos publicados</div>
-          <div style="font-size:32px;font-weight:900;color:#fff;line-height:1;">63</div>
-        </div>
-        <div style="background:rgba(255,255,255,.13);border-radius:8px;padding:12px 14px;">
-          <div style="font-size:9.5px;color:rgba(255,255,255,.65);margin-bottom:4px;">Impresiones</div>
-          <div style="font-size:22px;font-weight:900;color:#fff;line-height:1.1;">371.249</div>
-        </div>
-      </div>
-
-      <!-- Módulo: Impresiones mensuales -->
-      <div style="background:rgba(0,0,0,.18);border-radius:8px;padding:12px 14px;">
-        <div style="font-size:9.5px;font-weight:700;color:rgba(255,255,255,.75);margin-bottom:10px;">Impresiones mensuales</div>
-        <!-- 98K=61%→32, 112K=70%→36, 161K=100%→52; baseline y=72 -->
-        <svg viewBox="0 0 144 90" width="100%" style="display:block;">
-          <line x1="4" y1="72" x2="140" y2="72" stroke="rgba(255,255,255,.15)" stroke-width="1"/>
-          <rect x="17" y="40" width="26" height="32" rx="3" fill="rgba(255,255,255,.6)"/>
-          <rect x="59" y="36" width="26" height="36" rx="3" fill="rgba(255,255,255,.7)"/>
-          <rect x="101" y="20" width="26" height="52" rx="3" fill="rgba(255,255,255,.9)"/>
-          <text x="30" y="35" font-size="8" fill="white" text-anchor="middle" font-family="sans-serif" font-weight="bold">98K</text>
-          <text x="72" y="31" font-size="8" fill="white" text-anchor="middle" font-family="sans-serif" font-weight="bold">112K</text>
-          <text x="114" y="15" font-size="8" fill="white" text-anchor="middle" font-family="sans-serif" font-weight="bold">161K</text>
-          <text x="30" y="84" font-size="7.5" fill="rgba(255,255,255,.6)" text-anchor="middle" font-family="sans-serif">Ene</text>
-          <text x="72" y="84" font-size="7.5" fill="rgba(255,255,255,.6)" text-anchor="middle" font-family="sans-serif">Feb</text>
-          <text x="114" y="84" font-size="7.5" fill="rgba(255,255,255,.6)" text-anchor="middle" font-family="sans-serif">Mar</text>
-        </svg>
-      </div>
-
-      <!-- Módulo: Impresiones por plataforma -->
-      <div style="background:rgba(0,0,0,.18);border-radius:8px;padding:12px 14px;">
-        <div style="font-size:9.5px;font-weight:700;color:rgba(255,255,255,.75);margin-bottom:10px;">Impresiones por plataforma</div>
-        <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
-          <div style="font-size:9px;color:rgba(255,255,255,.8);width:58px;flex-shrink:0;">Instagram</div>
-          <div style="flex:1;background:rgba(255,255,255,.15);border-radius:3px;height:8px;overflow:hidden;"><div style="width:100%;height:100%;background:rgba(255,255,255,.8);border-radius:3px;"></div></div>
-          <div style="font-size:9px;font-weight:700;color:#fff;min-width:42px;text-align:right;">243.027</div>
-        </div>
-        <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
-          <div style="font-size:9px;color:rgba(255,255,255,.8);width:58px;flex-shrink:0;">LinkedIn</div>
-          <div style="flex:1;background:rgba(255,255,255,.15);border-radius:3px;height:8px;overflow:hidden;"><div style="width:41%;height:100%;background:rgba(255,255,255,.8);border-radius:3px;"></div></div>
-          <div style="font-size:9px;font-weight:700;color:#fff;min-width:42px;text-align:right;">100.476</div>
-        </div>
-        <div style="display:flex;align-items:center;gap:8px;">
-          <div style="font-size:9px;color:rgba(255,255,255,.8);width:58px;flex-shrink:0;">YouTube</div>
-          <div style="flex:1;background:rgba(255,255,255,.15);border-radius:3px;height:8px;overflow:hidden;"><div style="width:11%;height:100%;background:rgba(255,255,255,.8);border-radius:3px;"></div></div>
-          <div style="font-size:9px;font-weight:700;color:#fff;min-width:42px;text-align:right;">27.746</div>
-        </div>
-      </div>
-
-      <!-- Tráfico web -->
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:auto;">
-        <div style="background:rgba(0,0,0,.28);border-radius:8px;padding:13px 15px;">
-          <div style="font-size:9px;font-weight:700;color:rgba(255,255,255,.65);margin-bottom:4px;">Tráfico web pagado</div>
-          <div style="font-size:20px;font-weight:900;color:#fff;line-height:1.1;">20.326</div>
-          <div style="font-size:8px;color:rgba(255,255,255,.45);margin-top:2px;">usuarios</div>
-        </div>
-        <div style="background:rgba(0,0,0,.18);border-radius:8px;padding:13px 15px;">
-          <div style="font-size:9px;font-weight:700;color:rgba(255,255,255,.65);margin-bottom:4px;">Tráfico web orgánico</div>
-          <div style="font-size:20px;font-weight:900;color:#fff;line-height:1.1;">10.706</div>
-          <div style="font-size:8px;color:rgba(255,255,255,.45);margin-top:2px;">usuarios</div>
-        </div>
-      </div>
-
+    <div style="padding:12px 18px;">
+      <div style="font-size:9px;font-weight:700;color:#0d2055;margin-bottom:3px;">Apariciones prensa</div>
+      <div style="font-size:28px;font-weight:900;color:#0d2055;line-height:1;">8</div>
     </div>
   </div>
 
-  <!-- Contenidos orgánicos destacados -->
-  <div style="background:#0d2055;padding:18px 24px 22px;">
-    <div style="font-size:13px;font-weight:800;color:#fff;margin-bottom:12px;text-transform:uppercase;letter-spacing:.8px;">Contenidos orgánicos destacados</div>
-    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;">
+  <!-- Sin eventos notice -->
+  <div style="background:#f0f5ff;padding:12px 20px;border-bottom:1px solid #dde8fb;">
+    <span style="font-size:11px;color:#4a6a9e;font-style:italic;">Sin eventos este período.</span>
+  </div>
 
-      <div style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;">
-        <div style="background:rgba(0,0,0,.3);padding:10px;display:flex;align-items:center;justify-content:center;min-height:130px;">
-          <img src="btg-assets/7f062815eb9335c5f08f0f8cd06328da.png" style="max-width:100%;max-height:120px;width:auto;height:auto;object-fit:contain;border-radius:6px;display:block;" alt="">
+  <!-- Prensa full-width 2-col -->
+  <div style="background:#f0f5ff;padding:14px 18px 16px;">
+    <div style="font-size:9.5px;font-weight:700;color:#0d2055;margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px;">Prensa – Fuentes <span style="font-weight:900;font-size:20px;vertical-align:middle;margin-left:8px;">8</span></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px 16px;">
+      <div style="display:flex;align-items:center;gap:6px;margin-bottom:5px;">
+        <div style="font-size:8.5px;color:#2a4a8e;text-align:right;width:90px;flex-shrink:0;">Df.cl</div>
+        <div style="flex:1;background:#d0dff5;border-radius:3px;height:7px;overflow:hidden;"><div style="width:100%;height:100%;background:#1a5dc8;border-radius:3px;"></div></div>
+        <div style="font-size:8.5px;font-weight:700;color:#0d2055;min-width:16px;">2</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:6px;margin-bottom:5px;">
+        <div style="font-size:8.5px;color:#2a4a8e;text-align:right;width:90px;flex-shrink:0;">El Diario Financiero</div>
+        <div style="flex:1;background:#d0dff5;border-radius:3px;height:7px;overflow:hidden;"><div style="width:100%;height:100%;background:#1a5dc8;border-radius:3px;"></div></div>
+        <div style="font-size:8.5px;font-weight:700;color:#0d2055;min-width:16px;">2</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:6px;margin-bottom:5px;">
+        <div style="font-size:8.5px;color:#2a4a8e;text-align:right;width:90px;flex-shrink:0;">Duna</div>
+        <div style="flex:1;background:#d0dff5;border-radius:3px;height:7px;overflow:hidden;"><div style="width:50%;height:100%;background:#1a5dc8;border-radius:3px;"></div></div>
+        <div style="font-size:8.5px;font-weight:700;color:#0d2055;min-width:16px;">1</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:6px;margin-bottom:5px;">
+        <div style="font-size:8.5px;color:#2a4a8e;text-align:right;width:90px;flex-shrink:0;">Latercera.com</div>
+        <div style="flex:1;background:#d0dff5;border-radius:3px;height:7px;overflow:hidden;"><div style="width:50%;height:100%;background:#1a5dc8;border-radius:3px;"></div></div>
+        <div style="font-size:8.5px;font-weight:700;color:#0d2055;min-width:16px;">1</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:6px;">
+        <div style="font-size:8.5px;color:#2a4a8e;text-align:right;width:90px;flex-shrink:0;">Radio Infinita</div>
+        <div style="flex:1;background:#d0dff5;border-radius:3px;height:7px;overflow:hidden;"><div style="width:50%;height:100%;background:#1a5dc8;border-radius:3px;"></div></div>
+        <div style="font-size:8.5px;font-weight:700;color:#0d2055;min-width:16px;">1</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:6px;">
+        <div style="font-size:8.5px;color:#2a4a8e;text-align:right;width:90px;flex-shrink:0;">SeñalDF</div>
+        <div style="flex:1;background:#d0dff5;border-radius:3px;height:7px;overflow:hidden;"><div style="width:50%;height:100%;background:#1a5dc8;border-radius:3px;"></div></div>
+        <div style="font-size:8.5px;font-weight:700;color:#0d2055;min-width:16px;">1</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RRSS Label -->
+  <div style="background:#1a5dc8;padding:5px 22px;">
+    <span style="font-size:9px;font-weight:700;color:rgba(255,255,255,.75);letter-spacing:1.5px;text-transform:uppercase;">DIFUSIÓN EN RRSS</span>
+  </div>
+
+  <!-- RRSS body 2-col -->
+  <div style="display:grid;grid-template-columns:1fr 1fr;background:#1a2d6e;">
+    <!-- Left: Redes Sociales -->
+    <div style="background:rgba(0,0,0,.2);padding:14px 18px;border-right:1px solid rgba(255,255,255,.1);">
+      <div style="font-size:9.5px;font-weight:700;color:rgba(255,255,255,.75);margin-bottom:8px;text-transform:uppercase;letter-spacing:.8px;">Redes Sociales</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:8px;">
+        <div>
+          <div style="font-size:8px;color:rgba(255,255,255,.55);margin-bottom:2px;">Contenidos</div>
+          <div style="font-size:24px;font-weight:900;color:#fff;line-height:1;">43</div>
         </div>
-        <div style="padding:10px 12px;display:flex;flex-direction:column;gap:4px;">
-          <div style="font-size:8.5px;color:rgba(255,255,255,.8);line-height:1.45;">Comparación de programas económicos presidenciales</div>
-          <div style="display:flex;align-items:center;justify-content:space-between;margin-top:2px;">
-            <div style="font-size:8px;color:#7fa8d8;font-weight:700;">Instagram</div>
-            <div style="text-align:right;">
-              <div style="font-size:16px;font-weight:900;color:#fff;line-height:1;">76.641</div>
-              <div style="font-size:7px;color:rgba(255,255,255,.4);">Impresiones</div>
-            </div>
-          </div>
+        <div>
+          <div style="font-size:8px;color:rgba(255,255,255,.55);margin-bottom:2px;">Impresiones</div>
+          <div style="font-size:20px;font-weight:900;color:#fff;line-height:1.1;">1,4 MM</div>
         </div>
       </div>
-
-      <div style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;">
-        <div style="background:rgba(0,0,0,.3);padding:10px;display:flex;align-items:center;justify-content:center;min-height:130px;">
-          <img src="btg-assets/62e0f554add56682d8659231c9c2d8b2.png" style="max-width:100%;max-height:120px;width:auto;height:auto;object-fit:contain;border-radius:6px;display:block;" alt="">
+      <div style="font-size:8px;color:rgba(255,255,255,.55);margin-bottom:6px;text-transform:uppercase;letter-spacing:.8px;">Plataformas</div>
+      <div style="display:flex;align-items:center;gap:6px;margin-bottom:5px;">
+        <div style="font-size:8.5px;color:rgba(255,255,255,.7);text-align:right;width:65px;flex-shrink:0;">Instagram</div>
+        <div style="flex:1;background:rgba(255,255,255,.15);border-radius:3px;height:7px;overflow:hidden;"><div style="width:100%;height:100%;background:rgba(255,255,255,.75);border-radius:3px;"></div></div>
+        <div style="font-size:8.5px;font-weight:700;color:#fff;min-width:50px;">1.141.174</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:6px;margin-bottom:5px;">
+        <div style="font-size:8.5px;color:rgba(255,255,255,.7);text-align:right;width:65px;flex-shrink:0;">YouTube</div>
+        <div style="flex:1;background:rgba(255,255,255,.15);border-radius:3px;height:7px;overflow:hidden;"><div style="width:20%;height:100%;background:rgba(255,255,255,.75);border-radius:3px;"></div></div>
+        <div style="font-size:8.5px;font-weight:700;color:#fff;min-width:50px;">222.932</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:6px;">
+        <div style="font-size:8.5px;color:rgba(255,255,255,.7);text-align:right;width:65px;flex-shrink:0;">LinkedIn</div>
+        <div style="flex:1;background:rgba(255,255,255,.15);border-radius:3px;height:7px;overflow:hidden;"><div style="width:6%;height:100%;background:rgba(255,255,255,.75);border-radius:3px;"></div></div>
+        <div style="font-size:8.5px;font-weight:700;color:#fff;min-width:50px;">66.196</div>
+      </div>
+    </div>
+    <!-- Right: Mailing & Tráfico -->
+    <div style="background:rgba(0,0,0,.1);padding:14px 18px;">
+      <div style="font-size:9.5px;font-weight:700;color:rgba(255,255,255,.75);margin-bottom:8px;text-transform:uppercase;letter-spacing:.8px;">Mailing &amp; Tráfico</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:12px;">
+        <div>
+          <div style="font-size:8px;color:rgba(255,255,255,.55);margin-bottom:2px;">Campañas mailing</div>
+          <div style="font-size:24px;font-weight:900;color:#fff;line-height:1;">83</div>
         </div>
-        <div style="padding:10px 12px;display:flex;flex-direction:column;gap:4px;">
-          <div style="font-size:8.5px;color:rgba(255,255,255,.8);line-height:1.45;">Visión de Estrategia Asset Management | Enero 2026</div>
-          <div style="display:flex;align-items:center;justify-content:space-between;margin-top:2px;">
-            <div style="font-size:8px;color:#7fa8d8;font-weight:700;">YouTube</div>
-            <div style="text-align:right;">
-              <div style="font-size:16px;font-weight:900;color:#fff;line-height:1;">426</div>
-              <div style="font-size:7px;color:rgba(255,255,255,.4);">Reproducciones</div>
-            </div>
-          </div>
+        <div>
+          <div style="font-size:8px;color:rgba(255,255,255,.55);margin-bottom:2px;">Tasa apertura</div>
+          <div style="font-size:20px;font-weight:900;color:#fff;line-height:1.1;">44,6%</div>
         </div>
       </div>
-
-      <div style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;">
-        <div style="background:rgba(0,0,0,.3);padding:10px;display:flex;align-items:center;justify-content:center;min-height:130px;">
-          <img src="btg-assets/8bb3dbf0edbd523069d1513ea2818d85.png" style="max-width:100%;max-height:120px;width:auto;height:auto;object-fit:contain;border-radius:6px;display:block;" alt="">
-        </div>
-        <div style="padding:10px 12px;display:flex;flex-direction:column;gap:4px;">
-          <div style="font-size:8.5px;color:rgba(255,255,255,.8);line-height:1.45;">Equipo AM reconocido por El Mercurio Inversiones</div>
-          <div style="display:flex;align-items:center;justify-content:space-between;margin-top:2px;">
-            <div style="font-size:8px;color:#7fa8d8;font-weight:700;">LinkedIn</div>
-            <div style="text-align:right;">
-              <div style="font-size:16px;font-weight:900;color:#fff;line-height:1;">25.737</div>
-              <div style="font-size:7px;color:rgba(255,255,255,.4);">Impresiones</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
+      <div style="font-size:8px;color:rgba(255,255,255,.55);margin-bottom:4px;">Tráfico orgánico</div>
+      <div style="font-size:28px;font-weight:900;color:#fff;line-height:1;">805 <span style="font-size:8px;font-weight:400;color:rgba(255,255,255,.45);">usuarios</span></div>
     </div>
   </div>
 
@@ -1272,109 +1247,125 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:#1a1a2e;color:var(--
 
 <div class="page-divider"></div>
 
-<!-- ████  SLIDE 8 – SALES & TRADING: EVENTOS & MEDIOS  ████ -->
+<!-- ████  SLIDE 8 – CORPORATE LENDING (COMBINED)  ████ -->
 <div class="slide" style="background:#fff;">
 
-  <!-- Header navy -->
-  <div style="background:#0d2055;padding:20px 24px 18px;display:flex;align-items:center;justify-content:space-between;">
-    <div>
-      <div style="font-size:22px;font-weight:900;color:#fff;line-height:1.2;">Sales &amp; Trading</div>
-      <div style="font-size:13px;color:rgba(255,255,255,.65);font-style:italic;margin-top:4px;">Eventos &amp; Medios – Q1 2026</div>
+  <!-- Header -->
+  <div style="background:#0d2055;padding:16px 22px 14px;display:flex;align-items:center;justify-content:space-between;">
+    <div style="display:flex;align-items:center;gap:14px;">
+      <div style="font-size:48px;font-weight:900;color:rgba(255,255,255,.1);line-height:1;font-variant-numeric:tabular-nums;flex-shrink:0;">05</div>
+      <div>
+        <div style="background:#1a5dc8;color:#fff;font-size:14px;font-weight:800;padding:4px 14px;border-radius:6px;display:inline-block;margin-bottom:4px;">Corporate Lending</div>
+        <div style="font-size:12px;color:rgba(255,255,255,.65);font-style:italic;margin-top:2px;">Eventos &amp; Medios + Difusión RRSS – Q1 2026</div>
+      </div>
     </div>
-    <img src="btg-assets/img1.png" style="width:82px;object-fit:contain;display:block;" alt="BTG">
+    <img src="btg-assets/img1.png" style="width:70px;object-fit:contain;" alt="BTG">
   </div>
 
-  <!-- KPIs sky-blue — 3 columnas -->
-  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;background:#c8daf5;">
-    <div style="padding:16px 24px;border-right:1px solid rgba(0,47,115,.12);">
-      <div style="font-size:10px;color:#1a3a6e;margin-bottom:4px;font-weight:600;">Eventos</div>
-      <div style="font-size:36px;font-weight:900;color:#0d2055;line-height:1;">2</div>
-    </div>
-    <div style="padding:16px 24px;border-right:1px solid rgba(0,47,115,.12);">
-      <div style="font-size:10px;color:#1a3a6e;margin-bottom:4px;font-weight:600;">Asistentes</div>
-      <div style="font-size:36px;font-weight:900;color:#0d2055;line-height:1;">72</div>
-    </div>
-    <div style="padding:16px 24px;">
-      <div style="font-size:10px;color:#1a3a6e;margin-bottom:4px;font-weight:600;">Apariciones en Prensa</div>
-      <div style="font-size:36px;font-weight:900;color:#0d2055;line-height:1;">6</div>
-    </div>
+  <!-- E&M Label -->
+  <div style="background:#0d2055;padding:5px 22px;border-top:1px solid rgba(255,255,255,.1);">
+    <span style="font-size:9px;font-weight:700;color:rgba(255,255,255,.45);letter-spacing:1.5px;text-transform:uppercase;">EVENTOS &amp; MEDIOS</span>
   </div>
 
-  <!-- Asistentes por evento -->
-  <div style="background:#f0f5ff;padding:14px 24px;border-bottom:1px solid #dde8fb;">
-    <div style="font-size:10.5px;font-weight:700;color:#0d2055;margin-bottom:10px;text-transform:uppercase;letter-spacing:.5px;">Asistentes por evento</div>
-    <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
-      <div style="font-size:9.5px;color:#2a4a8e;width:200px;flex-shrink:0;">Kick off – CB en Dondoh</div>
-      <div style="flex:1;background:#d0dff5;border-radius:4px;height:10px;overflow:hidden;"><div style="width:100%;height:100%;background:#1a5dc8;border-radius:4px;"></div></div>
-      <div style="font-size:12px;font-weight:800;color:#0d2055;min-width:28px;text-align:right;">60</div>
+  <!-- KPI row E&M -->
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);background:#c8daf5;">
+    <div style="padding:12px 18px;border-right:1px solid rgba(0,47,115,.12);">
+      <div style="font-size:9px;font-weight:700;color:#0d2055;margin-bottom:3px;">Eventos</div>
+      <div style="font-size:28px;font-weight:900;color:#0d2055;line-height:1;">8</div>
     </div>
-    <div style="display:flex;align-items:center;gap:10px;">
-      <div style="font-size:9.5px;color:#2a4a8e;width:200px;flex-shrink:0;">Clínica Padel Javier Valdés</div>
-      <div style="flex:1;background:#d0dff5;border-radius:4px;height:10px;overflow:hidden;"><div style="width:20%;height:100%;background:#1a5dc8;border-radius:4px;"></div></div>
-      <div style="font-size:12px;font-weight:800;color:#0d2055;min-width:28px;text-align:right;">12</div>
+    <div style="padding:12px 18px;border-right:1px solid rgba(0,47,115,.12);">
+      <div style="font-size:9px;font-weight:700;color:#0d2055;margin-bottom:3px;">Asistentes</div>
+      <div style="font-size:28px;font-weight:900;color:#0d2055;line-height:1;">153</div>
+    </div>
+    <div style="padding:12px 18px;">
+      <div style="font-size:9px;font-weight:700;color:#0d2055;margin-bottom:3px;">Prensa</div>
+      <div style="font-size:28px;font-weight:900;color:#0d2055;line-height:1;">—</div>
     </div>
   </div>
 
-  <!-- Evento destacado: foto + descripción -->
-  <div style="background:#0d2055;display:flex;align-items:stretch;">
-    <div style="width:42%;flex-shrink:0;overflow:hidden;">
-      <img src="btg-assets/img2.jpg" style="width:100%;height:100%;object-fit:cover;display:block;" alt="Kick off CB en Dondoh">
+  <!-- E&M body full-width barlist -->
+  <div style="background:#f0f5ff;padding:14px 18px 16px;border-bottom:1px solid #dde8fb;">
+    <div style="font-size:9.5px;font-weight:700;color:#0d2055;margin-bottom:10px;text-transform:uppercase;letter-spacing:.5px;">Asistentes por evento</div>
+    <div style="display:flex;align-items:center;gap:6px;margin-bottom:5px;">
+      <div style="font-size:8px;color:#2a4a8e;text-align:right;width:155px;flex-shrink:0;">Cóctel primer semestre</div>
+      <div style="flex:1;background:#d0dff5;border-radius:3px;height:7px;overflow:hidden;"><div style="width:100%;height:100%;background:#1a5dc8;border-radius:3px;"></div></div>
+      <div style="font-size:8.5px;font-weight:700;color:#0d2055;min-width:20px;">50</div>
     </div>
-    <div style="flex:1;padding:22px 24px;display:flex;flex-direction:column;justify-content:center;gap:10px;">
-      <div style="font-size:11px;font-weight:800;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:.8px;">Evento destacado</div>
-      <div style="font-size:16px;font-weight:900;color:#fff;line-height:1.3;">Kick off – CB en Dondoh</div>
-      <div style="font-size:11px;color:rgba(255,255,255,.75);line-height:1.6;">Encuentro de apertura del equipo de <strong style="color:#fff;">Corporate Banking</strong> realizado en Dondoh. Reunió a clientes y equipo comercial con un total de 60 asistentes.</div>
-      <div style="display:flex;align-items:center;gap:6px;margin-top:4px;">
-        <div style="background:rgba(255,255,255,.15);border-radius:20px;padding:4px 12px;font-size:9px;color:rgba(255,255,255,.8);">60 asistentes</div>
-        <div style="background:rgba(255,255,255,.15);border-radius:20px;padding:4px 12px;font-size:9px;color:rgba(255,255,255,.8);">Kick off Q1</div>
-      </div>
+    <div style="display:flex;align-items:center;gap:6px;margin-bottom:5px;">
+      <div style="font-size:8px;color:#2a4a8e;text-align:right;width:155px;flex-shrink:0;">En off: Martín Arrau</div>
+      <div style="flex:1;background:#d0dff5;border-radius:3px;height:7px;overflow:hidden;"><div style="width:40%;height:100%;background:#1a5dc8;border-radius:3px;"></div></div>
+      <div style="font-size:8.5px;font-weight:700;color:#0d2055;min-width:20px;">20</div>
     </div>
-  </div>
-
-  <!-- Prensa: big number + fuentes -->
-  <div style="display:grid;grid-template-columns:1fr 2fr;background:#fff;border-top:1px solid #e4ecf7;border-bottom:1px solid #e4ecf7;">
-    <div style="padding:18px 24px;border-right:1px solid #e4ecf7;display:flex;flex-direction:column;justify-content:center;">
-      <div style="font-size:10.5px;font-weight:700;color:#0d2055;margin-bottom:6px;">Apariciones en prensa</div>
-      <div style="font-size:48px;font-weight:900;color:#0d2055;line-height:1;">6</div>
+    <div style="display:flex;align-items:center;gap:6px;margin-bottom:5px;">
+      <div style="font-size:8px;color:#2a4a8e;text-align:right;width:155px;flex-shrink:0;">Comida fidelización</div>
+      <div style="flex:1;background:#d0dff5;border-radius:3px;height:7px;overflow:hidden;"><div style="width:40%;height:100%;background:#1a5dc8;border-radius:3px;"></div></div>
+      <div style="font-size:8.5px;font-weight:700;color:#0d2055;min-width:20px;">20</div>
     </div>
-    <div style="padding:18px 24px;">
-      <div style="font-size:10.5px;font-weight:700;color:#0d2055;margin-bottom:12px;text-transform:uppercase;letter-spacing:.5px;">Fuentes principales</div>
-      <div style="display:flex;align-items:center;gap:8px;margin-bottom:7px;">
-        <div style="font-size:9px;color:#2a4a8e;width:120px;flex-shrink:0;">elmercurio.cl</div>
-        <div style="flex:1;background:#e4ecf7;border-radius:3px;height:7px;overflow:hidden;"><div style="width:100%;height:100%;background:#1a5dc8;border-radius:3px;"></div></div>
-        <div style="font-size:9.5px;font-weight:700;color:#0d2055;min-width:16px;text-align:right;">2</div>
-      </div>
-      <div style="display:flex;align-items:center;gap:8px;margin-bottom:7px;">
-        <div style="font-size:9px;color:#2a4a8e;width:120px;flex-shrink:0;">Ex-ante.cl</div>
-        <div style="flex:1;background:#e4ecf7;border-radius:3px;height:7px;overflow:hidden;"><div style="width:50%;height:100%;background:#1a5dc8;border-radius:3px;"></div></div>
-        <div style="font-size:9.5px;font-weight:700;color:#0d2055;min-width:16px;text-align:right;">1</div>
-      </div>
-      <div style="display:flex;align-items:center;gap:8px;margin-bottom:7px;">
-        <div style="font-size:9px;color:#2a4a8e;width:120px;flex-shrink:0;">Latercera.com</div>
-        <div style="flex:1;background:#e4ecf7;border-radius:3px;height:7px;overflow:hidden;"><div style="width:50%;height:100%;background:#1a5dc8;border-radius:3px;"></div></div>
-        <div style="font-size:9.5px;font-weight:700;color:#0d2055;min-width:16px;text-align:right;">1</div>
-      </div>
-      <div style="display:flex;align-items:center;gap:8px;margin-bottom:7px;">
-        <div style="font-size:9px;color:#2a4a8e;width:120px;flex-shrink:0;">Radio Duna</div>
-        <div style="flex:1;background:#e4ecf7;border-radius:3px;height:7px;overflow:hidden;"><div style="width:50%;height:100%;background:#1a5dc8;border-radius:3px;"></div></div>
-        <div style="font-size:9.5px;font-weight:700;color:#0d2055;min-width:16px;text-align:right;">1</div>
-      </div>
-      <div style="display:flex;align-items:center;gap:8px;">
-        <div style="font-size:9px;color:#2a4a8e;width:120px;flex-shrink:0;">Valorfuturo.com</div>
-        <div style="flex:1;background:#e4ecf7;border-radius:3px;height:7px;overflow:hidden;"><div style="width:50%;height:100%;background:#1a5dc8;border-radius:3px;"></div></div>
-        <div style="font-size:9.5px;font-weight:700;color:#0d2055;min-width:16px;text-align:right;">1</div>
-      </div>
+    <div style="display:flex;align-items:center;gap:6px;margin-bottom:5px;">
+      <div style="font-size:8px;color:#2a4a8e;text-align:right;width:155px;flex-shrink:0;">Desayuno Pablo Cruz</div>
+      <div style="flex:1;background:#d0dff5;border-radius:3px;height:7px;overflow:hidden;"><div style="width:30%;height:100%;background:#1a5dc8;border-radius:3px;"></div></div>
+      <div style="font-size:8.5px;font-weight:700;color:#0d2055;min-width:20px;">15</div>
+    </div>
+    <div style="display:flex;align-items:center;gap:6px;margin-bottom:5px;">
+      <div style="font-size:8px;color:#2a4a8e;text-align:right;width:155px;flex-shrink:0;">UC – Coquimbo Unido</div>
+      <div style="flex:1;background:#d0dff5;border-radius:3px;height:7px;overflow:hidden;"><div style="width:24%;height:100%;background:#1a5dc8;border-radius:3px;"></div></div>
+      <div style="font-size:8.5px;font-weight:700;color:#0d2055;min-width:20px;">12</div>
+    </div>
+    <div style="display:flex;align-items:center;gap:6px;margin-bottom:5px;">
+      <div style="font-size:8px;color:#2a4a8e;text-align:right;width:155px;flex-shrink:0;">UC – Everton</div>
+      <div style="flex:1;background:#d0dff5;border-radius:3px;height:7px;overflow:hidden;"><div style="width:24%;height:100%;background:#1a5dc8;border-radius:3px;"></div></div>
+      <div style="font-size:8.5px;font-weight:700;color:#0d2055;min-width:20px;">12</div>
+    </div>
+    <div style="display:flex;align-items:center;gap:6px;margin-bottom:5px;">
+      <div style="font-size:8px;color:#2a4a8e;text-align:right;width:155px;flex-shrink:0;">Concierto Bryan Adams</div>
+      <div style="flex:1;background:#d0dff5;border-radius:3px;height:7px;overflow:hidden;"><div style="width:24%;height:100%;background:#1a5dc8;border-radius:3px;"></div></div>
+      <div style="font-size:8.5px;font-weight:700;color:#0d2055;min-width:20px;">12</div>
+    </div>
+    <div style="display:flex;align-items:center;gap:6px;">
+      <div style="font-size:8px;color:#2a4a8e;text-align:right;width:155px;flex-shrink:0;">UC – Concepción</div>
+      <div style="flex:1;background:#d0dff5;border-radius:3px;height:7px;overflow:hidden;"><div style="width:24%;height:100%;background:#1a5dc8;border-radius:3px;"></div></div>
+      <div style="font-size:8.5px;font-weight:700;color:#0d2055;min-width:20px;">12</div>
     </div>
   </div>
 
-  <!-- Nota destacada -->
-  <div style="background:#0d2055;padding:18px 24px 22px;">
-    <div style="font-size:11px;font-weight:800;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:.8px;margin-bottom:12px;">Nota destacada</div>
-    <div style="display:flex;justify-content:center;">
-      <div style="width:55%;max-width:340px;">
-        <img src="btg-assets/img3.png" style="width:100%;height:auto;display:block;border-radius:6px;" alt="Nota destacada">
-        <div style="font-size:9px;color:rgba(255,255,255,.55);text-align:center;margin-top:8px;font-style:italic;">BTG Pactual cambia sus perspectivas para Empresas Copec — elmercurio.cl</div>
+  <!-- RRSS Label -->
+  <div style="background:#1a5dc8;padding:5px 22px;">
+    <span style="font-size:9px;font-weight:700;color:rgba(255,255,255,.75);letter-spacing:1.5px;text-transform:uppercase;">DIFUSIÓN EN RRSS</span>
+  </div>
+
+  <!-- RRSS body 2-col -->
+  <div style="display:grid;grid-template-columns:1fr 1fr;background:#1a2d6e;">
+    <!-- Left: Redes Sociales -->
+    <div style="background:rgba(0,0,0,.2);padding:14px 18px;border-right:1px solid rgba(255,255,255,.1);">
+      <div style="font-size:9.5px;font-weight:700;color:rgba(255,255,255,.75);margin-bottom:8px;text-transform:uppercase;letter-spacing:.8px;">Redes Sociales</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:8px;">
+        <div>
+          <div style="font-size:8px;color:rgba(255,255,255,.55);margin-bottom:2px;">Contenidos</div>
+          <div style="font-size:24px;font-weight:900;color:#fff;line-height:1;">3</div>
+        </div>
+        <div>
+          <div style="font-size:8px;color:rgba(255,255,255,.55);margin-bottom:2px;">Impresiones</div>
+          <div style="font-size:20px;font-weight:900;color:#fff;line-height:1.1;">17.519</div>
+        </div>
       </div>
+      <div style="font-size:8px;color:rgba(255,255,255,.55);margin-bottom:6px;text-transform:uppercase;letter-spacing:.8px;">Plataformas</div>
+      <div style="display:flex;align-items:center;gap:6px;margin-bottom:5px;">
+        <div style="font-size:8.5px;color:rgba(255,255,255,.7);text-align:right;width:65px;flex-shrink:0;">LinkedIn</div>
+        <div style="flex:1;background:rgba(255,255,255,.15);border-radius:3px;height:7px;overflow:hidden;"><div style="width:73%;height:100%;background:rgba(255,255,255,.75);border-radius:3px;"></div></div>
+        <div style="font-size:8.5px;font-weight:700;color:#fff;min-width:38px;">~73%</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:6px;">
+        <div style="font-size:8.5px;color:rgba(255,255,255,.7);text-align:right;width:65px;flex-shrink:0;">Instagram</div>
+        <div style="flex:1;background:rgba(255,255,255,.15);border-radius:3px;height:7px;overflow:hidden;"><div style="width:14%;height:100%;background:rgba(255,255,255,.75);border-radius:3px;"></div></div>
+        <div style="font-size:8.5px;font-weight:700;color:#fff;min-width:38px;">~14%</div>
+      </div>
+    </div>
+    <!-- Right: Tráfico -->
+    <div style="background:rgba(0,0,0,.1);padding:14px 18px;">
+      <div style="font-size:9.5px;font-weight:700;color:rgba(255,255,255,.75);margin-bottom:8px;text-transform:uppercase;letter-spacing:.8px;">Tráfico</div>
+      <div style="font-size:8px;color:rgba(255,255,255,.55);margin-bottom:4px;">Tráfico orgánico</div>
+      <div style="font-size:28px;font-weight:900;color:#fff;line-height:1;margin-bottom:10px;">233 <span style="font-size:8px;font-weight:400;color:rgba(255,255,255,.45);">usuarios</span></div>
+      <div style="font-size:9px;color:rgba(255,255,255,.45);font-style:italic;line-height:1.5;">Área con actividad presencial intensa — menor foco digital en redes sociales.</div>
     </div>
   </div>
 
@@ -1382,426 +1373,100 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:#1a1a2e;color:var(--
 
 <div class="page-divider"></div>
 
-<!-- ████  SLIDE 9 – SALES & TRADING: DIFUSIÓN RRSS  ████ -->
-<div class="slide" style="background:#0d2055;">
+<!-- ████  SLIDE 9 – INVESTMENT BANKING (COMBINED)  ████ -->
+<div class="slide" style="background:#fff;">
 
-  <!-- Header navy -->
-  <div style="background:#0d2055;padding:20px 24px 18px;display:flex;align-items:center;justify-content:space-between;">
-    <div>
-      <div style="font-size:22px;font-weight:900;color:#fff;line-height:1.2;">Sales &amp; Trading</div>
-      <div style="font-size:13px;color:rgba(255,255,255,.65);font-style:italic;margin-top:4px;">Difusión en RRSS – Q1 2026</div>
+  <!-- Header -->
+  <div style="background:#0d2055;padding:16px 22px 14px;display:flex;align-items:center;justify-content:space-between;">
+    <div style="display:flex;align-items:center;gap:14px;">
+      <div style="font-size:48px;font-weight:900;color:rgba(255,255,255,.1);line-height:1;font-variant-numeric:tabular-nums;flex-shrink:0;">06</div>
+      <div>
+        <div style="background:#1a5dc8;color:#fff;font-size:14px;font-weight:800;padding:4px 14px;border-radius:6px;display:inline-block;margin-bottom:4px;">Investment Banking</div>
+        <div style="font-size:12px;color:rgba(255,255,255,.65);font-style:italic;margin-top:2px;">Eventos &amp; Medios + Difusión RRSS – Q1 2026</div>
+      </div>
     </div>
-    <img src="btg-assets/img1.png" style="width:82px;object-fit:contain;display:block;" alt="BTG">
+    <img src="btg-assets/img1.png" style="width:70px;object-fit:contain;" alt="BTG">
   </div>
 
-  <!-- 2 columnas azules -->
-  <div style="display:grid;grid-template-columns:1fr 1fr;background:#1a5dc8;">
+  <!-- E&M Label -->
+  <div style="background:#0d2055;padding:5px 22px;border-top:1px solid rgba(255,255,255,.1);">
+    <span style="font-size:9px;font-weight:700;color:rgba(255,255,255,.45);letter-spacing:1.5px;text-transform:uppercase;">EVENTOS &amp; MEDIOS</span>
+  </div>
 
-    <!-- ── REDES SOCIALES ── -->
-    <div style="padding:20px 22px;border-right:1px solid rgba(255,255,255,.2);display:flex;flex-direction:column;gap:14px;">
-
-      <div style="font-size:12px;font-weight:900;color:#fff;text-transform:uppercase;letter-spacing:1px;padding-bottom:10px;border-bottom:2px solid rgba(255,255,255,.2);">Redes Sociales</div>
-
-      <!-- KPIs -->
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
-        <div style="background:rgba(255,255,255,.13);border-radius:8px;padding:12px 14px;">
-          <div style="font-size:9.5px;color:rgba(255,255,255,.65);margin-bottom:4px;">Contenidos publicados</div>
-          <div style="font-size:32px;font-weight:900;color:#fff;line-height:1;">102</div>
-        </div>
-        <div style="background:rgba(255,255,255,.13);border-radius:8px;padding:12px 14px;">
-          <div style="font-size:9.5px;color:rgba(255,255,255,.65);margin-bottom:4px;">Impresiones</div>
-          <div style="font-size:26px;font-weight:900;color:#fff;line-height:1.1;">1,1 MM</div>
-        </div>
-      </div>
-
-      <!-- Módulo: Contenidos por mes -->
-      <div style="background:rgba(0,0,0,.18);border-radius:8px;padding:12px 14px;">
-        <div style="font-size:9.5px;font-weight:700;color:rgba(255,255,255,.75);margin-bottom:10px;">Contenidos por mes</div>
-        <!-- Ene 36=100%→52, Feb 30=83%→43, Mar 36=100%→52; baseline y=72 -->
-        <svg viewBox="0 0 144 90" width="100%" style="display:block;">
-          <line x1="4" y1="72" x2="140" y2="72" stroke="rgba(255,255,255,.15)" stroke-width="1"/>
-          <rect x="17" y="20" width="26" height="52" rx="3" fill="rgba(255,255,255,.85)"/>
-          <rect x="59" y="29" width="26" height="43" rx="3" fill="rgba(255,255,255,.65)"/>
-          <rect x="101" y="20" width="26" height="52" rx="3" fill="rgba(255,255,255,.85)"/>
-          <text x="30" y="15" font-size="8" fill="white" text-anchor="middle" font-family="sans-serif" font-weight="bold">36</text>
-          <text x="72" y="24" font-size="8" fill="white" text-anchor="middle" font-family="sans-serif" font-weight="bold">30</text>
-          <text x="114" y="15" font-size="8" fill="white" text-anchor="middle" font-family="sans-serif" font-weight="bold">36</text>
-          <text x="30" y="84" font-size="7.5" fill="rgba(255,255,255,.6)" text-anchor="middle" font-family="sans-serif">Ene</text>
-          <text x="72" y="84" font-size="7.5" fill="rgba(255,255,255,.6)" text-anchor="middle" font-family="sans-serif">Feb</text>
-          <text x="114" y="84" font-size="7.5" fill="rgba(255,255,255,.6)" text-anchor="middle" font-family="sans-serif">Mar</text>
-        </svg>
-      </div>
-
+  <!-- KPI row E&M -->
+  <div style="display:grid;grid-template-columns:repeat(2,1fr);background:#c8daf5;">
+    <div style="padding:12px 18px;border-right:1px solid rgba(0,47,115,.12);">
+      <div style="font-size:9px;font-weight:700;color:#0d2055;margin-bottom:3px;">Eventos</div>
+      <div style="font-size:28px;font-weight:900;color:#0d2055;line-height:1;">—</div>
     </div>
-
-    <!-- ── PLATAFORMAS + TRÁFICO ── -->
-    <div style="padding:20px 22px;display:flex;flex-direction:column;gap:14px;">
-
-      <div style="font-size:12px;font-weight:900;color:#fff;text-transform:uppercase;letter-spacing:1px;padding-bottom:10px;border-bottom:2px solid rgba(255,255,255,.2);">Impresiones por plataforma</div>
-
-      <!-- Módulo plataformas -->
-      <div style="background:rgba(0,0,0,.18);border-radius:8px;padding:14px 16px;display:flex;flex-direction:column;gap:10px;">
-        <div style="display:flex;align-items:center;gap:8px;">
-          <div style="font-size:9px;color:rgba(255,255,255,.8);width:90px;flex-shrink:0;">Instagram</div>
-          <div style="flex:1;background:rgba(255,255,255,.15);border-radius:3px;height:8px;overflow:hidden;"><div style="width:100%;height:100%;background:rgba(255,255,255,.85);border-radius:3px;"></div></div>
-          <div style="font-size:9px;font-weight:700;color:#fff;min-width:48px;text-align:right;">564.577</div>
-        </div>
-        <div style="display:flex;align-items:center;gap:8px;">
-          <div style="font-size:9px;color:rgba(255,255,255,.8);width:90px;flex-shrink:0;">YouTube</div>
-          <div style="flex:1;background:rgba(255,255,255,.15);border-radius:3px;height:8px;overflow:hidden;"><div style="width:86%;height:100%;background:rgba(255,255,255,.8);border-radius:3px;"></div></div>
-          <div style="font-size:9px;font-weight:700;color:#fff;min-width:48px;text-align:right;">487.722</div>
-        </div>
-        <div style="display:flex;align-items:center;gap:8px;">
-          <div style="font-size:9px;color:rgba(255,255,255,.8);width:90px;flex-shrink:0;">LI Newsletter</div>
-          <div style="flex:1;background:rgba(255,255,255,.15);border-radius:3px;height:8px;overflow:hidden;"><div style="width:8%;height:100%;background:rgba(255,255,255,.7);border-radius:3px;"></div></div>
-          <div style="font-size:9px;font-weight:700;color:#fff;min-width:48px;text-align:right;">43.214</div>
-        </div>
-        <div style="display:flex;align-items:center;gap:8px;">
-          <div style="font-size:9px;color:rgba(255,255,255,.8);width:90px;flex-shrink:0;">LinkedIn</div>
-          <div style="flex:1;background:rgba(255,255,255,.15);border-radius:3px;height:8px;overflow:hidden;"><div style="width:3%;height:100%;background:rgba(255,255,255,.65);border-radius:3px;"></div></div>
-          <div style="font-size:9px;font-weight:700;color:#fff;min-width:48px;text-align:right;">19.617</div>
-        </div>
-      </div>
-
-      <!-- Tráfico web orgánico -->
-      <div style="background:rgba(0,0,0,.28);border-radius:8px;padding:14px 16px;margin-top:auto;">
-        <div style="font-size:9px;font-weight:700;color:rgba(255,255,255,.65);margin-bottom:4px;">Tráfico web orgánico</div>
-        <div style="font-size:28px;font-weight:900;color:#fff;line-height:1.1;">320 <span style="font-size:13px;font-weight:400;opacity:.65;">usuarios</span></div>
-      </div>
-
+    <div style="padding:12px 18px;">
+      <div style="font-size:9px;font-weight:700;color:#0d2055;margin-bottom:3px;">Apariciones prensa</div>
+      <div style="font-size:28px;font-weight:900;color:#0d2055;line-height:1;">—</div>
     </div>
   </div>
 
-  <!-- Contenidos orgánicos destacados -->
-  <div style="background:#0d2055;padding:18px 24px 22px;">
-    <div style="font-size:13px;font-weight:800;color:#fff;margin-bottom:12px;text-transform:uppercase;letter-spacing:.8px;">Contenidos orgánicos destacados</div>
-    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;">
+  <!-- Sin eventos ni prensa notice -->
+  <div style="background:#f0f5ff;padding:12px 20px;border-bottom:1px solid #dde8fb;">
+    <span style="font-size:11px;color:#4a6a9e;font-style:italic;">Sin eventos ni apariciones en prensa este período.</span>
+  </div>
 
-      <div style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;">
-        <div style="background:rgba(0,0,0,.3);padding:10px;display:flex;align-items:center;justify-content:center;min-height:130px;">
-          <img src="btg-assets/62e0f554add56682d8659231c9c2d8b2.png" style="max-width:100%;max-height:120px;object-fit:contain;border-radius:6px;display:block;" alt="">
+  <!-- RRSS Label -->
+  <div style="background:#1a5dc8;padding:5px 22px;">
+    <span style="font-size:9px;font-weight:700;color:rgba(255,255,255,.75);letter-spacing:1.5px;text-transform:uppercase;">DIFUSIÓN EN RRSS</span>
+  </div>
+
+  <!-- RRSS body 2-col -->
+  <div style="display:grid;grid-template-columns:1fr 1fr;background:#1a2d6e;">
+    <!-- Left: Redes Sociales -->
+    <div style="background:rgba(0,0,0,.2);padding:14px 18px;border-right:1px solid rgba(255,255,255,.1);">
+      <div style="font-size:9.5px;font-weight:700;color:rgba(255,255,255,.75);margin-bottom:8px;text-transform:uppercase;letter-spacing:.8px;">Redes Sociales</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:8px;">
+        <div>
+          <div style="font-size:8px;color:rgba(255,255,255,.55);margin-bottom:2px;">Contenidos</div>
+          <div style="font-size:24px;font-weight:900;color:#fff;line-height:1;">3</div>
         </div>
-        <div style="padding:10px 12px;display:flex;flex-direction:column;gap:4px;">
-          <div style="font-size:8.5px;color:rgba(255,255,255,.8);line-height:1.45;">¿Está comenzando un nuevo ciclo estructural para las acciones chilenas?</div>
-          <div style="display:flex;align-items:center;justify-content:space-between;margin-top:2px;">
-            <div style="font-size:8px;color:#7fa8d8;font-weight:700;">Instagram</div>
-            <div style="text-align:right;">
-              <div style="font-size:16px;font-weight:900;color:#fff;line-height:1;">156.095</div>
-              <div style="font-size:7px;color:rgba(255,255,255,.4);">Impresiones</div>
-            </div>
-          </div>
+        <div>
+          <div style="font-size:8px;color:rgba(255,255,255,.55);margin-bottom:2px;">Impresiones</div>
+          <div style="font-size:20px;font-weight:900;color:#fff;line-height:1.1;">7.481</div>
         </div>
       </div>
-
-      <div style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;">
-        <div style="background:rgba(0,0,0,.3);padding:10px;display:flex;align-items:center;justify-content:center;min-height:130px;">
-          <img src="btg-assets/8bb3dbf0edbd523069d1513ea2818d85.png" style="max-width:100%;max-height:120px;object-fit:contain;border-radius:6px;display:block;" alt="">
-        </div>
-        <div style="padding:10px 12px;display:flex;flex-direction:column;gap:4px;">
-          <div style="font-size:8.5px;color:rgba(255,255,255,.8);line-height:1.45;">El equipo de S&amp;T invitó a sus clientes institucionales a un encuentro</div>
-          <div style="display:flex;align-items:center;justify-content:space-between;margin-top:2px;">
-            <div style="font-size:8px;color:#7fa8d8;font-weight:700;">LinkedIn</div>
-            <div style="text-align:right;">
-              <div style="font-size:16px;font-weight:900;color:#fff;line-height:1;">6.257</div>
-              <div style="font-size:7px;color:rgba(255,255,255,.4);">Impresiones</div>
-            </div>
-          </div>
-        </div>
+      <div style="font-size:8px;color:rgba(255,255,255,.55);margin-bottom:6px;text-transform:uppercase;letter-spacing:.8px;">Contenidos por mes</div>
+      <div style="display:flex;align-items:center;gap:6px;margin-bottom:5px;">
+        <div style="font-size:8.5px;color:rgba(255,255,255,.7);text-align:right;width:55px;flex-shrink:0;">Enero</div>
+        <div style="flex:1;background:rgba(255,255,255,.15);border-radius:3px;height:7px;overflow:hidden;"><div style="width:0%;height:100%;background:rgba(255,255,255,.75);border-radius:3px;"></div></div>
+        <div style="font-size:8.5px;font-weight:700;color:#fff;min-width:20px;">0</div>
       </div>
-
-      <div style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;">
-        <div style="background:rgba(0,0,0,.3);padding:10px;display:flex;align-items:center;justify-content:center;min-height:130px;">
-          <img src="btg-assets/7f062815eb9335c5f08f0f8cd06328da.png" style="max-width:100%;max-height:120px;object-fit:contain;border-radius:6px;display:block;" alt="">
-        </div>
-        <div style="padding:10px 12px;display:flex;flex-direction:column;gap:4px;">
-          <div style="font-size:8.5px;color:rgba(255,255,255,.8);line-height:1.45;">Review Accionario local 26 al 30 de Enero</div>
-          <div style="display:flex;align-items:center;justify-content:space-between;margin-top:2px;">
-            <div style="font-size:8px;color:#7fa8d8;font-weight:700;">YouTube</div>
-            <div style="text-align:right;">
-              <div style="font-size:16px;font-weight:900;color:#fff;line-height:1;">33.370</div>
-              <div style="font-size:7px;color:rgba(255,255,255,.4);">Reproducciones</div>
-            </div>
-          </div>
-        </div>
+      <div style="display:flex;align-items:center;gap:6px;margin-bottom:5px;">
+        <div style="font-size:8.5px;color:rgba(255,255,255,.7);text-align:right;width:55px;flex-shrink:0;">Febrero</div>
+        <div style="flex:1;background:rgba(255,255,255,.15);border-radius:3px;height:7px;overflow:hidden;"><div style="width:100%;height:100%;background:rgba(255,255,255,.75);border-radius:3px;"></div></div>
+        <div style="font-size:8.5px;font-weight:700;color:#fff;min-width:20px;">2</div>
       </div>
-
+      <div style="display:flex;align-items:center;gap:6px;">
+        <div style="font-size:8.5px;color:rgba(255,255,255,.7);text-align:right;width:55px;flex-shrink:0;">Marzo</div>
+        <div style="flex:1;background:rgba(255,255,255,.15);border-radius:3px;height:7px;overflow:hidden;"><div style="width:50%;height:100%;background:rgba(255,255,255,.75);border-radius:3px;"></div></div>
+        <div style="font-size:8.5px;font-weight:700;color:#fff;min-width:20px;">1</div>
+      </div>
+    </div>
+    <!-- Right: Plataformas & Tráfico -->
+    <div style="background:rgba(0,0,0,.1);padding:14px 18px;">
+      <div style="font-size:9.5px;font-weight:700;color:rgba(255,255,255,.75);margin-bottom:8px;text-transform:uppercase;letter-spacing:.8px;">Plataformas &amp; Tráfico</div>
+      <div style="display:flex;align-items:center;gap:6px;margin-bottom:5px;">
+        <div style="font-size:8.5px;color:rgba(255,255,255,.7);text-align:right;width:65px;flex-shrink:0;">LinkedIn</div>
+        <div style="flex:1;background:rgba(255,255,255,.15);border-radius:3px;height:7px;overflow:hidden;"><div style="width:100%;height:100%;background:rgba(255,255,255,.75);border-radius:3px;"></div></div>
+        <div style="font-size:8.5px;font-weight:700;color:#fff;min-width:38px;">6.531</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:6px;margin-bottom:10px;">
+        <div style="font-size:8.5px;color:rgba(255,255,255,.7);text-align:right;width:65px;flex-shrink:0;">Instagram</div>
+        <div style="flex:1;background:rgba(255,255,255,.15);border-radius:3px;height:7px;overflow:hidden;"><div style="width:15%;height:100%;background:rgba(255,255,255,.75);border-radius:3px;"></div></div>
+        <div style="font-size:8.5px;font-weight:700;color:#fff;min-width:38px;">950</div>
+      </div>
+      <div style="font-size:8px;color:rgba(255,255,255,.55);margin-bottom:4px;">Tráfico orgánico</div>
+      <div style="font-size:28px;font-weight:900;color:#fff;line-height:1;margin-bottom:10px;">761 <span style="font-size:8px;font-weight:400;color:rgba(255,255,255,.45);">usuarios</span></div>
+      <div style="font-size:8px;color:rgba(255,255,255,.35);font-style:italic;">(*) No se incluyen datos de Twitter</div>
     </div>
   </div>
 
 </div><!-- /slide 9 -->
-
-<div class="page-divider"></div>
-
-<!-- ████  SLIDE 10 – WEALTH MANAGEMENT: EVENTOS & MEDIOS  ████ -->
-<div class="slide" style="background:#fff;">
-
-  <!-- Header navy -->
-  <div style="background:#0d2055;padding:20px 24px 18px;display:flex;align-items:center;justify-content:space-between;">
-    <div>
-      <div style="font-size:22px;font-weight:900;color:#fff;line-height:1.2;">Wealth Management</div>
-      <div style="font-size:13px;color:rgba(255,255,255,.65);font-style:italic;margin-top:4px;">Eventos &amp; Medios – Q1 2026</div>
-    </div>
-    <img src="btg-assets/img1.png" style="width:82px;object-fit:contain;display:block;" alt="BTG">
-  </div>
-
-  <!-- KPIs sky-blue -->
-  <div style="display:grid;grid-template-columns:1fr 1fr;background:#c8daf5;">
-    <div style="padding:16px 24px;border-right:1px solid rgba(0,47,115,.12);">
-      <div style="font-size:10px;color:#1a3a6e;margin-bottom:4px;font-weight:600;">Eventos destacados</div>
-      <div style="font-size:36px;font-weight:900;color:#0d2055;line-height:1;">—</div>
-      <div style="font-size:9.5px;color:#3a5a9e;margin-top:3px;">Sin eventos este período</div>
-    </div>
-    <div style="padding:16px 24px;">
-      <div style="font-size:10px;color:#1a3a6e;margin-bottom:4px;font-weight:600;">Apariciones en Prensa</div>
-      <div style="font-size:36px;font-weight:900;color:#0d2055;line-height:1;">8</div>
-    </div>
-  </div>
-
-  <!-- Sin eventos — aviso -->
-  <div style="background:#f0f5ff;padding:16px 24px;border-bottom:1px solid #dde8fb;display:flex;align-items:center;gap:14px;">
-    <div style="background:#c8daf5;border-radius:8px;padding:10px 16px;flex-shrink:0;">
-      <div style="font-size:10px;font-weight:700;color:#0d2055;">Eventos</div>
-      <div style="font-size:24px;font-weight:900;color:#0d2055;line-height:1;">—</div>
-    </div>
-    <div style="font-size:10px;color:#4a6a9e;line-height:1.6;">No se registraron eventos presenciales durante el Q1 2026 para el área de Wealth Management.</div>
-  </div>
-
-  <!-- Prensa: big number + fuentes -->
-  <div style="display:grid;grid-template-columns:1fr 2fr;background:#fff;border-top:1px solid #e4ecf7;border-bottom:1px solid #e4ecf7;">
-    <div style="padding:18px 24px;border-right:1px solid #e4ecf7;display:flex;flex-direction:column;justify-content:center;">
-      <div style="font-size:10.5px;font-weight:700;color:#0d2055;margin-bottom:6px;">Apariciones en prensa</div>
-      <div style="font-size:48px;font-weight:900;color:#0d2055;line-height:1;">8</div>
-    </div>
-    <div style="padding:18px 24px;">
-      <div style="font-size:10.5px;font-weight:700;color:#0d2055;margin-bottom:12px;text-transform:uppercase;letter-spacing:.5px;">Fuentes principales</div>
-      <div style="display:flex;align-items:center;gap:8px;margin-bottom:7px;">
-        <div style="font-size:9px;color:#2a4a8e;width:130px;flex-shrink:0;">Df.cl</div>
-        <div style="flex:1;background:#e4ecf7;border-radius:3px;height:7px;overflow:hidden;"><div style="width:100%;height:100%;background:#1a5dc8;border-radius:3px;"></div></div>
-        <div style="font-size:9.5px;font-weight:700;color:#0d2055;min-width:16px;text-align:right;">2</div>
-      </div>
-      <div style="display:flex;align-items:center;gap:8px;margin-bottom:7px;">
-        <div style="font-size:9px;color:#2a4a8e;width:130px;flex-shrink:0;">El Diario Financiero</div>
-        <div style="flex:1;background:#e4ecf7;border-radius:3px;height:7px;overflow:hidden;"><div style="width:100%;height:100%;background:#1a5dc8;border-radius:3px;"></div></div>
-        <div style="font-size:9.5px;font-weight:700;color:#0d2055;min-width:16px;text-align:right;">2</div>
-      </div>
-      <div style="display:flex;align-items:center;gap:8px;margin-bottom:7px;">
-        <div style="font-size:9px;color:#2a4a8e;width:130px;flex-shrink:0;">Duna</div>
-        <div style="flex:1;background:#e4ecf7;border-radius:3px;height:7px;overflow:hidden;"><div style="width:50%;height:100%;background:#1a5dc8;border-radius:3px;"></div></div>
-        <div style="font-size:9.5px;font-weight:700;color:#0d2055;min-width:16px;text-align:right;">1</div>
-      </div>
-      <div style="display:flex;align-items:center;gap:8px;margin-bottom:7px;">
-        <div style="font-size:9px;color:#2a4a8e;width:130px;flex-shrink:0;">Latercera.com</div>
-        <div style="flex:1;background:#e4ecf7;border-radius:3px;height:7px;overflow:hidden;"><div style="width:50%;height:100%;background:#1a5dc8;border-radius:3px;"></div></div>
-        <div style="font-size:9.5px;font-weight:700;color:#0d2055;min-width:16px;text-align:right;">1</div>
-      </div>
-      <div style="display:flex;align-items:center;gap:8px;margin-bottom:7px;">
-        <div style="font-size:9px;color:#2a4a8e;width:130px;flex-shrink:0;">Radio Infinita</div>
-        <div style="flex:1;background:#e4ecf7;border-radius:3px;height:7px;overflow:hidden;"><div style="width:50%;height:100%;background:#1a5dc8;border-radius:3px;"></div></div>
-        <div style="font-size:9.5px;font-weight:700;color:#0d2055;min-width:16px;text-align:right;">1</div>
-      </div>
-      <div style="display:flex;align-items:center;gap:8px;">
-        <div style="font-size:9px;color:#2a4a8e;width:130px;flex-shrink:0;">SeñalDF</div>
-        <div style="flex:1;background:#e4ecf7;border-radius:3px;height:7px;overflow:hidden;"><div style="width:50%;height:100%;background:#1a5dc8;border-radius:3px;"></div></div>
-        <div style="font-size:9.5px;font-weight:700;color:#0d2055;min-width:16px;text-align:right;">1</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Sin nota destacada -->
-  <div style="background:#0d2055;padding:20px 24px;display:flex;align-items:center;justify-content:center;min-height:80px;">
-    <div style="font-size:11px;color:rgba(255,255,255,.4);font-style:italic;text-align:center;">Sin nota destacada este período</div>
-  </div>
-
-</div><!-- /slide 10 -->
-
-<div class="page-divider"></div>
-
-<!-- ████  SLIDE 11 – WEALTH MANAGEMENT: DIFUSIÓN RRSS  ████ -->
-<div class="slide">
-  <div class="area-header">
-    <div>
-      <div class="area-name">Wealth Management</div>
-      <div class="area-sub">Difusión en RRSS - Q1 2026</div>
-    </div>
-    <div class="btg-logo"><img src="btg-assets/img1.png" alt="BTG Pactual"></div>
-  </div>
-
-  <div class="rrss-detail-grid">
-    <div class="rrss-detail-col left-impact">
-      <div class="rdc-title">Redes Sociales</div>
-      <div class="rrss-stat"><div class="rs-label">Contenidos publicados</div><div class="rs-num">43</div></div>
-      <div class="rrss-stat"><div class="rs-label">Impresiones totales</div><div class="rs-num">1,4 MM</div></div>
-      <div style="font-size:9px;color:rgba(255,255,255,.7);margin-top:8px;margin-bottom:6px;">Impresiones por plataforma</div>
-      <div class="barlist-row" style="margin-bottom:4px;"><div class="barlist-label" style="color:rgba(255,255,255,.9);width:100px;">Instagram</div><div class="barlist-track" style="background:rgba(255,255,255,.2);"><div class="barlist-fill" style="width:100%;background:rgba(255,255,255,.5);"></div></div><div class="barlist-val" style="color:#fff;font-size:8px;">1.141.174</div></div>
-      <div class="barlist-row" style="margin-bottom:4px;"><div class="barlist-label" style="color:rgba(255,255,255,.9);width:100px;">YouTube</div><div class="barlist-track" style="background:rgba(255,255,255,.2);"><div class="barlist-fill" style="width:20%;background:rgba(255,255,255,.5);"></div></div><div class="barlist-val" style="color:#fff;font-size:8px;">222.932</div></div>
-      <div class="barlist-row" style="margin-bottom:4px;"><div class="barlist-label" style="color:rgba(255,255,255,.9);width:100px;">LinkedIn</div><div class="barlist-track" style="background:rgba(255,255,255,.2);"><div class="barlist-fill" style="width:6%;background:rgba(255,255,255,.5);"></div></div><div class="barlist-val" style="color:#fff;font-size:8px;">66.196</div></div>
-    </div>
-    <div class="rrss-detail-col right-impact">
-      <div class="rdc-title">Mailing</div>
-      <div class="rrss-stat"><div class="rs-label">Campañas de Mailing</div><div class="rs-num">83</div></div>
-      <div class="rrss-stat"><div class="rs-label">Tasa de apertura</div><div class="rs-num">44,6%</div></div>
-      <div style="margin-top:20px;">
-        <div style="font-size:9px;color:rgba(255,255,255,.7);margin-bottom:4px;">Tráfico web orgánico</div>
-        <div style="font-size:22px;font-weight:900;color:#fff;">805 usuarios</div>
-      </div>
-    </div>
-  </div>
-
-  <div class="section-heading">Contenidos orgánicos destacados</div>
-  <div class="area-content-highlights">
-    <div class="ach-card">
-      <img src="btg-assets/9d958e6e3d7c51f5eb7ac43c964d47d2.png" alt="BTG Podcast WM">
-      <div class="ach-name">BTG Podcast | Joaquín Spörke | ¿Se debilita el rol del dólar?</div>
-      <div class="ach-platform">Instagram</div>
-      <div class="ach-metric">669.062</div>
-      <div class="ach-mlbl">Impresiones</div>
-    </div>
-    <div class="ach-card">
-      <img src="btg-assets/7f062815eb9335c5f08f0f8cd06328da.png" alt="Filantropía">
-      <div class="ach-name">La filantropía ya no es solo donar: es planificar, invertir y profesionalizar</div>
-      <div class="ach-platform">LinkedIn</div>
-      <div class="ach-metric">37.865</div>
-      <div class="ach-mlbl">Impresiones</div>
-    </div>
-    <div class="ach-card">
-      <img src="btg-assets/d202e731e03999c079bc2ea197752b54.png" alt="BTG Podcast YouTube">
-      <div class="ach-name">BTG Podcast | ¿Se debilita el rol del dólar como activo refugio?</div>
-      <div class="ach-platform">YouTube</div>
-      <div class="ach-metric">46.473</div>
-      <div class="ach-mlbl">Reproducciones</div>
-    </div>
-  </div>
-</div><!-- /slide 11 -->
-
-<div class="page-divider"></div>
-
-<!-- ████  SLIDE 12 – CORPORATE LENDING: EVENTOS & MEDIOS  ████ -->
-<div class="slide">
-  <div class="area-header">
-    <div>
-      <div class="area-name">Corporate Lending</div>
-      <div class="area-sub">Eventos &amp; Medios - Q1 2026</div>
-    </div>
-    <div class="btg-logo"><img src="btg-assets/img1.png" alt="BTG Pactual"></div>
-  </div>
-
-  <div style="display:grid;grid-template-columns:repeat(3,1fr);background:var(--c-sky);">
-    <div class="area-kpi"><div class="ak-label">Total eventos</div><div class="ak-num">8</div></div>
-    <div class="area-kpi" style="border-left:1px solid rgba(0,47,115,.12);"><div class="ak-label">Total asistentes</div><div class="ak-num">153</div></div>
-    <div class="area-kpi" style="border-left:1px solid rgba(0,47,115,.12);"><div class="ak-label">Apariciones en Prensa</div><div class="ak-num">—</div></div>
-  </div>
-
-  <div style="background:#f6faff;padding:12px 20px;border-bottom:1px solid #dde8fb;">
-    <div class="barlist-title" style="text-align:left;">Asistentes por evento</div>
-    <div class="barlist-row"><div class="barlist-label">Cóctel primer semestre</div><div class="barlist-track"><div class="barlist-fill" style="width:100%"></div></div><div class="barlist-val">50</div></div>
-    <div class="barlist-row"><div class="barlist-label">En off: Martín Arrau</div><div class="barlist-track"><div class="barlist-fill" style="width:40%"></div></div><div class="barlist-val">20</div></div>
-    <div class="barlist-row"><div class="barlist-label">Comida fidelización</div><div class="barlist-track"><div class="barlist-fill" style="width:40%"></div></div><div class="barlist-val">20</div></div>
-    <div class="barlist-row"><div class="barlist-label">Desayuno Pablo Cruz</div><div class="barlist-track"><div class="barlist-fill" style="width:30%"></div></div><div class="barlist-val">15</div></div>
-    <div class="barlist-row"><div class="barlist-label">UC - Coquimbo Unido</div><div class="barlist-track"><div class="barlist-fill" style="width:24%"></div></div><div class="barlist-val">12</div></div>
-    <div class="barlist-row"><div class="barlist-label">UC - Everton</div><div class="barlist-track"><div class="barlist-fill" style="width:24%"></div></div><div class="barlist-val">12</div></div>
-    <div class="barlist-row"><div class="barlist-label">Concierto Bryan Adams</div><div class="barlist-track"><div class="barlist-fill" style="width:24%"></div></div><div class="barlist-val">12</div></div>
-    <div class="barlist-row"><div class="barlist-label">UC - Concepción</div><div class="barlist-track"><div class="barlist-fill" style="width:24%"></div></div><div class="barlist-val">12</div></div>
-  </div>
-
-  <div class="section-heading">Evento destacado</div>
-  <div class="area-event-photo">
-    <img src="btg-assets/58f671e0316839d97a1d6cbb35c4e0dd.jpg" alt="Evento Corporate Lending Q1 2026">
-    <div class="photo-caption"><strong>Cóctel primer semestre en La Dicha</strong> · 50 asistentes</div>
-  </div>
-
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:12px 20px;background:#fff;">
-    <div style="background:#f6faff;border-radius:8px;padding:12px 16px;">
-      <div style="font-size:9px;font-weight:700;color:var(--c-navy);">Redes Sociales</div>
-      <div style="font-size:22px;font-weight:900;color:var(--c-navy);line-height:1.2;margin-top:4px;">17.519</div>
-      <div style="font-size:8.5px;color:var(--c-muted);">Impresiones · 3 contenidos</div>
-    </div>
-    <div class="aws organic" style="border-radius:8px;">
-      <div class="ws-lbl">Tráfico web orgánico</div>
-      <div class="ws-num">233 usuarios</div>
-    </div>
-  </div>
-
-  <div class="section-heading">Contenidos orgánicos destacados</div>
-  <div class="area-content-highlights" style="grid-template-columns:repeat(1,1fr);">
-    <div class="ach-card" style="max-width:260px;margin:0 auto;">
-      <img src="btg-assets/img2.jpg" alt="CL LinkedIn">
-      <div class="ach-name">El equipo de Créditos Corporativos reunió a 50 clientes —CFOs y CEOs— en un encuentro para fortalecer vínculos</div>
-      <div class="ach-platform">LinkedIn</div>
-      <div class="ach-metric">12.765</div>
-      <div class="ach-mlbl">Impresiones</div>
-    </div>
-  </div>
-</div><!-- /slide 12 -->
-
-<div class="page-divider"></div>
-
-<!-- ████  SLIDE 13 – INVESTMENT BANKING: EVENTOS & MEDIOS  ████ -->
-<div class="slide">
-  <div class="area-header">
-    <div>
-      <div class="area-name">Investment Banking</div>
-      <div class="area-sub">Eventos &amp; Medios - Q1 2026</div>
-    </div>
-    <div class="btg-logo"><img src="btg-assets/img1.png" alt="BTG Pactual"></div>
-  </div>
-
-  <div style="display:grid;grid-template-columns:repeat(2,1fr);background:var(--c-sky);">
-    <div class="area-kpi"><div class="ak-label">Eventos</div><div class="ak-num">—</div></div>
-    <div class="area-kpi" style="border-left:1px solid rgba(0,47,115,.12);"><div class="ak-label">Apariciones en Prensa</div><div class="ak-num">—</div></div>
-  </div>
-
-  <div class="nota-section" style="padding:20px;">
-    <div class="nota-title">Sin eventos ni apariciones en prensa este período</div>
-    <p style="font-size:11px;color:var(--c-muted);margin-top:6px;">Investment Banking no registró eventos presenciales ni apariciones en prensa destacadas durante Q1 2026.</p>
-  </div>
-</div><!-- /slide 13 -->
-
-<div class="page-divider"></div>
-
-<!-- ████  SLIDE 14 – INVESTMENT BANKING: DIFUSIÓN RRSS  ████ -->
-<div class="slide">
-  <div class="area-header">
-    <div>
-      <div class="area-name">Investment Banking</div>
-      <div class="area-sub">Difusión en RRSS - Q1 2026</div>
-    </div>
-    <div class="btg-logo"><img src="btg-assets/img1.png" alt="BTG Pactual"></div>
-  </div>
-
-  <div class="rrss-detail-grid">
-    <div class="rrss-detail-col left-impact">
-      <div class="rdc-title">Redes Sociales</div>
-      <div class="rrss-stat"><div class="rs-label">Contenidos publicados</div><div class="rs-num">3</div></div>
-      <div class="rrss-stat"><div class="rs-label">Impresiones totales</div><div class="rs-num">7.481</div></div>
-      <div style="font-size:9px;color:rgba(255,255,255,.7);margin-top:8px;margin-bottom:6px;">Contenidos por mes</div>
-      <div class="barlist-row" style="margin-bottom:4px;"><div class="barlist-label" style="color:rgba(255,255,255,.9);width:70px;">Enero</div><div class="barlist-track" style="background:rgba(255,255,255,.2);"><div class="barlist-fill" style="width:0%;background:rgba(255,255,255,.5);"></div></div><div class="barlist-val" style="color:#fff;font-size:8px;">0</div></div>
-      <div class="barlist-row" style="margin-bottom:4px;"><div class="barlist-label" style="color:rgba(255,255,255,.9);width:70px;">Febrero</div><div class="barlist-track" style="background:rgba(255,255,255,.2);"><div class="barlist-fill" style="width:100%;background:rgba(255,255,255,.5);"></div></div><div class="barlist-val" style="color:#fff;font-size:8px;">2</div></div>
-      <div class="barlist-row" style="margin-bottom:4px;"><div class="barlist-label" style="color:rgba(255,255,255,.9);width:70px;">Marzo</div><div class="barlist-track" style="background:rgba(255,255,255,.2);"><div class="barlist-fill" style="width:50%;background:rgba(255,255,255,.5);"></div></div><div class="barlist-val" style="color:#fff;font-size:8px;">1</div></div>
-    </div>
-    <div class="rrss-detail-col right-impact">
-      <div class="rdc-title">Impresiones por plataforma</div>
-      <div class="barlist-row" style="margin-bottom:6px;"><div class="barlist-label" style="color:rgba(255,255,255,.9);width:100px;">LinkedIn</div><div class="barlist-track" style="background:rgba(255,255,255,.2);"><div class="barlist-fill" style="width:100%;background:rgba(255,255,255,.5);"></div></div><div class="barlist-val" style="color:#fff;font-size:8px;">6.531</div></div>
-      <div class="barlist-row" style="margin-bottom:6px;"><div class="barlist-label" style="color:rgba(255,255,255,.9);width:100px;">Instagram</div><div class="barlist-track" style="background:rgba(255,255,255,.2);"><div class="barlist-fill" style="width:15%;background:rgba(255,255,255,.5);"></div></div><div class="barlist-val" style="color:#fff;font-size:8px;">950</div></div>
-      <div style="margin-top:20px;">
-        <div style="font-size:9px;color:rgba(255,255,255,.7);margin-bottom:4px;">Tráfico web orgánico</div>
-        <div style="font-size:22px;font-weight:900;color:#fff;">761 usuarios</div>
-      </div>
-    </div>
-  </div>
-
-  <div class="section-heading">Contenidos orgánicos destacados</div>
-  <div class="area-content-highlights" style="grid-template-columns:repeat(1,1fr);">
-    <div class="ach-card" style="max-width:260px;margin:0 auto;">
-      <img src="btg-assets/8caa5610e352dd0a85d13f003c0f309b.png" alt="IB LinkedIn">
-      <div class="ach-name">Felicitamos a nuestros equipos de IB y CL por su participación como Agente Estructurador, Financista y Hedge Provider</div>
-      <div class="ach-platform">LinkedIn</div>
-      <div class="ach-metric">3.310</div>
-      <div class="ach-mlbl">Impresiones</div>
-    </div>
-  </div>
-
-  <div style="font-size:8px;color:var(--c-muted);text-align:center;padding:8px 20px 16px;">(*) No se incluyen datos de Twitter para el cálculo de impresiones totales</div>
-</div><!-- /slide 14 -->
 
 <div class="page-divider" style="height:1px;background:rgba(255,255,255,.1);"></div>
 
