@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>BTG Pactual — Informe Q1 2026</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-snap-type:y mandatory;overflow-y:scroll;height:100%;}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:#050d1a;color:#fff;}
+
+/* ─── SLIDE ───────────── */
+.slide{width:100vw;height:100vh;scroll-snap-align:start;display:flex;overflow:hidden;position:relative;}
+
+/* ─── COVER ───────────── */
+.cover{background:radial-gradient(ellipse at 30% 60%,#0d2055 0%,#050d1a 65%);}
+
+/* ─── IMAGE COLUMN ─────── */
+.ic{
+  width:38%;flex-shrink:0;position:relative;overflow:hidden;
+  background:#04101e;
+}
+.ic img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;}
+/* gradient: left subtle dark, right heavy → blends into data panel */
+.ic::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(100deg,
+    rgba(0,0,0,.15) 0%,
+    rgba(4,12,26,.55) 55%,
+    rgba(4,12,26,.95) 100%);
+}
+/* area label overlay at bottom of image */
+.ic-over{
+  position:absolute;bottom:0;left:0;right:0;z-index:10;
+  padding:28px 32px 32px;
+  background:linear-gradient(to top,rgba(4,12,26,.95) 0%,rgba(4,12,26,.3) 60%,transparent 100%);
+}
+.ic-chnum{font-size:11px;font-weight:700;letter-spacing:3px;color:rgba(255,255,255,.35);text-transform:uppercase;margin-bottom:8px;}
+.ic-title{font-size:28px;font-weight:900;color:#fff;line-height:1.1;margin-bottom:6px;}
+.ic-sub{font-size:10px;color:rgba(255,255,255,.35);font-style:italic;}
+/* logo top-left on image */
+.ic-logo{position:absolute;top:24px;left:24px;z-index:10;width:48px;opacity:.85;}
+/* big watermark number */
+.ic-wm{position:absolute;bottom:-10px;right:-10px;z-index:9;font-size:180px;font-weight:900;color:rgba(255,255,255,.04);line-height:1;pointer-events:none;}
+
+/* ─── DATA COLUMN ─────── */
+.dc{
+  flex:1;display:flex;flex-direction:column;overflow:hidden;
+  background:#060f1e;
+}
+/* slim top bar */
+.dc-top{
+  display:flex;align-items:center;justify-content:flex-end;
+  padding:10px 28px;border-bottom:1px solid rgba(255,255,255,.06);
+  flex-shrink:0;
+  background:#04101e;
+}
+.dc-top img{width:46px;object-fit:contain;}
+.dc-top-q{font-size:9px;color:rgba(255,255,255,.25);font-style:italic;margin-right:12px;}
+
+/* ─── DATA SECTIONS ─────── */
+.ds{flex:1;display:flex;flex-direction:column;overflow:hidden;min-height:0;}
+.ds.em{background:#071733;border-bottom:2px solid rgba(26,93,200,.12);}
+.ds.rs{background:#060f1e;}
+
+/* section label */
+.ds-lbl{
+  padding:7px 28px;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;
+  flex-shrink:0;
+}
+.ds.em .ds-lbl{background:rgba(9,25,75,.7);color:rgba(180,210,255,.45);border-bottom:1px solid rgba(13,32,85,.5);}
+.ds.rs .ds-lbl{background:rgba(20,55,130,.18);color:rgba(100,160,255,.5);border-bottom:1px solid rgba(26,93,200,.15);}
+
+/* KPI row */
+.kr{display:flex;flex-shrink:0;border-bottom:1px solid rgba(255,255,255,.05);}
+.kc{flex:1;padding:14px 24px;border-right:1px solid rgba(255,255,255,.05);}
+.kc:last-child{border-right:none;}
+.kc-l{font-size:8.5px;font-weight:600;color:rgba(255,255,255,.28);text-transform:uppercase;letter-spacing:.7px;margin-bottom:4px;}
+.kc-v{font-size:36px;font-weight:900;color:#fff;line-height:1;}
+.kc-v.md{font-size:28px;}
+.kc-v.sm{font-size:20px;}
+.kc-v.dim{color:rgba(255,255,255,.15);}
+.kc-s{font-size:8.5px;color:rgba(255,255,255,.25);margin-top:3px;}
+
+/* detail grid */
+.dg{display:grid;grid-template-columns:1fr 1fr;flex:1;min-height:0;}
+.dc2{padding:14px 24px;display:flex;flex-direction:column;border-right:1px solid rgba(255,255,255,.04);}
+.dc2:last-child{border-right:none;}
+.dc2-t{font-size:8.5px;font-weight:700;color:rgba(255,255,255,.25);text-transform:uppercase;letter-spacing:.9px;margin-bottom:10px;}
+
+/* barlist */
+.bl{display:flex;flex-direction:column;gap:8px;}
+.bl-r{display:flex;align-items:center;gap:7px;}
+.bl-lb{font-size:9px;color:rgba(255,255,255,.4);flex-shrink:0;width:105px;text-align:right;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.bl-lb.w{width:145px;}
+.bl-lb.xs{width:80px;}
+.bl-tr{flex:1;background:rgba(255,255,255,.07);border-radius:3px;height:4px;}
+.bl-fi{height:100%;border-radius:3px;background:rgba(255,255,255,.38);}
+.bl-fi.hi{background:#1a5dc8;}
+.bl-vl{font-size:9px;font-weight:700;color:#fff;min-width:46px;text-align:right;flex-shrink:0;}
+
+/* stat pills */
+.pills{display:flex;flex-wrap:wrap;gap:7px;margin-top:auto;}
+.pill{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:8px;padding:9px 13px;}
+.pill-l{font-size:7.5px;color:rgba(255,255,255,.25);text-transform:uppercase;letter-spacing:.5px;margin-bottom:2px;}
+.pill-v{font-size:16px;font-weight:900;color:#fff;line-height:1;}
+.pill-v.blue{color:#5aafff;}
+
+/* divider */
+.divline{height:1px;background:rgba(255,255,255,.05);margin:11px 0;flex-shrink:0;}
+
+/* note */
+.note{font-size:8.5px;color:rgba(255,255,255,.2);font-style:italic;line-height:1.55;margin-top:8px;}
+
+/* badge */
+.badge{display:inline-block;background:rgba(26,93,200,.22);border:1px solid rgba(26,93,200,.3);color:rgba(180,210,255,.75);font-size:7.5px;font-weight:700;padding:2px 8px;border-radius:8px;margin:2px 3px 2px 0;}
+
+/* cover pills */
+.cpills{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:24px;}
+.cpill{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.5);font-size:11px;padding:6px 16px;border-radius:20px;cursor:pointer;transition:all .2s;}
+.cpill:hover{background:rgba(255,255,255,.14);color:#fff;}
+
+/* NAV */
+#nav{position:fixed;right:14px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:8px;z-index:200;}
+.dot{width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,.2);cursor:pointer;transition:all .25s;}
+.dot.active{background:#fff;transform:scale(1.6);}
+</style>
+</head>
+<body>
+
+<!-- ══ COVER ══════════════════════════════════════════════════════════════ -->
+<div class="slide cover" id="s0" style="align-items:center;justify-content:center;flex-direction:column;">
+  <div style="position:absolute;font-size:400px;font-weight:900;color:rgba(255,255,255,.015);bottom:-60px;left:-30px;line-height:1;pointer-events:none;">Q1</div>
+  <img src="btg-assets/img1.png" style="width:64px;margin-bottom:22px;" alt="BTG">
+  <div style="font-size:10px;font-weight:700;color:rgba(255,255,255,.28);letter-spacing:4px;text-transform:uppercase;margin-bottom:10px;">Marketing &amp; Comunicaciones</div>
+  <div style="font-size:72px;font-weight:900;line-height:1;margin-bottom:10px;text-align:center;">INFORME Q1 2026</div>
+  <div style="font-size:14px;color:rgba(255,255,255,.28);">Resumen de actividad enero · febrero · marzo</div>
+  <div style="width:38px;height:2px;background:#1a5dc8;margin:24px auto;"></div>
+  <div class="cpills">
+    <div class="cpill" onclick="go(1)">01 · Inversiones Digitales</div>
+    <div class="cpill" onclick="go(2)">02 · Asset Management</div>
+    <div class="cpill" onclick="go(3)">03 · Sales &amp; Trading</div>
+    <div class="cpill" onclick="go(4)">04 · Wealth Management</div>
+    <div class="cpill" onclick="go(5)">05 · Corporate Lending</div>
+    <div class="cpill" onclick="go(6)">06 · Investment Banking</div>
+  </div>
+  <div style="position:absolute;bottom:18px;font-size:10px;color:rgba(255,255,255,.14);">BTG Pactual Chile · Q1 2026 · Uso Interno</div>
+</div>
+
+<!-- ══ 01 INVERSIONES DIGITALES ════════════════════════════════════════════ -->
+<div class="slide" id="s1">
+
+  <!-- IMAGE LEFT -->
+  <div class="ic">
+    <img src="btg-assets/img2.jpg" alt="Evento">
+    <img src="btg-assets/img1.png" class="ic-logo" alt="BTG">
+    <div class="ic-wm">01</div>
+    <div class="ic-over">
+      <div class="ic-chnum">Capítulo 01</div>
+      <div class="ic-title">Inversiones<br>Digitales</div>
+      <div class="ic-sub">Eventos &amp; Medios · Difusión RRSS · Q1 2026</div>
+    </div>
+  </div>
+
+  <!-- DATA RIGHT -->
+  <div class="dc">
+    <div class="dc-top"><span class="dc-top-q">Q1 2026</span><img src="btg-assets/img1.png" alt="BTG"></div>
+
+    <!-- E&M -->
+    <div class="ds em">
+      <div class="ds-lbl">Eventos &amp; Medios</div>
+      <div class="kr">
+        <div class="kc"><div class="kc-l">Eventos</div><div class="kc-v">2</div><div class="kc-s">75 asistentes</div></div>
+        <div class="kc"><div class="kc-l">Prensa</div><div class="kc-v">4</div><div class="kc-s">13c · CNN · Infinita</div></div>
+        <div class="kc"><div class="kc-l">CPM promedio</div><div class="kc-v md">$820</div></div>
+        <div class="kc"><div class="kc-l">CTR promedio</div><div class="kc-v md" style="color:#5aafff;">1,6%</div></div>
+      </div>
+      <div class="dg">
+        <div class="dc2">
+          <div class="dc2-t">Asistentes por evento</div>
+          <div class="bl">
+            <div class="bl-r"><div class="bl-lb">Desayuno Agencias ID</div><div class="bl-tr"><div class="bl-fi hi" style="width:100%"></div></div><div class="bl-vl">60</div></div>
+            <div class="bl-r"><div class="bl-lb">Otros</div><div class="bl-tr"><div class="bl-fi hi" style="width:25%"></div></div><div class="bl-vl">15</div></div>
+          </div>
+          <div class="divline"></div>
+          <div class="dc2-t">Fuentes prensa</div>
+          <div class="bl">
+            <div class="bl-r"><div class="bl-lb">13c</div><div class="bl-tr"><div class="bl-fi" style="width:100%"></div></div><div class="bl-vl">1</div></div>
+            <div class="bl-r"><div class="bl-lb">CNN Chile</div><div class="bl-tr"><div class="bl-fi" style="width:100%"></div></div><div class="bl-vl">1</div></div>
+            <div class="bl-r"><div class="bl-lb">Infinita</div><div class="bl-tr"><div class="bl-fi" style="width:100%"></div></div><div class="bl-vl">1</div></div>
+            <div class="bl-r"><div class="bl-lb">Infinita.cl</div><div class="bl-tr"><div class="bl-fi" style="width:100%"></div></div><div class="bl-vl">1</div></div>
+          </div>
+        </div>
+        <div class="dc2">
+          <div class="dc2-t">Campañas digitales</div>
+          <div class="pills" style="margin-top:0;margin-bottom:10px;">
+            <div class="pill"><div class="pill-l">Campañas</div><div class="pill-v">42</div></div>
+            <div class="pill"><div class="pill-l">Personas alcanzadas</div><div class="pill-v">9,6 MM</div></div>
+            <div class="pill"><div class="pill-l">OBOL registros</div><div class="pill-v">3.304</div></div>
+            <div class="pill"><div class="pill-l">Clics anuncios</div><div class="pill-v">638K</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RRSS -->
+    <div class="ds rs">
+      <div class="ds-lbl">Difusión RRSS</div>
+      <div class="kr">
+        <div class="kc"><div class="kc-l">Impresiones</div><div class="kc-v">32.266</div><div class="kc-s">10 contenidos</div></div>
+        <div class="kc"><div class="kc-l">Tráfico pagado</div><div class="kc-v md">171K</div></div>
+        <div class="kc"><div class="kc-l">Tráfico orgánico</div><div class="kc-v md">103K</div></div>
+      </div>
+      <div class="dg">
+        <div class="dc2">
+          <div class="dc2-t">Plataformas</div>
+          <div class="bl">
+            <div class="bl-r"><div class="bl-lb xs">LinkedIn</div><div class="bl-tr"><div class="bl-fi" style="width:100%"></div></div><div class="bl-vl">19.646</div></div>
+            <div class="bl-r"><div class="bl-lb xs">Instagram</div><div class="bl-tr"><div class="bl-fi" style="width:41%"></div></div><div class="bl-vl">8.109</div></div>
+            <div class="bl-r"><div class="bl-lb xs">YouTube</div><div class="bl-tr"><div class="bl-fi" style="width:23%"></div></div><div class="bl-vl">4.511</div></div>
+          </div>
+        </div>
+        <div class="dc2">
+          <div class="dc2-t">Seguidores empresa</div>
+          <div class="bl">
+            <div class="bl-r"><div class="bl-lb xs">LinkedIn</div><div class="bl-tr"><div class="bl-fi" style="width:80%"></div></div><div class="bl-vl">53,2K</div></div>
+            <div class="bl-r"><div class="bl-lb xs">Instagram</div><div class="bl-tr"><div class="bl-fi" style="width:100%"></div></div><div class="bl-vl">66,4K</div></div>
+            <div class="bl-r"><div class="bl-lb xs">YouTube</div><div class="bl-tr"><div class="bl-fi" style="width:6%"></div></div><div class="bl-vl">3,5K</div></div>
+            <div class="bl-r"><div class="bl-lb xs">Spotify</div><div class="bl-tr"><div class="bl-fi" style="width:5%"></div></div><div class="bl-vl">3,2K</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ 02 ASSET MANAGEMENT ════════════════════════════════════════════════ -->
+<div class="slide" id="s2">
+  <div class="ic">
+    <img src="btg-assets/58f671e0316839d97a1d6cbb35c4e0dd.jpg" alt="Evento">
+    <img src="btg-assets/img1.png" class="ic-logo" alt="BTG">
+    <div class="ic-wm">02</div>
+    <div class="ic-over">
+      <div class="ic-chnum">Capítulo 02</div>
+      <div class="ic-title">Asset<br>Management</div>
+      <div class="ic-sub">Eventos &amp; Medios · Difusión RRSS · Q1 2026</div>
+    </div>
+  </div>
+  <div class="dc">
+    <div class="dc-top"><span class="dc-top-q">Q1 2026</span><img src="btg-assets/img1.png" alt="BTG"></div>
+    <div class="ds em">
+      <div class="ds-lbl">Eventos &amp; Medios</div>
+      <div class="kr">
+        <div class="kc"><div class="kc-l">Evento destacado</div><div class="kc-v md">Asset Day<br>Colombia</div><div class="kc-s">50 asist. · Marriot Bogotá</div></div>
+        <div class="kc"><div class="kc-l">Apariciones prensa</div><div class="kc-v">14</div><div class="kc-s">6 fuentes distintas</div></div>
+      </div>
+      <div class="dg">
+        <div class="dc2">
+          <div class="dc2-t">Fuentes prensa</div>
+          <div class="bl">
+            <div class="bl-r"><div class="bl-lb">Df.cl</div><div class="bl-tr"><div class="bl-fi hi" style="width:100%"></div></div><div class="bl-vl">3</div></div>
+            <div class="bl-r"><div class="bl-lb">El Diario Financiero</div><div class="bl-tr"><div class="bl-fi hi" style="width:100%"></div></div><div class="bl-vl">3</div></div>
+            <div class="bl-r"><div class="bl-lb">El Mercurio</div><div class="bl-tr"><div class="bl-fi hi" style="width:100%"></div></div><div class="bl-vl">3</div></div>
+            <div class="bl-r"><div class="bl-lb">fundsociety.com</div><div class="bl-tr"><div class="bl-fi" style="width:33%"></div></div><div class="bl-vl">1</div></div>
+          </div>
+        </div>
+        <div class="dc2">
+          <div class="dc2-t">Campañas — conversión</div>
+          <div class="pills" style="margin-top:0;">
+            <div class="pill"><div class="pill-l">Campañas</div><div class="pill-v">10</div></div>
+            <div class="pill"><div class="pill-l">Cuentas creadas</div><div class="pill-v">487</div></div>
+            <div class="pill"><div class="pill-l">CAC</div><div class="pill-v">$27.771</div></div>
+            <div class="pill"><div class="pill-l">Aportantes</div><div class="pill-v">867</div></div>
+            <div class="pill" style="background:rgba(26,93,200,.2);border-color:rgba(26,93,200,.3);">
+              <div class="pill-l">Monto aportes</div><div class="pill-v blue">$5.536 MM</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="ds rs">
+      <div class="ds-lbl">Difusión RRSS</div>
+      <div class="kr">
+        <div class="kc"><div class="kc-l">Impresiones</div><div class="kc-v">371K</div><div class="kc-s">63 contenidos</div></div>
+        <div class="kc"><div class="kc-l">Tráfico pagado</div><div class="kc-v md">20.326</div></div>
+        <div class="kc"><div class="kc-l">Tráfico orgánico</div><div class="kc-v md">10.706</div></div>
+      </div>
+      <div class="dg">
+        <div class="dc2">
+          <div class="dc2-t">Plataformas</div>
+          <div class="bl">
+            <div class="bl-r"><div class="bl-lb xs">Instagram</div><div class="bl-tr"><div class="bl-fi" style="width:100%"></div></div><div class="bl-vl">243K</div></div>
+            <div class="bl-r"><div class="bl-lb xs">LinkedIn</div><div class="bl-tr"><div class="bl-fi" style="width:41%"></div></div><div class="bl-vl">100K</div></div>
+            <div class="bl-r"><div class="bl-lb xs">YouTube</div><div class="bl-tr"><div class="bl-fi" style="width:11%"></div></div><div class="bl-vl">27,7K</div></div>
+          </div>
+        </div>
+        <div class="dc2">
+          <div class="dc2-t">Resumen</div>
+          <div class="pills" style="margin-top:0;">
+            <div class="pill"><div class="pill-l">Contenidos</div><div class="pill-v">63</div></div>
+            <div class="pill"><div class="pill-l">T.Pagado</div><div class="pill-v">20.326</div></div>
+            <div class="pill"><div class="pill-l">T.Orgánico</div><div class="pill-v">10.706</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ 03 SALES & TRADING ══════════════════════════════════════════════════ -->
+<div class="slide" id="s3">
+  <div class="ic">
+    <img src="btg-assets/img2.jpg" alt="Evento">
+    <img src="btg-assets/img1.png" class="ic-logo" alt="BTG">
+    <div class="ic-wm">03</div>
+    <div class="ic-over">
+      <div class="ic-chnum">Capítulo 03</div>
+      <div class="ic-title">Sales &amp;<br>Trading</div>
+      <div class="ic-sub">Eventos &amp; Medios · Difusión RRSS · Q1 2026</div>
+    </div>
+  </div>
+  <div class="dc">
+    <div class="dc-top"><span class="dc-top-q">Q1 2026</span><img src="btg-assets/img1.png" alt="BTG"></div>
+    <div class="ds em">
+      <div class="ds-lbl">Eventos &amp; Medios</div>
+      <div class="kr">
+        <div class="kc"><div class="kc-l">Eventos</div><div class="kc-v">2</div></div>
+        <div class="kc"><div class="kc-l">Asistentes</div><div class="kc-v">72</div></div>
+        <div class="kc"><div class="kc-l">Prensa</div><div class="kc-v">6</div><div class="kc-s">5 fuentes</div></div>
+      </div>
+      <div class="dg">
+        <div class="dc2">
+          <div class="dc2-t">Asistentes por evento</div>
+          <div class="bl">
+            <div class="bl-r"><div class="bl-lb">Kick off CB Dondoh</div><div class="bl-tr"><div class="bl-fi hi" style="width:100%"></div></div><div class="bl-vl">60</div></div>
+            <div class="bl-r"><div class="bl-lb">Clínica Padel J.Valdés</div><div class="bl-tr"><div class="bl-fi hi" style="width:20%"></div></div><div class="bl-vl">12</div></div>
+          </div>
+        </div>
+        <div class="dc2">
+          <div class="dc2-t">Fuentes prensa</div>
+          <div class="bl">
+            <div class="bl-r"><div class="bl-lb xs">elmercurio.cl</div><div class="bl-tr"><div class="bl-fi" style="width:100%"></div></div><div class="bl-vl">2</div></div>
+            <div class="bl-r"><div class="bl-lb xs">Ex-ante.cl</div><div class="bl-tr"><div class="bl-fi" style="width:50%"></div></div><div class="bl-vl">1</div></div>
+            <div class="bl-r"><div class="bl-lb xs">Latercera.com</div><div class="bl-tr"><div class="bl-fi" style="width:50%"></div></div><div class="bl-vl">1</div></div>
+            <div class="bl-r"><div class="bl-lb xs">Radio Duna</div><div class="bl-tr"><div class="bl-fi" style="width:50%"></div></div><div class="bl-vl">1</div></div>
+            <div class="bl-r"><div class="bl-lb xs">Valorfuturo.com</div><div class="bl-tr"><div class="bl-fi" style="width:50%"></div></div><div class="bl-vl">1</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="ds rs">
+      <div class="ds-lbl">Difusión RRSS</div>
+      <div class="kr">
+        <div class="kc"><div class="kc-l">Impresiones totales</div><div class="kc-v">1,1 MM</div></div>
+        <div class="kc"><div class="kc-l">Contenidos</div><div class="kc-v md">102</div><div class="kc-s">Ene 36 · Feb 30 · Mar 36</div></div>
+        <div class="kc"><div class="kc-l">Tráfico orgánico</div><div class="kc-v md">320</div></div>
+      </div>
+      <div class="dg">
+        <div class="dc2">
+          <div class="dc2-t">Plataformas</div>
+          <div class="bl">
+            <div class="bl-r"><div class="bl-lb xs">Instagram</div><div class="bl-tr"><div class="bl-fi" style="width:100%"></div></div><div class="bl-vl">564K</div></div>
+            <div class="bl-r"><div class="bl-lb xs">YouTube</div><div class="bl-tr"><div class="bl-fi" style="width:86%"></div></div><div class="bl-vl">487K</div></div>
+            <div class="bl-r"><div class="bl-lb xs">LI Newsletter</div><div class="bl-tr"><div class="bl-fi" style="width:8%"></div></div><div class="bl-vl">43K</div></div>
+            <div class="bl-r"><div class="bl-lb xs">LinkedIn</div><div class="bl-tr"><div class="bl-fi" style="width:3%"></div></div><div class="bl-vl">19,6K</div></div>
+          </div>
+        </div>
+        <div class="dc2">
+          <div class="dc2-t">Contenidos por mes</div>
+          <div class="bl">
+            <div class="bl-r"><div class="bl-lb xs">Enero</div><div class="bl-tr"><div class="bl-fi" style="width:100%"></div></div><div class="bl-vl">36</div></div>
+            <div class="bl-r"><div class="bl-lb xs">Febrero</div><div class="bl-tr"><div class="bl-fi" style="width:83%"></div></div><div class="bl-vl">30</div></div>
+            <div class="bl-r"><div class="bl-lb xs">Marzo</div><div class="bl-tr"><div class="bl-fi" style="width:100%"></div></div><div class="bl-vl">36</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ 04 WEALTH MANAGEMENT ═══════════════════════════════════════════════ -->
+<div class="slide" id="s4">
+  <div class="ic" style="background:#071020;">
+    <img src="btg-assets/9d958e6e3d7c51f5eb7ac43c964d47d2.png" alt="Podcast" style="object-position:center top;">
+    <img src="btg-assets/img1.png" class="ic-logo" alt="BTG">
+    <div class="ic-wm">04</div>
+    <div class="ic-over">
+      <div class="ic-chnum">Capítulo 04</div>
+      <div class="ic-title">Wealth<br>Management</div>
+      <div class="ic-sub">Eventos &amp; Medios · Difusión RRSS · Q1 2026</div>
+    </div>
+  </div>
+  <div class="dc">
+    <div class="dc-top"><span class="dc-top-q">Q1 2026</span><img src="btg-assets/img1.png" alt="BTG"></div>
+    <div class="ds em">
+      <div class="ds-lbl">Eventos &amp; Medios</div>
+      <div class="kr">
+        <div class="kc"><div class="kc-l">Eventos</div><div class="kc-v dim">—</div><div class="kc-s">sin eventos este período</div></div>
+        <div class="kc"><div class="kc-l">Prensa</div><div class="kc-v">8</div><div class="kc-s">6 fuentes</div></div>
+        <div class="kc"><div class="kc-l">Mailing</div><div class="kc-v">83</div><div class="kc-s">campañas · 44,6% apertura</div></div>
+      </div>
+      <div class="dg">
+        <div class="dc2">
+          <div class="dc2-t">Fuentes prensa</div>
+          <div class="bl">
+            <div class="bl-r"><div class="bl-lb">Df.cl</div><div class="bl-tr"><div class="bl-fi hi" style="width:100%"></div></div><div class="bl-vl">2</div></div>
+            <div class="bl-r"><div class="bl-lb">El Diario Financiero</div><div class="bl-tr"><div class="bl-fi hi" style="width:100%"></div></div><div class="bl-vl">2</div></div>
+            <div class="bl-r"><div class="bl-lb">Duna</div><div class="bl-tr"><div class="bl-fi" style="width:50%"></div></div><div class="bl-vl">1</div></div>
+            <div class="bl-r"><div class="bl-lb">Latercera.com</div><div class="bl-tr"><div class="bl-fi" style="width:50%"></div></div><div class="bl-vl">1</div></div>
+            <div class="bl-r"><div class="bl-lb">Radio Infinita</div><div class="bl-tr"><div class="bl-fi" style="width:50%"></div></div><div class="bl-vl">1</div></div>
+            <div class="bl-r"><div class="bl-lb">SeñalDF</div><div class="bl-tr"><div class="bl-fi" style="width:50%"></div></div><div class="bl-vl">1</div></div>
+          </div>
+        </div>
+        <div class="dc2">
+          <div class="dc2-t">Mailing</div>
+          <div class="pills" style="margin-top:0;">
+            <div class="pill"><div class="pill-l">Campañas enviadas</div><div class="pill-v">83</div></div>
+            <div class="pill"><div class="pill-l">Tasa apertura</div><div class="pill-v blue">44,6%</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="ds rs">
+      <div class="ds-lbl">Difusión RRSS</div>
+      <div class="kr">
+        <div class="kc"><div class="kc-l">Impresiones</div><div class="kc-v">1,4 MM</div></div>
+        <div class="kc"><div class="kc-l">Contenidos</div><div class="kc-v md">43</div></div>
+        <div class="kc"><div class="kc-l">Tráfico orgánico</div><div class="kc-v md">805</div></div>
+      </div>
+      <div class="dg">
+        <div class="dc2">
+          <div class="dc2-t">Plataformas</div>
+          <div class="bl">
+            <div class="bl-r"><div class="bl-lb xs">Instagram</div><div class="bl-tr"><div class="bl-fi" style="width:100%"></div></div><div class="bl-vl">1.141K</div></div>
+            <div class="bl-r"><div class="bl-lb xs">YouTube</div><div class="bl-tr"><div class="bl-fi" style="width:20%"></div></div><div class="bl-vl">222,9K</div></div>
+            <div class="bl-r"><div class="bl-lb xs">LinkedIn</div><div class="bl-tr"><div class="bl-fi" style="width:6%"></div></div><div class="bl-vl">66,2K</div></div>
+          </div>
+        </div>
+        <div class="dc2">
+          <div class="dc2-t">Distribución impresiones</div>
+          <div class="pills" style="margin-top:0;">
+            <div class="pill"><div class="pill-l">Instagram</div><div class="pill-v blue">79%</div></div>
+            <div class="pill"><div class="pill-l">YouTube</div><div class="pill-v">16%</div></div>
+            <div class="pill"><div class="pill-l">LinkedIn</div><div class="pill-v">5%</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ 05 CORPORATE LENDING ════════════════════════════════════════════════ -->
+<div class="slide" id="s5">
+  <div class="ic">
+    <img src="btg-assets/58f671e0316839d97a1d6cbb35c4e0dd.jpg" alt="Evento" style="object-position:center 30%;">
+    <img src="btg-assets/img1.png" class="ic-logo" alt="BTG">
+    <div class="ic-wm">05</div>
+    <div class="ic-over">
+      <div class="ic-chnum">Capítulo 05</div>
+      <div class="ic-title">Corporate<br>Lending</div>
+      <div class="ic-sub">Eventos &amp; Medios · Difusión RRSS · Q1 2026</div>
+    </div>
+  </div>
+  <div class="dc">
+    <div class="dc-top"><span class="dc-top-q">Q1 2026</span><img src="btg-assets/img1.png" alt="BTG"></div>
+    <div class="ds em">
+      <div class="ds-lbl">Eventos &amp; Medios</div>
+      <div class="kr">
+        <div class="kc"><div class="kc-l">Eventos</div><div class="kc-v">8</div><div class="kc-s">alta actividad Q1</div></div>
+        <div class="kc"><div class="kc-l">Asistentes</div><div class="kc-v">153</div></div>
+        <div class="kc"><div class="kc-l">Prensa</div><div class="kc-v dim">—</div></div>
+      </div>
+      <div class="dg">
+        <div class="dc2">
+          <div class="dc2-t">Asistentes por evento</div>
+          <div class="bl">
+            <div class="bl-r"><div class="bl-lb w">Cóctel primer semestre</div><div class="bl-tr"><div class="bl-fi hi" style="width:100%"></div></div><div class="bl-vl">50</div></div>
+            <div class="bl-r"><div class="bl-lb w">En off: Martín Arrau</div><div class="bl-tr"><div class="bl-fi hi" style="width:40%"></div></div><div class="bl-vl">20</div></div>
+            <div class="bl-r"><div class="bl-lb w">Comida fidelización</div><div class="bl-tr"><div class="bl-fi hi" style="width:40%"></div></div><div class="bl-vl">20</div></div>
+            <div class="bl-r"><div class="bl-lb w">Desayuno Pablo Cruz</div><div class="bl-tr"><div class="bl-fi" style="width:30%"></div></div><div class="bl-vl">15</div></div>
+          </div>
+        </div>
+        <div class="dc2">
+          <div class="dc2-t">Eventos deportivos</div>
+          <div class="bl">
+            <div class="bl-r"><div class="bl-lb w">UC – Coquimbo Unido</div><div class="bl-tr"><div class="bl-fi" style="width:100%"></div></div><div class="bl-vl">12</div></div>
+            <div class="bl-r"><div class="bl-lb w">UC – Everton</div><div class="bl-tr"><div class="bl-fi" style="width:100%"></div></div><div class="bl-vl">12</div></div>
+            <div class="bl-r"><div class="bl-lb w">Concierto Bryan Adams</div><div class="bl-tr"><div class="bl-fi" style="width:100%"></div></div><div class="bl-vl">12</div></div>
+            <div class="bl-r"><div class="bl-lb w">UC – Concepción</div><div class="bl-tr"><div class="bl-fi" style="width:100%"></div></div><div class="bl-vl">12</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="ds rs">
+      <div class="ds-lbl">Difusión RRSS</div>
+      <div class="kr">
+        <div class="kc"><div class="kc-l">Impresiones</div><div class="kc-v">17.519</div></div>
+        <div class="kc"><div class="kc-l">Contenidos</div><div class="kc-v md">3</div><div class="kc-s">área presencial intensiva</div></div>
+        <div class="kc"><div class="kc-l">Tráfico orgánico</div><div class="kc-v md">233</div></div>
+      </div>
+      <div class="dg">
+        <div class="dc2">
+          <div class="dc2-t">Plataformas</div>
+          <div class="bl">
+            <div class="bl-r"><div class="bl-lb xs">LinkedIn</div><div class="bl-tr"><div class="bl-fi" style="width:100%"></div></div><div class="bl-vl">12.765</div></div>
+            <div class="bl-r"><div class="bl-lb xs">Instagram</div><div class="bl-tr"><div class="bl-fi" style="width:19%"></div></div><div class="bl-vl">2.443</div></div>
+          </div>
+          <div class="divline"></div>
+          <div class="dc2-t" style="margin-top:2px;">Distribución</div>
+          <div class="pills" style="margin-top:4px;">
+            <div class="pill"><div class="pill-l">LinkedIn</div><div class="pill-v blue">73%</div></div>
+            <div class="pill"><div class="pill-l">Instagram</div><div class="pill-v">14%</div></div>
+          </div>
+        </div>
+        <div class="dc2">
+          <p class="note" style="font-size:9.5px;color:rgba(255,255,255,.28);line-height:1.7;">Corporate Lending fue el área con mayor actividad presencial en Q1: <strong style="color:#fff;">8 eventos</strong> y <strong style="color:#fff;">153 asistentes</strong>, representando el <strong style="color:#fff;">44%</strong> del total de asistentes de la empresa.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ 06 INVESTMENT BANKING ═══════════════════════════════════════════════ -->
+<div class="slide" id="s6">
+  <div class="ic" style="background:#060c18;">
+    <img src="btg-assets/8caa5610e352dd0a85d13f003c0f309b.png" alt="Prensa IB" style="object-position:center center;">
+    <img src="btg-assets/img1.png" class="ic-logo" alt="BTG">
+    <div class="ic-wm">06</div>
+    <div class="ic-over">
+      <div class="ic-chnum">Capítulo 06</div>
+      <div class="ic-title">Investment<br>Banking</div>
+      <div class="ic-sub">Eventos &amp; Medios · Difusión RRSS · Q1 2026</div>
+    </div>
+  </div>
+  <div class="dc">
+    <div class="dc-top"><span class="dc-top-q">Q1 2026</span><img src="btg-assets/img1.png" alt="BTG"></div>
+    <div class="ds em">
+      <div class="ds-lbl">Eventos &amp; Medios</div>
+      <div class="kr">
+        <div class="kc"><div class="kc-l">Eventos</div><div class="kc-v dim">—</div></div>
+        <div class="kc"><div class="kc-l">Prensa</div><div class="kc-v dim">—</div></div>
+      </div>
+      <div class="dg">
+        <div class="dc2" style="grid-column:1/-1;">
+          <p class="note" style="font-size:10px;color:rgba(255,255,255,.28);line-height:1.7;">
+            Sin eventos presenciales ni apariciones en prensa durante Q1 2026. La actividad del área se concentró en difusión digital y contenidos de RRSS.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="ds rs">
+      <div class="ds-lbl">Difusión RRSS</div>
+      <div class="kr">
+        <div class="kc"><div class="kc-l">Impresiones</div><div class="kc-v">7.481</div></div>
+        <div class="kc"><div class="kc-l">Contenidos</div><div class="kc-v md">3</div><div class="kc-s">Feb(2) · Mar(1)</div></div>
+        <div class="kc"><div class="kc-l">Tráfico orgánico</div><div class="kc-v md">761</div></div>
+      </div>
+      <div class="dg">
+        <div class="dc2">
+          <div class="dc2-t">Plataformas</div>
+          <div class="bl">
+            <div class="bl-r"><div class="bl-lb xs">LinkedIn</div><div class="bl-tr"><div class="bl-fi" style="width:100%"></div></div><div class="bl-vl">6.531</div></div>
+            <div class="bl-r"><div class="bl-lb xs">Instagram</div><div class="bl-tr"><div class="bl-fi" style="width:15%"></div></div><div class="bl-vl">950</div></div>
+          </div>
+          <div class="divline"></div>
+          <div class="dc2-t">Distribución</div>
+          <div class="pills" style="margin-top:4px;">
+            <div class="pill"><div class="pill-l">LinkedIn</div><div class="pill-v blue">87%</div></div>
+            <div class="pill"><div class="pill-l">Instagram</div><div class="pill-v">13%</div></div>
+          </div>
+        </div>
+        <div class="dc2">
+          <div class="dc2-t">Contenidos por mes</div>
+          <div class="bl">
+            <div class="bl-r"><div class="bl-lb xs">Enero</div><div class="bl-tr"><div class="bl-fi" style="width:0%"></div></div><div class="bl-vl" style="color:rgba(255,255,255,.2);">0</div></div>
+            <div class="bl-r"><div class="bl-lb xs">Febrero</div><div class="bl-tr"><div class="bl-fi" style="width:100%"></div></div><div class="bl-vl">2</div></div>
+            <div class="bl-r"><div class="bl-lb xs">Marzo</div><div class="bl-tr"><div class="bl-fi" style="width:50%"></div></div><div class="bl-vl">1</div></div>
+          </div>
+          <p class="note" style="margin-top:12px;">(*) No se incluyen datos de Twitter para impresiones totales.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- NAV -->
+<div id="nav">
+  <div class="dot active" onclick="go(0)"></div>
+  <div class="dot" onclick="go(1)"></div>
+  <div class="dot" onclick="go(2)"></div>
+  <div class="dot" onclick="go(3)"></div>
+  <div class="dot" onclick="go(4)"></div>
+  <div class="dot" onclick="go(5)"></div>
+  <div class="dot" onclick="go(6)"></div>
+</div>
+
+<script>
+const ids=['s0','s1','s2','s3','s4','s5','s6'];
+const dots=document.querySelectorAll('.dot');
+function go(i){document.getElementById(ids[i]).scrollIntoView({behavior:'smooth'});}
+const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){const i=ids.indexOf(x.target.id);dots.forEach((d,j)=>d.classList.toggle('active',i===j));}});},{threshold:0.6});
+ids.forEach(id=>obs.observe(document.getElementById(id)));
+</script>
+</body>
+</html>
