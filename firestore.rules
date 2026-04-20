@@ -1,0 +1,50 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Solo usuarios autenticados con email @artool.cl pueden administrar
+    function isArtoolAdmin() {
+      return request.auth != null
+        && request.auth.token.email_verified == true
+        && request.auth.token.email.matches('.*@artool\\.cl');
+    }
+
+    // El reporte público es de solo lectura para todos
+    match /reportes/{periodo} {
+      allow read: if true;
+
+      match /metricas/{doc} {
+        allow read: if true;
+        allow write: if isArtoolAdmin();
+      }
+
+      match /origenes/{doc} {
+        allow read: if true;
+        allow write: if isArtoolAdmin();
+      }
+
+      match /imagenes/{doc} {
+        allow read: if true;
+        allow write: if isArtoolAdmin();
+      }
+
+      match /config/{doc} {
+        allow read: if true;
+        allow write: if isArtoolAdmin();
+      }
+
+      match /historial/{doc} {
+        // El historial solo lo pueden leer y crear admins (no borrar)
+        allow read, create: if isArtoolAdmin();
+        allow delete, update: if false;
+      }
+    }
+
+    // Colección de períodos disponibles
+    match /periodos/{doc} {
+      allow read: if true;
+      allow write: if isArtoolAdmin();
+    }
+  }
+}

@@ -1,0 +1,26 @@
+rules_version = '2';
+
+service firebase.storage {
+  match /b/{bucket}/o {
+
+    function isArtoolAdmin() {
+      return request.auth != null
+        && request.auth.token.email_verified == true
+        && request.auth.token.email.matches('.*@artool\\.cl');
+    }
+
+    // Imágenes del reporte — lectura pública, escritura solo admin
+    match /reportes/{periodo}/imagenes/{filename} {
+      allow read: if true;
+      allow write: if isArtoolAdmin()
+        && request.resource.size < 10 * 1024 * 1024  // máx 10MB
+        && request.resource.contentType.matches('image/.*');
+    }
+
+    // PDFs generados — URLs firmadas, no acceso directo
+    match /reportes/{periodo}/pdfs/{filename} {
+      allow read: if isArtoolAdmin();
+      allow write: if false; // solo Firebase Functions escribe aquí
+    }
+  }
+}

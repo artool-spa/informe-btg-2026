@@ -1,0 +1,22 @@
+{
+  "indexes": [
+    {
+      "collectionGroup": "metricas",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "area", "order": "ASCENDING" },
+        { "fieldPath": "subarea", "order": "ASCENDING" },
+        { "fieldPath": "orden", "order": "ASCENDING" }
+      ]
+    },
+    {
+      "collectionGroup": "historial",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "timestamp", "order": "DESCENDING" },
+        { "fieldPath": "usuario", "order": "ASCENDING" }
+      ]
+    }
+  ],
+  "fieldOverrides": []
+}

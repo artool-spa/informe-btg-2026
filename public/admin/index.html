@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin — Reporte Trimestral BTG</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #0f1117;
+      color: #e2e8f0;
+      min-height: 100vh;
+    }
+
+    /* ── Login Screen ── */
+    #login-screen {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      gap: 24px;
+    }
+    .login-card {
+      background: #1a1d27;
+      border: 1px solid #2d3148;
+      border-radius: 16px;
+      padding: 48px 56px;
+      text-align: center;
+      width: 420px;
+    }
+    .login-card .logo {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      color: #7c85b3;
+      text-transform: uppercase;
+      margin-bottom: 32px;
+    }
+    .login-card h1 {
+      font-size: 24px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+    .login-card p {
+      font-size: 14px;
+      color: #7c85b3;
+      margin-bottom: 36px;
+    }
+    .btn-google {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      width: 100%;
+      padding: 14px 24px;
+      background: #fff;
+      color: #1a1a2e;
+      border: none;
+      border-radius: 10px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: opacity 0.15s;
+    }
+    .btn-google:hover { opacity: 0.9; }
+    .btn-google svg { flex-shrink: 0; }
+    .login-note {
+      font-size: 12px;
+      color: #4a5280;
+      margin-top: 20px;
+    }
+
+    /* ── App Shell ── */
+    #app-shell { display: none; }
+    nav {
+      background: #1a1d27;
+      border-bottom: 1px solid #2d3148;
+      padding: 0 32px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .nav-brand .wordmark {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: #7c85b3;
+      text-transform: uppercase;
+    }
+    .nav-brand .separator { color: #2d3148; }
+    .nav-brand .page-title {
+      font-size: 15px;
+      font-weight: 600;
+      color: #e2e8f0;
+    }
+    .nav-user {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 13px;
+      color: #7c85b3;
+    }
+    .avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #2d3148;
+    }
+    .btn-signout {
+      background: none;
+      border: 1px solid #2d3148;
+      color: #7c85b3;
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-size: 12px;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .btn-signout:hover { border-color: #7c85b3; color: #e2e8f0; }
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 40px 32px;
+    }
+
+    /* ── Período selector ── */
+    .section-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 24px;
+    }
+    .section-header h2 {
+      font-size: 20px;
+      font-weight: 700;
+      color: #fff;
+    }
+    .periodo-badge {
+      background: #1e3a5f;
+      color: #60a5fa;
+      padding: 6px 16px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+
+    /* ── Area Cards ── */
+    .areas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+    .area-card {
+      background: #1a1d27;
+      border: 1px solid #2d3148;
+      border-radius: 12px;
+      padding: 20px 24px;
+      cursor: pointer;
+      transition: all 0.15s;
+      text-decoration: none;
+      display: block;
+    }
+    .area-card:hover {
+      border-color: #4a6fa5;
+      transform: translateY(-2px);
+    }
+    .area-card .area-name {
+      font-size: 15px;
+      font-weight: 600;
+      color: #e2e8f0;
+      margin-bottom: 6px;
+    }
+    .area-card .area-meta {
+      font-size: 12px;
+      color: #7c85b3;
+    }
+    .area-card .status-dot {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      margin-right: 6px;
+    }
+    .status-dot.ok { background: #22c55e; }
+    .status-dot.pending { background: #f59e0b; }
+    .status-dot.empty { background: #4a5280; }
+
+    /* ── PDF Export Panel ── */
+    .export-panel {
+      background: #1a1d27;
+      border: 1px solid #2d3148;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin-bottom: 32px;
+    }
+    .export-panel h3 {
+      font-size: 16px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+    .export-panel p {
+      font-size: 13px;
+      color: #7c85b3;
+      margin-bottom: 20px;
+    }
+    .area-checkboxes {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .area-check-label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: #0f1117;
+      border: 1px solid #2d3148;
+      border-radius: 8px;
+      padding: 8px 14px;
+      font-size: 13px;
+      color: #e2e8f0;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .area-check-label:has(input:checked) {
+      border-color: #3b82f6;
+      background: #1e3a5f;
+      color: #60a5fa;
+    }
+    .area-check-label input { display: none; }
+    .btn-export {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 24px;
+      background: #3b82f6;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .btn-export:hover { background: #2563eb; }
+    .btn-export:disabled { background: #1e3a5f; color: #4a5280; cursor: not-allowed; }
+    .export-spinner {
+      display: none;
+      font-size: 13px;
+      color: #7c85b3;
+      margin-top: 12px;
+    }
+    .export-spinner.visible { display: block; }
+
+    /* ── Toast ── */
+    #toast {
+      position: fixed;
+      bottom: 32px;
+      right: 32px;
+      background: #1a1d27;
+      border: 1px solid #2d3148;
+      color: #e2e8f0;
+      padding: 14px 20px;
+      border-radius: 10px;
+      font-size: 14px;
+      opacity: 0;
+      transform: translateY(12px);
+      transition: all 0.25s;
+      z-index: 9999;
+      max-width: 320px;
+    }
+    #toast.show { opacity: 1; transform: translateY(0); }
+    #toast.error { border-color: #ef4444; color: #fca5a5; }
+    #toast.success { border-color: #22c55e; color: #86efac; }
+  </style>
+</head>
+<body>
+
+<!-- Login screen -->
+<div id="login-screen">
+  <div class="login-card">
+    <div class="logo">Artool × BTG Pactual</div>
+    <h1>Panel de Administración</h1>
+    <p>Acceso restringido a cuentas <strong>@artool.cl</strong></p>
+    <button class="btn-google" id="btn-google-signin">
+      <svg width="20" height="20" viewBox="0 0 48 48">
+        <path fill="#FFC107" d="M43.6 20.1H42V20H24v8h11.3C33.6 32.5 29.3 35 24 35c-6.1 0-11-4.9-11-11s4.9-11 11-11c2.8 0 5.3 1 7.2 2.7l5.7-5.7C33.6 7.1 29.1 5 24 5 12.9 5 4 13.9 4 25s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.6-.4-3.9z"/>
+        <path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.6 16 19 13 24 13c2.8 0 5.3 1 7.2 2.7l5.7-5.7C33.6 7.1 29.1 5 24 5c-7.7 0-14.4 4.4-17.7 9.7z"/>
+        <path fill="#4CAF50" d="M24 45c5 0 9.5-1.9 12.9-5l-5.9-5c-2 1.4-4.5 2.2-7 2.2-5.2 0-9.6-3.5-11.2-8.3l-6.5 5C9.5 40.4 16.2 45 24 45z"/>
+        <path fill="#1976D2" d="M43.6 20.1H42V20H24v8h11.3c-.8 2.3-2.3 4.3-4.2 5.7l5.9 5C40.7 36 44 31 44 25c0-1.3-.1-2.6-.4-3.9z"/>
+      </svg>
+      Continuar con Google
+    </button>
+    <p class="login-note">Solo cuentas @artool.cl tienen acceso</p>
+  </div>
+</div>
+
+<!-- App shell -->
+<div id="app-shell">
+  <nav>
+    <div class="nav-brand">
+      <span class="wordmark">Artool</span>
+      <span class="separator">·</span>
+      <span class="page-title">Reporte BTG — Admin</span>
+    </div>
+    <div class="nav-user">
+      <img class="avatar" id="user-avatar" src="" alt="" />
+      <span id="user-email"></span>
+      <button class="btn-signout" id="btn-signout">Salir</button>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Periodo header -->
+    <div class="section-header">
+      <h2>Reporte Q1 2026</h2>
+      <span class="periodo-badge">Q1-2026</span>
+    </div>
+
+    <!-- PDF Export panel -->
+    <div class="export-panel">
+      <h3>Exportar PDF</h3>
+      <p>Selecciona las áreas a incluir. Dejar todo sin marcar exporta el reporte completo.</p>
+      <div class="area-checkboxes" id="area-checkboxes">
+        <!-- generado dinámicamente -->
+      </div>
+      <button class="btn-export" id="btn-export">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M12 15V3M6 9l6 6 6-6M3 21h18" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Generar y descargar PDF
+      </button>
+      <div class="export-spinner" id="export-spinner">Generando PDF, puede tardar hasta 60 segundos…</div>
+    </div>
+
+    <!-- Áreas del reporte -->
+    <div class="section-header">
+      <h2>Áreas del reporte</h2>
+    </div>
+    <div class="areas-grid" id="areas-grid">
+      <!-- generado dinámicamente -->
+    </div>
+  </main>
+</div>
+
+<div id="toast"></div>
+
+<!-- Firebase SDK -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.0/firebase-app.js";
+  import {
+    getAuth,
+    GoogleAuthProvider,
+    signInWithPopup,
+    signOut,
+    onAuthStateChanged
+  } from "https://www.gstatic.com/firebasejs/11.0.0/firebase-auth.js";
+  import {
+    getFirestore,
+    collection,
+    getDocs,
+    query,
+    orderBy
+  } from "https://www.gstatic.com/firebasejs/11.0.0/firebase-firestore.js";
+
+  // ── Config (se reemplaza en deploy) ──
+  const firebaseConfig = {
+    apiKey: "__FIREBASE_API_KEY__",
+    authDomain: "reporte-trimestral-btg.firebaseapp.com",
+    projectId: "reporte-trimestral-btg",
+    storageBucket: "reporte-trimestral-btg.appspot.com",
+    messagingSenderId: "__MESSAGING_SENDER_ID__",
+    appId: "__APP_ID__"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+  const db = getFirestore(app);
+  const provider = new GoogleAuthProvider();
+  provider.setCustomParameters({ hd: "artool.cl" }); // hint al dominio
+
+  const AREAS = [
+    { id: "resumen-general",        label: "Resumen General" },
+    { id: "eventos-medios",         label: "Eventos y Medios" },
+    { id: "impacto-digital",        label: "Impacto Digital" },
+    { id: "inversiones-digitales",  label: "Inversiones Digitales" },
+    { id: "asset-management",       label: "Asset Management" },
+    { id: "sales-trading",          label: "Sales & Trading" },
+    { id: "wealth-management",      label: "Wealth Management" },
+    { id: "corporate-lending",      label: "Corporate Lending" },
+    { id: "investment-banking",     label: "Investment Banking" },
+  ];
+
+  // ── Auth state ──
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      if (!user.email?.endsWith("@artool.cl")) {
+        showToast("Acceso denegado. Solo @artool.cl", "error");
+        signOut(auth);
+        return;
+      }
+      showApp(user);
+    } else {
+      showLogin();
+    }
+  });
+
+  function showLogin() {
+    document.getElementById("login-screen").style.display = "flex";
+    document.getElementById("app-shell").style.display = "none";
+  }
+
+  function showApp(user) {
+    document.getElementById("login-screen").style.display = "none";
+    document.getElementById("app-shell").style.display = "block";
+    document.getElementById("user-email").textContent = user.email;
+    const avatar = document.getElementById("user-avatar");
+    if (user.photoURL) avatar.src = user.photoURL;
+    renderAreas();
+    renderCheckboxes();
+  }
+
+  function renderAreas() {
+    const grid = document.getElementById("areas-grid");
+    grid.innerHTML = AREAS.map(a => `
+      <div class="area-card" data-area="${a.id}">
+        <div class="area-name">${a.label}</div>
+        <div class="area-meta">
+          <span class="status-dot pending"></span>
+          Clic para editar datos
+        </div>
+      </div>
+    `).join("");
+  }
+
+  function renderCheckboxes() {
+    const container = document.getElementById("area-checkboxes");
+    container.innerHTML = AREAS.map(a => `
+      <label class="area-check-label">
+        <input type="checkbox" value="${a.id}" />
+        ${a.label}
+      </label>
+    `).join("");
+  }
+
+  // ── Google Sign In ──
+  document.getElementById("btn-google-signin").addEventListener("click", async () => {
+    try {
+      await signInWithPopup(auth, provider);
+    } catch (err) {
+      showToast("Error al iniciar sesión", "error");
+      console.error(err);
+    }
+  });
+
+  document.getElementById("btn-signout").addEventListener("click", () => signOut(auth));
+
+  // ── PDF Export ──
+  document.getElementById("btn-export").addEventListener("click", async () => {
+    const user = auth.currentUser;
+    if (!user) return;
+
+    const checked = Array.from(
+      document.querySelectorAll("#area-checkboxes input:checked")
+    ).map(el => el.value);
+
+    const btn = document.getElementById("btn-export");
+    const spinner = document.getElementById("export-spinner");
+    btn.disabled = true;
+    spinner.classList.add("visible");
+
+    try {
+      const token = await user.getIdToken();
+      const resp = await fetch("/api/generate", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${token}`
+        },
+        body: JSON.stringify({
+          periodo: "Q1-2026",
+          areas: checked.length > 0 ? checked : undefined
+        })
+      });
+
+      if (!resp.ok) throw new Error(await resp.text());
+      const { url } = await resp.json();
+      window.open(url, "_blank");
+      showToast("PDF generado correctamente", "success");
+    } catch (err) {
+      showToast("Error generando PDF: " + err.message, "error");
+    } finally {
+      btn.disabled = false;
+      spinner.classList.remove("visible");
+    }
+  });
+
+  // ── Toast ──
+  function showToast(msg, type = "") {
+    const t = document.getElementById("toast");
+    t.textContent = msg;
+    t.className = `show ${type}`;
+    setTimeout(() => { t.className = ""; }, 4000);
+  }
+</script>
+</body>
+</html>
